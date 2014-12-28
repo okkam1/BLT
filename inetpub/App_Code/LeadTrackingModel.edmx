@@ -1,0 +1,2100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="LeadTrackingProgram2Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="LeadTrackingProgram2ModelStoreContainer">
+          <EntitySet Name="ActionStatus" EntityType="LeadTrackingProgram2Model.Store.ActionStatus" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BloodResults" EntityType="LeadTrackingProgram2Model.Store.BloodResults" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BloodResultsToPerson" EntityType="LeadTrackingProgram2Model.Store.BloodResultsToPerson" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Classification" EntityType="LeadTrackingProgram2Model.Store.Classification" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CleanUpStatus" EntityType="LeadTrackingProgram2Model.Store.CleanUpStatus" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ConstructionType" EntityType="LeadTrackingProgram2Model.Store.ConstructionType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Family" EntityType="LeadTrackingProgram2Model.Store.Family" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FamilyToLanguage" EntityType="LeadTrackingProgram2Model.Store.FamilyToLanguage" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FamilyToNotes" EntityType="LeadTrackingProgram2Model.Store.FamilyToNotes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FPLinkType" EntityType="LeadTrackingProgram2Model.Store.FPLinkType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Lab" EntityType="LeadTrackingProgram2Model.Store.Lab" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Language" EntityType="LeadTrackingProgram2Model.Store.Language" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LeadValueCategory" EntityType="LeadTrackingProgram2Model.Store.LeadValueCategory" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Medium" EntityType="LeadTrackingProgram2Model.Store.Medium" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Notes" EntityType="LeadTrackingProgram2Model.Store.Notes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="NoteType" EntityType="LeadTrackingProgram2Model.Store.NoteType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Person" EntityType="LeadTrackingProgram2Model.Store.Person" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PersonToFamily" EntityType="LeadTrackingProgram2Model.Store.PersonToFamily" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PersonToLanguage" EntityType="LeadTrackingProgram2Model.Store.PersonToLanguage" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PersonToNotes" EntityType="LeadTrackingProgram2Model.Store.PersonToNotes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PersonToProperty" EntityType="LeadTrackingProgram2Model.Store.PersonToProperty" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PersonToQuestionaire" EntityType="LeadTrackingProgram2Model.Store.PersonToQuestionaire" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Property" EntityType="LeadTrackingProgram2Model.Store.Property" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PropertyToCleanUpStatus" EntityType="LeadTrackingProgram2Model.Store.PropertyToCleanUpStatus" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PropertyToNotes" EntityType="LeadTrackingProgram2Model.Store.PropertyToNotes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Questoinaire" EntityType="LeadTrackingProgram2Model.Store.Questoinaire" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ReleaseStatus" EntityType="LeadTrackingProgram2Model.Store.ReleaseStatus" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Samples" EntityType="LeadTrackingProgram2Model.Store.Samples" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SampleType" EntityType="LeadTrackingProgram2Model.Store.SampleType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SeedTable" EntityType="LeadTrackingProgram2Model.Store.SeedTable" store:Type="Tables" store:Schema="dbo" store:Name="SeedTable">
+            <DefiningQuery>SELECT 
+      [SeedTable].[id] AS [id], 
+      [SeedTable].[LastNames] AS [LastNames], 
+      [SeedTable].[FirstNames] AS [FirstNames], 
+      [SeedTable].[streetnames] AS [streetnames], 
+      [SeedTable].[city] AS [city], 
+      [SeedTable].[state] AS [state]
+      FROM [dbo].[SeedTable] AS [SeedTable]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Status" EntityType="LeadTrackingProgram2Model.Store.Status" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_BloodResults_Lab" Association="LeadTrackingProgram2Model.Store.FK_BloodResults_Lab">
+            <End Role="Lab" EntitySet="Lab" />
+            <End Role="BloodResults" EntitySet="BloodResults" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BloodResults_LeadValueCategory" Association="LeadTrackingProgram2Model.Store.FK_BloodResults_LeadValueCategory">
+            <End Role="LeadValueCategory" EntitySet="LeadValueCategory" />
+            <End Role="BloodResults" EntitySet="BloodResults" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BloodResults_Samples" Association="LeadTrackingProgram2Model.Store.FK_BloodResults_Samples">
+            <End Role="Samples" EntitySet="Samples" />
+            <End Role="BloodResults" EntitySet="BloodResults" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BloodResults_Status" Association="LeadTrackingProgram2Model.Store.FK_BloodResults_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="BloodResults" EntitySet="BloodResults" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BloodResultsToPerson_BloodResults" Association="LeadTrackingProgram2Model.Store.FK_BloodResultsToPerson_BloodResults">
+            <End Role="BloodResults" EntitySet="BloodResults" />
+            <End Role="BloodResultsToPerson" EntitySet="BloodResultsToPerson" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BloodResultsToPerson_Person" Association="LeadTrackingProgram2Model.Store.FK_BloodResultsToPerson_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="BloodResultsToPerson" EntitySet="BloodResultsToPerson" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Family_PrimaryLanguage" Association="LeadTrackingProgram2Model.Store.FK_Family_PrimaryLanguage">
+            <End Role="Language" EntitySet="Language" />
+            <End Role="Family" EntitySet="Family" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FamilyToLanguage_Family" Association="LeadTrackingProgram2Model.Store.FK_FamilyToLanguage_Family">
+            <End Role="Family" EntitySet="Family" />
+            <End Role="FamilyToLanguage" EntitySet="FamilyToLanguage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FamilyToLanguage_Language" Association="LeadTrackingProgram2Model.Store.FK_FamilyToLanguage_Language">
+            <End Role="Language" EntitySet="Language" />
+            <End Role="FamilyToLanguage" EntitySet="FamilyToLanguage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FamilyToNotes_Family" Association="LeadTrackingProgram2Model.Store.FK_FamilyToNotes_Family">
+            <End Role="Family" EntitySet="Family" />
+            <End Role="FamilyToNotes" EntitySet="FamilyToNotes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FamilyToNotes_Notes" Association="LeadTrackingProgram2Model.Store.FK_FamilyToNotes_Notes">
+            <End Role="Notes" EntitySet="Notes" />
+            <End Role="FamilyToNotes" EntitySet="FamilyToNotes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Notes_Classification" Association="LeadTrackingProgram2Model.Store.FK_Notes_Classification">
+            <End Role="Classification" EntitySet="Classification" />
+            <End Role="Notes" EntitySet="Notes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Notes_NoteType" Association="LeadTrackingProgram2Model.Store.FK_Notes_NoteType">
+            <End Role="NoteType" EntitySet="NoteType" />
+            <End Role="Notes" EntitySet="Notes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Person_PrimaryLanguage" Association="LeadTrackingProgram2Model.Store.FK_Person_PrimaryLanguage">
+            <End Role="Language" EntitySet="Language" />
+            <End Role="Person" EntitySet="Person" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Person_ReleaseStatus" Association="LeadTrackingProgram2Model.Store.FK_Person_ReleaseStatus">
+            <End Role="ReleaseStatus" EntitySet="ReleaseStatus" />
+            <End Role="Person" EntitySet="Person" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Person_Status" Association="LeadTrackingProgram2Model.Store.FK_Person_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Person" EntitySet="Person" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonToFamily_Family" Association="LeadTrackingProgram2Model.Store.FK_PersonToFamily_Family">
+            <End Role="Family" EntitySet="Family" />
+            <End Role="PersonToFamily" EntitySet="PersonToFamily" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonToFamily_Person" Association="LeadTrackingProgram2Model.Store.FK_PersonToFamily_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="PersonToFamily" EntitySet="PersonToFamily" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonToLanguage_Language" Association="LeadTrackingProgram2Model.Store.FK_PersonToLanguage_Language">
+            <End Role="Language" EntitySet="Language" />
+            <End Role="PersonToLanguage" EntitySet="PersonToLanguage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonToLanguage_Person" Association="LeadTrackingProgram2Model.Store.FK_PersonToLanguage_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="PersonToLanguage" EntitySet="PersonToLanguage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonToNotes_Notes" Association="LeadTrackingProgram2Model.Store.FK_PersonToNotes_Notes">
+            <End Role="Notes" EntitySet="Notes" />
+            <End Role="PersonToNotes" EntitySet="PersonToNotes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonToNotes_Person" Association="LeadTrackingProgram2Model.Store.FK_PersonToNotes_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="PersonToNotes" EntitySet="PersonToNotes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonToProperty_FPLinkType" Association="LeadTrackingProgram2Model.Store.FK_PersonToProperty_FPLinkType">
+            <End Role="FPLinkType" EntitySet="FPLinkType" />
+            <End Role="PersonToProperty" EntitySet="PersonToProperty" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonToProperty_Person" Association="LeadTrackingProgram2Model.Store.FK_PersonToProperty_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="PersonToProperty" EntitySet="PersonToProperty" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonToProperty_Property" Association="LeadTrackingProgram2Model.Store.FK_PersonToProperty_Property">
+            <End Role="Property" EntitySet="Property" />
+            <End Role="PersonToProperty" EntitySet="PersonToProperty" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonToQuestionaire_Person" Association="LeadTrackingProgram2Model.Store.FK_PersonToQuestionaire_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="PersonToQuestionaire" EntitySet="PersonToQuestionaire" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonToQuestionaire_Questoinaire" Association="LeadTrackingProgram2Model.Store.FK_PersonToQuestionaire_Questoinaire">
+            <End Role="Questoinaire" EntitySet="Questoinaire" />
+            <End Role="PersonToQuestionaire" EntitySet="PersonToQuestionaire" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Property_ConstructionType" Association="LeadTrackingProgram2Model.Store.FK_Property_ConstructionType">
+            <End Role="ConstructionType" EntitySet="ConstructionType" />
+            <End Role="Property" EntitySet="Property" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Property_Property" Association="LeadTrackingProgram2Model.Store.FK_Property_Property">
+            <End Role="Property" EntitySet="Property" />
+            <End Role="Property1" EntitySet="Property" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyToCleanUpStatus_ActionStatus" Association="LeadTrackingProgram2Model.Store.FK_PropertyToCleanUpStatus_ActionStatus">
+            <End Role="ActionStatus" EntitySet="ActionStatus" />
+            <End Role="PropertyToCleanUpStatus" EntitySet="PropertyToCleanUpStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyToCleanUpStatus_CleanUpStatus" Association="LeadTrackingProgram2Model.Store.FK_PropertyToCleanUpStatus_CleanUpStatus">
+            <End Role="CleanUpStatus" EntitySet="CleanUpStatus" />
+            <End Role="PropertyToCleanUpStatus" EntitySet="PropertyToCleanUpStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyToCleanUpStatus_Medium" Association="LeadTrackingProgram2Model.Store.FK_PropertyToCleanUpStatus_Medium">
+            <End Role="Medium" EntitySet="Medium" />
+            <End Role="PropertyToCleanUpStatus" EntitySet="PropertyToCleanUpStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyToCleanUpStatus_Property" Association="LeadTrackingProgram2Model.Store.FK_PropertyToCleanUpStatus_Property">
+            <End Role="Property" EntitySet="Property" />
+            <End Role="PropertyToCleanUpStatus" EntitySet="PropertyToCleanUpStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyToNotes_Notes" Association="LeadTrackingProgram2Model.Store.FK_PropertyToNotes_Notes">
+            <End Role="Notes" EntitySet="Notes" />
+            <End Role="PropertyToNotes" EntitySet="PropertyToNotes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyToNotes_Property" Association="LeadTrackingProgram2Model.Store.FK_PropertyToNotes_Property">
+            <End Role="Property" EntitySet="Property" />
+            <End Role="PropertyToNotes" EntitySet="PropertyToNotes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Questoinaire_Property" Association="LeadTrackingProgram2Model.Store.FK_Questoinaire_Property">
+            <End Role="Property" EntitySet="Property" />
+            <End Role="Questoinaire" EntitySet="Questoinaire" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Samples_Medium" Association="LeadTrackingProgram2Model.Store.FK_Samples_Medium">
+            <End Role="Medium" EntitySet="Medium" />
+            <End Role="Samples" EntitySet="Samples" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Samples_Property" Association="LeadTrackingProgram2Model.Store.FK_Samples_Property">
+            <End Role="Property" EntitySet="Property" />
+            <End Role="Samples" EntitySet="Samples" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Samples_SampleType" Association="LeadTrackingProgram2Model.Store.FK_Samples_SampleType">
+            <End Role="SampleType" EntitySet="SampleType" />
+            <End Role="Samples" EntitySet="Samples" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ActionStatus">
+          <Key>
+            <PropertyRef Name="ActionStatusID" />
+          </Key>
+          <Property Name="ActionStatusID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ActionStatus" Type="varchar" Nullable="false" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="BloodResults">
+          <Key>
+            <PropertyRef Name="BloodResultsID" />
+          </Key>
+          <Property Name="BloodResultsID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PersonID" Type="int" Nullable="false" />
+          <Property Name="SampleDate" Type="date" Nullable="false" />
+          <Property Name="LeadValue" Type="int" />
+          <Property Name="LeadValueCategoryID" Type="int" />
+          <Property Name="StatusID" Type="int" />
+          <Property Name="LabID" Type="int" />
+          <Property Name="LabDate" Type="date" />
+          <Property Name="SampleID" Type="int" />
+        </EntityType>
+        <EntityType Name="BloodResultsToPerson">
+          <Key>
+            <PropertyRef Name="PersonID" />
+            <PropertyRef Name="BloodresultsID" />
+          </Key>
+          <Property Name="PersonID" Type="int" Nullable="false" />
+          <Property Name="BloodresultsID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Classification">
+          <Key>
+            <PropertyRef Name="ClassificationID" />
+          </Key>
+          <Property Name="ClassificationID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Classification" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="CleanUpStatus">
+          <Key>
+            <PropertyRef Name="CleanUpStatusID" />
+          </Key>
+          <Property Name="CleanUpStatusID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CleanUpStatus" Type="varchar" Nullable="false" MaxLength="40" />
+        </EntityType>
+        <EntityType Name="ConstructionType">
+          <Key>
+            <PropertyRef Name="ConstructionTypeID" />
+          </Key>
+          <Property Name="ConstructionTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ConstructionType" Type="varchar" MaxLength="40" />
+        </EntityType>
+        <EntityType Name="Family">
+          <Key>
+            <PropertyRef Name="FamilyID" />
+          </Key>
+          <Property Name="FamilyID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FamilyLastName" Type="varchar" Nullable="false" MaxLength="40" />
+          <Property Name="NumberofSmokers" Type="tinyint" />
+          <Property Name="LeadDishware" Type="bit" />
+          <Property Name="InOutPets" Type="tinyint" />
+          <Property Name="PrimaryLanguageID" Type="int" />
+          <Property Name="NotesID" Type="int" />
+        </EntityType>
+        <EntityType Name="FamilyToLanguage">
+          <Key>
+            <PropertyRef Name="FamilyID" />
+            <PropertyRef Name="LanguageID" />
+          </Key>
+          <Property Name="FamilyID" Type="int" Nullable="false" />
+          <Property Name="LanguageID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FamilyToNotes">
+          <Key>
+            <PropertyRef Name="FamilyID" />
+            <PropertyRef Name="NoteID" />
+          </Key>
+          <Property Name="FamilyID" Type="int" Nullable="false" />
+          <Property Name="NoteID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FPLinkType">
+          <Key>
+            <PropertyRef Name="FPLinkTypeID" />
+          </Key>
+          <Property Name="FPLinkTypeID" Type="int" Nullable="false" />
+          <Property Name="FPLinkType" Type="varchar" Nullable="false" MaxLength="40" />
+        </EntityType>
+        <EntityType Name="Lab">
+          <Key>
+            <PropertyRef Name="LabID" />
+          </Key>
+          <Property Name="LabID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="labName" Type="varchar" Nullable="false" MaxLength="60" />
+          <Property Name="HouseNumber" Type="varchar" MaxLength="10" />
+          <Property Name="Apartment" Type="varchar" MaxLength="10" />
+          <Property Name="Street" Type="varchar" MaxLength="40" />
+          <Property Name="City" Type="varchar" MaxLength="40" />
+          <Property Name="State" Type="varchar" MaxLength="40" />
+          <Property Name="Country" Type="varchar" MaxLength="60" />
+          <Property Name="YearOpen" Type="date" />
+          <Property Name="YearClosed" Type="date" />
+          <Property Name="Notes" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="Language">
+          <Key>
+            <PropertyRef Name="LanguageID" />
+          </Key>
+          <Property Name="LanguageID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="LeadValueCategory">
+          <Key>
+            <PropertyRef Name="LeadValueCategoryID" />
+          </Key>
+          <Property Name="LeadValueCategoryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="LeadValueCategory" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Medium">
+          <Key>
+            <PropertyRef Name="MediumID" />
+          </Key>
+          <Property Name="MediumID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Medium" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Notes">
+          <Key>
+            <PropertyRef Name="NotesID" />
+          </Key>
+          <Property Name="NotesID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Note" Type="varchar" Nullable="false" MaxLength="2000" />
+          <Property Name="EntityID" Type="int" Nullable="false" />
+          <Property Name="ClassificationID" Type="int" Nullable="false" />
+          <Property Name="NoteTypeID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NoteType">
+          <Key>
+            <PropertyRef Name="NoteTypeID" />
+          </Key>
+          <Property Name="NoteTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="NoteType" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="PersonID" />
+          </Key>
+          <Property Name="PersonID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="40" />
+          <Property Name="LastName" Type="varchar" Nullable="false" MaxLength="40" />
+          <Property Name="BirthDate" Type="date" />
+          <Property Name="Sex" Type="char" MaxLength="2" />
+          <Property Name="PrimaryLanguageID" Type="int" />
+          <Property Name="ReleaseStatusID" Type="int" />
+          <Property Name="StatusID" Type="int" />
+        </EntityType>
+        <EntityType Name="PersonToFamily">
+          <Key>
+            <PropertyRef Name="PersonID" />
+            <PropertyRef Name="FamilyID" />
+          </Key>
+          <Property Name="PersonID" Type="int" Nullable="false" />
+          <Property Name="FamilyID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PersonToLanguage">
+          <Key>
+            <PropertyRef Name="PersonID" />
+            <PropertyRef Name="LanguageID" />
+          </Key>
+          <Property Name="PersonID" Type="int" Nullable="false" />
+          <Property Name="LanguageID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PersonToNotes">
+          <Key>
+            <PropertyRef Name="PersonID" />
+            <PropertyRef Name="NoteID" />
+          </Key>
+          <Property Name="PersonID" Type="int" Nullable="false" />
+          <Property Name="NoteID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PersonToProperty">
+          <Key>
+            <PropertyRef Name="PersonID" />
+            <PropertyRef Name="PropertyID" />
+          </Key>
+          <Property Name="PersonID" Type="int" Nullable="false" />
+          <Property Name="PropertyID" Type="int" Nullable="false" />
+          <Property Name="MoveInDate" Type="date" />
+          <Property Name="MoveOutDate" Type="date" />
+          <Property Name="FPLinkTypeID" Type="int" />
+        </EntityType>
+        <EntityType Name="PersonToQuestionaire">
+          <Key>
+            <PropertyRef Name="QuestionaireID" />
+            <PropertyRef Name="PersonID" />
+          </Key>
+          <Property Name="QuestionaireID" Type="int" Nullable="false" />
+          <Property Name="PersonID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Property">
+          <Key>
+            <PropertyRef Name="PropertyID" />
+          </Key>
+          <Property Name="PropertyID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PropertyName" Type="varchar" MaxLength="60" />
+          <Property Name="HouseNumber" Type="varchar" MaxLength="10" />
+          <Property Name="Apartment" Type="varchar" MaxLength="10" />
+          <Property Name="Street" Type="varchar" MaxLength="40" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="State" Type="varchar" MaxLength="40" />
+          <Property Name="Country" Type="varchar" MaxLength="50" />
+          <Property Name="YearBuilt" Type="int" />
+          <Property Name="CleanUpStatusID" Type="int" />
+          <Property Name="ConstructionTypeID" Type="int" />
+        </EntityType>
+        <EntityType Name="PropertyToCleanUpStatus">
+          <Key>
+            <PropertyRef Name="CleanUpStatusID" />
+            <PropertyRef Name="PropertyID" />
+          </Key>
+          <Property Name="CleanUpStatusID" Type="int" Nullable="false" />
+          <Property Name="PropertyID" Type="int" Nullable="false" />
+          <Property Name="StartDate" Type="date" Nullable="false" />
+          <Property Name="CompleteDate" Type="date" />
+          <Property Name="Clearance" Type="varchar" MaxLength="20" />
+          <Property Name="Description" Type="varchar" MaxLength="1000" />
+          <Property Name="ActionStatusID" Type="int" />
+          <Property Name="ActionStatusDate" Type="date" />
+          <Property Name="MediumID" Type="int" />
+        </EntityType>
+        <EntityType Name="PropertyToNotes">
+          <Key>
+            <PropertyRef Name="PropertyID" />
+            <PropertyRef Name="NotesID" />
+          </Key>
+          <Property Name="PropertyID" Type="int" Nullable="false" />
+          <Property Name="NotesID" Type="int" Nullable="false" />
+          <Property Name="NoteDate" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Questoinaire">
+          <Key>
+            <PropertyRef Name="QuestionaireID" />
+          </Key>
+          <Property Name="QuestionaireID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DateAdministered" Type="date" />
+          <Property Name="Source" Type="varchar" MaxLength="40" />
+          <Property Name="MouthingIndex" Type="int" />
+          <Property Name="Nursing" Type="bit" />
+          <Property Name="Pacifier" Type="bit" />
+          <Property Name="DayCareID" Type="int" />
+          <Property Name="Notes" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="ReleaseStatus">
+          <Key>
+            <PropertyRef Name="ReleaseStatusID" />
+          </Key>
+          <Property Name="ReleaseStatusID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ReleaseStatusDesc" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Samples">
+          <Key>
+            <PropertyRef Name="SampleID" />
+          </Key>
+          <Property Name="SampleID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Object" Type="varchar" MaxLength="20" />
+          <Property Name="Description" Type="varchar" MaxLength="100" />
+          <Property Name="SampleDate" Type="date" />
+          <Property Name="Notes" Type="varchar" MaxLength="1000" />
+          <Property Name="PropertyID" Type="int" />
+          <Property Name="SampleTypeID" Type="int" />
+          <Property Name="MediuamID" Type="int" />
+        </EntityType>
+        <EntityType Name="SampleType">
+          <Key>
+            <PropertyRef Name="SampleTypeID" />
+          </Key>
+          <Property Name="SampleTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SampleType" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'LeadTrackingProgram2.dbo.SeedTable' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="SeedTable">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="LastNames" Type="varchar" MaxLength="40" />
+          <Property Name="FirstNames" Type="varchar" MaxLength="40" />
+          <Property Name="streetnames" Type="varchar" MaxLength="40" />
+          <Property Name="city" Type="varchar" MaxLength="40" />
+          <Property Name="state" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="StatusID" />
+          </Key>
+          <Property Name="StatusID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StatusName" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <Association Name="FK_BloodResults_Lab">
+          <End Role="Lab" Type="LeadTrackingProgram2Model.Store.Lab" Multiplicity="0..1" />
+          <End Role="BloodResults" Type="LeadTrackingProgram2Model.Store.BloodResults" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lab">
+              <PropertyRef Name="LabID" />
+            </Principal>
+            <Dependent Role="BloodResults">
+              <PropertyRef Name="LabID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BloodResults_LeadValueCategory">
+          <End Role="LeadValueCategory" Type="LeadTrackingProgram2Model.Store.LeadValueCategory" Multiplicity="0..1" />
+          <End Role="BloodResults" Type="LeadTrackingProgram2Model.Store.BloodResults" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LeadValueCategory">
+              <PropertyRef Name="LeadValueCategoryID" />
+            </Principal>
+            <Dependent Role="BloodResults">
+              <PropertyRef Name="LeadValueCategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BloodResults_Samples">
+          <End Role="Samples" Type="LeadTrackingProgram2Model.Store.Samples" Multiplicity="0..1" />
+          <End Role="BloodResults" Type="LeadTrackingProgram2Model.Store.BloodResults" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Samples">
+              <PropertyRef Name="SampleID" />
+            </Principal>
+            <Dependent Role="BloodResults">
+              <PropertyRef Name="SampleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BloodResults_Status">
+          <End Role="Status" Type="LeadTrackingProgram2Model.Store.Status" Multiplicity="0..1" />
+          <End Role="BloodResults" Type="LeadTrackingProgram2Model.Store.BloodResults" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="StatusID" />
+            </Principal>
+            <Dependent Role="BloodResults">
+              <PropertyRef Name="StatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BloodResultsToPerson_BloodResults">
+          <End Role="BloodResults" Type="LeadTrackingProgram2Model.Store.BloodResults" Multiplicity="1" />
+          <End Role="BloodResultsToPerson" Type="LeadTrackingProgram2Model.Store.BloodResultsToPerson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BloodResults">
+              <PropertyRef Name="BloodResultsID" />
+            </Principal>
+            <Dependent Role="BloodResultsToPerson">
+              <PropertyRef Name="BloodresultsID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BloodResultsToPerson_Person">
+          <End Role="Person" Type="LeadTrackingProgram2Model.Store.Person" Multiplicity="1" />
+          <End Role="BloodResultsToPerson" Type="LeadTrackingProgram2Model.Store.BloodResultsToPerson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonID" />
+            </Principal>
+            <Dependent Role="BloodResultsToPerson">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Family_PrimaryLanguage">
+          <End Role="Language" Type="LeadTrackingProgram2Model.Store.Language" Multiplicity="0..1" />
+          <End Role="Family" Type="LeadTrackingProgram2Model.Store.Family" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="LanguageID" />
+            </Principal>
+            <Dependent Role="Family">
+              <PropertyRef Name="PrimaryLanguageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FamilyToLanguage_Family">
+          <End Role="Family" Type="LeadTrackingProgram2Model.Store.Family" Multiplicity="1" />
+          <End Role="FamilyToLanguage" Type="LeadTrackingProgram2Model.Store.FamilyToLanguage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Family">
+              <PropertyRef Name="FamilyID" />
+            </Principal>
+            <Dependent Role="FamilyToLanguage">
+              <PropertyRef Name="FamilyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FamilyToLanguage_Language">
+          <End Role="Language" Type="LeadTrackingProgram2Model.Store.Language" Multiplicity="1" />
+          <End Role="FamilyToLanguage" Type="LeadTrackingProgram2Model.Store.FamilyToLanguage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="LanguageID" />
+            </Principal>
+            <Dependent Role="FamilyToLanguage">
+              <PropertyRef Name="LanguageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FamilyToNotes_Family">
+          <End Role="Family" Type="LeadTrackingProgram2Model.Store.Family" Multiplicity="1" />
+          <End Role="FamilyToNotes" Type="LeadTrackingProgram2Model.Store.FamilyToNotes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Family">
+              <PropertyRef Name="FamilyID" />
+            </Principal>
+            <Dependent Role="FamilyToNotes">
+              <PropertyRef Name="FamilyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FamilyToNotes_Notes">
+          <End Role="Notes" Type="LeadTrackingProgram2Model.Store.Notes" Multiplicity="1" />
+          <End Role="FamilyToNotes" Type="LeadTrackingProgram2Model.Store.FamilyToNotes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Notes">
+              <PropertyRef Name="NotesID" />
+            </Principal>
+            <Dependent Role="FamilyToNotes">
+              <PropertyRef Name="NoteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Notes_Classification">
+          <End Role="Classification" Type="LeadTrackingProgram2Model.Store.Classification" Multiplicity="1" />
+          <End Role="Notes" Type="LeadTrackingProgram2Model.Store.Notes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Classification">
+              <PropertyRef Name="ClassificationID" />
+            </Principal>
+            <Dependent Role="Notes">
+              <PropertyRef Name="ClassificationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Notes_NoteType">
+          <End Role="NoteType" Type="LeadTrackingProgram2Model.Store.NoteType" Multiplicity="1" />
+          <End Role="Notes" Type="LeadTrackingProgram2Model.Store.Notes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NoteType">
+              <PropertyRef Name="NoteTypeID" />
+            </Principal>
+            <Dependent Role="Notes">
+              <PropertyRef Name="NoteTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Person_PrimaryLanguage">
+          <End Role="Language" Type="LeadTrackingProgram2Model.Store.Language" Multiplicity="0..1" />
+          <End Role="Person" Type="LeadTrackingProgram2Model.Store.Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="LanguageID" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="PrimaryLanguageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Person_ReleaseStatus">
+          <End Role="ReleaseStatus" Type="LeadTrackingProgram2Model.Store.ReleaseStatus" Multiplicity="0..1" />
+          <End Role="Person" Type="LeadTrackingProgram2Model.Store.Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ReleaseStatus">
+              <PropertyRef Name="ReleaseStatusID" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="ReleaseStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Person_Status">
+          <End Role="Status" Type="LeadTrackingProgram2Model.Store.Status" Multiplicity="0..1" />
+          <End Role="Person" Type="LeadTrackingProgram2Model.Store.Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="StatusID" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="StatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonToFamily_Family">
+          <End Role="Family" Type="LeadTrackingProgram2Model.Store.Family" Multiplicity="1" />
+          <End Role="PersonToFamily" Type="LeadTrackingProgram2Model.Store.PersonToFamily" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Family">
+              <PropertyRef Name="FamilyID" />
+            </Principal>
+            <Dependent Role="PersonToFamily">
+              <PropertyRef Name="FamilyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonToFamily_Person">
+          <End Role="Person" Type="LeadTrackingProgram2Model.Store.Person" Multiplicity="1" />
+          <End Role="PersonToFamily" Type="LeadTrackingProgram2Model.Store.PersonToFamily" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonID" />
+            </Principal>
+            <Dependent Role="PersonToFamily">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonToLanguage_Language">
+          <End Role="Language" Type="LeadTrackingProgram2Model.Store.Language" Multiplicity="1" />
+          <End Role="PersonToLanguage" Type="LeadTrackingProgram2Model.Store.PersonToLanguage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="LanguageID" />
+            </Principal>
+            <Dependent Role="PersonToLanguage">
+              <PropertyRef Name="LanguageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonToLanguage_Person">
+          <End Role="Person" Type="LeadTrackingProgram2Model.Store.Person" Multiplicity="1" />
+          <End Role="PersonToLanguage" Type="LeadTrackingProgram2Model.Store.PersonToLanguage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonID" />
+            </Principal>
+            <Dependent Role="PersonToLanguage">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonToNotes_Notes">
+          <End Role="Notes" Type="LeadTrackingProgram2Model.Store.Notes" Multiplicity="1" />
+          <End Role="PersonToNotes" Type="LeadTrackingProgram2Model.Store.PersonToNotes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Notes">
+              <PropertyRef Name="NotesID" />
+            </Principal>
+            <Dependent Role="PersonToNotes">
+              <PropertyRef Name="NoteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonToNotes_Person">
+          <End Role="Person" Type="LeadTrackingProgram2Model.Store.Person" Multiplicity="1" />
+          <End Role="PersonToNotes" Type="LeadTrackingProgram2Model.Store.PersonToNotes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonID" />
+            </Principal>
+            <Dependent Role="PersonToNotes">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonToProperty_FPLinkType">
+          <End Role="FPLinkType" Type="LeadTrackingProgram2Model.Store.FPLinkType" Multiplicity="0..1" />
+          <End Role="PersonToProperty" Type="LeadTrackingProgram2Model.Store.PersonToProperty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FPLinkType">
+              <PropertyRef Name="FPLinkTypeID" />
+            </Principal>
+            <Dependent Role="PersonToProperty">
+              <PropertyRef Name="FPLinkTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonToProperty_Person">
+          <End Role="Person" Type="LeadTrackingProgram2Model.Store.Person" Multiplicity="1" />
+          <End Role="PersonToProperty" Type="LeadTrackingProgram2Model.Store.PersonToProperty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonID" />
+            </Principal>
+            <Dependent Role="PersonToProperty">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonToProperty_Property">
+          <End Role="Property" Type="LeadTrackingProgram2Model.Store.Property" Multiplicity="1" />
+          <End Role="PersonToProperty" Type="LeadTrackingProgram2Model.Store.PersonToProperty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Property">
+              <PropertyRef Name="PropertyID" />
+            </Principal>
+            <Dependent Role="PersonToProperty">
+              <PropertyRef Name="PropertyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonToQuestionaire_Person">
+          <End Role="Person" Type="LeadTrackingProgram2Model.Store.Person" Multiplicity="1" />
+          <End Role="PersonToQuestionaire" Type="LeadTrackingProgram2Model.Store.PersonToQuestionaire" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonID" />
+            </Principal>
+            <Dependent Role="PersonToQuestionaire">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonToQuestionaire_Questoinaire">
+          <End Role="Questoinaire" Type="LeadTrackingProgram2Model.Store.Questoinaire" Multiplicity="1" />
+          <End Role="PersonToQuestionaire" Type="LeadTrackingProgram2Model.Store.PersonToQuestionaire" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Questoinaire">
+              <PropertyRef Name="QuestionaireID" />
+            </Principal>
+            <Dependent Role="PersonToQuestionaire">
+              <PropertyRef Name="QuestionaireID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Property_ConstructionType">
+          <End Role="ConstructionType" Type="LeadTrackingProgram2Model.Store.ConstructionType" Multiplicity="0..1" />
+          <End Role="Property" Type="LeadTrackingProgram2Model.Store.Property" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ConstructionType">
+              <PropertyRef Name="ConstructionTypeID" />
+            </Principal>
+            <Dependent Role="Property">
+              <PropertyRef Name="ConstructionTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Property_Property">
+          <End Role="Property" Type="LeadTrackingProgram2Model.Store.Property" Multiplicity="1" />
+          <End Role="Property1" Type="LeadTrackingProgram2Model.Store.Property" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Property">
+              <PropertyRef Name="PropertyID" />
+            </Principal>
+            <Dependent Role="Property1">
+              <PropertyRef Name="PropertyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyToCleanUpStatus_ActionStatus">
+          <End Role="ActionStatus" Type="LeadTrackingProgram2Model.Store.ActionStatus" Multiplicity="0..1" />
+          <End Role="PropertyToCleanUpStatus" Type="LeadTrackingProgram2Model.Store.PropertyToCleanUpStatus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ActionStatus">
+              <PropertyRef Name="ActionStatusID" />
+            </Principal>
+            <Dependent Role="PropertyToCleanUpStatus">
+              <PropertyRef Name="ActionStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyToCleanUpStatus_CleanUpStatus">
+          <End Role="CleanUpStatus" Type="LeadTrackingProgram2Model.Store.CleanUpStatus" Multiplicity="1" />
+          <End Role="PropertyToCleanUpStatus" Type="LeadTrackingProgram2Model.Store.PropertyToCleanUpStatus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CleanUpStatus">
+              <PropertyRef Name="CleanUpStatusID" />
+            </Principal>
+            <Dependent Role="PropertyToCleanUpStatus">
+              <PropertyRef Name="CleanUpStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyToCleanUpStatus_Medium">
+          <End Role="Medium" Type="LeadTrackingProgram2Model.Store.Medium" Multiplicity="0..1" />
+          <End Role="PropertyToCleanUpStatus" Type="LeadTrackingProgram2Model.Store.PropertyToCleanUpStatus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medium">
+              <PropertyRef Name="MediumID" />
+            </Principal>
+            <Dependent Role="PropertyToCleanUpStatus">
+              <PropertyRef Name="MediumID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyToCleanUpStatus_Property">
+          <End Role="Property" Type="LeadTrackingProgram2Model.Store.Property" Multiplicity="1" />
+          <End Role="PropertyToCleanUpStatus" Type="LeadTrackingProgram2Model.Store.PropertyToCleanUpStatus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Property">
+              <PropertyRef Name="PropertyID" />
+            </Principal>
+            <Dependent Role="PropertyToCleanUpStatus">
+              <PropertyRef Name="PropertyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyToNotes_Notes">
+          <End Role="Notes" Type="LeadTrackingProgram2Model.Store.Notes" Multiplicity="1" />
+          <End Role="PropertyToNotes" Type="LeadTrackingProgram2Model.Store.PropertyToNotes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Notes">
+              <PropertyRef Name="NotesID" />
+            </Principal>
+            <Dependent Role="PropertyToNotes">
+              <PropertyRef Name="NotesID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyToNotes_Property">
+          <End Role="Property" Type="LeadTrackingProgram2Model.Store.Property" Multiplicity="1" />
+          <End Role="PropertyToNotes" Type="LeadTrackingProgram2Model.Store.PropertyToNotes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Property">
+              <PropertyRef Name="PropertyID" />
+            </Principal>
+            <Dependent Role="PropertyToNotes">
+              <PropertyRef Name="PropertyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Questoinaire_Property">
+          <End Role="Property" Type="LeadTrackingProgram2Model.Store.Property" Multiplicity="0..1" />
+          <End Role="Questoinaire" Type="LeadTrackingProgram2Model.Store.Questoinaire" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Property">
+              <PropertyRef Name="PropertyID" />
+            </Principal>
+            <Dependent Role="Questoinaire">
+              <PropertyRef Name="DayCareID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Samples_Medium">
+          <End Role="Medium" Type="LeadTrackingProgram2Model.Store.Medium" Multiplicity="0..1" />
+          <End Role="Samples" Type="LeadTrackingProgram2Model.Store.Samples" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medium">
+              <PropertyRef Name="MediumID" />
+            </Principal>
+            <Dependent Role="Samples">
+              <PropertyRef Name="MediuamID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Samples_Property">
+          <End Role="Property" Type="LeadTrackingProgram2Model.Store.Property" Multiplicity="0..1" />
+          <End Role="Samples" Type="LeadTrackingProgram2Model.Store.Samples" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Property">
+              <PropertyRef Name="PropertyID" />
+            </Principal>
+            <Dependent Role="Samples">
+              <PropertyRef Name="PropertyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Samples_SampleType">
+          <End Role="SampleType" Type="LeadTrackingProgram2Model.Store.SampleType" Multiplicity="0..1" />
+          <End Role="Samples" Type="LeadTrackingProgram2Model.Store.Samples" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SampleType">
+              <PropertyRef Name="SampleTypeID" />
+            </Principal>
+            <Dependent Role="Samples">
+              <PropertyRef Name="SampleTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LeadTrackingProgram2Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="LeadTrackingProgram2Entities2" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="ActionStatus" EntityType="LeadTrackingProgram2Model.ActionStatu" />
+          <EntitySet Name="BloodResults" EntityType="LeadTrackingProgram2Model.BloodResult" />
+          <EntitySet Name="Classifications" EntityType="LeadTrackingProgram2Model.Classification" />
+          <EntitySet Name="CleanUpStatus" EntityType="LeadTrackingProgram2Model.CleanUpStatu" />
+          <EntitySet Name="ConstructionTypes" EntityType="LeadTrackingProgram2Model.ConstructionType" />
+          <EntitySet Name="Families" EntityType="LeadTrackingProgram2Model.Family" />
+          <EntitySet Name="FPLinkTypes" EntityType="LeadTrackingProgram2Model.FPLinkType" />
+          <EntitySet Name="Labs" EntityType="LeadTrackingProgram2Model.Lab" />
+          <EntitySet Name="Languages" EntityType="LeadTrackingProgram2Model.Language" />
+          <EntitySet Name="LeadValueCategories" EntityType="LeadTrackingProgram2Model.LeadValueCategory" />
+          <EntitySet Name="Media" EntityType="LeadTrackingProgram2Model.Medium" />
+          <EntitySet Name="Notes" EntityType="LeadTrackingProgram2Model.Note" />
+          <EntitySet Name="NoteTypes" EntityType="LeadTrackingProgram2Model.NoteType" />
+          <EntitySet Name="People" EntityType="LeadTrackingProgram2Model.Person" />
+          <EntitySet Name="PersonToProperties" EntityType="LeadTrackingProgram2Model.PersonToProperty" />
+          <EntitySet Name="Properties" EntityType="LeadTrackingProgram2Model.Property" />
+          <EntitySet Name="PropertyToCleanUpStatus" EntityType="LeadTrackingProgram2Model.PropertyToCleanUpStatu" />
+          <EntitySet Name="PropertyToNotes" EntityType="LeadTrackingProgram2Model.PropertyToNote" />
+          <EntitySet Name="Questoinaires" EntityType="LeadTrackingProgram2Model.Questoinaire" />
+          <EntitySet Name="ReleaseStatus" EntityType="LeadTrackingProgram2Model.ReleaseStatu" />
+          <EntitySet Name="Samples" EntityType="LeadTrackingProgram2Model.Sample" />
+          <EntitySet Name="SampleTypes" EntityType="LeadTrackingProgram2Model.SampleType" />
+          <EntitySet Name="SeedTables" EntityType="LeadTrackingProgram2Model.SeedTable" />
+          <EntitySet Name="Status" EntityType="LeadTrackingProgram2Model.Status" />
+          <AssociationSet Name="FK_PropertyToCleanUpStatus_ActionStatus" Association="LeadTrackingProgram2Model.FK_PropertyToCleanUpStatus_ActionStatus">
+            <End Role="ActionStatus" EntitySet="ActionStatus" />
+            <End Role="PropertyToCleanUpStatus" EntitySet="PropertyToCleanUpStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BloodResults_Lab" Association="LeadTrackingProgram2Model.FK_BloodResults_Lab">
+            <End Role="Lab" EntitySet="Labs" />
+            <End Role="BloodResults" EntitySet="BloodResults" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BloodResults_LeadValueCategory" Association="LeadTrackingProgram2Model.FK_BloodResults_LeadValueCategory">
+            <End Role="LeadValueCategory" EntitySet="LeadValueCategories" />
+            <End Role="BloodResults" EntitySet="BloodResults" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BloodResults_Samples" Association="LeadTrackingProgram2Model.FK_BloodResults_Samples">
+            <End Role="Samples" EntitySet="Samples" />
+            <End Role="BloodResults" EntitySet="BloodResults" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BloodResults_Status" Association="LeadTrackingProgram2Model.FK_BloodResults_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="BloodResults" EntitySet="BloodResults" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Notes_Classification" Association="LeadTrackingProgram2Model.FK_Notes_Classification">
+            <End Role="Classification" EntitySet="Classifications" />
+            <End Role="Notes" EntitySet="Notes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyToCleanUpStatus_CleanUpStatus" Association="LeadTrackingProgram2Model.FK_PropertyToCleanUpStatus_CleanUpStatus">
+            <End Role="CleanUpStatus" EntitySet="CleanUpStatus" />
+            <End Role="PropertyToCleanUpStatus" EntitySet="PropertyToCleanUpStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Property_ConstructionType" Association="LeadTrackingProgram2Model.FK_Property_ConstructionType">
+            <End Role="ConstructionType" EntitySet="ConstructionTypes" />
+            <End Role="Property" EntitySet="Properties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Family_PrimaryLanguage" Association="LeadTrackingProgram2Model.FK_Family_PrimaryLanguage">
+            <End Role="Language" EntitySet="Languages" />
+            <End Role="Family" EntitySet="Families" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonToProperty_FPLinkType" Association="LeadTrackingProgram2Model.FK_PersonToProperty_FPLinkType">
+            <End Role="FPLinkType" EntitySet="FPLinkTypes" />
+            <End Role="PersonToProperty" EntitySet="PersonToProperties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Person_PrimaryLanguage" Association="LeadTrackingProgram2Model.FK_Person_PrimaryLanguage">
+            <End Role="Language" EntitySet="Languages" />
+            <End Role="Person" EntitySet="People" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyToCleanUpStatus_Medium" Association="LeadTrackingProgram2Model.FK_PropertyToCleanUpStatus_Medium">
+            <End Role="Medium" EntitySet="Media" />
+            <End Role="PropertyToCleanUpStatus" EntitySet="PropertyToCleanUpStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Samples_Medium" Association="LeadTrackingProgram2Model.FK_Samples_Medium">
+            <End Role="Medium" EntitySet="Media" />
+            <End Role="Samples" EntitySet="Samples" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Notes_NoteType" Association="LeadTrackingProgram2Model.FK_Notes_NoteType">
+            <End Role="NoteType" EntitySet="NoteTypes" />
+            <End Role="Notes" EntitySet="Notes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyToNotes_Notes" Association="LeadTrackingProgram2Model.FK_PropertyToNotes_Notes">
+            <End Role="Notes" EntitySet="Notes" />
+            <End Role="PropertyToNotes" EntitySet="PropertyToNotes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Person_ReleaseStatus" Association="LeadTrackingProgram2Model.FK_Person_ReleaseStatus">
+            <End Role="ReleaseStatus" EntitySet="ReleaseStatus" />
+            <End Role="Person" EntitySet="People" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Person_Status" Association="LeadTrackingProgram2Model.FK_Person_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Person" EntitySet="People" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonToProperty_Person" Association="LeadTrackingProgram2Model.FK_PersonToProperty_Person">
+            <End Role="Person" EntitySet="People" />
+            <End Role="PersonToProperty" EntitySet="PersonToProperties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonToProperty_Property" Association="LeadTrackingProgram2Model.FK_PersonToProperty_Property">
+            <End Role="Property" EntitySet="Properties" />
+            <End Role="PersonToProperty" EntitySet="PersonToProperties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Property_Property" Association="LeadTrackingProgram2Model.FK_Property_Property">
+            <End Role="Property" EntitySet="Properties" />
+            <End Role="Property1" EntitySet="Properties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyToCleanUpStatus_Property" Association="LeadTrackingProgram2Model.FK_PropertyToCleanUpStatus_Property">
+            <End Role="Property" EntitySet="Properties" />
+            <End Role="PropertyToCleanUpStatus" EntitySet="PropertyToCleanUpStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyToNotes_Property" Association="LeadTrackingProgram2Model.FK_PropertyToNotes_Property">
+            <End Role="Property" EntitySet="Properties" />
+            <End Role="PropertyToNotes" EntitySet="PropertyToNotes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Questoinaire_Property" Association="LeadTrackingProgram2Model.FK_Questoinaire_Property">
+            <End Role="Property" EntitySet="Properties" />
+            <End Role="Questoinaire" EntitySet="Questoinaires" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Samples_Property" Association="LeadTrackingProgram2Model.FK_Samples_Property">
+            <End Role="Property" EntitySet="Properties" />
+            <End Role="Samples" EntitySet="Samples" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Samples_SampleType" Association="LeadTrackingProgram2Model.FK_Samples_SampleType">
+            <End Role="SampleType" EntitySet="SampleTypes" />
+            <End Role="Samples" EntitySet="Samples" />
+          </AssociationSet>
+          <AssociationSet Name="BloodResultsToPerson" Association="LeadTrackingProgram2Model.BloodResultsToPerson">
+            <End Role="BloodResults" EntitySet="BloodResults" />
+            <End Role="Person" EntitySet="People" />
+          </AssociationSet>
+          <AssociationSet Name="FamilyToLanguage" Association="LeadTrackingProgram2Model.FamilyToLanguage">
+            <End Role="Family" EntitySet="Families" />
+            <End Role="Language" EntitySet="Languages" />
+          </AssociationSet>
+          <AssociationSet Name="FamilyToNotes" Association="LeadTrackingProgram2Model.FamilyToNotes">
+            <End Role="Family" EntitySet="Families" />
+            <End Role="Notes" EntitySet="Notes" />
+          </AssociationSet>
+          <AssociationSet Name="PersonToFamily" Association="LeadTrackingProgram2Model.PersonToFamily">
+            <End Role="Family" EntitySet="Families" />
+            <End Role="Person" EntitySet="People" />
+          </AssociationSet>
+          <AssociationSet Name="PersonToLanguage" Association="LeadTrackingProgram2Model.PersonToLanguage">
+            <End Role="Language" EntitySet="Languages" />
+            <End Role="Person" EntitySet="People" />
+          </AssociationSet>
+          <AssociationSet Name="PersonToNotes" Association="LeadTrackingProgram2Model.PersonToNotes">
+            <End Role="Notes" EntitySet="Notes" />
+            <End Role="Person" EntitySet="People" />
+          </AssociationSet>
+          <AssociationSet Name="PersonToQuestionaire" Association="LeadTrackingProgram2Model.PersonToQuestionaire">
+            <End Role="Person" EntitySet="People" />
+            <End Role="Questoinaire" EntitySet="Questoinaires" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ActionStatu">
+          <Key>
+            <PropertyRef Name="ActionStatusID" />
+          </Key>
+          <Property Name="ActionStatusID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ActionStatus" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="PropertyToCleanUpStatus" Relationship="LeadTrackingProgram2Model.FK_PropertyToCleanUpStatus_ActionStatus" FromRole="ActionStatus" ToRole="PropertyToCleanUpStatus" />
+        </EntityType>
+        <EntityType Name="BloodResult">
+          <Key>
+            <PropertyRef Name="BloodResultsID" />
+          </Key>
+          <Property Name="BloodResultsID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="PersonID" Type="Int32" Nullable="false" />
+          <Property Name="SampleDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="LeadValue" Type="Int32" />
+          <Property Name="LeadValueCategoryID" Type="Int32" />
+          <Property Name="StatusID" Type="Int32" />
+          <Property Name="LabID" Type="Int32" />
+          <Property Name="LabDate" Type="DateTime" Precision="0" />
+          <Property Name="SampleID" Type="Int32" />
+          <NavigationProperty Name="Lab" Relationship="LeadTrackingProgram2Model.FK_BloodResults_Lab" FromRole="BloodResults" ToRole="Lab" />
+          <NavigationProperty Name="LeadValueCategory" Relationship="LeadTrackingProgram2Model.FK_BloodResults_LeadValueCategory" FromRole="BloodResults" ToRole="LeadValueCategory" />
+          <NavigationProperty Name="Sample" Relationship="LeadTrackingProgram2Model.FK_BloodResults_Samples" FromRole="BloodResults" ToRole="Samples" />
+          <NavigationProperty Name="Status" Relationship="LeadTrackingProgram2Model.FK_BloodResults_Status" FromRole="BloodResults" ToRole="Status" />
+          <NavigationProperty Name="People" Relationship="LeadTrackingProgram2Model.BloodResultsToPerson" FromRole="BloodResults" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="Classification">
+          <Key>
+            <PropertyRef Name="ClassificationID" />
+          </Key>
+          <Property Name="ClassificationID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Classification1" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Notes" Relationship="LeadTrackingProgram2Model.FK_Notes_Classification" FromRole="Classification" ToRole="Notes" />
+        </EntityType>
+        <EntityType Name="CleanUpStatu">
+          <Key>
+            <PropertyRef Name="CleanUpStatusID" />
+          </Key>
+          <Property Name="CleanUpStatusID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="CleanUpStatus" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="PropertyToCleanUpStatus" Relationship="LeadTrackingProgram2Model.FK_PropertyToCleanUpStatus_CleanUpStatus" FromRole="CleanUpStatus" ToRole="PropertyToCleanUpStatus" />
+        </EntityType>
+        <EntityType Name="ConstructionType">
+          <Key>
+            <PropertyRef Name="ConstructionTypeID" />
+          </Key>
+          <Property Name="ConstructionTypeID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ConstructionType1" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Properties" Relationship="LeadTrackingProgram2Model.FK_Property_ConstructionType" FromRole="ConstructionType" ToRole="Property" />
+        </EntityType>
+        <EntityType Name="Family">
+          <Key>
+            <PropertyRef Name="FamilyID" />
+          </Key>
+          <Property Name="FamilyID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="FamilyLastName" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="NumberofSmokers" Type="Byte" />
+          <Property Name="LeadDishware" Type="Boolean" />
+          <Property Name="InOutPets" Type="Byte" />
+          <Property Name="PrimaryLanguageID" Type="Int32" />
+          <Property Name="NotesID" Type="Int32" />
+          <NavigationProperty Name="Language" Relationship="LeadTrackingProgram2Model.FK_Family_PrimaryLanguage" FromRole="Family" ToRole="Language" />
+          <NavigationProperty Name="Languages" Relationship="LeadTrackingProgram2Model.FamilyToLanguage" FromRole="Family" ToRole="Language" />
+          <NavigationProperty Name="Notes" Relationship="LeadTrackingProgram2Model.FamilyToNotes" FromRole="Family" ToRole="Notes" />
+          <NavigationProperty Name="People" Relationship="LeadTrackingProgram2Model.PersonToFamily" FromRole="Family" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="FPLinkType">
+          <Key>
+            <PropertyRef Name="FPLinkTypeID" />
+          </Key>
+          <Property Name="FPLinkTypeID" Type="Int32" Nullable="false" />
+          <Property Name="FPLinkType1" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="PersonToProperties" Relationship="LeadTrackingProgram2Model.FK_PersonToProperty_FPLinkType" FromRole="FPLinkType" ToRole="PersonToProperty" />
+        </EntityType>
+        <EntityType Name="Lab">
+          <Key>
+            <PropertyRef Name="LabID" />
+          </Key>
+          <Property Name="LabID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="labName" Type="String" Nullable="false" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="HouseNumber" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Apartment" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Street" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="City" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="State" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="Country" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="YearOpen" Type="DateTime" Precision="0" />
+          <Property Name="YearClosed" Type="DateTime" Precision="0" />
+          <Property Name="Notes" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="BloodResults" Relationship="LeadTrackingProgram2Model.FK_BloodResults_Lab" FromRole="Lab" ToRole="BloodResults" />
+        </EntityType>
+        <EntityType Name="Language">
+          <Key>
+            <PropertyRef Name="LanguageID" />
+          </Key>
+          <Property Name="LanguageID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Families" Relationship="LeadTrackingProgram2Model.FK_Family_PrimaryLanguage" FromRole="Language" ToRole="Family" />
+          <NavigationProperty Name="People" Relationship="LeadTrackingProgram2Model.FK_Person_PrimaryLanguage" FromRole="Language" ToRole="Person" />
+          <NavigationProperty Name="Families1" Relationship="LeadTrackingProgram2Model.FamilyToLanguage" FromRole="Language" ToRole="Family" />
+          <NavigationProperty Name="People1" Relationship="LeadTrackingProgram2Model.PersonToLanguage" FromRole="Language" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="LeadValueCategory">
+          <Key>
+            <PropertyRef Name="LeadValueCategoryID" />
+          </Key>
+          <Property Name="LeadValueCategoryID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="LeadValueCategory1" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="BloodResults" Relationship="LeadTrackingProgram2Model.FK_BloodResults_LeadValueCategory" FromRole="LeadValueCategory" ToRole="BloodResults" />
+        </EntityType>
+        <EntityType Name="Medium">
+          <Key>
+            <PropertyRef Name="MediumID" />
+          </Key>
+          <Property Name="MediumID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Medium1" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="PropertyToCleanUpStatus" Relationship="LeadTrackingProgram2Model.FK_PropertyToCleanUpStatus_Medium" FromRole="Medium" ToRole="PropertyToCleanUpStatus" />
+          <NavigationProperty Name="Samples" Relationship="LeadTrackingProgram2Model.FK_Samples_Medium" FromRole="Medium" ToRole="Samples" />
+        </EntityType>
+        <EntityType Name="Note">
+          <Key>
+            <PropertyRef Name="NotesID" />
+          </Key>
+          <Property Name="NotesID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Note1" Type="String" Nullable="false" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="EntityID" Type="Int32" Nullable="false" />
+          <Property Name="ClassificationID" Type="Int32" Nullable="false" />
+          <Property Name="NoteTypeID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Classification" Relationship="LeadTrackingProgram2Model.FK_Notes_Classification" FromRole="Notes" ToRole="Classification" />
+          <NavigationProperty Name="NoteType" Relationship="LeadTrackingProgram2Model.FK_Notes_NoteType" FromRole="Notes" ToRole="NoteType" />
+          <NavigationProperty Name="PropertyToNotes" Relationship="LeadTrackingProgram2Model.FK_PropertyToNotes_Notes" FromRole="Notes" ToRole="PropertyToNotes" />
+          <NavigationProperty Name="Families" Relationship="LeadTrackingProgram2Model.FamilyToNotes" FromRole="Notes" ToRole="Family" />
+          <NavigationProperty Name="People" Relationship="LeadTrackingProgram2Model.PersonToNotes" FromRole="Notes" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="NoteType">
+          <Key>
+            <PropertyRef Name="NoteTypeID" />
+          </Key>
+          <Property Name="NoteTypeID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="NoteType1" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Notes" Relationship="LeadTrackingProgram2Model.FK_Notes_NoteType" FromRole="NoteType" ToRole="Notes" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="PersonID" />
+          </Key>
+          <Property Name="PersonID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="BirthDate" Type="DateTime" Precision="0" />
+          <Property Name="Sex" Type="String" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="PrimaryLanguageID" Type="Int32" />
+          <Property Name="ReleaseStatusID" Type="Int32" />
+          <Property Name="StatusID" Type="Int32" />
+          <NavigationProperty Name="Language" Relationship="LeadTrackingProgram2Model.FK_Person_PrimaryLanguage" FromRole="Person" ToRole="Language" />
+          <NavigationProperty Name="ReleaseStatu" Relationship="LeadTrackingProgram2Model.FK_Person_ReleaseStatus" FromRole="Person" ToRole="ReleaseStatus" />
+          <NavigationProperty Name="Status" Relationship="LeadTrackingProgram2Model.FK_Person_Status" FromRole="Person" ToRole="Status" />
+          <NavigationProperty Name="PersonToProperties" Relationship="LeadTrackingProgram2Model.FK_PersonToProperty_Person" FromRole="Person" ToRole="PersonToProperty" />
+          <NavigationProperty Name="BloodResults" Relationship="LeadTrackingProgram2Model.BloodResultsToPerson" FromRole="Person" ToRole="BloodResults" />
+          <NavigationProperty Name="Families" Relationship="LeadTrackingProgram2Model.PersonToFamily" FromRole="Person" ToRole="Family" />
+          <NavigationProperty Name="Languages" Relationship="LeadTrackingProgram2Model.PersonToLanguage" FromRole="Person" ToRole="Language" />
+          <NavigationProperty Name="Notes" Relationship="LeadTrackingProgram2Model.PersonToNotes" FromRole="Person" ToRole="Notes" />
+          <NavigationProperty Name="Questoinaires" Relationship="LeadTrackingProgram2Model.PersonToQuestionaire" FromRole="Person" ToRole="Questoinaire" />
+        </EntityType>
+        <EntityType Name="PersonToProperty">
+          <Key>
+            <PropertyRef Name="PersonID" />
+            <PropertyRef Name="PropertyID" />
+          </Key>
+          <Property Name="PersonID" Type="Int32" Nullable="false" />
+          <Property Name="PropertyID" Type="Int32" Nullable="false" />
+          <Property Name="MoveInDate" Type="DateTime" Precision="0" />
+          <Property Name="MoveOutDate" Type="DateTime" Precision="0" />
+          <Property Name="FPLinkTypeID" Type="Int32" />
+          <NavigationProperty Name="FPLinkType" Relationship="LeadTrackingProgram2Model.FK_PersonToProperty_FPLinkType" FromRole="PersonToProperty" ToRole="FPLinkType" />
+          <NavigationProperty Name="Person" Relationship="LeadTrackingProgram2Model.FK_PersonToProperty_Person" FromRole="PersonToProperty" ToRole="Person" />
+          <NavigationProperty Name="Property" Relationship="LeadTrackingProgram2Model.FK_PersonToProperty_Property" FromRole="PersonToProperty" ToRole="Property" />
+        </EntityType>
+        <EntityType Name="Property">
+          <Key>
+            <PropertyRef Name="PropertyID" />
+          </Key>
+          <Property Name="PropertyID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="PropertyName" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="HouseNumber" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Apartment" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Street" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="City" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="State" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="Country" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="YearBuilt" Type="Int32" />
+          <Property Name="CleanUpStatusID" Type="Int32" />
+          <Property Name="ConstructionTypeID" Type="Int32" />
+          <NavigationProperty Name="ConstructionType" Relationship="LeadTrackingProgram2Model.FK_Property_ConstructionType" FromRole="Property" ToRole="ConstructionType" />
+          <NavigationProperty Name="PersonToProperties" Relationship="LeadTrackingProgram2Model.FK_PersonToProperty_Property" FromRole="Property" ToRole="PersonToProperty" />
+          <NavigationProperty Name="Property1" Relationship="LeadTrackingProgram2Model.FK_Property_Property" FromRole="Property" ToRole="Property1" />
+          <NavigationProperty Name="Property2" Relationship="LeadTrackingProgram2Model.FK_Property_Property" FromRole="Property1" ToRole="Property" />
+          <NavigationProperty Name="PropertyToCleanUpStatus" Relationship="LeadTrackingProgram2Model.FK_PropertyToCleanUpStatus_Property" FromRole="Property" ToRole="PropertyToCleanUpStatus" />
+          <NavigationProperty Name="PropertyToNotes" Relationship="LeadTrackingProgram2Model.FK_PropertyToNotes_Property" FromRole="Property" ToRole="PropertyToNotes" />
+          <NavigationProperty Name="Questoinaires" Relationship="LeadTrackingProgram2Model.FK_Questoinaire_Property" FromRole="Property" ToRole="Questoinaire" />
+          <NavigationProperty Name="Samples" Relationship="LeadTrackingProgram2Model.FK_Samples_Property" FromRole="Property" ToRole="Samples" />
+        </EntityType>
+        <EntityType Name="PropertyToCleanUpStatu">
+          <Key>
+            <PropertyRef Name="CleanUpStatusID" />
+            <PropertyRef Name="PropertyID" />
+          </Key>
+          <Property Name="CleanUpStatusID" Type="Int32" Nullable="false" />
+          <Property Name="PropertyID" Type="Int32" Nullable="false" />
+          <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="CompleteDate" Type="DateTime" Precision="0" />
+          <Property Name="Clearance" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="ActionStatusID" Type="Int32" />
+          <Property Name="ActionStatusDate" Type="DateTime" Precision="0" />
+          <Property Name="MediumID" Type="Int32" />
+          <NavigationProperty Name="ActionStatu" Relationship="LeadTrackingProgram2Model.FK_PropertyToCleanUpStatus_ActionStatus" FromRole="PropertyToCleanUpStatus" ToRole="ActionStatus" />
+          <NavigationProperty Name="CleanUpStatu" Relationship="LeadTrackingProgram2Model.FK_PropertyToCleanUpStatus_CleanUpStatus" FromRole="PropertyToCleanUpStatus" ToRole="CleanUpStatus" />
+          <NavigationProperty Name="Medium" Relationship="LeadTrackingProgram2Model.FK_PropertyToCleanUpStatus_Medium" FromRole="PropertyToCleanUpStatus" ToRole="Medium" />
+          <NavigationProperty Name="Property" Relationship="LeadTrackingProgram2Model.FK_PropertyToCleanUpStatus_Property" FromRole="PropertyToCleanUpStatus" ToRole="Property" />
+        </EntityType>
+        <EntityType Name="PropertyToNote">
+          <Key>
+            <PropertyRef Name="PropertyID" />
+            <PropertyRef Name="NotesID" />
+          </Key>
+          <Property Name="PropertyID" Type="Int32" Nullable="false" />
+          <Property Name="NotesID" Type="Int32" Nullable="false" />
+          <Property Name="NoteDate" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Note" Relationship="LeadTrackingProgram2Model.FK_PropertyToNotes_Notes" FromRole="PropertyToNotes" ToRole="Notes" />
+          <NavigationProperty Name="Property" Relationship="LeadTrackingProgram2Model.FK_PropertyToNotes_Property" FromRole="PropertyToNotes" ToRole="Property" />
+        </EntityType>
+        <EntityType Name="Questoinaire">
+          <Key>
+            <PropertyRef Name="QuestionaireID" />
+          </Key>
+          <Property Name="QuestionaireID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="DateAdministered" Type="DateTime" Precision="0" />
+          <Property Name="Source" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="MouthingIndex" Type="Int32" />
+          <Property Name="Nursing" Type="Boolean" />
+          <Property Name="Pacifier" Type="Boolean" />
+          <Property Name="DayCareID" Type="Int32" />
+          <Property Name="Notes" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Property" Relationship="LeadTrackingProgram2Model.FK_Questoinaire_Property" FromRole="Questoinaire" ToRole="Property" />
+          <NavigationProperty Name="People" Relationship="LeadTrackingProgram2Model.PersonToQuestionaire" FromRole="Questoinaire" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="ReleaseStatu">
+          <Key>
+            <PropertyRef Name="ReleaseStatusID" />
+          </Key>
+          <Property Name="ReleaseStatusID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ReleaseStatusDesc" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="People" Relationship="LeadTrackingProgram2Model.FK_Person_ReleaseStatus" FromRole="ReleaseStatus" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="Sample">
+          <Key>
+            <PropertyRef Name="SampleID" />
+          </Key>
+          <Property Name="SampleID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Object" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="SampleDate" Type="DateTime" Precision="0" />
+          <Property Name="Notes" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="PropertyID" Type="Int32" />
+          <Property Name="SampleTypeID" Type="Int32" />
+          <Property Name="MediuamID" Type="Int32" />
+          <NavigationProperty Name="BloodResults" Relationship="LeadTrackingProgram2Model.FK_BloodResults_Samples" FromRole="Samples" ToRole="BloodResults" />
+          <NavigationProperty Name="Medium" Relationship="LeadTrackingProgram2Model.FK_Samples_Medium" FromRole="Samples" ToRole="Medium" />
+          <NavigationProperty Name="Property" Relationship="LeadTrackingProgram2Model.FK_Samples_Property" FromRole="Samples" ToRole="Property" />
+          <NavigationProperty Name="SampleType" Relationship="LeadTrackingProgram2Model.FK_Samples_SampleType" FromRole="Samples" ToRole="SampleType" />
+        </EntityType>
+        <EntityType Name="SampleType">
+          <Key>
+            <PropertyRef Name="SampleTypeID" />
+          </Key>
+          <Property Name="SampleTypeID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="SampleType1" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Samples" Relationship="LeadTrackingProgram2Model.FK_Samples_SampleType" FromRole="SampleType" ToRole="Samples" />
+        </EntityType>
+        <EntityType Name="SeedTable">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="LastNames" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="FirstNames" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="streetnames" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="city" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="state" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="StatusID" />
+          </Key>
+          <Property Name="StatusID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="StatusName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="BloodResults" Relationship="LeadTrackingProgram2Model.FK_BloodResults_Status" FromRole="Status" ToRole="BloodResults" />
+          <NavigationProperty Name="People" Relationship="LeadTrackingProgram2Model.FK_Person_Status" FromRole="Status" ToRole="Person" />
+        </EntityType>
+        <Association Name="FK_PropertyToCleanUpStatus_ActionStatus">
+          <End Role="ActionStatus" Type="LeadTrackingProgram2Model.ActionStatu" Multiplicity="0..1" />
+          <End Role="PropertyToCleanUpStatus" Type="LeadTrackingProgram2Model.PropertyToCleanUpStatu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ActionStatus">
+              <PropertyRef Name="ActionStatusID" />
+            </Principal>
+            <Dependent Role="PropertyToCleanUpStatus">
+              <PropertyRef Name="ActionStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BloodResults_Lab">
+          <End Role="Lab" Type="LeadTrackingProgram2Model.Lab" Multiplicity="0..1" />
+          <End Role="BloodResults" Type="LeadTrackingProgram2Model.BloodResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lab">
+              <PropertyRef Name="LabID" />
+            </Principal>
+            <Dependent Role="BloodResults">
+              <PropertyRef Name="LabID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BloodResults_LeadValueCategory">
+          <End Role="LeadValueCategory" Type="LeadTrackingProgram2Model.LeadValueCategory" Multiplicity="0..1" />
+          <End Role="BloodResults" Type="LeadTrackingProgram2Model.BloodResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LeadValueCategory">
+              <PropertyRef Name="LeadValueCategoryID" />
+            </Principal>
+            <Dependent Role="BloodResults">
+              <PropertyRef Name="LeadValueCategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BloodResults_Samples">
+          <End Role="Samples" Type="LeadTrackingProgram2Model.Sample" Multiplicity="0..1" />
+          <End Role="BloodResults" Type="LeadTrackingProgram2Model.BloodResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Samples">
+              <PropertyRef Name="SampleID" />
+            </Principal>
+            <Dependent Role="BloodResults">
+              <PropertyRef Name="SampleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BloodResults_Status">
+          <End Role="Status" Type="LeadTrackingProgram2Model.Status" Multiplicity="0..1" />
+          <End Role="BloodResults" Type="LeadTrackingProgram2Model.BloodResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="StatusID" />
+            </Principal>
+            <Dependent Role="BloodResults">
+              <PropertyRef Name="StatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Notes_Classification">
+          <End Role="Classification" Type="LeadTrackingProgram2Model.Classification" Multiplicity="1" />
+          <End Role="Notes" Type="LeadTrackingProgram2Model.Note" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Classification">
+              <PropertyRef Name="ClassificationID" />
+            </Principal>
+            <Dependent Role="Notes">
+              <PropertyRef Name="ClassificationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyToCleanUpStatus_CleanUpStatus">
+          <End Role="CleanUpStatus" Type="LeadTrackingProgram2Model.CleanUpStatu" Multiplicity="1" />
+          <End Role="PropertyToCleanUpStatus" Type="LeadTrackingProgram2Model.PropertyToCleanUpStatu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CleanUpStatus">
+              <PropertyRef Name="CleanUpStatusID" />
+            </Principal>
+            <Dependent Role="PropertyToCleanUpStatus">
+              <PropertyRef Name="CleanUpStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Property_ConstructionType">
+          <End Role="ConstructionType" Type="LeadTrackingProgram2Model.ConstructionType" Multiplicity="0..1" />
+          <End Role="Property" Type="LeadTrackingProgram2Model.Property" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ConstructionType">
+              <PropertyRef Name="ConstructionTypeID" />
+            </Principal>
+            <Dependent Role="Property">
+              <PropertyRef Name="ConstructionTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Family_PrimaryLanguage">
+          <End Role="Language" Type="LeadTrackingProgram2Model.Language" Multiplicity="0..1" />
+          <End Role="Family" Type="LeadTrackingProgram2Model.Family" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="LanguageID" />
+            </Principal>
+            <Dependent Role="Family">
+              <PropertyRef Name="PrimaryLanguageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonToProperty_FPLinkType">
+          <End Role="FPLinkType" Type="LeadTrackingProgram2Model.FPLinkType" Multiplicity="0..1" />
+          <End Role="PersonToProperty" Type="LeadTrackingProgram2Model.PersonToProperty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FPLinkType">
+              <PropertyRef Name="FPLinkTypeID" />
+            </Principal>
+            <Dependent Role="PersonToProperty">
+              <PropertyRef Name="FPLinkTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Person_PrimaryLanguage">
+          <End Role="Language" Type="LeadTrackingProgram2Model.Language" Multiplicity="0..1" />
+          <End Role="Person" Type="LeadTrackingProgram2Model.Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="LanguageID" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="PrimaryLanguageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyToCleanUpStatus_Medium">
+          <End Role="Medium" Type="LeadTrackingProgram2Model.Medium" Multiplicity="0..1" />
+          <End Role="PropertyToCleanUpStatus" Type="LeadTrackingProgram2Model.PropertyToCleanUpStatu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medium">
+              <PropertyRef Name="MediumID" />
+            </Principal>
+            <Dependent Role="PropertyToCleanUpStatus">
+              <PropertyRef Name="MediumID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Samples_Medium">
+          <End Role="Medium" Type="LeadTrackingProgram2Model.Medium" Multiplicity="0..1" />
+          <End Role="Samples" Type="LeadTrackingProgram2Model.Sample" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medium">
+              <PropertyRef Name="MediumID" />
+            </Principal>
+            <Dependent Role="Samples">
+              <PropertyRef Name="MediuamID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Notes_NoteType">
+          <End Role="NoteType" Type="LeadTrackingProgram2Model.NoteType" Multiplicity="1" />
+          <End Role="Notes" Type="LeadTrackingProgram2Model.Note" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NoteType">
+              <PropertyRef Name="NoteTypeID" />
+            </Principal>
+            <Dependent Role="Notes">
+              <PropertyRef Name="NoteTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyToNotes_Notes">
+          <End Role="Notes" Type="LeadTrackingProgram2Model.Note" Multiplicity="1" />
+          <End Role="PropertyToNotes" Type="LeadTrackingProgram2Model.PropertyToNote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Notes">
+              <PropertyRef Name="NotesID" />
+            </Principal>
+            <Dependent Role="PropertyToNotes">
+              <PropertyRef Name="NotesID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Person_ReleaseStatus">
+          <End Role="ReleaseStatus" Type="LeadTrackingProgram2Model.ReleaseStatu" Multiplicity="0..1" />
+          <End Role="Person" Type="LeadTrackingProgram2Model.Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ReleaseStatus">
+              <PropertyRef Name="ReleaseStatusID" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="ReleaseStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Person_Status">
+          <End Role="Status" Type="LeadTrackingProgram2Model.Status" Multiplicity="0..1" />
+          <End Role="Person" Type="LeadTrackingProgram2Model.Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="StatusID" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="StatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonToProperty_Person">
+          <End Role="Person" Type="LeadTrackingProgram2Model.Person" Multiplicity="1" />
+          <End Role="PersonToProperty" Type="LeadTrackingProgram2Model.PersonToProperty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonID" />
+            </Principal>
+            <Dependent Role="PersonToProperty">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonToProperty_Property">
+          <End Role="Property" Type="LeadTrackingProgram2Model.Property" Multiplicity="1" />
+          <End Role="PersonToProperty" Type="LeadTrackingProgram2Model.PersonToProperty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Property">
+              <PropertyRef Name="PropertyID" />
+            </Principal>
+            <Dependent Role="PersonToProperty">
+              <PropertyRef Name="PropertyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Property_Property">
+          <End Role="Property" Type="LeadTrackingProgram2Model.Property" Multiplicity="1" />
+          <End Role="Property1" Type="LeadTrackingProgram2Model.Property" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Property">
+              <PropertyRef Name="PropertyID" />
+            </Principal>
+            <Dependent Role="Property1">
+              <PropertyRef Name="PropertyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyToCleanUpStatus_Property">
+          <End Role="Property" Type="LeadTrackingProgram2Model.Property" Multiplicity="1" />
+          <End Role="PropertyToCleanUpStatus" Type="LeadTrackingProgram2Model.PropertyToCleanUpStatu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Property">
+              <PropertyRef Name="PropertyID" />
+            </Principal>
+            <Dependent Role="PropertyToCleanUpStatus">
+              <PropertyRef Name="PropertyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyToNotes_Property">
+          <End Role="Property" Type="LeadTrackingProgram2Model.Property" Multiplicity="1" />
+          <End Role="PropertyToNotes" Type="LeadTrackingProgram2Model.PropertyToNote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Property">
+              <PropertyRef Name="PropertyID" />
+            </Principal>
+            <Dependent Role="PropertyToNotes">
+              <PropertyRef Name="PropertyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Questoinaire_Property">
+          <End Role="Property" Type="LeadTrackingProgram2Model.Property" Multiplicity="0..1" />
+          <End Role="Questoinaire" Type="LeadTrackingProgram2Model.Questoinaire" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Property">
+              <PropertyRef Name="PropertyID" />
+            </Principal>
+            <Dependent Role="Questoinaire">
+              <PropertyRef Name="DayCareID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Samples_Property">
+          <End Role="Property" Type="LeadTrackingProgram2Model.Property" Multiplicity="0..1" />
+          <End Role="Samples" Type="LeadTrackingProgram2Model.Sample" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Property">
+              <PropertyRef Name="PropertyID" />
+            </Principal>
+            <Dependent Role="Samples">
+              <PropertyRef Name="PropertyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Samples_SampleType">
+          <End Role="SampleType" Type="LeadTrackingProgram2Model.SampleType" Multiplicity="0..1" />
+          <End Role="Samples" Type="LeadTrackingProgram2Model.Sample" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SampleType">
+              <PropertyRef Name="SampleTypeID" />
+            </Principal>
+            <Dependent Role="Samples">
+              <PropertyRef Name="SampleTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="BloodResultsToPerson">
+          <End Role="BloodResults" Type="LeadTrackingProgram2Model.BloodResult" Multiplicity="*" />
+          <End Role="Person" Type="LeadTrackingProgram2Model.Person" Multiplicity="*" />
+        </Association>
+        <Association Name="FamilyToLanguage">
+          <End Role="Family" Type="LeadTrackingProgram2Model.Family" Multiplicity="*" />
+          <End Role="Language" Type="LeadTrackingProgram2Model.Language" Multiplicity="*" />
+        </Association>
+        <Association Name="FamilyToNotes">
+          <End Role="Family" Type="LeadTrackingProgram2Model.Family" Multiplicity="*" />
+          <End Role="Notes" Type="LeadTrackingProgram2Model.Note" Multiplicity="*" />
+        </Association>
+        <Association Name="PersonToFamily">
+          <End Role="Family" Type="LeadTrackingProgram2Model.Family" Multiplicity="*" />
+          <End Role="Person" Type="LeadTrackingProgram2Model.Person" Multiplicity="*" />
+        </Association>
+        <Association Name="PersonToLanguage">
+          <End Role="Language" Type="LeadTrackingProgram2Model.Language" Multiplicity="*" />
+          <End Role="Person" Type="LeadTrackingProgram2Model.Person" Multiplicity="*" />
+        </Association>
+        <Association Name="PersonToNotes">
+          <End Role="Notes" Type="LeadTrackingProgram2Model.Note" Multiplicity="*" />
+          <End Role="Person" Type="LeadTrackingProgram2Model.Person" Multiplicity="*" />
+        </Association>
+        <Association Name="PersonToQuestionaire">
+          <End Role="Person" Type="LeadTrackingProgram2Model.Person" Multiplicity="*" />
+          <End Role="Questoinaire" Type="LeadTrackingProgram2Model.Questoinaire" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LeadTrackingProgram2ModelStoreContainer" CdmEntityContainer="LeadTrackingProgram2Entities2">
+          <EntitySetMapping Name="ActionStatus">
+            <EntityTypeMapping TypeName="LeadTrackingProgram2Model.ActionStatu">
+              <MappingFragment StoreEntitySet="ActionStatus">
+                <ScalarProperty Name="ActionStatusID" ColumnName="ActionStatusID" />
+                <ScalarProperty Name="ActionStatus" ColumnName="ActionStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BloodResults">
+            <EntityTypeMapping TypeName="LeadTrackingProgram2Model.BloodResult">
+              <MappingFragment StoreEntitySet="BloodResults">
+                <ScalarProperty Name="BloodResultsID" ColumnName="BloodResultsID" />
+                <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+                <ScalarProperty Name="SampleDate" ColumnName="SampleDate" />
+                <ScalarProperty Name="LeadValue" ColumnName="LeadValue" />
+                <ScalarProperty Name="LeadValueCategoryID" ColumnName="LeadValueCategoryID" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="LabID" ColumnName="LabID" />
+                <ScalarProperty Name="LabDate" ColumnName="LabDate" />
+                <ScalarProperty Name="SampleID" ColumnName="SampleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Classifications">
+            <EntityTypeMapping TypeName="LeadTrackingProgram2Model.Classification">
+              <MappingFragment StoreEntitySet="Classification">
+                <ScalarProperty Name="ClassificationID" ColumnName="ClassificationID" />
+                <ScalarProperty Name="Classification1" ColumnName="Classification" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CleanUpStatus">
+            <EntityTypeMapping TypeName="LeadTrackingProgram2Model.CleanUpStatu">
+              <MappingFragment StoreEntitySet="CleanUpStatus">
+                <ScalarProperty Name="CleanUpStatusID" ColumnName="CleanUpStatusID" />
+                <ScalarProperty Name="CleanUpStatus" ColumnName="CleanUpStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ConstructionTypes">
+            <EntityTypeMapping TypeName="LeadTrackingProgram2Model.ConstructionType">
+              <MappingFragment StoreEntitySet="ConstructionType">
+                <ScalarProperty Name="ConstructionTypeID" ColumnName="ConstructionTypeID" />
+                <ScalarProperty Name="ConstructionType1" ColumnName="ConstructionType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Families">
+            <EntityTypeMapping TypeName="LeadTrackingProgram2Model.Family">
+              <MappingFragment StoreEntitySet="Family">
+                <ScalarProperty Name="FamilyID" ColumnName="FamilyID" />
+                <ScalarProperty Name="FamilyLastName" ColumnName="FamilyLastName" />
+                <ScalarProperty Name="NumberofSmokers" ColumnName="NumberofSmokers" />
+                <ScalarProperty Name="LeadDishware" ColumnName="LeadDishware" />
+                <ScalarProperty Name="InOutPets" ColumnName="InOutPets" />
+                <ScalarProperty Name="PrimaryLanguageID" ColumnName="PrimaryLanguageID" />
+                <ScalarProperty Name="NotesID" ColumnName="NotesID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FPLinkTypes">
+            <EntityTypeMapping TypeName="LeadTrackingProgram2Model.FPLinkType">
+              <MappingFragment StoreEntitySet="FPLinkType">
+                <ScalarProperty Name="FPLinkTypeID" ColumnName="FPLinkTypeID" />
+                <ScalarProperty Name="FPLinkType1" ColumnName="FPLinkType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Labs">
+            <EntityTypeMapping TypeName="LeadTrackingProgram2Model.Lab">
+              <MappingFragment StoreEntitySet="Lab">
+                <ScalarProperty Name="LabID" ColumnName="LabID" />
+                <ScalarProperty Name="labName" ColumnName="labName" />
+                <ScalarProperty Name="HouseNumber" ColumnName="HouseNumber" />
+                <ScalarProperty Name="Apartment" ColumnName="Apartment" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="YearOpen" ColumnName="YearOpen" />
+                <ScalarProperty Name="YearClosed" ColumnName="YearClosed" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Languages">
+            <EntityTypeMapping TypeName="LeadTrackingProgram2Model.Language">
+              <MappingFragment StoreEntitySet="Language">
+                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LeadValueCategories">
+            <EntityTypeMapping TypeName="LeadTrackingProgram2Model.LeadValueCategory">
+              <MappingFragment StoreEntitySet="LeadValueCategory">
+                <ScalarProperty Name="LeadValueCategoryID" ColumnName="LeadValueCategoryID" />
+                <ScalarProperty Name="LeadValueCategory1" ColumnName="LeadValueCategory" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Media">
+            <EntityTypeMapping TypeName="LeadTrackingProgram2Model.Medium">
+              <MappingFragment StoreEntitySet="Medium">
+                <ScalarProperty Name="MediumID" ColumnName="MediumID" />
+                <ScalarProperty Name="Medium1" ColumnName="Medium" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Notes">
+            <EntityTypeMapping TypeName="LeadTrackingProgram2Model.Note">
+              <MappingFragment StoreEntitySet="Notes">
+                <ScalarProperty Name="NotesID" ColumnName="NotesID" />
+                <ScalarProperty Name="Note1" ColumnName="Note" />
+                <ScalarProperty Name="EntityID" ColumnName="EntityID" />
+                <ScalarProperty Name="ClassificationID" ColumnName="ClassificationID" />
+                <ScalarProperty Name="NoteTypeID" ColumnName="NoteTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NoteTypes">
+            <EntityTypeMapping TypeName="LeadTrackingProgram2Model.NoteType">
+              <MappingFragment StoreEntitySet="NoteType">
+                <ScalarProperty Name="NoteTypeID" ColumnName="NoteTypeID" />
+                <ScalarProperty Name="NoteType1" ColumnName="NoteType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="People">
+            <EntityTypeMapping TypeName="LeadTrackingProgram2Model.Person">
+              <MappingFragment StoreEntitySet="Person">
+                <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="PrimaryLanguageID" ColumnName="PrimaryLanguageID" />
+                <ScalarProperty Name="ReleaseStatusID" ColumnName="ReleaseStatusID" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PersonToProperties">
+            <EntityTypeMapping TypeName="LeadTrackingProgram2Model.PersonToProperty">
+              <MappingFragment StoreEntitySet="PersonToProperty">
+                <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+                <ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
+                <ScalarProperty Name="MoveInDate" ColumnName="MoveInDate" />
+                <ScalarProperty Name="MoveOutDate" ColumnName="MoveOutDate" />
+                <ScalarProperty Name="FPLinkTypeID" ColumnName="FPLinkTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Properties">
+            <EntityTypeMapping TypeName="LeadTrackingProgram2Model.Property">
+              <MappingFragment StoreEntitySet="Property">
+                <ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
+                <ScalarProperty Name="PropertyName" ColumnName="PropertyName" />
+                <ScalarProperty Name="HouseNumber" ColumnName="HouseNumber" />
+                <ScalarProperty Name="Apartment" ColumnName="Apartment" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="YearBuilt" ColumnName="YearBuilt" />
+                <ScalarProperty Name="CleanUpStatusID" ColumnName="CleanUpStatusID" />
+                <ScalarProperty Name="ConstructionTypeID" ColumnName="ConstructionTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PropertyToCleanUpStatus">
+            <EntityTypeMapping TypeName="LeadTrackingProgram2Model.PropertyToCleanUpStatu">
+              <MappingFragment StoreEntitySet="PropertyToCleanUpStatus">
+                <ScalarProperty Name="CleanUpStatusID" ColumnName="CleanUpStatusID" />
+                <ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="CompleteDate" ColumnName="CompleteDate" />
+                <ScalarProperty Name="Clearance" ColumnName="Clearance" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ActionStatusID" ColumnName="ActionStatusID" />
+                <ScalarProperty Name="ActionStatusDate" ColumnName="ActionStatusDate" />
+                <ScalarProperty Name="MediumID" ColumnName="MediumID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PropertyToNotes">
+            <EntityTypeMapping TypeName="LeadTrackingProgram2Model.PropertyToNote">
+              <MappingFragment StoreEntitySet="PropertyToNotes">
+                <ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
+                <ScalarProperty Name="NotesID" ColumnName="NotesID" />
+                <ScalarProperty Name="NoteDate" ColumnName="NoteDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Questoinaires">
+            <EntityTypeMapping TypeName="LeadTrackingProgram2Model.Questoinaire">
+              <MappingFragment StoreEntitySet="Questoinaire">
+                <ScalarProperty Name="QuestionaireID" ColumnName="QuestionaireID" />
+                <ScalarProperty Name="DateAdministered" ColumnName="DateAdministered" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="MouthingIndex" ColumnName="MouthingIndex" />
+                <ScalarProperty Name="Nursing" ColumnName="Nursing" />
+                <ScalarProperty Name="Pacifier" ColumnName="Pacifier" />
+                <ScalarProperty Name="DayCareID" ColumnName="DayCareID" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReleaseStatus">
+            <EntityTypeMapping TypeName="LeadTrackingProgram2Model.ReleaseStatu">
+              <MappingFragment StoreEntitySet="ReleaseStatus">
+                <ScalarProperty Name="ReleaseStatusID" ColumnName="ReleaseStatusID" />
+                <ScalarProperty Name="ReleaseStatusDesc" ColumnName="ReleaseStatusDesc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Samples">
+            <EntityTypeMapping TypeName="LeadTrackingProgram2Model.Sample">
+              <MappingFragment StoreEntitySet="Samples">
+                <ScalarProperty Name="SampleID" ColumnName="SampleID" />
+                <ScalarProperty Name="Object" ColumnName="Object" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="SampleDate" ColumnName="SampleDate" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
+                <ScalarProperty Name="SampleTypeID" ColumnName="SampleTypeID" />
+                <ScalarProperty Name="MediuamID" ColumnName="MediuamID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SampleTypes">
+            <EntityTypeMapping TypeName="LeadTrackingProgram2Model.SampleType">
+              <MappingFragment StoreEntitySet="SampleType">
+                <ScalarProperty Name="SampleTypeID" ColumnName="SampleTypeID" />
+                <ScalarProperty Name="SampleType1" ColumnName="SampleType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SeedTables">
+            <EntityTypeMapping TypeName="LeadTrackingProgram2Model.SeedTable">
+              <MappingFragment StoreEntitySet="SeedTable">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="LastNames" ColumnName="LastNames" />
+                <ScalarProperty Name="FirstNames" ColumnName="FirstNames" />
+                <ScalarProperty Name="streetnames" ColumnName="streetnames" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="state" ColumnName="state" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Status">
+            <EntityTypeMapping TypeName="LeadTrackingProgram2Model.Status">
+              <MappingFragment StoreEntitySet="Status">
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="BloodResultsToPerson" TypeName="LeadTrackingProgram2Model.BloodResultsToPerson" StoreEntitySet="BloodResultsToPerson">
+            <EndProperty Name="BloodResults">
+              <ScalarProperty Name="BloodResultsID" ColumnName="BloodresultsID" />
+            </EndProperty>
+            <EndProperty Name="Person">
+              <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FamilyToLanguage" TypeName="LeadTrackingProgram2Model.FamilyToLanguage" StoreEntitySet="FamilyToLanguage">
+            <EndProperty Name="Family">
+              <ScalarProperty Name="FamilyID" ColumnName="FamilyID" />
+            </EndProperty>
+            <EndProperty Name="Language">
+              <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FamilyToNotes" TypeName="LeadTrackingProgram2Model.FamilyToNotes" StoreEntitySet="FamilyToNotes">
+            <EndProperty Name="Family">
+              <ScalarProperty Name="FamilyID" ColumnName="FamilyID" />
+            </EndProperty>
+            <EndProperty Name="Notes">
+              <ScalarProperty Name="NotesID" ColumnName="NoteID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="PersonToFamily" TypeName="LeadTrackingProgram2Model.PersonToFamily" StoreEntitySet="PersonToFamily">
+            <EndProperty Name="Family">
+              <ScalarProperty Name="FamilyID" ColumnName="FamilyID" />
+            </EndProperty>
+            <EndProperty Name="Person">
+              <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="PersonToLanguage" TypeName="LeadTrackingProgram2Model.PersonToLanguage" StoreEntitySet="PersonToLanguage">
+            <EndProperty Name="Language">
+              <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+            </EndProperty>
+            <EndProperty Name="Person">
+              <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="PersonToNotes" TypeName="LeadTrackingProgram2Model.PersonToNotes" StoreEntitySet="PersonToNotes">
+            <EndProperty Name="Notes">
+              <ScalarProperty Name="NotesID" ColumnName="NoteID" />
+            </EndProperty>
+            <EndProperty Name="Person">
+              <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="PersonToQuestionaire" TypeName="LeadTrackingProgram2Model.PersonToQuestionaire" StoreEntitySet="PersonToQuestionaire">
+            <EndProperty Name="Person">
+              <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+            </EndProperty>
+            <EndProperty Name="Questoinaire">
+              <ScalarProperty Name="QuestionaireID" ColumnName="QuestionaireID" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Default" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
