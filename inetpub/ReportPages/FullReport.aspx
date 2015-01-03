@@ -24,7 +24,7 @@
             </SelectParameters>
         </asp:SqlDataSource>
 
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:csLeadTrackingProgram-Liam %>" SelectCommand="usp_SLInsertedData" SelectCommandType="StoredProcedure">
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:csLCCHP %>" SelectCommand="usp_SLInsertedData" SelectCommandType="StoredProcedure">
             <SelectParameters>
                 <asp:Parameter Name="LastName" Type="String" />
             </SelectParameters>

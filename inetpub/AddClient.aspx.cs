@@ -10,7 +10,7 @@ using System.Configuration;
 
 public partial class AddChild : System.Web.UI.Page
 {
-    string connectionString = ConfigurationManager.ConnectionStrings["csLeadTrackingProgram-Liam"].ConnectionString;
+    string connectionString = ConfigurationManager.ConnectionStrings["csLCCHP"].ConnectionString;
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -30,12 +30,10 @@ public partial class AddChild : System.Web.UI.Page
 //            string com = "Select Lastname, FamilyID from dbo.Family order by Lastname asc";
 
 
-            string com = @"Select f.FamilyID, f.Lastname, CONCAT(f.Lastname,' -- ', p.StreetNumber,' ',p.Street,' ',p.Zipcode ) NameAddress
-from dbo.Family f --, dbo.property p
-     join PersontoProperty ptp 
-       on f.FamilyID = ptp.PersonID
+            string com = @"Select f.FamilyID, p.PropertyID, f.Lastname, CONCAT(f.Lastname,' -- ', p.StreetNumber,' ',p.Street,' ',p.Zipcode ) NameAddress
+from dbo.Family f 
      join Property p 
-       on p.PropertyID = ptp.PropertyID
+       on p.PropertyID = f.PrimaryPropertyID
 order by f.Lastname
 ";
 
@@ -61,7 +59,7 @@ order by f.Lastname
             FamilyNameList.DataBind();
             //FamilyNameList.("test");
             // if (!Page.IsPostBack)
-            FamilyNameList.Items.Insert(0, "-");
+            FamilyNameList.Items.Insert(0, "(Family name -- PRIMARY residence)");
             // FamilyNameList.Items.Insert(1, "Bonifacic"  + " -- " + addr.ToString() + " Main St, " + zip.ToString());
 
             Trace.Write("connectionString: " + connectionString);

@@ -21,7 +21,7 @@
             </LocalReport>
         </rsweb:ReportViewer>
 
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:csLeadTrackingProgram-Liam%>" SelectCommand="SELECT * FROM [Person]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:csLCCHP%>" SelectCommand="SELECT * FROM [Person]"></asp:SqlDataSource>
 
 &nbsp;<rsweb:ReportViewer ID="ReportViewer2" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt">
            <LocalReport ReportPath="Reports/FamilyReport.rdlc">
@@ -31,7 +31,7 @@
            </LocalReport>
         </rsweb:ReportViewer>
 
-        <asp:SqlDataSource ID="testingdb" runat="server" ConnectionString="<%$ ConnectionStrings:csLeadTrackingProgram-Liam %>" SelectCommand="usp_CountParticipantsByAge" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="testingdb" runat="server" ConnectionString="<%$ ConnectionStrings:csLCCHP %>" SelectCommand="usp_CountParticipantsByAge" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
 
         <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetData" TypeName="LeadTrackingTestingDataSetTableAdapters.FamilyTableAdapter"></asp:ObjectDataSource>
 

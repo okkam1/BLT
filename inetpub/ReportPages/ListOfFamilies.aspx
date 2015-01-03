@@ -13,12 +13,12 @@
                 <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="80%">
             <LocalReport ReportPath="Reports\FamilyReport.rdlc">
                 <DataSources>
-                    <rsweb:ReportDataSource DataSourceId="SqlDataSource1" Name="DataSetLiam" />
+                    <rsweb:ReportDataSource DataSourceId="SqlDataSourcePerson" Name="DataSetPerson" />
                 </DataSources>
             </LocalReport>
         </rsweb:ReportViewer>
 
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:csLeadTrackingProgram-Liam%>" SelectCommand="SELECT * FROM [Person]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSourcePerson" runat="server" ConnectionString="<%$ ConnectionStrings:csLCCHP%>" SelectCommand="SELECT * FROM [Person]"></asp:SqlDataSource>
 
         </div>
 

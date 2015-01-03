@@ -10,7 +10,7 @@ using System.Configuration;
 
 public partial class Questionnaire : System.Web.UI.Page
 {
-    string connectionString = ConfigurationManager.ConnectionStrings["csLeadTrackingProgram-Liam"].ConnectionString;
+    string connectionString = ConfigurationManager.ConnectionStrings["csLCCHP"].ConnectionString;
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -62,7 +62,8 @@ public partial class Questionnaire : System.Web.UI.Page
             command.Parameters.Add("@PaintPeeling", SqlDbType.Bit).Value = Convert.ToByte(rblPaintPeeling.SelectedValue);
             command.Parameters.Add("@PaintAge", SqlDbType.Int).Value = Convert.ToInt32(ddlPaintAge.SelectedValue);
             command.Parameters.Add("@VisitRemodel", SqlDbType.Bit).Value = Convert.ToByte(rblVisitRemodel.SelectedValue);
-            command.Parameters.Add("@RemodelPropertyAge", SqlDbType.Int).Value = Convert.ToInt32(ddlBuildingAge.SelectedValue);
+            command.Parameter
+                s.Add("@RemodelPropertyAge", SqlDbType.Int).Value = Convert.ToInt32(ddlBuildingAge.SelectedValue);
             command.Parameters.Add("@Vitamins", SqlDbType.Bit).Value = Convert.ToByte(rblVitamins.SelectedValue);
             command.Parameters.Add("@HandWash", SqlDbType.Bit).Value = Convert.ToByte(rblHandWash.SelectedValue);
             command.Parameters.Add("@Bottle", SqlDbType.Bit).Value = Convert.ToByte(rblBottle.SelectedValue);

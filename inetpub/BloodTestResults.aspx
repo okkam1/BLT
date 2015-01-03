@@ -66,7 +66,7 @@
             <tr>
                 <td>Blood Lead Result (Pb):</td>
                 <td><asp:TextBox ID="tbBloodLeadResult" runat="server"></asp:TextBox>
-                    <asp:CompareValidator ID="cvBloodLeadResult" runat="server" ControlToValidate="tbBloodLeadResult" Type="Integer" Operator="DataTypeCheck" ErrorMessage="Value must be an integer!" ForeColor="Red" />
+                    <asp:CompareValidator ID="cvBloodLeadResult" runat="server" ControlToValidate="tbBloodLeadResult" Type="Double" Operator="DataTypeCheck" ErrorMessage="Value must be a number!" ForeColor="Red" />
                 </td>
             </tr>
 
@@ -110,7 +110,7 @@
             <tr>
                 <td>Hemoglobin:</td>
                 <td><asp:TextBox ID="tbHemoglobin" runat="server"></asp:TextBox>
-                    <asp:CompareValidator ID="cvHemoglobin" runat="server" ControlToValidate="tbHemoglobin" Type="Integer" Operator="DataTypeCheck" ErrorMessage="Value must be an integer!" ForeColor="Red" />
+                    <asp:CompareValidator ID="cvHemoglobin" runat="server" ControlToValidate="tbHemoglobin" Type="Double" Operator="DataTypeCheck" ErrorMessage="Value must be a number!" ForeColor="Red" />
                 </td>
             </tr>
 

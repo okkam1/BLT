@@ -617,7 +617,7 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DataSetLiam</DataSetName>
+        <DataSetName>DataSetPerson</DataSetName>
         <Height>0.5in</Height>
         <Width>8in</Width>
         <Style>
@@ -640,7 +640,7 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="LeadTrackingTestingLiamDataSet">
+    <DataSource Name="LCCHPPersonDataSet">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
@@ -649,9 +649,9 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSetLiam">
+    <DataSet Name="DataSetPerson">
       <Query>
-        <DataSourceName>LeadTrackingTestingLiamDataSet</DataSourceName>
+        <DataSourceName>LCCHPPersonDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -737,8 +737,8 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>LeadTrackingTesting-LiamDataSet</rd:DataSetName>
-        <rd:SchemaPath>D:\inetpub\App_Code\LeadTrackingTesting-LiamDataSet.xsd</rd:SchemaPath>
+        <rd:DataSetName>LCCHPPersonDataSet</rd:DataSetName>
+        <rd:SchemaPath></rd:SchemaPath>
         <rd:TableName>Person</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

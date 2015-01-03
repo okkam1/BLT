@@ -15,7 +15,7 @@
     Font-Names="Verdana" Font-Size="1.2em" ForeColor="#284775" Width="100px" />
         
         </asp:Login>
-       <asp:HyperLink runat="server" ID="forgotPasswordLink" NavigateUrl="~/ForgotPassword.aspx">Forgot Password?</asp:HyperLink>
+       <asp:HyperLink runat="server" ID="forgotPasswordLink" NavigateUrl="~/ForgotPassword.aspx" CssClass="DD">Forgot Password?</asp:HyperLink>
 
     </div>
 

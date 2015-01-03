@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
     <siteMapNode url="/" title=""  description="The Main Menu for Lead Data Software">
-        <siteMapNode url="AddChild.aspx" title="Onboard"  description="Search/Onboard New Research Subject" />
+        <siteMapNode url="AddClient.aspx" title="Onboard"  description="Onboard New Research Subject" />
+        <siteMapNode url="Questionnaire.aspx" title="Questionnaire" description="Questionnaire" />
+        <siteMapNode url="BloodTestResults.aspx" title="BloodTestResults" description="Blood Test Results" />
       <siteMapNode url="Reports.aspx" title="Reports"  description="View Reports for Lead Data Study">
         <siteMapNode url="ReportPages/ListOfFamilies.aspx" title="List of Families" description="List of Families in the Study" />
       </siteMapNode>

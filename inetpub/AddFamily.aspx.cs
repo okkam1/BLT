@@ -11,7 +11,7 @@ using System.Text;
 
 public partial class AddFamily : System.Web.UI.Page
 {
-    string connectionString = ConfigurationManager.ConnectionStrings["csLeadTrackingProgram-Liam"].ConnectionString;
+    string connectionString = ConfigurationManager.ConnectionStrings["csLCCHP"].ConnectionString;
 
     protected void Page_Load(object sender, EventArgs e)
     {

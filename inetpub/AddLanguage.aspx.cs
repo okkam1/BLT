@@ -10,7 +10,7 @@ using System.Configuration;
 
 public partial class AddLanguage : System.Web.UI.Page
 {
-    string connectionString = ConfigurationManager.ConnectionStrings["csLeadTrackingProgram-Liam"].ConnectionString;
+    string connectionString = ConfigurationManager.ConnectionStrings["csLCCHP"].ConnectionString;
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -36,26 +36,58 @@ public partial class AddLanguage : System.Web.UI.Page
             SqlConnection sqlConnection = new SqlConnection(connectionString);
             SqlCommand command = new SqlCommand("[usp_InsertLanguage]", sqlConnection);
             command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.Add("@LanguageName", SqlDbType.VarChar).Value = Language.Text;
+            command.Parameters.Add("@LanguageName", SqlDbType.VarChar).Value = Language.Text.ToUpper();
             command.Parameters.Add("@LanguageID", SqlDbType.Int).Direction = ParameterDirection.Output;  //usp returns ID upon completion
+
             sqlConnection.Open();
-            command.ExecuteNonQuery();
+
+            int rownum = 0;
+
+                rownum = command.ExecuteNonQuery();
+
+                String sID = command.Parameters["@LanguageID"].Value.ToString();
+
+                Trace.Write("sID: " + sID);
+
+                if (sID != "")
+                {
+                    lbOutput.Text = "New Language #" + sID + " Inserted at: " + DateTime.Now;
+                    lbPopUp.Text = lbOutput.Text;
+
+                    NextButton.Visible = true;
+                    ModalPopupExtender1.Show();
+                }
+                else
+                {
+                    lbOutput.Text = "Failed to Insert New Language";
+                    lbPopUp.Text = lbOutput.Text;
+                    ModalPopupExtender1.Show();
+                }
+
             sqlConnection.Close();
 
-            lbOutput.Text = "New Language: " +Language.Text + " Inserted at: " + DateTime.Now;
 
         }
         catch (SqlException exSQL)
         {
-            lbOutput.Text = "SQL ERROR: " + exSQL.Message.ToString() + DateTime.Now;
+            lbOutput.Text = "SQL ERROR: " + exSQL.Message.ToString() + " " + DateTime.Now;
+
+            lbPopUp.Text = lbOutput.Text;
+            ModalPopupExtender1.Show();
+
             Trace.Write("SQL Error" + exSQL.Message.ToString());
 
         }
         catch (Exception ex)
         {
-            lbOutput.Text = "ERROR: " + ex.Message.ToString() + DateTime.Now;
+            lbOutput.Text = "ERROR: " + ex.Message.ToString() + " " + DateTime.Now;
+
+            lbPopUp.Text = lbOutput.Text;
+            ModalPopupExtender1.Show();
+
             Trace.Write("Error" + ex.Message.ToString());
         }
+
 
     }
     protected void Back_Click(object sender, EventArgs e)

@@ -10,7 +10,7 @@ using System.Configuration;
 
 public partial class BloodTestResults : System.Web.UI.Page
 {
-    string connectionString = ConfigurationManager.ConnectionStrings["csLeadTrackingProgram-Liam"].ConnectionString;
+    string connectionString = ConfigurationManager.ConnectionStrings["csLCCHP"].ConnectionString;
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -52,7 +52,7 @@ public partial class BloodTestResults : System.Web.UI.Page
             if (tbLabDate.Text != "")
                 command.Parameters.Add("@Lab_Date", SqlDbType.DateTime).Value = tbLabDate.Text;
             if (tbBloodLeadResult.Text != "")
-                command.Parameters.Add("@Blood_Lead_Result", SqlDbType.Int).Value = Convert.ToInt32(tbBloodLeadResult.Text);
+                command.Parameters.Add("@Blood_Lead_Result", SqlDbType.Decimal).Value = Convert.ToDecimal(tbBloodLeadResult.Text);
             if (tbTestType.Text != "")
                 command.Parameters.Add("@Test_Type", SqlDbType.Int).Value = Convert.ToInt32(tbTestType.Text);
             if (tbLab.Text != "")
@@ -62,7 +62,7 @@ public partial class BloodTestResults : System.Web.UI.Page
             if (tbChildStatusCode.Text != "")
                 command.Parameters.Add("@Child_Status_Code", SqlDbType.Int).Value = Convert.ToInt32(tbChildStatusCode.Text);
             if (tbHemoglobin.Text != "")
-                command.Parameters.Add("@Hemoglobin_Value", SqlDbType.Int).Value = Convert.ToInt32(tbHemoglobin.Text);
+                command.Parameters.Add("@Hemoglobin_Value", SqlDbType.Decimal).Value = Convert.ToDecimal(tbHemoglobin.Text);
 
 
             command.Parameters.Add("@Blood_Test_Results_ID", SqlDbType.Int).Direction = ParameterDirection.Output;  //usp returns ID upon completion

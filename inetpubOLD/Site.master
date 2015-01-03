@@ -1,0 +1,65 @@
+﻿<%@ Master Language="C#" CodeFile="Site.master.cs" Inherits="Site" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <title>Lead Data Monitoring Application</title>
+    <link href="~/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+    
+    <form id="form1" runat="server">
+
+        <h1 class="DDMainHeader">
+            <a href="/"><asp:Image ImageUrl="images/LakeCountySeal.jpg" runat="server" ID="CountySeal" border="0" /></a>
+            Lake County Blood Lead Tracking Software <span class="small">v1.6</span> 
+            <span runat="server" visible="false" id="userLabel" class="DDFloatRight" style="font-size:medium;">User: 
+                <asp:LoginName ID="LoginName1" runat="server" /> |
+
+                <span class="small"><asp:LoginStatus ID="LoginStatus1" runat="server" /></span>
+        </span></h1>
+
+        <br />
+
+    <div class="DDNavigation" id="MainNav" runat="server" visible="false">
+        > <a href="/">Main Menu</a>
+        <asp:SiteMapPath ID="SiteMapPath1" runat="server"></asp:SiteMapPath>
+        
+    </div>
+
+        
+
+    <div>
+        <%-- TODO: Enable partial rendering by setting the EnablePartialRendering attribute to "true" to provide a smoother browsing experience.
+             Leaving partial rendering disabled will provide a better debugging experience while the application is in development. --%>
+
+        
+
+        <ajaxToolkit:ToolkitScriptManager runat="server"><Scripts>
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" />
+            </Scripts></ajaxToolkit:ToolkitScriptManager> 
+
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+
+        <h1 class="DDMainHeader"></h1>
+        
+
+        <div class="DDFloatRight">
+
+            <span class="DD">Lake County Community Health Program &copy; 2014</span>
+
+        </div>
+        <br />
+
+    </div>
+    </form>
+</body>
+</html>
+

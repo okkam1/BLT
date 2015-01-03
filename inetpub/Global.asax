@@ -3,7 +3,7 @@
 <%@ Import Namespace="System.Web.Routing" %>
 <%@ Import Namespace="System.Web.DynamicData" %>
 <%@ Import Namespace="System.Web.UI" %>
-<%@ Import Namespace="LeadTrackingProgram2Model" %>
+
 
 <script RunAt="server">
     private static MetaModel s_defaultModel = new MetaModel();
@@ -24,9 +24,9 @@
         // class in your application.
         // See http://go.microsoft.com/fwlink/?LinkId=257395 for more information on how to add and configure an Entity Data model to this project
 
-        
 
-        DefaultModel.RegisterContext(typeof(LeadTrackingProgram2Entities2), new ContextConfiguration() { ScaffoldAllTables = true });
+
+//        DefaultModel.RegisterContext(typeof(LeadTrackingProgram2Entities2), new ContextConfiguration() { ScaffoldAllTables = true });
 
         // The following statement supports separate-page mode, where the List, Detail, Insert, and 
         // Update tasks are performed by using separate pages. To enable this mode, uncomment the following 
