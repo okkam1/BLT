@@ -3,6 +3,7 @@
 <%@ Import Namespace="System.Web.Routing" %>
 <%@ Import Namespace="System.Web.DynamicData" %>
 <%@ Import Namespace="System.Web.UI" %>
+<%@ Import Namespace="LCCHPEntityModel" %>
 
 
 <script RunAt="server">
@@ -26,7 +27,7 @@
 
 
 
-//        DefaultModel.RegisterContext(typeof(LeadTrackingProgram2Entities2), new ContextConfiguration() { ScaffoldAllTables = true });
+        DefaultModel.RegisterContext(typeof(LCCHPEntityModelContainer), new ContextConfiguration() { ScaffoldAllTables = true });
 
         // The following statement supports separate-page mode, where the List, Detail, Insert, and 
         // Update tasks are performed by using separate pages. To enable this mode, uncomment the following 
