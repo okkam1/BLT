@@ -8,7 +8,7 @@
 
     <div class="DD">
 
-        <h2 class="DDSubHeader">Onboard Lead Research Subject</h2>
+        <h2 class="DDSubHeader">Onboard Client for Lead Research Study</h2>
 
         <table>
             <tr>
@@ -16,7 +16,7 @@
                 <td><asp:DropDownList ID="FamilyNameList" runat="server" ViewStateMode="Enabled"></asp:DropDownList>
                 <a href="AddFamily.aspx" class="small">Add a New Family</a>
                     
-                    <asp:RequiredFieldValidator ID="rfvFamilyName" runat="server" InitialValue="-" ErrorMessage="Please select a family" ControlToValidate="FamilyNameList" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="rfvFamilyName" runat="server" InitialValue="(Family name -- PRIMARY residence)" ErrorMessage="Please select a family" ControlToValidate="FamilyNameList" ForeColor="Red"></asp:RequiredFieldValidator>
 
                 </td>
             </tr>

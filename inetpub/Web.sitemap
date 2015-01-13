@@ -5,7 +5,9 @@
         <siteMapNode url="Questionnaire.aspx" title="Questionnaire" description="Questionnaire" />
         <siteMapNode url="BloodTestResults.aspx" title="BloodTestResults" description="Blood Test Results" />
       <siteMapNode url="Reports.aspx" title="Reports"  description="View Reports for Lead Data Study">
-        <siteMapNode url="ReportPages/ListOfFamilies.aspx" title="List of Families" description="List of Families in the Study" />
+        <siteMapNode url="ReportPages/ListOfClients.aspx" title="List of Clients" description="Complete List of Clients in the Study" />
+        <siteMapNode url="ReportPages/ClientsByAge.aspx" title="Clients by Age" description="Count of Clients in the Study by Age" />
+        <siteMapNode url="ReportPages/ClientsByAgeGroup.aspx" title="Clients by Age Group" description="Count of Clients in the Study by Age Groups" />
       </siteMapNode>
       <siteMapNode url="ManageData.aspx" title="Manage Data"  description="Manage Data for Lead Data Study" />
     </siteMapNode>

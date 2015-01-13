@@ -11,15 +11,15 @@
     <div class="MainNavigation">
         <ul>
     <li>
-        <asp:HyperLink runat="server" NavigateUrl="AddClient.aspx"><img src="images/onboard.jpg" />Onboard Research Subject </asp:HyperLink></li>
+        <asp:HyperLink runat="server" NavigateUrl="AddClient.aspx"><img src="images/onboard.jpg" />Onboard Lead Research Study Client </asp:HyperLink></li>
     <li>
-        <a href="Reports.aspx"><img src="images/graph3.jpg" />View Reports</a></li>
+        <a href="Reports.aspx"><img src="images/graph3.jpg" />View Reports for Lead Research Study</a></li>
     <!--<li>
         <a href="ManageData.aspx"><img src="images/data.jpg" width="80" />Manage Data</a></li>-->
 
             <li runat="server" id="datamangebullet">
-                <asp:HyperLink runat="server" id ="datamanage" NavigateUrl="ManageData.aspx" ImageUrl="images/data.jpg" ImageWidth="80" Text="Manage Data">Manage Data</asp:HyperLink>
-                <asp:HyperLink runat="server" id ="datamanage2" NavigateUrl="ManageData.aspx" Text="Manage Data">Manage Data</asp:HyperLink>
+                <asp:HyperLink runat="server" id ="datamanage" NavigateUrl="ManageData.aspx" ImageUrl="images/data.jpg" ImageWidth="80" Text="Manage Data">Advanced Data Management</asp:HyperLink>
+                <asp:HyperLink runat="server" id ="datamanage2" NavigateUrl="ManageData.aspx" Text="Manage Data">Advanced Data Management</asp:HyperLink>
             </li>
             </ul>
                 

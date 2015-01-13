@@ -13,13 +13,21 @@
         <table>
             <tr>
                 <td>Family Last Name:</td>
-                <td><asp:TextBox ID="tbLastName" runat="server"></asp:TextBox></td>
+                <td><asp:TextBox ID="tbLastName" runat="server"></asp:TextBox>
+
+                    <asp:RequiredFieldValidator ID="rfvFamilyName" runat="server" InitialValue="" ErrorMessage="Please Enter a Family Name" ControlToValidate="tbLastName" ForeColor="Red"></asp:RequiredFieldValidator>
+
+                </td>
             </tr>
    
         <tr>
                 <td>Street Number:</td>
             <td>
-        <asp:TextBox ID="TextBoxStreetNumber" runat="server"></asp:TextBox></td>
+        <asp:TextBox ID="TextBoxStreetNumber" runat="server"></asp:TextBox>
+
+
+
+            </td>
             </tr>
 
             <tr>
@@ -150,40 +158,7 @@
             </tr>
         
             <tr><td colspan="2"><hr /></td></tr>
-<%--        
-        <tr>
-                <td>Language:</td>
-            <td>
-        <asp:DropDownList ID="ddlLanguage" runat="server" OnSelectedIndexChanged="ddlLanguage_SelectedIndexChanged">
-            <asp:ListItem>-</asp:ListItem>
-        </asp:DropDownList> <a href="AddLanguage.aspx">Add Language</a></td>
-            </tr>
-       
-        
-        
-        <tr>
-                <td>Medicaid:</td>
-            <td>
-                <asp:RadioButtonList ID="MedicaidRadioButtonList" runat="server" RepeatDirection="Horizontal">
-                    <asp:ListItem>Yes</asp:ListItem>
-                    <asp:ListItem>No</asp:ListItem>
-                </asp:RadioButtonList>
 
-
-            </td>
-            </tr>
-        
-            <tr>
-                <td>Lead Dishes:</td>
-            <td>
-                <asp:RadioButtonList ID="RadioButtonListLeadDishes" runat="server" RepeatDirection="Horizontal">
-                    <asp:ListItem>Yes</asp:ListItem>
-                    <asp:ListItem>No</asp:ListItem>
-                </asp:RadioButtonList>
-
-            </td>
-            </tr>
-        --%>
             <tr>
                 <td>Pets:</td>
             <td>
@@ -208,26 +183,6 @@
             </td>
             </tr>
         
-        <%--<tr>
-                <td># Smokers:</td>
-            <td>
-                <asp:DropDownList ID="DropDownListSmokers" runat="server">
-                    <asp:ListItem Value="">-</asp:ListItem>
-                    <asp:ListItem>0</asp:ListItem>
-                    <asp:ListItem>1</asp:ListItem>
-                    <asp:ListItem>2</asp:ListItem>
-                    <asp:ListItem>3</asp:ListItem>
-                    <asp:ListItem>4</asp:ListItem>
-                    <asp:ListItem>5</asp:ListItem>
-                    <asp:ListItem>6</asp:ListItem>
-                    <asp:ListItem>7</asp:ListItem>
-                    <asp:ListItem>8</asp:ListItem>
-                    <asp:ListItem>9</asp:ListItem>
-                    <asp:ListItem>10</asp:ListItem>
-        </asp:DropDownList>
-            </td>
-            </tr>--%>
-
             <tr><td colspan="2"><hr /></td></tr>
         
         <%--<tr>
@@ -247,6 +202,7 @@
 
             <tr><td colspan="2"><hr /></td></tr>
         --%>
+
         <tr>
                 <td>Other Notes:</td>
             <td>
@@ -255,19 +211,7 @@
 
             </td>
             </tr>
-        <%--
-        <tr>
-                <td>Incentive:</td>
-            <td>
-                <asp:RadioButtonList ID="RadioButtonListIncentive" runat="server" RepeatDirection="Horizontal">
-                    <asp:ListItem>Yes</asp:ListItem>
-                    <asp:ListItem>No</asp:ListItem>
-                </asp:RadioButtonList>
 
-
-            </td>
-            </tr>
-            --%>
 </table>
         <br /><br />
         <input id="back" type="button" value="&lt;&lt; Back" OnClick="javascript: history.back();" />
@@ -275,7 +219,7 @@
         &nbsp;&nbsp;&nbsp;
         <asp:Button ID="Insert" runat="server" OnClick="Button1_Click" Text="Insert New Family" />
 
-    <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" />
+        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" />
 
             <asp:Button ID="Button1" runat="server" style="visibility:hidden;" />
 

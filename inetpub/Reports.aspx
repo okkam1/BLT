@@ -11,7 +11,10 @@
         <h2 class="DDSubHeader">Available Reports</h2>
 
         <ul>
-        <li><a href="ReportPages/ListOfFamilies.aspx">List of Families</a></li>
+            <li><a href="ReportPages/ListOfClients.aspx">List of Clients</a></li>
+            <li><a href="ReportPages/ClientsByAge.aspx">Count of Clients by Age</a></li>
+            <li><a href="ReportPages/ClientsByAgeGroup.aspx">Count of Clients by Age Group</a></li>
+
 
 <!--
         <li><a href="#">List of Research Subjects by Last Name</a></li>
