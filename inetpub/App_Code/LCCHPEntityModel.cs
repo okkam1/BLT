@@ -9,3 +9,989 @@
 
 using System;
 using System.Collections.Generic;
+
+public partial class AccessAgreement
+{
+    public AccessAgreement()
+    {
+        this.PersontoAccessAgreements = new HashSet<PersontoAccessAgreement>();
+    }
+
+    public int AccessAgreementID { get; set; }
+    public Nullable<int> AccessPurposeID { get; set; }
+    public string Notes { get; set; }
+    public byte[] AccessAgreementFile { get; set; }
+    public Nullable<int> PropertyID { get; set; }
+
+    public virtual AccessPurpose AccessPurpose { get; set; }
+    public virtual Property Property { get; set; }
+    public virtual ICollection<PersontoAccessAgreement> PersontoAccessAgreements { get; set; }
+}
+
+public partial class AccessPurpose
+{
+    public AccessPurpose()
+    {
+        this.AccessAgreements = new HashSet<AccessAgreement>();
+    }
+
+    public int AccessPurposeID { get; set; }
+    public string AccessPurposeName { get; set; }
+    public string AccessPurposeDescription { get; set; }
+
+    public virtual ICollection<AccessAgreement> AccessAgreements { get; set; }
+}
+
+public partial class Area
+{
+    public Area()
+    {
+        this.Properties = new HashSet<Property>();
+    }
+
+    public int AreaID { get; set; }
+    public string AreaDescription { get; set; }
+    public string AreaName { get; set; }
+
+    public virtual ICollection<Property> Properties { get; set; }
+}
+
+public partial class BloodTestResult
+{
+    public int BloodTestResultsID { get; set; }
+    public bool isBaseline { get; set; }
+    public Nullable<int> PersonID { get; set; }
+    public System.DateTime SampleDate { get; set; }
+    public Nullable<System.DateTime> LabSubmissionDate { get; set; }
+    public Nullable<decimal> LeadValue { get; set; }
+    public Nullable<byte> LeadValueCategoryID { get; set; }
+    public Nullable<decimal> HemoglobinValue { get; set; }
+    public Nullable<byte> HemoglobinValueCategoryID { get; set; }
+    public Nullable<byte> HematocritValueCategoryID { get; set; }
+    public Nullable<int> LabID { get; set; }
+    public Nullable<decimal> BloodTestCosts { get; set; }
+    public Nullable<byte> SampleTypeID { get; set; }
+    public string notes { get; set; }
+    public Nullable<decimal> HematocritValue { get; set; }
+    public Nullable<bool> TakenAfterPropertyRemediationCompleted { get; set; }
+    public System.DateTime InsertDate { get; set; }
+
+    public virtual SampleLevelCategory SampleLevelCategory { get; set; }
+    public virtual SampleLevelCategory SampleLevelCategory1 { get; set; }
+    public virtual Lab Lab { get; set; }
+    public virtual SampleLevelCategory SampleLevelCategory2 { get; set; }
+    public virtual Person Person { get; set; }
+    public virtual SampleType SampleType { get; set; }
+}
+
+public partial class CleanupStatu
+{
+    public CleanupStatu()
+    {
+        this.PropertytoCleanupStatus = new HashSet<PropertytoCleanupStatu>();
+    }
+
+    public byte CleanupStatusID { get; set; }
+    public string CleanupStatusDescription { get; set; }
+    public string CleanupStatusName { get; set; }
+    public string HistoricCleanupStatusID { get; set; }
+
+    public virtual ICollection<PropertytoCleanupStatu> PropertytoCleanupStatus { get; set; }
+}
+
+public partial class ConstructionType
+{
+    public ConstructionType()
+    {
+        this.Properties = new HashSet<Property>();
+    }
+
+    public byte ConstructionTypeID { get; set; }
+    public string ConstructionTypeName { get; set; }
+    public string ConstructionTypeDescription { get; set; }
+    public string HistoricConstructionTypeID { get; set; }
+
+    public virtual ICollection<Property> Properties { get; set; }
+}
+
+public partial class Contractor
+{
+    public Contractor()
+    {
+        this.ContractortoProperties = new HashSet<ContractortoProperty>();
+        this.ContractortoRemediations = new HashSet<ContractortoRemediation>();
+        this.ContractortoRemediationActionPlans = new HashSet<ContractortoRemediationActionPlan>();
+        this.ContractortoRemediationActionPlans1 = new HashSet<ContractortoRemediationActionPlan>();
+    }
+
+    public int ContractorID { get; set; }
+    public string ContractorName { get; set; }
+    public string ContractorDescription { get; set; }
+
+    public virtual ICollection<ContractortoProperty> ContractortoProperties { get; set; }
+    public virtual ICollection<ContractortoRemediation> ContractortoRemediations { get; set; }
+    public virtual ICollection<ContractortoRemediationActionPlan> ContractortoRemediationActionPlans { get; set; }
+    public virtual ICollection<ContractortoRemediationActionPlan> ContractortoRemediationActionPlans1 { get; set; }
+}
+
+public partial class ContractortoProperty
+{
+    public int ContractorID { get; set; }
+    public int PropertyID { get; set; }
+    public Nullable<System.DateTime> StartDate { get; set; }
+    public Nullable<System.DateTime> EndDate { get; set; }
+
+    public virtual Contractor Contractor { get; set; }
+    public virtual Property Property { get; set; }
+}
+
+public partial class ContractortoRemediation
+{
+    public int ContractorID { get; set; }
+    public int RemediationID { get; set; }
+    public Nullable<System.DateTime> StartDate { get; set; }
+    public Nullable<System.DateTime> EndDate { get; set; }
+    public Nullable<bool> isSubContractor { get; set; }
+
+    public virtual Contractor Contractor { get; set; }
+    public virtual Remediation Remediation { get; set; }
+}
+
+public partial class ContractortoRemediationActionPlan
+{
+    public int ContractorID { get; set; }
+    public int RemediationActionPlanID { get; set; }
+    public Nullable<System.DateTime> StartDate { get; set; }
+    public Nullable<System.DateTime> EndDate { get; set; }
+    public Nullable<bool> isSubContractor { get; set; }
+
+    public virtual Contractor Contractor { get; set; }
+    public virtual Contractor Contractor1 { get; set; }
+    public virtual RemediationActionPlan RemediationActionPlan { get; set; }
+    public virtual RemediationActionPlan RemediationActionPlan1 { get; set; }
+}
+
+public partial class Country
+{
+    public Country()
+    {
+        this.PersonToTravelCountries = new HashSet<PersonToTravelCountry>();
+        this.ForeignFoods = new HashSet<ForeignFood>();
+    }
+
+    public byte CountryID { get; set; }
+    public string CountryName { get; set; }
+
+    public virtual ICollection<PersonToTravelCountry> PersonToTravelCountries { get; set; }
+    public virtual ICollection<ForeignFood> ForeignFoods { get; set; }
+}
+
+public partial class Daycare
+{
+    public Daycare()
+    {
+        this.DaycaretoProperties = new HashSet<DaycaretoProperty>();
+        this.PersontoDaycares = new HashSet<PersontoDaycare>();
+    }
+
+    public int DaycareID { get; set; }
+    public string DaycareName { get; set; }
+    public string DaycareDescription { get; set; }
+
+    public virtual ICollection<DaycaretoProperty> DaycaretoProperties { get; set; }
+    public virtual ICollection<PersontoDaycare> PersontoDaycares { get; set; }
+}
+
+public partial class DaycarePrimaryContact
+{
+    public int DaycareID { get; set; }
+    public int PersonID { get; set; }
+    public byte ContactPriority { get; set; }
+    public Nullable<int> PrimaryPhoneNumberID { get; set; }
+
+    public virtual Person Person { get; set; }
+    public virtual PersontoPhoneNumber PersontoPhoneNumber { get; set; }
+    public virtual PhoneNumber PhoneNumber { get; set; }
+}
+
+public partial class DaycaretoProperty
+{
+    public int DaycareID { get; set; }
+    public int PropertyID { get; set; }
+    public System.DateTime StartDate { get; set; }
+    public Nullable<System.DateTime> EndDate { get; set; }
+
+    public virtual Daycare Daycare { get; set; }
+    public virtual Property Property { get; set; }
+}
+
+public partial class Employer
+{
+    public Employer()
+    {
+        this.EmployertoProperties = new HashSet<EmployertoProperty>();
+        this.PersontoEmployers = new HashSet<PersontoEmployer>();
+    }
+
+    public int EmployerID { get; set; }
+    public string EmployerName { get; set; }
+
+    public virtual ICollection<EmployertoProperty> EmployertoProperties { get; set; }
+    public virtual ICollection<PersontoEmployer> PersontoEmployers { get; set; }
+}
+
+public partial class EmployertoProperty
+{
+    public int EmployerID { get; set; }
+    public int PropertyID { get; set; }
+    public System.DateTime StartDate { get; set; }
+    public Nullable<System.DateTime> EndDate { get; set; }
+
+    public virtual Employer Employer { get; set; }
+    public virtual Property Property { get; set; }
+}
+
+public partial class EnvironmentalInvestigation
+{
+    public EnvironmentalInvestigation()
+    {
+        this.RemediationActionPlans = new HashSet<RemediationActionPlan>();
+    }
+
+    public int EnvironmentalInvestigationID { get; set; }
+    public Nullable<bool> ConductEnvironmentalInvestigation { get; set; }
+    public Nullable<System.DateTime> ConductEnvironmentalInvestigationDecisionDate { get; set; }
+    public Nullable<decimal> Cost { get; set; }
+    public Nullable<System.DateTime> EnvironmentalInvestigationDate { get; set; }
+    public int PropertyID { get; set; }
+    public Nullable<System.DateTime> StartDate { get; set; }
+    public Nullable<System.DateTime> EndDate { get; set; }
+
+    public virtual Property Property { get; set; }
+    public virtual ICollection<RemediationActionPlan> RemediationActionPlans { get; set; }
+}
+
+public partial class ErrorLog
+{
+    public int ErrorID { get; set; }
+    public string Username { get; set; }
+    public Nullable<int> ErrorNumber { get; set; }
+    public Nullable<int> ErrorSeverity { get; set; }
+    public Nullable<int> ErrorState { get; set; }
+    public string ErrorProcedure { get; set; }
+    public Nullable<int> ErrorLine { get; set; }
+    public string ErrorMessage { get; set; }
+    public Nullable<System.DateTime> ErrorTime { get; set; }
+}
+
+public partial class Ethnicity
+{
+    public Ethnicity()
+    {
+        this.People = new HashSet<Person>();
+    }
+
+    public byte EthnicityID { get; set; }
+    public string Ethnicity1 { get; set; }
+    public string HistoricEthnicityCode { get; set; }
+
+    public virtual ICollection<Person> People { get; set; }
+}
+
+public partial class Family
+{
+    public Family()
+    {
+        this.People = new HashSet<Person>();
+    }
+
+    public int FamilyID { get; set; }
+    public string Lastname { get; set; }
+    public Nullable<byte> NumberofSmokers { get; set; }
+    public Nullable<byte> PrimaryLanguageID { get; set; }
+    public string Notes { get; set; }
+    public Nullable<bool> Pets { get; set; }
+    public Nullable<bool> inandout { get; set; }
+    public Nullable<short> HistoricFamilyID { get; set; }
+    public Nullable<int> PrimaryPropertyID { get; set; }
+    public System.DateTime InsertDate { get; set; }
+
+    public virtual ICollection<Person> People { get; set; }
+}
+
+public partial class ForeignFood
+{
+    public ForeignFood()
+    {
+        this.Countries = new HashSet<Country>();
+        this.People = new HashSet<Person>();
+    }
+
+    public int ForeignFoodID { get; set; }
+    public string ForeignFoodName { get; set; }
+    public string ForeignFoodDescription { get; set; }
+
+    public virtual ICollection<Country> Countries { get; set; }
+    public virtual ICollection<Person> People { get; set; }
+}
+
+public partial class GiftCard
+{
+    public int GiftCardID { get; set; }
+    public decimal GiftCardValue { get; set; }
+    public System.DateTime IssueDate { get; set; }
+    public int PersonID { get; set; }
+
+    public virtual Person Person { get; set; }
+}
+
+public partial class Hobby
+{
+    public Hobby()
+    {
+        this.People = new HashSet<Person>();
+    }
+
+    public short HobbyID { get; set; }
+    public string HobbyDescription { get; set; }
+    public string HobbyName { get; set; }
+    public System.DateTime InsertDate { get; set; }
+
+    public virtual ICollection<Person> People { get; set; }
+}
+
+public partial class HomeRemedy
+{
+    public HomeRemedy()
+    {
+        this.People = new HashSet<Person>();
+    }
+
+    public int HomeRemedyID { get; set; }
+    public string HomeRemedyName { get; set; }
+    public string HomeRemedyDescription { get; set; }
+
+    public virtual ICollection<Person> People { get; set; }
+}
+
+public partial class HouseholdSourcesofLead
+{
+    public HouseholdSourcesofLead()
+    {
+        this.Properties = new HashSet<Property>();
+    }
+
+    public int HouseholdSourcesofLeadID { get; set; }
+    public string HouseholdItemName { get; set; }
+    public string HouseholdItemDescription { get; set; }
+
+    public virtual ICollection<Property> Properties { get; set; }
+}
+
+public partial class InsuranceProvider
+{
+    public InsuranceProvider()
+    {
+        this.PersontoInsurances = new HashSet<PersontoInsurance>();
+    }
+
+    public short InsuranceProviderID { get; set; }
+    public string InsuranceProviderName { get; set; }
+
+    public virtual ICollection<PersontoInsurance> PersontoInsurances { get; set; }
+}
+
+public partial class Lab
+{
+    public Lab()
+    {
+        this.BloodTestResults = new HashSet<BloodTestResult>();
+        this.MediumSampleResults = new HashSet<MediumSampleResult>();
+    }
+
+    public int LabID { get; set; }
+    public string LabName { get; set; }
+    public string LabDescription { get; set; }
+    public string Notes { get; set; }
+    public string HistoricLabID { get; set; }
+
+    public virtual ICollection<BloodTestResult> BloodTestResults { get; set; }
+    public virtual ICollection<MediumSampleResult> MediumSampleResults { get; set; }
+}
+
+public partial class Language
+{
+    public Language()
+    {
+        this.PersontoLanguages = new HashSet<PersontoLanguage>();
+    }
+
+    public byte LanguageID { get; set; }
+    public string LanguageName { get; set; }
+    public string PrimLanguageCode { get; set; }
+
+    public virtual ICollection<PersontoLanguage> PersontoLanguages { get; set; }
+}
+
+public partial class Medium
+{
+    public Medium()
+    {
+        this.MediumSampleResults = new HashSet<MediumSampleResult>();
+        this.PropertytoMediums = new HashSet<PropertytoMedium>();
+    }
+
+    public int MediumID { get; set; }
+    public string MediumName { get; set; }
+    public string MediumDescription { get; set; }
+    public Nullable<int> TriggerLevel { get; set; }
+    public Nullable<int> TriggerLevelUnitsID { get; set; }
+    public string HistoricMediumCode { get; set; }
+
+    public virtual ICollection<MediumSampleResult> MediumSampleResults { get; set; }
+    public virtual ICollection<PropertytoMedium> PropertytoMediums { get; set; }
+}
+
+public partial class MediumSampleResult
+{
+    public int MediumSampleResultsID { get; set; }
+    public int MediumID { get; set; }
+    public Nullable<decimal> MediumSampleValue { get; set; }
+    public Nullable<byte> SampleLevelCategoryID { get; set; }
+    public System.DateTime MediumSampleDate { get; set; }
+    public Nullable<int> LabID { get; set; }
+    public Nullable<System.DateTime> LabSubmissionDate { get; set; }
+    public string Notes { get; set; }
+    public Nullable<bool> IsAboveTriggerLevel { get; set; }
+    public Nullable<short> UnitsID { get; set; }
+
+    public virtual Lab Lab { get; set; }
+    public virtual Medium Medium { get; set; }
+    public virtual SampleLevelCategory SampleLevelCategory { get; set; }
+    public virtual Unit Unit { get; set; }
+}
+
+public partial class Occupation
+{
+    public Occupation()
+    {
+        this.PersontoOccupations = new HashSet<PersontoOccupation>();
+    }
+
+    public short OccupationID { get; set; }
+    public string OccupationName { get; set; }
+    public string OccupationDescription { get; set; }
+    public string OccupationNotes { get; set; }
+
+    public virtual ICollection<PersontoOccupation> PersontoOccupations { get; set; }
+}
+
+public partial class Person
+{
+    public Person()
+    {
+        this.BloodTestResults = new HashSet<BloodTestResult>();
+        this.DaycarePrimaryContacts = new HashSet<DaycarePrimaryContact>();
+        this.GiftCards = new HashSet<GiftCard>();
+        this.PersontoAccessAgreements = new HashSet<PersontoAccessAgreement>();
+        this.PersontoDaycares = new HashSet<PersontoDaycare>();
+        this.PersontoEmployers = new HashSet<PersontoEmployer>();
+        this.PersontoInsurances = new HashSet<PersontoInsurance>();
+        this.PersontoLanguages = new HashSet<PersontoLanguage>();
+        this.PersontoOccupations = new HashSet<PersontoOccupation>();
+        this.PersontoPersons = new HashSet<PersontoPerson>();
+        this.PersontoPersons1 = new HashSet<PersontoPerson>();
+        this.PersontoPhoneNumbers = new HashSet<PersontoPhoneNumber>();
+        this.PersontoProperties = new HashSet<PersontoProperty>();
+        this.PersonToStatus = new HashSet<PersonToStatu>();
+        this.PersonToTravelCountries = new HashSet<PersonToTravelCountry>();
+        this.Properties = new HashSet<Property>();
+        this.Questionnaires = new HashSet<Questionnaire>();
+        this.Ethnicities = new HashSet<Ethnicity>();
+        this.Families = new HashSet<Family>();
+        this.ForeignFoods = new HashSet<ForeignFood>();
+        this.Hobbies = new HashSet<Hobby>();
+        this.HomeRemedies = new HashSet<HomeRemedy>();
+    }
+
+    public int PersonID { get; set; }
+    public string FirstName { get; set; }
+    public string MiddleName { get; set; }
+    public string LastName { get; set; }
+    public Nullable<System.DateTime> BirthDate { get; set; }
+    public string Gender { get; set; }
+    public Nullable<short> StatusID { get; set; }
+    public Nullable<bool> ForeignTravel { get; set; }
+    public Nullable<bool> OutofSite { get; set; }
+    public Nullable<bool> EatsForeignFood { get; set; }
+    public Nullable<short> PatientID { get; set; }
+    public Nullable<System.DateTime> RetestDate { get; set; }
+    public Nullable<bool> Moved { get; set; }
+    public Nullable<System.DateTime> MovedDate { get; set; }
+    public Nullable<bool> isClosed { get; set; }
+    public Nullable<bool> isResolved { get; set; }
+    public string Notes { get; set; }
+    public Nullable<int> GuardianID { get; set; }
+    public Nullable<short> personCode { get; set; }
+    public Nullable<bool> isSmoker { get; set; }
+
+    public virtual ICollection<BloodTestResult> BloodTestResults { get; set; }
+    public virtual ICollection<DaycarePrimaryContact> DaycarePrimaryContacts { get; set; }
+    public virtual ICollection<GiftCard> GiftCards { get; set; }
+    public virtual ICollection<PersontoAccessAgreement> PersontoAccessAgreements { get; set; }
+    public virtual ICollection<PersontoDaycare> PersontoDaycares { get; set; }
+    public virtual ICollection<PersontoEmployer> PersontoEmployers { get; set; }
+    public virtual ICollection<PersontoInsurance> PersontoInsurances { get; set; }
+    public virtual ICollection<PersontoLanguage> PersontoLanguages { get; set; }
+    public virtual ICollection<PersontoOccupation> PersontoOccupations { get; set; }
+    public virtual ICollection<PersontoPerson> PersontoPersons { get; set; }
+    public virtual ICollection<PersontoPerson> PersontoPersons1 { get; set; }
+    public virtual ICollection<PersontoPhoneNumber> PersontoPhoneNumbers { get; set; }
+    public virtual ICollection<PersontoProperty> PersontoProperties { get; set; }
+    public virtual ICollection<PersonToStatu> PersonToStatus { get; set; }
+    public virtual ICollection<PersonToTravelCountry> PersonToTravelCountries { get; set; }
+    public virtual ICollection<Property> Properties { get; set; }
+    public virtual ICollection<Questionnaire> Questionnaires { get; set; }
+    public virtual ICollection<Ethnicity> Ethnicities { get; set; }
+    public virtual ICollection<Family> Families { get; set; }
+    public virtual ICollection<ForeignFood> ForeignFoods { get; set; }
+    public virtual ICollection<Hobby> Hobbies { get; set; }
+    public virtual ICollection<HomeRemedy> HomeRemedies { get; set; }
+}
+
+public partial class PersontoAccessAgreement
+{
+    public int PersonID { get; set; }
+    public int AccessAgreementID { get; set; }
+    public Nullable<System.DateTime> AccessAgreementDate { get; set; }
+
+    public virtual AccessAgreement AccessAgreement { get; set; }
+    public virtual Person Person { get; set; }
+}
+
+public partial class PersontoDaycare
+{
+    public int PersonID { get; set; }
+    public int DaycareID { get; set; }
+    public System.DateTime StartDate { get; set; }
+    public Nullable<System.DateTime> EndDate { get; set; }
+    public string DaycareNotes { get; set; }
+
+    public virtual Daycare Daycare { get; set; }
+    public virtual Person Person { get; set; }
+}
+
+public partial class PersontoEmployer
+{
+    public int PersonID { get; set; }
+    public int EmployerID { get; set; }
+    public System.DateTime StartDate { get; set; }
+    public Nullable<System.DateTime> EndDate { get; set; }
+
+    public virtual Employer Employer { get; set; }
+    public virtual Person Person { get; set; }
+}
+
+public partial class PersontoInsurance
+{
+    public int PersonID { get; set; }
+    public short InsuranceID { get; set; }
+    public Nullable<System.DateTime> StartDate { get; set; }
+    public Nullable<System.DateTime> EndDate { get; set; }
+    public string GroupID { get; set; }
+
+    public virtual InsuranceProvider InsuranceProvider { get; set; }
+    public virtual Person Person { get; set; }
+}
+
+public partial class PersontoLanguage
+{
+    public int PersonID { get; set; }
+    public byte LanguageID { get; set; }
+    public bool isPrimaryLanguage { get; set; }
+
+    public virtual Language Language { get; set; }
+    public virtual Person Person { get; set; }
+}
+
+public partial class PersontoOccupation
+{
+    public int PersonID { get; set; }
+    public short OccupationID { get; set; }
+    public System.DateTime StartDate { get; set; }
+    public Nullable<System.DateTime> EndDate { get; set; }
+
+    public virtual Occupation Occupation { get; set; }
+    public virtual Person Person { get; set; }
+}
+
+public partial class PersontoPerson
+{
+    public int Person1ID { get; set; }
+    public int Person2ID { get; set; }
+    public string RelationshipPerson1toPerson2 { get; set; }
+    public Nullable<bool> isGuardian { get; set; }
+    public Nullable<bool> isPrimaryContact { get; set; }
+
+    public virtual Person Person { get; set; }
+    public virtual Person Person1 { get; set; }
+}
+
+public partial class PersontoPhoneNumber
+{
+    public PersontoPhoneNumber()
+    {
+        this.DaycarePrimaryContacts = new HashSet<DaycarePrimaryContact>();
+    }
+
+    public int PersonID { get; set; }
+    public int PhoneNumberID { get; set; }
+    public Nullable<byte> NumberPriority { get; set; }
+
+    public virtual ICollection<DaycarePrimaryContact> DaycarePrimaryContacts { get; set; }
+    public virtual Person Person { get; set; }
+    public virtual PhoneNumber PhoneNumber { get; set; }
+}
+
+public partial class PersontoProperty
+{
+    public int PersonID { get; set; }
+    public int PropertyID { get; set; }
+    public System.DateTime StartDate { get; set; }
+    public Nullable<System.DateTime> EndDate { get; set; }
+    public Nullable<bool> isPrimaryResidence { get; set; }
+    public Nullable<int> FamilyID { get; set; }
+    public int PersontoPropertyID { get; set; }
+
+    public virtual Person Person { get; set; }
+    public virtual Property Property { get; set; }
+}
+
+public partial class PersontoPropertyOriginal
+{
+    public int PersonID { get; set; }
+    public int PropertyID { get; set; }
+    public System.DateTime StartDate { get; set; }
+    public Nullable<System.DateTime> EndDate { get; set; }
+    public Nullable<bool> isPrimaryResidence { get; set; }
+    public int FamilyID { get; set; }
+}
+
+public partial class PersonToStatu
+{
+    public int PersonID { get; set; }
+    public short StatusID { get; set; }
+    public System.DateTime StatusDate { get; set; }
+
+    public virtual Person Person { get; set; }
+    public virtual Status Status { get; set; }
+}
+
+public partial class PersonToTravelCountry
+{
+    public int PersonID { get; set; }
+    public byte CountryID { get; set; }
+    public System.DateTime StartDate { get; set; }
+    public Nullable<System.DateTime> EndDate { get; set; }
+
+    public virtual Country Country { get; set; }
+    public virtual Person Person { get; set; }
+}
+
+public partial class PhoneNumber
+{
+    public PhoneNumber()
+    {
+        this.DaycarePrimaryContacts = new HashSet<DaycarePrimaryContact>();
+        this.PersontoPhoneNumbers = new HashSet<PersontoPhoneNumber>();
+    }
+
+    public int PhoneNumberID { get; set; }
+    public byte CountryCode { get; set; }
+    public Nullable<long> PhoneNumber1 { get; set; }
+    public Nullable<byte> PhoneNumberTypeID { get; set; }
+
+    public virtual ICollection<DaycarePrimaryContact> DaycarePrimaryContacts { get; set; }
+    public virtual ICollection<PersontoPhoneNumber> PersontoPhoneNumbers { get; set; }
+    public virtual PhoneNumberType PhoneNumberType { get; set; }
+}
+
+public partial class PhoneNumberType
+{
+    public PhoneNumberType()
+    {
+        this.PhoneNumbers = new HashSet<PhoneNumber>();
+    }
+
+    public byte PhoneNumberTypeID { get; set; }
+    public string PhoneNumberTypeName { get; set; }
+
+    public virtual ICollection<PhoneNumber> PhoneNumbers { get; set; }
+}
+
+public partial class Property
+{
+    public Property()
+    {
+        this.AccessAgreements = new HashSet<AccessAgreement>();
+        this.ContractortoProperties = new HashSet<ContractortoProperty>();
+        this.DaycaretoProperties = new HashSet<DaycaretoProperty>();
+        this.EmployertoProperties = new HashSet<EmployertoProperty>();
+        this.EnvironmentalInvestigations = new HashSet<EnvironmentalInvestigation>();
+        this.PersontoProperties = new HashSet<PersontoProperty>();
+        this.PropertySampleResults = new HashSet<PropertySampleResult>();
+        this.PropertytoCleanupStatus = new HashSet<PropertytoCleanupStatu>();
+        this.PropertytoMediums = new HashSet<PropertytoMedium>();
+        this.Remediations = new HashSet<Remediation>();
+        this.HouseholdSourcesofLeads = new HashSet<HouseholdSourcesofLead>();
+    }
+
+    public int PropertyID { get; set; }
+    public Nullable<byte> ConstructionTypeID { get; set; }
+    public Nullable<int> AreaID { get; set; }
+    public Nullable<bool> isinHistoricDistrict { get; set; }
+    public Nullable<bool> isRemodeled { get; set; }
+    public Nullable<System.DateTime> RemodelDate { get; set; }
+    public Nullable<bool> isinCityLimits { get; set; }
+    public string StreetNumber { get; set; }
+    public string Street { get; set; }
+    public string StreetSuffix { get; set; }
+    public string ApartmentNumber { get; set; }
+    public string City { get; set; }
+    public string State { get; set; }
+    public string Zipcode { get; set; }
+    public Nullable<short> YearBuilt { get; set; }
+    public Nullable<int> OwnerID { get; set; }
+    public Nullable<bool> isOwnerOccuppied { get; set; }
+    public Nullable<byte> ReplacedPipesFaucets { get; set; }
+    public Nullable<decimal> TotalRemediationCosts { get; set; }
+    public string notes { get; set; }
+    public Nullable<bool> isResidential { get; set; }
+    public Nullable<bool> isCurrentlyBeingRemodeled { get; set; }
+    public Nullable<bool> hasPeelingChippingPaint { get; set; }
+    public string County { get; set; }
+    public Nullable<bool> isRental { get; set; }
+    public Nullable<short> HistoricPropertyID { get; set; }
+    public System.DateTime InsertDate { get; set; }
+
+    public virtual ICollection<AccessAgreement> AccessAgreements { get; set; }
+    public virtual Area Area { get; set; }
+    public virtual ConstructionType ConstructionType { get; set; }
+    public virtual ICollection<ContractortoProperty> ContractortoProperties { get; set; }
+    public virtual ICollection<DaycaretoProperty> DaycaretoProperties { get; set; }
+    public virtual ICollection<EmployertoProperty> EmployertoProperties { get; set; }
+    public virtual ICollection<EnvironmentalInvestigation> EnvironmentalInvestigations { get; set; }
+    public virtual Person Person { get; set; }
+    public virtual ICollection<PersontoProperty> PersontoProperties { get; set; }
+    public virtual ICollection<PropertySampleResult> PropertySampleResults { get; set; }
+    public virtual ICollection<PropertytoCleanupStatu> PropertytoCleanupStatus { get; set; }
+    public virtual ICollection<PropertytoMedium> PropertytoMediums { get; set; }
+    public virtual ICollection<Remediation> Remediations { get; set; }
+    public virtual ICollection<HouseholdSourcesofLead> HouseholdSourcesofLeads { get; set; }
+}
+
+public partial class PropertySampleResult
+{
+    public int PropertySampleResultsID { get; set; }
+    public bool isBaseline { get; set; }
+    public int PropertyID { get; set; }
+    public Nullable<System.DateTime> LabSubmissionDate { get; set; }
+    public Nullable<int> LabID { get; set; }
+    public Nullable<byte> SampleTypeID { get; set; }
+    public string Notes { get; set; }
+
+    public virtual Property Property { get; set; }
+    public virtual SampleType SampleType { get; set; }
+}
+
+public partial class PropertytoCleanupStatu
+{
+    public int PropertyID { get; set; }
+    public byte CleanupStatusID { get; set; }
+    public System.DateTime CleanupStatusDate { get; set; }
+    public Nullable<decimal> CostofCleanup { get; set; }
+
+    public virtual CleanupStatu CleanupStatu { get; set; }
+    public virtual Property Property { get; set; }
+}
+
+public partial class PropertytoMedium
+{
+    public int PropertyID { get; set; }
+    public int MediumID { get; set; }
+    public bool MediumTested { get; set; }
+
+    public virtual Medium Medium { get; set; }
+    public virtual Property Property { get; set; }
+}
+
+public partial class Questionnaire
+{
+    public int QuestionnaireID { get; set; }
+    public int PersonID { get; set; }
+    public Nullable<System.DateTime> QuestionnaireDate { get; set; }
+    public Nullable<int> Source { get; set; }
+    public Nullable<bool> VisitRemodeledProperty { get; set; }
+    public Nullable<int> RemodeledPropertyAge { get; set; }
+    public Nullable<bool> isExposedtoPeelingPaint { get; set; }
+    public Nullable<bool> isTakingVitamins { get; set; }
+    public Nullable<bool> isNursing { get; set; }
+    public Nullable<bool> isUsingPacifier { get; set; }
+    public Nullable<bool> isUsingBottle { get; set; }
+    public Nullable<bool> BitesNails { get; set; }
+    public Nullable<bool> NonFoodEating { get; set; }
+    public Nullable<bool> NonFoodinMouth { get; set; }
+    public Nullable<bool> EatOutside { get; set; }
+    public Nullable<bool> Suckling { get; set; }
+    public Nullable<bool> FrequentHandWashing { get; set; }
+    public Nullable<bool> Daycare { get; set; }
+    public string Notes { get; set; }
+    public System.DateTime InsertDate { get; set; }
+
+    public virtual Person Person { get; set; }
+}
+
+public partial class Remediation
+{
+    public Remediation()
+    {
+        this.ContractortoRemediations = new HashSet<ContractortoRemediation>();
+    }
+
+    public int RemediationID { get; set; }
+    public Nullable<System.DateTime> RemediationApprovalDate { get; set; }
+    public Nullable<System.DateTime> RemediationStartDate { get; set; }
+    public Nullable<System.DateTime> RemediationEndDate { get; set; }
+    public Nullable<int> PropertyID { get; set; }
+    public Nullable<int> AccessAgreementID { get; set; }
+    public byte[] FinalRemediationReportFile { get; set; }
+    public Nullable<System.DateTime> FinalRemediationReportDate { get; set; }
+    public Nullable<decimal> RemediationCost { get; set; }
+    public Nullable<System.DateTime> OneYearRemediationCompleteDate { get; set; }
+    public string Notes { get; set; }
+    public Nullable<bool> OneYearRemediationComplete { get; set; }
+    public Nullable<int> RemediationActionPlanID { get; set; }
+
+    public virtual ICollection<ContractortoRemediation> ContractortoRemediations { get; set; }
+    public virtual Property Property { get; set; }
+    public virtual RemediationActionPlan RemediationActionPlan { get; set; }
+}
+
+public partial class RemediationActionPlan
+{
+    public RemediationActionPlan()
+    {
+        this.ContractortoRemediationActionPlans = new HashSet<ContractortoRemediationActionPlan>();
+        this.ContractortoRemediationActionPlans1 = new HashSet<ContractortoRemediationActionPlan>();
+        this.Remediations = new HashSet<Remediation>();
+    }
+
+    public int RemediationActionPlanID { get; set; }
+    public Nullable<System.DateTime> RemediationActionPlanApprovalDate { get; set; }
+    public Nullable<System.DateTime> HomeOwnerConsultationDate { get; set; }
+    public Nullable<System.DateTime> ContractorCompletedInvestigationDate { get; set; }
+    public Nullable<System.DateTime> RemediationActionPlanFinalReportSubmissionDate { get; set; }
+    public byte[] RemediationActionPlanFile { get; set; }
+    public Nullable<int> PropertyID { get; set; }
+    public Nullable<int> EnvironmentalInvestigationID { get; set; }
+
+    public virtual ICollection<ContractortoRemediationActionPlan> ContractortoRemediationActionPlans { get; set; }
+    public virtual ICollection<ContractortoRemediationActionPlan> ContractortoRemediationActionPlans1 { get; set; }
+    public virtual EnvironmentalInvestigation EnvironmentalInvestigation { get; set; }
+    public virtual ICollection<Remediation> Remediations { get; set; }
+}
+
+public partial class SampleLevelCategory
+{
+    public SampleLevelCategory()
+    {
+        this.BloodTestResults = new HashSet<BloodTestResult>();
+        this.BloodTestResults1 = new HashSet<BloodTestResult>();
+        this.BloodTestResults2 = new HashSet<BloodTestResult>();
+        this.MediumSampleResults = new HashSet<MediumSampleResult>();
+    }
+
+    public byte SampleLevelCategoryID { get; set; }
+    public string SampleLevelCategoryName { get; set; }
+    public string SampleLevelCategoryDescription { get; set; }
+
+    public virtual ICollection<BloodTestResult> BloodTestResults { get; set; }
+    public virtual ICollection<BloodTestResult> BloodTestResults1 { get; set; }
+    public virtual ICollection<BloodTestResult> BloodTestResults2 { get; set; }
+    public virtual ICollection<MediumSampleResult> MediumSampleResults { get; set; }
+}
+
+public partial class SampleType
+{
+    public SampleType()
+    {
+        this.BloodTestResults = new HashSet<BloodTestResult>();
+        this.PropertySampleResults = new HashSet<PropertySampleResult>();
+    }
+
+    public byte SampleTypeID { get; set; }
+    public string SampleTypeName { get; set; }
+    public string SampleTypeDescription { get; set; }
+    public string historicSampleType { get; set; }
+    public string SampleTarget { get; set; }
+
+    public virtual ICollection<BloodTestResult> BloodTestResults { get; set; }
+    public virtual ICollection<PropertySampleResult> PropertySampleResults { get; set; }
+}
+
+public partial class Status
+{
+    public Status()
+    {
+        this.PersonToStatus = new HashSet<PersonToStatu>();
+    }
+
+    public short StatusID { get; set; }
+    public string StatusName { get; set; }
+    public string StatusDescription { get; set; }
+
+    public virtual ICollection<PersonToStatu> PersonToStatus { get; set; }
+}
+
+public partial class sysdiagram
+{
+    public string name { get; set; }
+    public int principal_id { get; set; }
+    public int diagram_id { get; set; }
+    public Nullable<int> version { get; set; }
+    public byte[] definition { get; set; }
+}
+
+public partial class TempFamily
+{
+    public int FamilyID { get; set; }
+    public string Lastname { get; set; }
+    public Nullable<byte> NumberofSmokers { get; set; }
+    public Nullable<byte> PrimaryLanguageID { get; set; }
+    public string Notes { get; set; }
+    public Nullable<bool> Pets { get; set; }
+    public Nullable<bool> inandout { get; set; }
+    public Nullable<short> HistoricFamilyID { get; set; }
+    public Nullable<int> PrimaryPropertyID { get; set; }
+    public System.DateTime InsertDate { get; set; }
+}
+
+public partial class TestTran
+{
+    public int Cola { get; set; }
+    public string Colb { get; set; }
+}
+
+public partial class Unit
+{
+    public Unit()
+    {
+        this.MediumSampleResults = new HashSet<MediumSampleResult>();
+    }
+
+    public short UnitsID { get; set; }
+    public string Units { get; set; }
+    public string UnitsDescription { get; set; }
+
+    public virtual ICollection<MediumSampleResult> MediumSampleResults { get; set; }
+}

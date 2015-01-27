@@ -54,7 +54,9 @@
 
         <div class="DDFloatRight">
 
-            <span class="DD">Lake County Community Health Program &copy; 2014</span>
+            <span class="DD">Lake County Community Health Program &copy; 
+            <asp:Label ID="lblCopyrightDate" runat="server" Text=""></asp:Label>
+            </span>
 
         </div>
         <br />

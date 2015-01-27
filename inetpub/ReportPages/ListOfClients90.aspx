@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="FullReport.aspx.cs" Inherits="ReportPages_FullReport" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="ListOfClients90.aspx.cs" Inherits="ReportPages_ListOfFamilies" %>
 
 <%@ Register Assembly="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Namespace="Microsoft.Reporting.WebForms" TagPrefix="rsweb"%>
 
@@ -8,20 +8,18 @@
 
     <div class="DD">
 
-        <h2 class="DDSubHeader">Full Report</h2>
+        <h2 class="DDSubHeader">List of Clients Added in the Last 90 Days</h2>
        
                 <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="80%">
-            <LocalReport ReportPath="Reports\FullReportOcean.rdlc">
+            <LocalReport ReportPath="Reports\ListOfClientsDate.rdlc">
                 <DataSources>
-                    <rsweb:ReportDataSource DataSourceId="FullReportDataSet" Name="FullReportDataSet" />
+                    <rsweb:ReportDataSource DataSourceId="SqlDataSourcePerson" Name="DataSetPerson" />
                 </DataSources>
             </LocalReport>
         </rsweb:ReportViewer>
 
-        <asp:SqlDataSource ID="FullReportDataSet" runat="server" ConnectionString="<%$ ConnectionStrings:csLCCHP %>" SelectCommand="usp_SLInsertedData" SelectCommandType="StoredProcedure">
-        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSourcePerson" runat="server" ConnectionString="<%$ ConnectionStrings:csLCCHP%>" SelectCommand="SELECT * FROM [Person] where CreatedDate >= DateDiff(d,90,GetDate())"></asp:SqlDataSource>
 
         </div>
 
 </asp:Content>
-

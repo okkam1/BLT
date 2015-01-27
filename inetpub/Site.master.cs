@@ -22,5 +22,7 @@ public partial class Site : System.Web.UI.MasterPage {
             CountySeal.Height = 115;
         }
 
+        lblCopyrightDate.Text = DateTime.Now.Year.ToString();
+
     }
 }

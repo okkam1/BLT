@@ -5,9 +5,14 @@
         <siteMapNode url="Questionnaire.aspx" title="Questionnaire" description="Questionnaire" />
         <siteMapNode url="BloodTestResults.aspx" title="BloodTestResults" description="Blood Test Results" />
       <siteMapNode url="Reports.aspx" title="Reports"  description="View Reports for Lead Data Study">
-        <siteMapNode url="ReportPages/ListOfClients.aspx" title="List of Clients" description="Complete List of Clients in the Study" />
+        <siteMapNode url="ReportPages/ListOfClients.aspx" title="List of ALL Clients" description="Complete List of Clients in the Study" />
+        <siteMapNode url="ReportPages/ListOfClients30.aspx" title="List of New Clients -- 30 Days" description="List of New Clients in the Study" />
+        <siteMapNode url="ReportPages/ListOfClients60.aspx" title="List of New Clients -- 60 Days" description="List of New Clients in the Study" />
+        <siteMapNode url="ReportPages/ListOfClients90.aspx" title="List of New Clients -- 90 Days" description="List of New Clients in the Study" />
         <siteMapNode url="ReportPages/ClientsByAge.aspx" title="Clients by Age" description="Count of Clients in the Study by Age" />
         <siteMapNode url="ReportPages/ClientsByAgeGroup.aspx" title="Clients by Age Group" description="Count of Clients in the Study by Age Groups" />
+        <siteMapNode url="ReportPages/FullReport.aspx" title="Full Report" description="Full Report" />
+        <siteMapNode url="ReportPages/ClientsByBloodLeadLevel.aspx" title="Clients by Blood Lead Level" description="Clients in the Study by Blood Lead Level" />
       </siteMapNode>
       <siteMapNode url="ManageData.aspx" title="Manage Data"  description="Manage Data for Lead Data Study" />
     </siteMapNode>
