@@ -49,15 +49,32 @@
                 </td>
             </tr>
 
-            <tr>
-                <td>Paint Bldg Age:</td>
-                <td>
-                    <asp:DropDownList ID="ddlPaintAge" runat="server">
-                    </asp:DropDownList>
 
+                        <tr>
+                <td>Date Last Painted:</td>
+                <td><asp:TextBox ID="tbPaintDate" runat="server"></asp:TextBox>
+
+                    <ajaxtoolkit:CalendarExtender ID="CalendarExtender2"   
+    runat="server"   
+    PopupPosition="Right"  
+    PopupButtonID="tbPaintDate"   
+    TargetControlID="tbPaintDate"   
+    Format="MM/dd/yyyy">  
+</ajaxtoolkit:CalendarExtender>
+
+                                        <asp:CompareValidator
+    id="CompareValidator1" runat="server" 
+    Type="Date"
+    Operator="DataTypeCheck"
+    ControlToValidate="tbPaintDate" 
+    ErrorMessage="Please enter a valid date." ForeColor="Red">
+</asp:CompareValidator>
+
+      
                 </td>
             </tr>
-   
+
+
             <tr>
                 <td>Visit Remodel:</td>
                 <td>
@@ -70,11 +87,26 @@
             </tr>
         
             <tr>
-                <td>Remodel <br />Building Age:</td>
-                <td>
-                    <asp:DropDownList ID="ddlBuildingAge" runat="server">
-                        
-                    </asp:DropDownList>
+                <td>Date of Last Remodel:</td>
+                <td><asp:TextBox ID="tbRemodelDate" runat="server"></asp:TextBox>
+
+                    <ajaxtoolkit:CalendarExtender ID="CalendarExtender3"   
+    runat="server"   
+    PopupPosition="Right"  
+    PopupButtonID="tbRemodelDate"   
+    TargetControlID="tbRemodelDate"   
+    Format="MM/dd/yyyy">  
+</ajaxtoolkit:CalendarExtender>
+
+                                        <asp:CompareValidator
+    id="CompareValidator2" runat="server" 
+    Type="Date"
+    Operator="DataTypeCheck"
+    ControlToValidate="tbRemodelDate" 
+    ErrorMessage="Please enter a valid date." ForeColor="Red">
+</asp:CompareValidator>
+
+      
                 </td>
             </tr>
 

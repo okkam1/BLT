@@ -1,0 +1,17 @@
+USE [master]
+ALTER DATABASE [LCCHPPublic] SET SINGLE_USER WITH ROLLBACK IMMEDIATE
+RESTORE DATABASE [LCCHPPublic] FROM  
+DISK = N'Y:\Backup\WIN-1M8NQQ69OEH\LCCHPDev\FULL\WIN-1M8NQQ69OEH_LCCHPDev_FULL_20150126_231747.bak' 
+WITH  FILE = 1,  MOVE N'LCCHP' TO N'D:\MSSQL\Data\LCCHPPublic.mdf',  
+MOVE N'LCCHP_UData' TO N'D:\MSSQL\Data\LCCHPPublic_UData.ndf',  
+MOVE N'LCCHP_log' TO N'D:\MSSQL\Log\LCCHPPublic_log.ldf',  
+MOVE N'LCCHPAttachments' TO N'D:\MSSQL\Filestream\LCCHPAttachmentsPublic',  NOUNLOAD,  REPLACE,  STATS = 5
+ALTER DATABASE [LCCHPPublic] SET MULTI_USER
+
+GO
+
+
+
+select * from LCCHPPublic..BloodTestResults
+
+select * from LCCHPDev..BloodTestResults

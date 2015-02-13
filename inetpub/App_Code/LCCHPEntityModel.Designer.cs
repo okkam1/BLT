@@ -20,9 +20,7 @@ using System.Xml.Serialization;
 #region EDM Relationship Metadata
 
 [assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_AccessAgreement_AccessPurpose", "AccessPurpose", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LCCHPEntityModel.AccessPurpose), "AccessAgreement", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.AccessAgreement), true)]
-[assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_AccessAgreement_Property", "Property", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LCCHPEntityModel.Property), "AccessAgreement", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.AccessAgreement), true)]
 [assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_PersontoAccessAgreement_AccessAgreement", "AccessAgreement", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.AccessAgreement), "PersontoAccessAgreement", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.PersontoAccessAgreement), true)]
-[assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_Property_Area", "Area", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LCCHPEntityModel.Area), "Property", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.Property), true)]
 [assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_BloodTestResults_HematocritLevelCategory", "SampleLevelCategory", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LCCHPEntityModel.SampleLevelCategory), "BloodTestResult", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.BloodTestResult), true)]
 [assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_BloodTestResults_HemoglobinLevelCategory", "SampleLevelCategory", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LCCHPEntityModel.SampleLevelCategory), "BloodTestResult", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.BloodTestResult), true)]
 [assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_BloodTestResults_Lab", "Lab", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LCCHPEntityModel.Lab), "BloodTestResult", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.BloodTestResult), true)]
@@ -30,12 +28,10 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_BloodTestResults_Person", "Person", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LCCHPEntityModel.Person), "BloodTestResult", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.BloodTestResult), true)]
 [assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_BloodTestResults_SampleType", "SampleType", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LCCHPEntityModel.SampleType), "BloodTestResult", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.BloodTestResult), true)]
 [assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_PropertytoCleanupStatus_CleanupStatus", "CleanupStatu", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.CleanupStatu), "PropertytoCleanupStatu", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.PropertytoCleanupStatu), true)]
-[assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_Property_ConstructionType", "ConstructionType", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LCCHPEntityModel.ConstructionType), "Property", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.Property), true)]
 [assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_ContractortoProperty_Contractor", "Contractor", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.Contractor), "ContractortoProperty", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.ContractortoProperty), true)]
 [assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_ContractortoRemediation_Contractor", "Contractor", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.Contractor), "ContractortoRemediation", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.ContractortoRemediation), true)]
 [assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_ContractortoRemediationActionPlan_Contractor", "Contractor", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.Contractor), "ContractortoRemediationActionPlan", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.ContractortoRemediationActionPlan), true)]
 [assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_ContractortoSamplingPlan_Contractor", "Contractor", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.Contractor), "ContractortoRemediationActionPlan", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.ContractortoRemediationActionPlan), true)]
-[assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_ContractortoProperty_Property", "Property", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.Property), "ContractortoProperty", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.ContractortoProperty), true)]
 [assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_ContractortoRemediation_Remediation", "Remediation", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.Remediation), "ContractortoRemediation", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.ContractortoRemediation), true)]
 [assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_ContractortoRemediationActionPlan_RemediationActionPlan", "RemediationActionPlan", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.RemediationActionPlan), "ContractortoRemediationActionPlan", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.ContractortoRemediationActionPlan), true)]
 [assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_ContractortoRemediationPlan_RemediationActionPlan", "RemediationActionPlan", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.RemediationActionPlan), "ContractortoRemediationActionPlan", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.ContractortoRemediationActionPlan), true)]
@@ -45,11 +41,8 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_DaycareContactPerson_Person", "Person", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.Person), "DaycarePrimaryContact", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.DaycarePrimaryContact), true)]
 [assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_DaycarePrimaryContact_PersontoPhoneNumber", "PersontoPhoneNumber", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LCCHPEntityModel.PersontoPhoneNumber), "DaycarePrimaryContact", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.DaycarePrimaryContact), true)]
 [assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_DaycarePrimaryContact_PhoneNumber", "PhoneNumber", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LCCHPEntityModel.PhoneNumber), "DaycarePrimaryContact", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.DaycarePrimaryContact), true)]
-[assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_DaycaretoProperty_Property", "Property", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.Property), "DaycaretoProperty", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.DaycaretoProperty), true)]
 [assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_EmployertoProperty_Employer", "Employer", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.Employer), "EmployertoProperty", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.EmployertoProperty), true)]
 [assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_PersontoEmployer_Employer", "Employer", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.Employer), "PersontoEmployer", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.PersontoEmployer), true)]
-[assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_EmployertoProperty_Property", "Property", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.Property), "EmployertoProperty", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.EmployertoProperty), true)]
-[assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_EnvironmentalInvestigation_Property", "Property", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.Property), "EnvironmentalInvestigation", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.EnvironmentalInvestigation), true)]
 [assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_RemediationActionPlan_EnvironmentalInvestigation", "EnvironmentalInvestigation", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LCCHPEntityModel.EnvironmentalInvestigation), "RemediationActionPlan", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.RemediationActionPlan), true)]
 [assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_GiftCard_Person", "Person", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.Person), "GiftCard", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.GiftCard), true)]
 [assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_PersontoInsurance_PersontoInsurance", "InsuranceProvider", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.InsuranceProvider), "PersontoInsurance", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.PersontoInsurance), true)]
@@ -66,22 +59,14 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_PersontoInsurance_Person", "Person", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.Person), "PersontoInsurance", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.PersontoInsurance), true)]
 [assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_PersontoLanguage_Person", "Person", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.Person), "PersontoLanguage", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.PersontoLanguage), true)]
 [assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_PersontoOccupation_Person", "Person", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.Person), "PersontoOccupation", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.PersontoOccupation), true)]
-[assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_PersontoPerson_Person", "Person", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.Person), "PersontoPerson", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.PersontoPerson), true)]
-[assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_PersontoPerson_Person1", "Person", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.Person), "PersontoPerson", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.PersontoPerson), true)]
 [assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_PersontoPhoneNumber_Person", "Person", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.Person), "PersontoPhoneNumber", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.PersontoPhoneNumber), true)]
 [assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_PersontoProperty_Person", "Person", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.Person), "PersontoProperty", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.PersontoProperty), true)]
 [assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_PersonToStatus_Person", "Person", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.Person), "PersonToStatu", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.PersonToStatu), true)]
 [assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_PersonToTravelCountry_Person", "Person", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.Person), "PersonToTravelCountry", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.PersonToTravelCountry), true)]
-[assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_Property_Person", "Person", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LCCHPEntityModel.Person), "Property", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.Property), true)]
 [assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_Questionnaire_Person", "Person", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.Person), "Questionnaire", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.Questionnaire), true)]
 [assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_PersontoPhoneNumber_PhoneNumber", "PhoneNumber", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.PhoneNumber), "PersontoPhoneNumber", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.PersontoPhoneNumber), true)]
-[assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_PersontoProperty_Property", "Property", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.Property), "PersontoProperty", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.PersontoProperty), true)]
 [assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_PersonToStatus_Status", "Status", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.Status), "PersonToStatu", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.PersonToStatu), true)]
 [assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_PhoneNumber_PhoneNumber", "PhoneNumberType", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LCCHPEntityModel.PhoneNumberType), "PhoneNumber", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.PhoneNumber), true)]
-[assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_PropertySampletResults_Property", "Property", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.Property), "PropertySampleResult", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.PropertySampleResult), true)]
-[assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_PropertytoCleanupStatus_Property", "Property", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.Property), "PropertytoCleanupStatu", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.PropertytoCleanupStatu), true)]
-[assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_PropertytoMedium_Property", "Property", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.Property), "PropertytoMedium", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.PropertytoMedium), true)]
-[assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_Remediation_Property", "Property", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LCCHPEntityModel.Property), "Remediation", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.Remediation), true)]
 [assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_PropertySampleResults_SampleType", "SampleType", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LCCHPEntityModel.SampleType), "PropertySampleResult", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.PropertySampleResult), true)]
 [assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_Remediation_RemediationActionPlan", "RemediationActionPlan", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LCCHPEntityModel.RemediationActionPlan), "Remediation", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.Remediation), true)]
 [assembly: EdmRelationshipAttribute("LCCHPEntityModel", "ForeignFoodtoCountry", "Country", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.Country), "ForeignFood", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.ForeignFood))]
@@ -90,7 +75,24 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("LCCHPEntityModel", "PersontoForeignFood", "ForeignFood", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.ForeignFood), "Person", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.Person))]
 [assembly: EdmRelationshipAttribute("LCCHPEntityModel", "PersontoHobby", "Hobby", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.Hobby), "Person", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.Person))]
 [assembly: EdmRelationshipAttribute("LCCHPEntityModel", "PersontoHomeRemedy", "Person", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.Person), "HomeRemedy", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.HomeRemedy))]
-[assembly: EdmRelationshipAttribute("LCCHPEntityModel", "PropertytoHouseholdSourcesofLead", "HouseholdSourcesofLead", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.HouseholdSourcesofLead), "Property", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.Property))]
+[assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_PersontoPerson_Person1ID", "Person", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.Person), "PersontoPerson", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.PersontoPerson), true)]
+[assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_PersontoPerson_Person2ID", "Person", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.Person), "PersontoPerson", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.PersontoPerson), true)]
+[assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_AccessAgreement_Property", "Property", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LCCHPEntityModel.Property), "AccessAgreement", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.AccessAgreement), true)]
+[assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_Property_Area", "Area", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LCCHPEntityModel.Area), "Property", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.Property), true)]
+[assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_Property_ConstructionType", "ConstructionType", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LCCHPEntityModel.ConstructionType), "Property", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.Property), true)]
+[assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_ContractortoProperty_Property", "Property", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.Property), "ContractortoProperty", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.ContractortoProperty), true)]
+[assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_DaycaretoProperty_Property", "Property", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.Property), "DaycaretoProperty", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.DaycaretoProperty), true)]
+[assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_EmployertoProperty_Property", "Property", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.Property), "EmployertoProperty", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.EmployertoProperty), true)]
+[assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_EnvironmentalInvestigation_Property", "Property", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.Property), "EnvironmentalInvestigation", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.EnvironmentalInvestigation), true)]
+[assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_HouseholdSourcesofLead_PropertytoHouseholdSourcesofLead", "HouseholdSourcesofLead", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.HouseholdSourcesofLead), "PropertytoHouseholdSourcesofLead", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.PropertytoHouseholdSourcesofLead), true)]
+[assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_Property_Person", "Person", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LCCHPEntityModel.Person), "Property", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.Property), true)]
+[assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_PersontoProperty_Property", "Property", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.Property), "PersontoProperty", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.PersontoProperty), true)]
+[assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_Property_PropertytoHouseholdSourcesofLead", "Property", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.Property), "PropertytoHouseholdSourcesofLead", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.PropertytoHouseholdSourcesofLead), true)]
+[assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_PropertySampletResults_Property", "Property", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.Property), "PropertySampleResult", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.PropertySampleResult), true)]
+[assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_PropertytoCleanupStatus_Property", "Property", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.Property), "PropertytoCleanupStatu", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.PropertytoCleanupStatu), true)]
+[assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_PropertytoMedium_Property", "Property", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.Property), "PropertytoMedium", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.PropertytoMedium), true)]
+[assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_Remediation_Property", "Property", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LCCHPEntityModel.Property), "Remediation", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.Remediation), true)]
+[assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_PersontoPerson_RelationshipType", "RelationshipType", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.RelationshipType), "PersontoPerson", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.PersontoPerson), true)]
 
 #endregion
 
@@ -753,22 +755,6 @@ namespace LCCHPEntityModel
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<PersontoPerson> PersontoPersons
-        {
-            get
-            {
-                if ((_PersontoPersons == null))
-                {
-                    _PersontoPersons = base.CreateObjectSet<PersontoPerson>("PersontoPersons");
-                }
-                return _PersontoPersons;
-            }
-        }
-        private ObjectSet<PersontoPerson> _PersontoPersons;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         public ObjectSet<PersontoPhoneNumber> PersontoPhoneNumbers
         {
             get
@@ -797,22 +783,6 @@ namespace LCCHPEntityModel
             }
         }
         private ObjectSet<PersontoProperty> _PersontoProperties;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<PersontoPropertyOriginal> PersontoPropertyOriginals
-        {
-            get
-            {
-                if ((_PersontoPropertyOriginals == null))
-                {
-                    _PersontoPropertyOriginals = base.CreateObjectSet<PersontoPropertyOriginal>("PersontoPropertyOriginals");
-                }
-                return _PersontoPropertyOriginals;
-            }
-        }
-        private ObjectSet<PersontoPropertyOriginal> _PersontoPropertyOriginals;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -877,22 +847,6 @@ namespace LCCHPEntityModel
             }
         }
         private ObjectSet<PhoneNumberType> _PhoneNumberTypes;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<Property> Properties
-        {
-            get
-            {
-                if ((_Properties == null))
-                {
-                    _Properties = base.CreateObjectSet<Property>("Properties");
-                }
-                return _Properties;
-            }
-        }
-        private ObjectSet<Property> _Properties;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -1057,38 +1011,6 @@ namespace LCCHPEntityModel
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<TempFamily> TempFamilies
-        {
-            get
-            {
-                if ((_TempFamilies == null))
-                {
-                    _TempFamilies = base.CreateObjectSet<TempFamily>("TempFamilies");
-                }
-                return _TempFamilies;
-            }
-        }
-        private ObjectSet<TempFamily> _TempFamilies;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<TestTran> TestTrans
-        {
-            get
-            {
-                if ((_TestTrans == null))
-                {
-                    _TestTrans = base.CreateObjectSet<TestTran>("TestTrans");
-                }
-                return _TestTrans;
-            }
-        }
-        private ObjectSet<TestTran> _TestTrans;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         public ObjectSet<Unit> Units
         {
             get
@@ -1101,6 +1023,70 @@ namespace LCCHPEntityModel
             }
         }
         private ObjectSet<Unit> _Units;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<PersontoPerson> PersontoPersons
+        {
+            get
+            {
+                if ((_PersontoPersons == null))
+                {
+                    _PersontoPersons = base.CreateObjectSet<PersontoPerson>("PersontoPersons");
+                }
+                return _PersontoPersons;
+            }
+        }
+        private ObjectSet<PersontoPerson> _PersontoPersons;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<Property> Properties
+        {
+            get
+            {
+                if ((_Properties == null))
+                {
+                    _Properties = base.CreateObjectSet<Property>("Properties");
+                }
+                return _Properties;
+            }
+        }
+        private ObjectSet<Property> _Properties;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<PropertytoHouseholdSourcesofLead> PropertytoHouseholdSourcesofLeads
+        {
+            get
+            {
+                if ((_PropertytoHouseholdSourcesofLeads == null))
+                {
+                    _PropertytoHouseholdSourcesofLeads = base.CreateObjectSet<PropertytoHouseholdSourcesofLead>("PropertytoHouseholdSourcesofLeads");
+                }
+                return _PropertytoHouseholdSourcesofLeads;
+            }
+        }
+        private ObjectSet<PropertytoHouseholdSourcesofLead> _PropertytoHouseholdSourcesofLeads;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<RelationshipType> RelationshipTypes
+        {
+            get
+            {
+                if ((_RelationshipTypes == null))
+                {
+                    _RelationshipTypes = base.CreateObjectSet<RelationshipType>("RelationshipTypes");
+                }
+                return _RelationshipTypes;
+            }
+        }
+        private ObjectSet<RelationshipType> _RelationshipTypes;
 
         #endregion
 
@@ -1411,14 +1397,6 @@ namespace LCCHPEntityModel
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the PersontoPersons EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToPersontoPersons(PersontoPerson persontoPerson)
-        {
-            base.AddObject("PersontoPersons", persontoPerson);
-        }
-    
-        /// <summary>
         /// Deprecated Method for adding a new object to the PersontoPhoneNumbers EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddToPersontoPhoneNumbers(PersontoPhoneNumber persontoPhoneNumber)
@@ -1432,14 +1410,6 @@ namespace LCCHPEntityModel
         public void AddToPersontoProperties(PersontoProperty persontoProperty)
         {
             base.AddObject("PersontoProperties", persontoProperty);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the PersontoPropertyOriginals EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToPersontoPropertyOriginals(PersontoPropertyOriginal persontoPropertyOriginal)
-        {
-            base.AddObject("PersontoPropertyOriginals", persontoPropertyOriginal);
         }
     
         /// <summary>
@@ -1472,14 +1442,6 @@ namespace LCCHPEntityModel
         public void AddToPhoneNumberTypes(PhoneNumberType phoneNumberType)
         {
             base.AddObject("PhoneNumberTypes", phoneNumberType);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the Properties EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToProperties(Property property)
-        {
-            base.AddObject("Properties", property);
         }
     
         /// <summary>
@@ -1563,27 +1525,43 @@ namespace LCCHPEntityModel
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the TempFamilies EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToTempFamilies(TempFamily tempFamily)
-        {
-            base.AddObject("TempFamilies", tempFamily);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the TestTrans EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToTestTrans(TestTran testTran)
-        {
-            base.AddObject("TestTrans", testTran);
-        }
-    
-        /// <summary>
         /// Deprecated Method for adding a new object to the Units EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddToUnits(Unit unit)
         {
             base.AddObject("Units", unit);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the PersontoPersons EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToPersontoPersons(PersontoPerson persontoPerson)
+        {
+            base.AddObject("PersontoPersons", persontoPerson);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the Properties EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToProperties(Property property)
+        {
+            base.AddObject("Properties", property);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the PropertytoHouseholdSourcesofLeads EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToPropertytoHouseholdSourcesofLeads(PropertytoHouseholdSourcesofLead propertytoHouseholdSourcesofLead)
+        {
+            base.AddObject("PropertytoHouseholdSourcesofLeads", propertytoHouseholdSourcesofLead);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the RelationshipTypes EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToRelationshipTypes(RelationshipType relationshipType)
+        {
+            base.AddObject("RelationshipTypes", relationshipType);
         }
 
         #endregion
@@ -1741,6 +1719,54 @@ namespace LCCHPEntityModel
         private Nullable<global::System.Int32> _PropertyID;
         partial void OnPropertyIDChanging(Nullable<global::System.Int32> value);
         partial void OnPropertyIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
 
         #endregion
 
@@ -1790,6 +1816,28 @@ namespace LCCHPEntityModel
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LCCHPEntityModel", "FK_PersontoAccessAgreement_AccessAgreement", "PersontoAccessAgreement")]
+        public EntityCollection<PersontoAccessAgreement> PersontoAccessAgreements
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<PersontoAccessAgreement>("LCCHPEntityModel.FK_PersontoAccessAgreement_AccessAgreement", "PersontoAccessAgreement");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<PersontoAccessAgreement>("LCCHPEntityModel.FK_PersontoAccessAgreement_AccessAgreement", "PersontoAccessAgreement", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("LCCHPEntityModel", "FK_AccessAgreement_Property", "Property")]
         public Property Property
         {
@@ -1818,28 +1866,6 @@ namespace LCCHPEntityModel
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Property>("LCCHPEntityModel.FK_AccessAgreement_Property", "Property", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LCCHPEntityModel", "FK_PersontoAccessAgreement_AccessAgreement", "PersontoAccessAgreement")]
-        public EntityCollection<PersontoAccessAgreement> PersontoAccessAgreements
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<PersontoAccessAgreement>("LCCHPEntityModel.FK_PersontoAccessAgreement_AccessAgreement", "PersontoAccessAgreement");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<PersontoAccessAgreement>("LCCHPEntityModel.FK_PersontoAccessAgreement_AccessAgreement", "PersontoAccessAgreement", value);
                 }
             }
         }
@@ -1947,6 +1973,54 @@ namespace LCCHPEntityModel
         private global::System.String _AccessPurposeDescription;
         partial void OnAccessPurposeDescriptionChanging(global::System.String value);
         partial void OnAccessPurposeDescriptionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
 
         #endregion
 
@@ -2079,6 +2153,54 @@ namespace LCCHPEntityModel
         private global::System.String _AreaName;
         partial void OnAreaNameChanging(global::System.String value);
         partial void OnAreaNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
 
         #endregion
 
@@ -2126,14 +2248,12 @@ namespace LCCHPEntityModel
         /// <param name="bloodTestResultsID">Initial value of the BloodTestResultsID property.</param>
         /// <param name="isBaseline">Initial value of the isBaseline property.</param>
         /// <param name="sampleDate">Initial value of the SampleDate property.</param>
-        /// <param name="insertDate">Initial value of the InsertDate property.</param>
-        public static BloodTestResult CreateBloodTestResult(global::System.Int32 bloodTestResultsID, global::System.Boolean isBaseline, global::System.DateTime sampleDate, global::System.DateTime insertDate)
+        public static BloodTestResult CreateBloodTestResult(global::System.Int32 bloodTestResultsID, global::System.Boolean isBaseline, global::System.DateTime sampleDate)
         {
             BloodTestResult bloodTestResult = new BloodTestResult();
             bloodTestResult.BloodTestResultsID = bloodTestResultsID;
             bloodTestResult.isBaseline = isBaseline;
             bloodTestResult.SampleDate = sampleDate;
-            bloodTestResult.InsertDate = insertDate;
             return bloodTestResult;
         }
 
@@ -2531,26 +2651,50 @@ namespace LCCHPEntityModel
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.DateTime InsertDate
+        public Nullable<global::System.DateTime> ModifiedDate
         {
             get
             {
-                return _InsertDate;
+                return _ModifiedDate;
             }
             set
             {
-                OnInsertDateChanging(value);
-                ReportPropertyChanging("InsertDate");
-                _InsertDate = StructuralObject.SetValidValue(value, "InsertDate");
-                ReportPropertyChanged("InsertDate");
-                OnInsertDateChanged();
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
             }
         }
-        private global::System.DateTime _InsertDate;
-        partial void OnInsertDateChanging(global::System.DateTime value);
-        partial void OnInsertDateChanged();
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
 
         #endregion
 
@@ -2911,6 +3055,54 @@ namespace LCCHPEntityModel
         private global::System.String _HistoricCleanupStatusID;
         partial void OnHistoricCleanupStatusIDChanging(global::System.String value);
         partial void OnHistoricCleanupStatusIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
 
         #endregion
 
@@ -3067,6 +3259,54 @@ namespace LCCHPEntityModel
         private global::System.String _HistoricConstructionTypeID;
         partial void OnHistoricConstructionTypeIDChanging(global::System.String value);
         partial void OnHistoricConstructionTypeIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
 
         #endregion
 
@@ -3197,6 +3437,54 @@ namespace LCCHPEntityModel
         private global::System.String _ContractorDescription;
         partial void OnContractorDescriptionChanging(global::System.String value);
         partial void OnContractorDescriptionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
 
         #endregion
 
@@ -3422,6 +3710,54 @@ namespace LCCHPEntityModel
         private Nullable<global::System.DateTime> _EndDate;
         partial void OnEndDateChanging(Nullable<global::System.DateTime> value);
         partial void OnEndDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
 
         #endregion
 
@@ -3659,6 +3995,54 @@ namespace LCCHPEntityModel
         private Nullable<global::System.Boolean> _isSubContractor;
         partial void OnisSubContractorChanging(Nullable<global::System.Boolean> value);
         partial void OnisSubContractorChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
 
         #endregion
 
@@ -3896,6 +4280,54 @@ namespace LCCHPEntityModel
         private Nullable<global::System.Boolean> _isSubContractor;
         partial void OnisSubContractorChanging(Nullable<global::System.Boolean> value);
         partial void OnisSubContractorChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
 
         #endregion
 
@@ -4134,6 +4566,54 @@ namespace LCCHPEntityModel
         private global::System.String _CountryName;
         partial void OnCountryNameChanging(global::System.String value);
         partial void OnCountryNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
 
         #endregion
 
@@ -4288,6 +4768,54 @@ namespace LCCHPEntityModel
         private global::System.String _DaycareDescription;
         partial void OnDaycareDescriptionChanging(global::System.String value);
         partial void OnDaycareDescriptionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
 
         #endregion
 
@@ -4474,6 +5002,54 @@ namespace LCCHPEntityModel
         private Nullable<global::System.Int32> _PrimaryPhoneNumberID;
         partial void OnPrimaryPhoneNumberIDChanging(Nullable<global::System.Int32> value);
         partial void OnPrimaryPhoneNumberIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
 
         #endregion
 
@@ -4730,6 +5306,54 @@ namespace LCCHPEntityModel
         private Nullable<global::System.DateTime> _EndDate;
         partial void OnEndDateChanging(Nullable<global::System.DateTime> value);
         partial void OnEndDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
 
         #endregion
 
@@ -4892,6 +5516,54 @@ namespace LCCHPEntityModel
         private global::System.String _EmployerName;
         partial void OnEmployerNameChanging(global::System.String value);
         partial void OnEmployerNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
 
         #endregion
 
@@ -5078,6 +5750,54 @@ namespace LCCHPEntityModel
         private Nullable<global::System.DateTime> _EndDate;
         partial void OnEndDateChanging(Nullable<global::System.DateTime> value);
         partial void OnEndDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
 
         #endregion
 
@@ -5384,10 +6104,80 @@ namespace LCCHPEntityModel
         private Nullable<global::System.DateTime> _EndDate;
         partial void OnEndDateChanging(Nullable<global::System.DateTime> value);
         partial void OnEndDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
 
         #endregion
 
         #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LCCHPEntityModel", "FK_RemediationActionPlan_EnvironmentalInvestigation", "RemediationActionPlan")]
+        public EntityCollection<RemediationActionPlan> RemediationActionPlans
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<RemediationActionPlan>("LCCHPEntityModel.FK_RemediationActionPlan_EnvironmentalInvestigation", "RemediationActionPlan");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<RemediationActionPlan>("LCCHPEntityModel.FK_RemediationActionPlan_EnvironmentalInvestigation", "RemediationActionPlan", value);
+                }
+            }
+        }
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -5423,28 +6213,6 @@ namespace LCCHPEntityModel
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Property>("LCCHPEntityModel.FK_EnvironmentalInvestigation_Property", "Property", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LCCHPEntityModel", "FK_RemediationActionPlan_EnvironmentalInvestigation", "RemediationActionPlan")]
-        public EntityCollection<RemediationActionPlan> RemediationActionPlans
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<RemediationActionPlan>("LCCHPEntityModel.FK_RemediationActionPlan_EnvironmentalInvestigation", "RemediationActionPlan");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<RemediationActionPlan>("LCCHPEntityModel.FK_RemediationActionPlan_EnvironmentalInvestigation", "RemediationActionPlan", value);
                 }
             }
         }
@@ -5698,6 +6466,54 @@ namespace LCCHPEntityModel
         private Nullable<global::System.DateTime> _ErrorTime;
         partial void OnErrorTimeChanging(Nullable<global::System.DateTime> value);
         partial void OnErrorTimeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
 
         #endregion
 
@@ -5804,6 +6620,54 @@ namespace LCCHPEntityModel
         private global::System.String _HistoricEthnicityCode;
         partial void OnHistoricEthnicityCodeChanging(global::System.String value);
         partial void OnHistoricEthnicityCodeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
 
         #endregion
 
@@ -5849,12 +6713,12 @@ namespace LCCHPEntityModel
         /// Create a new Family object.
         /// </summary>
         /// <param name="familyID">Initial value of the FamilyID property.</param>
-        /// <param name="insertDate">Initial value of the InsertDate property.</param>
-        public static Family CreateFamily(global::System.Int32 familyID, global::System.DateTime insertDate)
+        /// <param name="lastname">Initial value of the Lastname property.</param>
+        public static Family CreateFamily(global::System.Int32 familyID, global::System.String lastname)
         {
             Family family = new Family();
             family.FamilyID = familyID;
-            family.InsertDate = insertDate;
+            family.Lastname = lastname;
             return family;
         }
 
@@ -5892,7 +6756,7 @@ namespace LCCHPEntityModel
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String Lastname
         {
@@ -5904,7 +6768,7 @@ namespace LCCHPEntityModel
             {
                 OnLastnameChanging(value);
                 ReportPropertyChanging("Lastname");
-                _Lastname = StructuralObject.SetValidValue(value, true, "Lastname");
+                _Lastname = StructuralObject.SetValidValue(value, false, "Lastname");
                 ReportPropertyChanged("Lastname");
                 OnLastnameChanged();
             }
@@ -6084,26 +6948,50 @@ namespace LCCHPEntityModel
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.DateTime InsertDate
+        public Nullable<global::System.DateTime> ModifiedDate
         {
             get
             {
-                return _InsertDate;
+                return _ModifiedDate;
             }
             set
             {
-                OnInsertDateChanging(value);
-                ReportPropertyChanging("InsertDate");
-                _InsertDate = StructuralObject.SetValidValue(value, "InsertDate");
-                ReportPropertyChanged("InsertDate");
-                OnInsertDateChanged();
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
             }
         }
-        private global::System.DateTime _InsertDate;
-        partial void OnInsertDateChanging(global::System.DateTime value);
-        partial void OnInsertDateChanged();
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
 
         #endregion
 
@@ -6234,6 +7122,54 @@ namespace LCCHPEntityModel
         private global::System.String _ForeignFoodDescription;
         partial void OnForeignFoodDescriptionChanging(global::System.String value);
         partial void OnForeignFoodDescriptionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
 
         #endregion
 
@@ -6416,6 +7352,54 @@ namespace LCCHPEntityModel
         private global::System.Int32 _PersonID;
         partial void OnPersonIDChanging(global::System.Int32 value);
         partial void OnPersonIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
 
         #endregion
 
@@ -6477,12 +7461,10 @@ namespace LCCHPEntityModel
         /// Create a new Hobby object.
         /// </summary>
         /// <param name="hobbyID">Initial value of the HobbyID property.</param>
-        /// <param name="insertDate">Initial value of the InsertDate property.</param>
-        public static Hobby CreateHobby(global::System.Int16 hobbyID, global::System.DateTime insertDate)
+        public static Hobby CreateHobby(global::System.Int16 hobbyID)
         {
             Hobby hobby = new Hobby();
             hobby.HobbyID = hobbyID;
-            hobby.InsertDate = insertDate;
             return hobby;
         }
 
@@ -6568,26 +7550,50 @@ namespace LCCHPEntityModel
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.DateTime InsertDate
+        public Nullable<global::System.DateTime> ModifiedDate
         {
             get
             {
-                return _InsertDate;
+                return _ModifiedDate;
             }
             set
             {
-                OnInsertDateChanging(value);
-                ReportPropertyChanging("InsertDate");
-                _InsertDate = StructuralObject.SetValidValue(value, "InsertDate");
-                ReportPropertyChanged("InsertDate");
-                OnInsertDateChanged();
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
             }
         }
-        private global::System.DateTime _InsertDate;
-        partial void OnInsertDateChanging(global::System.DateTime value);
-        partial void OnInsertDateChanged();
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
 
         #endregion
 
@@ -6720,6 +7726,54 @@ namespace LCCHPEntityModel
         private global::System.String _HomeRemedyDescription;
         partial void OnHomeRemedyDescriptionChanging(global::System.String value);
         partial void OnHomeRemedyDescriptionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
 
         #endregion
 
@@ -6850,6 +7904,54 @@ namespace LCCHPEntityModel
         private global::System.String _HouseholdItemDescription;
         partial void OnHouseholdItemDescriptionChanging(global::System.String value);
         partial void OnHouseholdItemDescriptionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
 
         #endregion
 
@@ -6861,18 +7963,18 @@ namespace LCCHPEntityModel
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LCCHPEntityModel", "PropertytoHouseholdSourcesofLead", "Property")]
-        public EntityCollection<Property> Properties
+        [EdmRelationshipNavigationPropertyAttribute("LCCHPEntityModel", "FK_HouseholdSourcesofLead_PropertytoHouseholdSourcesofLead", "PropertytoHouseholdSourcesofLead")]
+        public EntityCollection<PropertytoHouseholdSourcesofLead> PropertytoHouseholdSourcesofLeads
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Property>("LCCHPEntityModel.PropertytoHouseholdSourcesofLead", "Property");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<PropertytoHouseholdSourcesofLead>("LCCHPEntityModel.FK_HouseholdSourcesofLead_PropertytoHouseholdSourcesofLead", "PropertytoHouseholdSourcesofLead");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Property>("LCCHPEntityModel.PropertytoHouseholdSourcesofLead", "Property", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<PropertytoHouseholdSourcesofLead>("LCCHPEntityModel.FK_HouseholdSourcesofLead_PropertytoHouseholdSourcesofLead", "PropertytoHouseholdSourcesofLead", value);
                 }
             }
         }
@@ -6958,6 +8060,54 @@ namespace LCCHPEntityModel
         private global::System.String _InsuranceProviderName;
         partial void OnInsuranceProviderNameChanging(global::System.String value);
         partial void OnInsuranceProviderNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
 
         #endregion
 
@@ -7136,6 +8286,54 @@ namespace LCCHPEntityModel
         private global::System.String _HistoricLabID;
         partial void OnHistoricLabIDChanging(global::System.String value);
         partial void OnHistoricLabIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
 
         #endregion
 
@@ -7290,6 +8488,54 @@ namespace LCCHPEntityModel
         private global::System.String _PrimLanguageCode;
         partial void OnPrimLanguageCodeChanging(global::System.String value);
         partial void OnPrimLanguageCodeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
 
         #endregion
 
@@ -7494,6 +8740,54 @@ namespace LCCHPEntityModel
         private global::System.String _HistoricMediumCode;
         partial void OnHistoricMediumCodeChanging(global::System.String value);
         partial void OnHistoricMediumCodeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
 
         #endregion
 
@@ -7818,6 +9112,54 @@ namespace LCCHPEntityModel
         private Nullable<global::System.Int16> _UnitsID;
         partial void OnUnitsIDChanging(Nullable<global::System.Int16> value);
         partial void OnUnitsIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
 
         #endregion
 
@@ -8104,6 +9446,54 @@ namespace LCCHPEntityModel
         private global::System.String _OccupationNotes;
         partial void OnOccupationNotesChanging(global::System.String value);
         partial void OnOccupationNotesChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
 
         #endregion
 
@@ -8646,6 +10036,78 @@ namespace LCCHPEntityModel
         private Nullable<global::System.Boolean> _isSmoker;
         partial void OnisSmokerChanging(Nullable<global::System.Boolean> value);
         partial void OnisSmokerChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> Age
+        {
+            get
+            {
+                return _Age;
+            }
+            set
+            {
+                OnAgeChanging(value);
+                ReportPropertyChanging("Age");
+                _Age = StructuralObject.SetValidValue(value, "Age");
+                ReportPropertyChanged("Age");
+                OnAgeChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _Age;
+        partial void OnAgeChanging(Nullable<global::System.Int32> value);
+        partial void OnAgeChanged();
 
         #endregion
 
@@ -8855,50 +10317,6 @@ namespace LCCHPEntityModel
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LCCHPEntityModel", "FK_PersontoPerson_Person", "PersontoPerson")]
-        public EntityCollection<PersontoPerson> PersontoPersons
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<PersontoPerson>("LCCHPEntityModel.FK_PersontoPerson_Person", "PersontoPerson");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<PersontoPerson>("LCCHPEntityModel.FK_PersontoPerson_Person", "PersontoPerson", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LCCHPEntityModel", "FK_PersontoPerson_Person1", "PersontoPerson")]
-        public EntityCollection<PersontoPerson> PersontoPersons1
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<PersontoPerson>("LCCHPEntityModel.FK_PersontoPerson_Person1", "PersontoPerson");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<PersontoPerson>("LCCHPEntityModel.FK_PersontoPerson_Person1", "PersontoPerson", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("LCCHPEntityModel", "FK_PersontoPhoneNumber_Person", "PersontoPhoneNumber")]
         public EntityCollection<PersontoPhoneNumber> PersontoPhoneNumbers
         {
@@ -8977,28 +10395,6 @@ namespace LCCHPEntityModel
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<PersonToTravelCountry>("LCCHPEntityModel.FK_PersonToTravelCountry_Person", "PersonToTravelCountry", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LCCHPEntityModel", "FK_Property_Person", "Property")]
-        public EntityCollection<Property> Properties
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Property>("LCCHPEntityModel.FK_Property_Person", "Property");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Property>("LCCHPEntityModel.FK_Property_Person", "Property", value);
                 }
             }
         }
@@ -9134,6 +10530,72 @@ namespace LCCHPEntityModel
                 }
             }
         }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LCCHPEntityModel", "FK_PersontoPerson_Person1ID", "PersontoPerson")]
+        public EntityCollection<PersontoPerson> PersontoPersons
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<PersontoPerson>("LCCHPEntityModel.FK_PersontoPerson_Person1ID", "PersontoPerson");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<PersontoPerson>("LCCHPEntityModel.FK_PersontoPerson_Person1ID", "PersontoPerson", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LCCHPEntityModel", "FK_PersontoPerson_Person2ID", "PersontoPerson")]
+        public EntityCollection<PersontoPerson> PersontoPersons1
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<PersontoPerson>("LCCHPEntityModel.FK_PersontoPerson_Person2ID", "PersontoPerson");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<PersontoPerson>("LCCHPEntityModel.FK_PersontoPerson_Person2ID", "PersontoPerson", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LCCHPEntityModel", "FK_Property_Person", "Property")]
+        public EntityCollection<Property> Properties
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Property>("LCCHPEntityModel.FK_Property_Person", "Property");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Property>("LCCHPEntityModel.FK_Property_Person", "Property", value);
+                }
+            }
+        }
 
         #endregion
 
@@ -9243,6 +10705,30 @@ namespace LCCHPEntityModel
         private Nullable<global::System.DateTime> _AccessAgreementDate;
         partial void OnAccessAgreementDateChanging(Nullable<global::System.DateTime> value);
         partial void OnAccessAgreementDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
 
         #endregion
 
@@ -9485,6 +10971,30 @@ namespace LCCHPEntityModel
         private global::System.String _DaycareNotes;
         partial void OnDaycareNotesChanging(global::System.String value);
         partial void OnDaycareNotesChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
 
         #endregion
 
@@ -9703,6 +11213,30 @@ namespace LCCHPEntityModel
         private Nullable<global::System.DateTime> _EndDate;
         partial void OnEndDateChanging(Nullable<global::System.DateTime> value);
         partial void OnEndDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
 
         #endregion
 
@@ -9940,6 +11474,30 @@ namespace LCCHPEntityModel
         private global::System.String _GroupID;
         partial void OnGroupIDChanging(global::System.String value);
         partial void OnGroupIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
 
         #endregion
 
@@ -10131,6 +11689,30 @@ namespace LCCHPEntityModel
         private global::System.Boolean _isPrimaryLanguage;
         partial void OnisPrimaryLanguageChanging(global::System.Boolean value);
         partial void OnisPrimaryLanguageChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
 
         #endregion
 
@@ -10349,6 +11931,30 @@ namespace LCCHPEntityModel
         private Nullable<global::System.DateTime> _EndDate;
         partial void OnEndDateChanging(Nullable<global::System.DateTime> value);
         partial void OnEndDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
 
         #endregion
 
@@ -10449,13 +12055,13 @@ namespace LCCHPEntityModel
         /// </summary>
         /// <param name="person1ID">Initial value of the Person1ID property.</param>
         /// <param name="person2ID">Initial value of the Person2ID property.</param>
-        /// <param name="relationshipPerson1toPerson2">Initial value of the RelationshipPerson1toPerson2 property.</param>
-        public static PersontoPerson CreatePersontoPerson(global::System.Int32 person1ID, global::System.Int32 person2ID, global::System.String relationshipPerson1toPerson2)
+        /// <param name="relationshipTypeID">Initial value of the RelationshipTypeID property.</param>
+        public static PersontoPerson CreatePersontoPerson(global::System.Int32 person1ID, global::System.Int32 person2ID, global::System.Int32 relationshipTypeID)
         {
             PersontoPerson persontoPerson = new PersontoPerson();
             persontoPerson.Person1ID = person1ID;
             persontoPerson.Person2ID = person2ID;
-            persontoPerson.RelationshipPerson1toPerson2 = relationshipPerson1toPerson2;
+            persontoPerson.RelationshipTypeID = relationshipTypeID;
             return persontoPerson;
         }
 
@@ -10522,27 +12128,27 @@ namespace LCCHPEntityModel
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String RelationshipPerson1toPerson2
+        public global::System.Int32 RelationshipTypeID
         {
             get
             {
-                return _RelationshipPerson1toPerson2;
+                return _RelationshipTypeID;
             }
             set
             {
-                if (_RelationshipPerson1toPerson2 != value)
+                if (_RelationshipTypeID != value)
                 {
-                    OnRelationshipPerson1toPerson2Changing(value);
-                    ReportPropertyChanging("RelationshipPerson1toPerson2");
-                    _RelationshipPerson1toPerson2 = StructuralObject.SetValidValue(value, false, "RelationshipPerson1toPerson2");
-                    ReportPropertyChanged("RelationshipPerson1toPerson2");
-                    OnRelationshipPerson1toPerson2Changed();
+                    OnRelationshipTypeIDChanging(value);
+                    ReportPropertyChanging("RelationshipTypeID");
+                    _RelationshipTypeID = StructuralObject.SetValidValue(value, "RelationshipTypeID");
+                    ReportPropertyChanged("RelationshipTypeID");
+                    OnRelationshipTypeIDChanged();
                 }
             }
         }
-        private global::System.String _RelationshipPerson1toPerson2;
-        partial void OnRelationshipPerson1toPerson2Changing(global::System.String value);
-        partial void OnRelationshipPerson1toPerson2Changed();
+        private global::System.Int32 _RelationshipTypeID;
+        partial void OnRelationshipTypeIDChanging(global::System.Int32 value);
+        partial void OnRelationshipTypeIDChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -10591,6 +12197,54 @@ namespace LCCHPEntityModel
         private Nullable<global::System.Boolean> _isPrimaryContact;
         partial void OnisPrimaryContactChanging(Nullable<global::System.Boolean> value);
         partial void OnisPrimaryContactChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
 
         #endregion
 
@@ -10602,16 +12256,16 @@ namespace LCCHPEntityModel
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LCCHPEntityModel", "FK_PersontoPerson_Person", "Person")]
+        [EdmRelationshipNavigationPropertyAttribute("LCCHPEntityModel", "FK_PersontoPerson_Person1ID", "Person")]
         public Person Person
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Person>("LCCHPEntityModel.FK_PersontoPerson_Person", "Person").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Person>("LCCHPEntityModel.FK_PersontoPerson_Person1ID", "Person").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Person>("LCCHPEntityModel.FK_PersontoPerson_Person", "Person").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Person>("LCCHPEntityModel.FK_PersontoPerson_Person1ID", "Person").Value = value;
             }
         }
         /// <summary>
@@ -10623,13 +12277,13 @@ namespace LCCHPEntityModel
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Person>("LCCHPEntityModel.FK_PersontoPerson_Person", "Person");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Person>("LCCHPEntityModel.FK_PersontoPerson_Person1ID", "Person");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Person>("LCCHPEntityModel.FK_PersontoPerson_Person", "Person", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Person>("LCCHPEntityModel.FK_PersontoPerson_Person1ID", "Person", value);
                 }
             }
         }
@@ -10640,16 +12294,16 @@ namespace LCCHPEntityModel
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LCCHPEntityModel", "FK_PersontoPerson_Person1", "Person")]
+        [EdmRelationshipNavigationPropertyAttribute("LCCHPEntityModel", "FK_PersontoPerson_Person2ID", "Person")]
         public Person Person1
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Person>("LCCHPEntityModel.FK_PersontoPerson_Person1", "Person").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Person>("LCCHPEntityModel.FK_PersontoPerson_Person2ID", "Person").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Person>("LCCHPEntityModel.FK_PersontoPerson_Person1", "Person").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Person>("LCCHPEntityModel.FK_PersontoPerson_Person2ID", "Person").Value = value;
             }
         }
         /// <summary>
@@ -10661,13 +12315,51 @@ namespace LCCHPEntityModel
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Person>("LCCHPEntityModel.FK_PersontoPerson_Person1", "Person");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Person>("LCCHPEntityModel.FK_PersontoPerson_Person2ID", "Person");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Person>("LCCHPEntityModel.FK_PersontoPerson_Person1", "Person", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Person>("LCCHPEntityModel.FK_PersontoPerson_Person2ID", "Person", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LCCHPEntityModel", "FK_PersontoPerson_RelationshipType", "RelationshipType")]
+        public RelationshipType RelationshipType
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<RelationshipType>("LCCHPEntityModel.FK_PersontoPerson_RelationshipType", "RelationshipType").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<RelationshipType>("LCCHPEntityModel.FK_PersontoPerson_RelationshipType", "RelationshipType").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<RelationshipType> RelationshipTypeReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<RelationshipType>("LCCHPEntityModel.FK_PersontoPerson_RelationshipType", "RelationshipType");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<RelationshipType>("LCCHPEntityModel.FK_PersontoPerson_RelationshipType", "RelationshipType", value);
                 }
             }
         }
@@ -10780,6 +12472,30 @@ namespace LCCHPEntityModel
         private Nullable<global::System.Byte> _NumberPriority;
         partial void OnNumberPriorityChanging(Nullable<global::System.Byte> value);
         partial void OnNumberPriorityChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
 
         #endregion
 
@@ -11088,6 +12804,30 @@ namespace LCCHPEntityModel
         private global::System.Int32 _PersontoPropertyID;
         partial void OnPersontoPropertyIDChanging(global::System.Int32 value);
         partial void OnPersontoPropertyIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
 
         #endregion
 
@@ -11168,197 +12908,6 @@ namespace LCCHPEntityModel
                 }
             }
         }
-
-        #endregion
-
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="LCCHPEntityModel", Name="PersontoPropertyOriginal")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class PersontoPropertyOriginal : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new PersontoPropertyOriginal object.
-        /// </summary>
-        /// <param name="personID">Initial value of the PersonID property.</param>
-        /// <param name="propertyID">Initial value of the PropertyID property.</param>
-        /// <param name="startDate">Initial value of the StartDate property.</param>
-        /// <param name="familyID">Initial value of the FamilyID property.</param>
-        public static PersontoPropertyOriginal CreatePersontoPropertyOriginal(global::System.Int32 personID, global::System.Int32 propertyID, global::System.DateTime startDate, global::System.Int32 familyID)
-        {
-            PersontoPropertyOriginal persontoPropertyOriginal = new PersontoPropertyOriginal();
-            persontoPropertyOriginal.PersonID = personID;
-            persontoPropertyOriginal.PropertyID = propertyID;
-            persontoPropertyOriginal.StartDate = startDate;
-            persontoPropertyOriginal.FamilyID = familyID;
-            return persontoPropertyOriginal;
-        }
-
-        #endregion
-
-        #region Simple Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 PersonID
-        {
-            get
-            {
-                return _PersonID;
-            }
-            set
-            {
-                if (_PersonID != value)
-                {
-                    OnPersonIDChanging(value);
-                    ReportPropertyChanging("PersonID");
-                    _PersonID = StructuralObject.SetValidValue(value, "PersonID");
-                    ReportPropertyChanged("PersonID");
-                    OnPersonIDChanged();
-                }
-            }
-        }
-        private global::System.Int32 _PersonID;
-        partial void OnPersonIDChanging(global::System.Int32 value);
-        partial void OnPersonIDChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 PropertyID
-        {
-            get
-            {
-                return _PropertyID;
-            }
-            set
-            {
-                if (_PropertyID != value)
-                {
-                    OnPropertyIDChanging(value);
-                    ReportPropertyChanging("PropertyID");
-                    _PropertyID = StructuralObject.SetValidValue(value, "PropertyID");
-                    ReportPropertyChanged("PropertyID");
-                    OnPropertyIDChanged();
-                }
-            }
-        }
-        private global::System.Int32 _PropertyID;
-        partial void OnPropertyIDChanging(global::System.Int32 value);
-        partial void OnPropertyIDChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime StartDate
-        {
-            get
-            {
-                return _StartDate;
-            }
-            set
-            {
-                if (_StartDate != value)
-                {
-                    OnStartDateChanging(value);
-                    ReportPropertyChanging("StartDate");
-                    _StartDate = StructuralObject.SetValidValue(value, "StartDate");
-                    ReportPropertyChanged("StartDate");
-                    OnStartDateChanged();
-                }
-            }
-        }
-        private global::System.DateTime _StartDate;
-        partial void OnStartDateChanging(global::System.DateTime value);
-        partial void OnStartDateChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.DateTime> EndDate
-        {
-            get
-            {
-                return _EndDate;
-            }
-            set
-            {
-                OnEndDateChanging(value);
-                ReportPropertyChanging("EndDate");
-                _EndDate = StructuralObject.SetValidValue(value, "EndDate");
-                ReportPropertyChanged("EndDate");
-                OnEndDateChanged();
-            }
-        }
-        private Nullable<global::System.DateTime> _EndDate;
-        partial void OnEndDateChanging(Nullable<global::System.DateTime> value);
-        partial void OnEndDateChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Boolean> isPrimaryResidence
-        {
-            get
-            {
-                return _isPrimaryResidence;
-            }
-            set
-            {
-                OnisPrimaryResidenceChanging(value);
-                ReportPropertyChanging("isPrimaryResidence");
-                _isPrimaryResidence = StructuralObject.SetValidValue(value, "isPrimaryResidence");
-                ReportPropertyChanged("isPrimaryResidence");
-                OnisPrimaryResidenceChanged();
-            }
-        }
-        private Nullable<global::System.Boolean> _isPrimaryResidence;
-        partial void OnisPrimaryResidenceChanging(Nullable<global::System.Boolean> value);
-        partial void OnisPrimaryResidenceChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 FamilyID
-        {
-            get
-            {
-                return _FamilyID;
-            }
-            set
-            {
-                if (_FamilyID != value)
-                {
-                    OnFamilyIDChanging(value);
-                    ReportPropertyChanging("FamilyID");
-                    _FamilyID = StructuralObject.SetValidValue(value, "FamilyID");
-                    ReportPropertyChanged("FamilyID");
-                    OnFamilyIDChanged();
-                }
-            }
-        }
-        private global::System.Int32 _FamilyID;
-        partial void OnFamilyIDChanging(global::System.Int32 value);
-        partial void OnFamilyIDChanged();
 
         #endregion
 
@@ -11473,6 +13022,30 @@ namespace LCCHPEntityModel
         private global::System.DateTime _StatusDate;
         partial void OnStatusDateChanging(global::System.DateTime value);
         partial void OnStatusDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
 
         #endregion
 
@@ -11691,6 +13264,30 @@ namespace LCCHPEntityModel
         private Nullable<global::System.DateTime> _EndDate;
         partial void OnEndDateChanging(Nullable<global::System.DateTime> value);
         partial void OnEndDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
 
         #endregion
 
@@ -11901,6 +13498,54 @@ namespace LCCHPEntityModel
         private Nullable<global::System.Byte> _PhoneNumberTypeID;
         partial void OnPhoneNumberTypeIDChanging(Nullable<global::System.Byte> value);
         partial void OnPhoneNumberTypeIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
 
         #endregion
 
@@ -12067,6 +13712,54 @@ namespace LCCHPEntityModel
         private global::System.String _PhoneNumberTypeName;
         partial void OnPhoneNumberTypeNameChanging(global::System.String value);
         partial void OnPhoneNumberTypeNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
 
         #endregion
 
@@ -12112,12 +13805,10 @@ namespace LCCHPEntityModel
         /// Create a new Property object.
         /// </summary>
         /// <param name="propertyID">Initial value of the PropertyID property.</param>
-        /// <param name="insertDate">Initial value of the InsertDate property.</param>
-        public static Property CreateProperty(global::System.Int32 propertyID, global::System.DateTime insertDate)
+        public static Property CreateProperty(global::System.Int32 propertyID)
         {
             Property property = new Property();
             property.PropertyID = propertyID;
-            property.InsertDate = insertDate;
             return property;
         }
 
@@ -12755,26 +14446,50 @@ namespace LCCHPEntityModel
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.DateTime InsertDate
+        public Nullable<global::System.DateTime> CreatedDate
         {
             get
             {
-                return _InsertDate;
+                return _CreatedDate;
             }
             set
             {
-                OnInsertDateChanging(value);
-                ReportPropertyChanging("InsertDate");
-                _InsertDate = StructuralObject.SetValidValue(value, "InsertDate");
-                ReportPropertyChanged("InsertDate");
-                OnInsertDateChanged();
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
             }
         }
-        private global::System.DateTime _InsertDate;
-        partial void OnInsertDateChanging(global::System.DateTime value);
-        partial void OnInsertDateChanged();
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
 
         #endregion
 
@@ -13032,6 +14747,28 @@ namespace LCCHPEntityModel
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LCCHPEntityModel", "FK_Property_PropertytoHouseholdSourcesofLead", "PropertytoHouseholdSourcesofLead")]
+        public EntityCollection<PropertytoHouseholdSourcesofLead> PropertytoHouseholdSourcesofLeads
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<PropertytoHouseholdSourcesofLead>("LCCHPEntityModel.FK_Property_PropertytoHouseholdSourcesofLead", "PropertytoHouseholdSourcesofLead");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<PropertytoHouseholdSourcesofLead>("LCCHPEntityModel.FK_Property_PropertytoHouseholdSourcesofLead", "PropertytoHouseholdSourcesofLead", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("LCCHPEntityModel", "FK_PropertySampletResults_Property", "PropertySampleResult")]
         public EntityCollection<PropertySampleResult> PropertySampleResults
         {
@@ -13110,28 +14847,6 @@ namespace LCCHPEntityModel
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Remediation>("LCCHPEntityModel.FK_Remediation_Property", "Remediation", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LCCHPEntityModel", "PropertytoHouseholdSourcesofLead", "HouseholdSourcesofLead")]
-        public EntityCollection<HouseholdSourcesofLead> HouseholdSourcesofLeads
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<HouseholdSourcesofLead>("LCCHPEntityModel.PropertytoHouseholdSourcesofLead", "HouseholdSourcesofLead");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<HouseholdSourcesofLead>("LCCHPEntityModel.PropertytoHouseholdSourcesofLead", "HouseholdSourcesofLead", value);
                 }
             }
         }
@@ -13339,48 +15054,58 @@ namespace LCCHPEntityModel
         private global::System.String _Notes;
         partial void OnNotesChanging(global::System.String value);
         partial void OnNotesChanged();
-
-        #endregion
-
-        #region Navigation Properties
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LCCHPEntityModel", "FK_PropertySampletResults_Property", "Property")]
-        public Property Property
+        public Nullable<global::System.DateTime> CreatedDate
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Property>("LCCHPEntityModel.FK_PropertySampletResults_Property", "Property").Value;
+                return _CreatedDate;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Property>("LCCHPEntityModel.FK_PropertySampletResults_Property", "Property").Value = value;
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
             }
         }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
+    
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [BrowsableAttribute(false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public EntityReference<Property> PropertyReference
+        public Nullable<global::System.DateTime> ModifiedDate
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Property>("LCCHPEntityModel.FK_PropertySampletResults_Property", "Property");
+                return _ModifiedDate;
             }
             set
             {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Property>("LCCHPEntityModel.FK_PropertySampletResults_Property", "Property", value);
-                }
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
             }
         }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
+
+        #endregion
+
+        #region Navigation Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -13416,6 +15141,44 @@ namespace LCCHPEntityModel
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<SampleType>("LCCHPEntityModel.FK_PropertySampleResults_SampleType", "SampleType", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LCCHPEntityModel", "FK_PropertySampletResults_Property", "Property")]
+        public Property Property
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Property>("LCCHPEntityModel.FK_PropertySampletResults_Property", "Property").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Property>("LCCHPEntityModel.FK_PropertySampletResults_Property", "Property").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Property> PropertyReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Property>("LCCHPEntityModel.FK_PropertySampletResults_Property", "Property");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Property>("LCCHPEntityModel.FK_PropertySampletResults_Property", "Property", value);
                 }
             }
         }
@@ -13557,6 +15320,54 @@ namespace LCCHPEntityModel
         private Nullable<global::System.Decimal> _CostofCleanup;
         partial void OnCostofCleanupChanging(Nullable<global::System.Decimal> value);
         partial void OnCostofCleanupChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
 
         #endregion
 
@@ -13634,6 +15445,219 @@ namespace LCCHPEntityModel
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Property>("LCCHPEntityModel.FK_PropertytoCleanupStatus_Property", "Property", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="LCCHPEntityModel", Name="PropertytoHouseholdSourcesofLead")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class PropertytoHouseholdSourcesofLead : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new PropertytoHouseholdSourcesofLead object.
+        /// </summary>
+        /// <param name="propertyID">Initial value of the PropertyID property.</param>
+        /// <param name="householdSourcesofLeadID">Initial value of the HouseholdSourcesofLeadID property.</param>
+        public static PropertytoHouseholdSourcesofLead CreatePropertytoHouseholdSourcesofLead(global::System.Int32 propertyID, global::System.Int32 householdSourcesofLeadID)
+        {
+            PropertytoHouseholdSourcesofLead propertytoHouseholdSourcesofLead = new PropertytoHouseholdSourcesofLead();
+            propertytoHouseholdSourcesofLead.PropertyID = propertyID;
+            propertytoHouseholdSourcesofLead.HouseholdSourcesofLeadID = householdSourcesofLeadID;
+            return propertytoHouseholdSourcesofLead;
+        }
+
+        #endregion
+
+        #region Simple Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 PropertyID
+        {
+            get
+            {
+                return _PropertyID;
+            }
+            set
+            {
+                if (_PropertyID != value)
+                {
+                    OnPropertyIDChanging(value);
+                    ReportPropertyChanging("PropertyID");
+                    _PropertyID = StructuralObject.SetValidValue(value, "PropertyID");
+                    ReportPropertyChanged("PropertyID");
+                    OnPropertyIDChanged();
+                }
+            }
+        }
+        private global::System.Int32 _PropertyID;
+        partial void OnPropertyIDChanging(global::System.Int32 value);
+        partial void OnPropertyIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 HouseholdSourcesofLeadID
+        {
+            get
+            {
+                return _HouseholdSourcesofLeadID;
+            }
+            set
+            {
+                if (_HouseholdSourcesofLeadID != value)
+                {
+                    OnHouseholdSourcesofLeadIDChanging(value);
+                    ReportPropertyChanging("HouseholdSourcesofLeadID");
+                    _HouseholdSourcesofLeadID = StructuralObject.SetValidValue(value, "HouseholdSourcesofLeadID");
+                    ReportPropertyChanged("HouseholdSourcesofLeadID");
+                    OnHouseholdSourcesofLeadIDChanged();
+                }
+            }
+        }
+        private global::System.Int32 _HouseholdSourcesofLeadID;
+        partial void OnHouseholdSourcesofLeadIDChanging(global::System.Int32 value);
+        partial void OnHouseholdSourcesofLeadIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
+
+        #endregion
+
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LCCHPEntityModel", "FK_HouseholdSourcesofLead_PropertytoHouseholdSourcesofLead", "HouseholdSourcesofLead")]
+        public HouseholdSourcesofLead HouseholdSourcesofLead
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<HouseholdSourcesofLead>("LCCHPEntityModel.FK_HouseholdSourcesofLead_PropertytoHouseholdSourcesofLead", "HouseholdSourcesofLead").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<HouseholdSourcesofLead>("LCCHPEntityModel.FK_HouseholdSourcesofLead_PropertytoHouseholdSourcesofLead", "HouseholdSourcesofLead").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<HouseholdSourcesofLead> HouseholdSourcesofLeadReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<HouseholdSourcesofLead>("LCCHPEntityModel.FK_HouseholdSourcesofLead_PropertytoHouseholdSourcesofLead", "HouseholdSourcesofLead");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<HouseholdSourcesofLead>("LCCHPEntityModel.FK_HouseholdSourcesofLead_PropertytoHouseholdSourcesofLead", "HouseholdSourcesofLead", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LCCHPEntityModel", "FK_Property_PropertytoHouseholdSourcesofLead", "Property")]
+        public Property Property
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Property>("LCCHPEntityModel.FK_Property_PropertytoHouseholdSourcesofLead", "Property").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Property>("LCCHPEntityModel.FK_Property_PropertytoHouseholdSourcesofLead", "Property").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Property> PropertyReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Property>("LCCHPEntityModel.FK_Property_PropertytoHouseholdSourcesofLead", "Property");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Property>("LCCHPEntityModel.FK_Property_PropertytoHouseholdSourcesofLead", "Property", value);
                 }
             }
         }
@@ -13748,6 +15772,54 @@ namespace LCCHPEntityModel
         private global::System.Boolean _MediumTested;
         partial void OnMediumTestedChanging(global::System.Boolean value);
         partial void OnMediumTestedChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
 
         #endregion
 
@@ -13848,13 +15920,11 @@ namespace LCCHPEntityModel
         /// </summary>
         /// <param name="questionnaireID">Initial value of the QuestionnaireID property.</param>
         /// <param name="personID">Initial value of the PersonID property.</param>
-        /// <param name="insertDate">Initial value of the InsertDate property.</param>
-        public static Questionnaire CreateQuestionnaire(global::System.Int32 questionnaireID, global::System.Int32 personID, global::System.DateTime insertDate)
+        public static Questionnaire CreateQuestionnaire(global::System.Int32 questionnaireID, global::System.Int32 personID)
         {
             Questionnaire questionnaire = new Questionnaire();
             questionnaire.QuestionnaireID = questionnaireID;
             questionnaire.PersonID = personID;
-            questionnaire.InsertDate = insertDate;
             return questionnaire;
         }
 
@@ -14324,26 +16394,50 @@ namespace LCCHPEntityModel
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.DateTime InsertDate
+        public Nullable<global::System.DateTime> CreatedDate
         {
             get
             {
-                return _InsertDate;
+                return _CreatedDate;
             }
             set
             {
-                OnInsertDateChanging(value);
-                ReportPropertyChanging("InsertDate");
-                _InsertDate = StructuralObject.SetValidValue(value, "InsertDate");
-                ReportPropertyChanged("InsertDate");
-                OnInsertDateChanged();
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
             }
         }
-        private global::System.DateTime _InsertDate;
-        partial void OnInsertDateChanging(global::System.DateTime value);
-        partial void OnInsertDateChanged();
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
 
         #endregion
 
@@ -14383,6 +16477,184 @@ namespace LCCHPEntityModel
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Person>("LCCHPEntityModel.FK_Questionnaire_Person", "Person", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="LCCHPEntityModel", Name="RelationshipType")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class RelationshipType : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new RelationshipType object.
+        /// </summary>
+        /// <param name="relationshipTypeID">Initial value of the RelationshipTypeID property.</param>
+        public static RelationshipType CreateRelationshipType(global::System.Int32 relationshipTypeID)
+        {
+            RelationshipType relationshipType = new RelationshipType();
+            relationshipType.RelationshipTypeID = relationshipTypeID;
+            return relationshipType;
+        }
+
+        #endregion
+
+        #region Simple Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 RelationshipTypeID
+        {
+            get
+            {
+                return _RelationshipTypeID;
+            }
+            set
+            {
+                if (_RelationshipTypeID != value)
+                {
+                    OnRelationshipTypeIDChanging(value);
+                    ReportPropertyChanging("RelationshipTypeID");
+                    _RelationshipTypeID = StructuralObject.SetValidValue(value, "RelationshipTypeID");
+                    ReportPropertyChanged("RelationshipTypeID");
+                    OnRelationshipTypeIDChanged();
+                }
+            }
+        }
+        private global::System.Int32 _RelationshipTypeID;
+        partial void OnRelationshipTypeIDChanging(global::System.Int32 value);
+        partial void OnRelationshipTypeIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String RelationshipTypeName
+        {
+            get
+            {
+                return _RelationshipTypeName;
+            }
+            set
+            {
+                OnRelationshipTypeNameChanging(value);
+                ReportPropertyChanging("RelationshipTypeName");
+                _RelationshipTypeName = StructuralObject.SetValidValue(value, true, "RelationshipTypeName");
+                ReportPropertyChanged("RelationshipTypeName");
+                OnRelationshipTypeNameChanged();
+            }
+        }
+        private global::System.String _RelationshipTypeName;
+        partial void OnRelationshipTypeNameChanging(global::System.String value);
+        partial void OnRelationshipTypeNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String RelationshipTypeDescription
+        {
+            get
+            {
+                return _RelationshipTypeDescription;
+            }
+            set
+            {
+                OnRelationshipTypeDescriptionChanging(value);
+                ReportPropertyChanging("RelationshipTypeDescription");
+                _RelationshipTypeDescription = StructuralObject.SetValidValue(value, true, "RelationshipTypeDescription");
+                ReportPropertyChanged("RelationshipTypeDescription");
+                OnRelationshipTypeDescriptionChanged();
+            }
+        }
+        private global::System.String _RelationshipTypeDescription;
+        partial void OnRelationshipTypeDescriptionChanging(global::System.String value);
+        partial void OnRelationshipTypeDescriptionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
+
+        #endregion
+
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LCCHPEntityModel", "FK_PersontoPerson_RelationshipType", "PersontoPerson")]
+        public EntityCollection<PersontoPerson> PersontoPersons
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<PersontoPerson>("LCCHPEntityModel.FK_PersontoPerson_RelationshipType", "PersontoPerson");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<PersontoPerson>("LCCHPEntityModel.FK_PersontoPerson_RelationshipType", "PersontoPerson", value);
                 }
             }
         }
@@ -14730,6 +17002,54 @@ namespace LCCHPEntityModel
         private Nullable<global::System.Int32> _RemediationActionPlanID;
         partial void OnRemediationActionPlanIDChanging(Nullable<global::System.Int32> value);
         partial void OnRemediationActionPlanIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
 
         #endregion
 
@@ -14753,44 +17073,6 @@ namespace LCCHPEntityModel
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ContractortoRemediation>("LCCHPEntityModel.FK_ContractortoRemediation_Remediation", "ContractortoRemediation", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LCCHPEntityModel", "FK_Remediation_Property", "Property")]
-        public Property Property
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Property>("LCCHPEntityModel.FK_Remediation_Property", "Property").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Property>("LCCHPEntityModel.FK_Remediation_Property", "Property").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Property> PropertyReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Property>("LCCHPEntityModel.FK_Remediation_Property", "Property");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Property>("LCCHPEntityModel.FK_Remediation_Property", "Property", value);
                 }
             }
         }
@@ -14829,6 +17111,44 @@ namespace LCCHPEntityModel
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<RemediationActionPlan>("LCCHPEntityModel.FK_Remediation_RemediationActionPlan", "RemediationActionPlan", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LCCHPEntityModel", "FK_Remediation_Property", "Property")]
+        public Property Property
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Property>("LCCHPEntityModel.FK_Remediation_Property", "Property").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Property>("LCCHPEntityModel.FK_Remediation_Property", "Property").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Property> PropertyReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Property>("LCCHPEntityModel.FK_Remediation_Property", "Property");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Property>("LCCHPEntityModel.FK_Remediation_Property", "Property", value);
                 }
             }
         }
@@ -15056,6 +17376,54 @@ namespace LCCHPEntityModel
         private Nullable<global::System.Int32> _EnvironmentalInvestigationID;
         partial void OnEnvironmentalInvestigationIDChanging(Nullable<global::System.Int32> value);
         partial void OnEnvironmentalInvestigationIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
 
         #endregion
 
@@ -15268,6 +17636,54 @@ namespace LCCHPEntityModel
         private global::System.String _SampleLevelCategoryDescription;
         partial void OnSampleLevelCategoryDescriptionChanging(global::System.String value);
         partial void OnSampleLevelCategoryDescriptionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
 
         #endregion
 
@@ -15512,6 +17928,54 @@ namespace LCCHPEntityModel
         private global::System.String _SampleTarget;
         partial void OnSampleTargetChanging(global::System.String value);
         partial void OnSampleTargetChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
 
         #endregion
 
@@ -15664,6 +18128,54 @@ namespace LCCHPEntityModel
         private global::System.String _StatusDescription;
         partial void OnStatusDescriptionChanging(global::System.String value);
         partial void OnStatusDescriptionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
 
         #endregion
 
@@ -15846,365 +18358,54 @@ namespace LCCHPEntityModel
         private global::System.Byte[] _definition;
         partial void OndefinitionChanging(global::System.Byte[] value);
         partial void OndefinitionChanged();
-
-        #endregion
-
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="LCCHPEntityModel", Name="TempFamily")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class TempFamily : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new TempFamily object.
-        /// </summary>
-        /// <param name="familyID">Initial value of the FamilyID property.</param>
-        /// <param name="insertDate">Initial value of the InsertDate property.</param>
-        public static TempFamily CreateTempFamily(global::System.Int32 familyID, global::System.DateTime insertDate)
-        {
-            TempFamily tempFamily = new TempFamily();
-            tempFamily.FamilyID = familyID;
-            tempFamily.InsertDate = insertDate;
-            return tempFamily;
-        }
-
-        #endregion
-
-        #region Simple Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 FamilyID
-        {
-            get
-            {
-                return _FamilyID;
-            }
-            set
-            {
-                if (_FamilyID != value)
-                {
-                    OnFamilyIDChanging(value);
-                    ReportPropertyChanging("FamilyID");
-                    _FamilyID = StructuralObject.SetValidValue(value, "FamilyID");
-                    ReportPropertyChanged("FamilyID");
-                    OnFamilyIDChanged();
-                }
-            }
-        }
-        private global::System.Int32 _FamilyID;
-        partial void OnFamilyIDChanging(global::System.Int32 value);
-        partial void OnFamilyIDChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String Lastname
+        public Nullable<global::System.DateTime> ModifiedDate
         {
             get
             {
-                return _Lastname;
+                return _ModifiedDate;
             }
             set
             {
-                OnLastnameChanging(value);
-                ReportPropertyChanging("Lastname");
-                _Lastname = StructuralObject.SetValidValue(value, true, "Lastname");
-                ReportPropertyChanged("Lastname");
-                OnLastnameChanged();
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
             }
         }
-        private global::System.String _Lastname;
-        partial void OnLastnameChanging(global::System.String value);
-        partial void OnLastnameChanged();
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Byte> NumberofSmokers
+        public Nullable<global::System.DateTime> CreatedDate
         {
             get
             {
-                return _NumberofSmokers;
+                return _CreatedDate;
             }
             set
             {
-                OnNumberofSmokersChanging(value);
-                ReportPropertyChanging("NumberofSmokers");
-                _NumberofSmokers = StructuralObject.SetValidValue(value, "NumberofSmokers");
-                ReportPropertyChanged("NumberofSmokers");
-                OnNumberofSmokersChanged();
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
             }
         }
-        private Nullable<global::System.Byte> _NumberofSmokers;
-        partial void OnNumberofSmokersChanging(Nullable<global::System.Byte> value);
-        partial void OnNumberofSmokersChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Byte> PrimaryLanguageID
-        {
-            get
-            {
-                return _PrimaryLanguageID;
-            }
-            set
-            {
-                OnPrimaryLanguageIDChanging(value);
-                ReportPropertyChanging("PrimaryLanguageID");
-                _PrimaryLanguageID = StructuralObject.SetValidValue(value, "PrimaryLanguageID");
-                ReportPropertyChanged("PrimaryLanguageID");
-                OnPrimaryLanguageIDChanged();
-            }
-        }
-        private Nullable<global::System.Byte> _PrimaryLanguageID;
-        partial void OnPrimaryLanguageIDChanging(Nullable<global::System.Byte> value);
-        partial void OnPrimaryLanguageIDChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String Notes
-        {
-            get
-            {
-                return _Notes;
-            }
-            set
-            {
-                OnNotesChanging(value);
-                ReportPropertyChanging("Notes");
-                _Notes = StructuralObject.SetValidValue(value, true, "Notes");
-                ReportPropertyChanged("Notes");
-                OnNotesChanged();
-            }
-        }
-        private global::System.String _Notes;
-        partial void OnNotesChanging(global::System.String value);
-        partial void OnNotesChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Boolean> Pets
-        {
-            get
-            {
-                return _Pets;
-            }
-            set
-            {
-                OnPetsChanging(value);
-                ReportPropertyChanging("Pets");
-                _Pets = StructuralObject.SetValidValue(value, "Pets");
-                ReportPropertyChanged("Pets");
-                OnPetsChanged();
-            }
-        }
-        private Nullable<global::System.Boolean> _Pets;
-        partial void OnPetsChanging(Nullable<global::System.Boolean> value);
-        partial void OnPetsChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Boolean> inandout
-        {
-            get
-            {
-                return _inandout;
-            }
-            set
-            {
-                OninandoutChanging(value);
-                ReportPropertyChanging("inandout");
-                _inandout = StructuralObject.SetValidValue(value, "inandout");
-                ReportPropertyChanged("inandout");
-                OninandoutChanged();
-            }
-        }
-        private Nullable<global::System.Boolean> _inandout;
-        partial void OninandoutChanging(Nullable<global::System.Boolean> value);
-        partial void OninandoutChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Int16> HistoricFamilyID
-        {
-            get
-            {
-                return _HistoricFamilyID;
-            }
-            set
-            {
-                OnHistoricFamilyIDChanging(value);
-                ReportPropertyChanging("HistoricFamilyID");
-                _HistoricFamilyID = StructuralObject.SetValidValue(value, "HistoricFamilyID");
-                ReportPropertyChanged("HistoricFamilyID");
-                OnHistoricFamilyIDChanged();
-            }
-        }
-        private Nullable<global::System.Int16> _HistoricFamilyID;
-        partial void OnHistoricFamilyIDChanging(Nullable<global::System.Int16> value);
-        partial void OnHistoricFamilyIDChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Int32> PrimaryPropertyID
-        {
-            get
-            {
-                return _PrimaryPropertyID;
-            }
-            set
-            {
-                OnPrimaryPropertyIDChanging(value);
-                ReportPropertyChanging("PrimaryPropertyID");
-                _PrimaryPropertyID = StructuralObject.SetValidValue(value, "PrimaryPropertyID");
-                ReportPropertyChanged("PrimaryPropertyID");
-                OnPrimaryPropertyIDChanged();
-            }
-        }
-        private Nullable<global::System.Int32> _PrimaryPropertyID;
-        partial void OnPrimaryPropertyIDChanging(Nullable<global::System.Int32> value);
-        partial void OnPrimaryPropertyIDChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime InsertDate
-        {
-            get
-            {
-                return _InsertDate;
-            }
-            set
-            {
-                if (_InsertDate != value)
-                {
-                    OnInsertDateChanging(value);
-                    ReportPropertyChanging("InsertDate");
-                    _InsertDate = StructuralObject.SetValidValue(value, "InsertDate");
-                    ReportPropertyChanged("InsertDate");
-                    OnInsertDateChanged();
-                }
-            }
-        }
-        private global::System.DateTime _InsertDate;
-        partial void OnInsertDateChanging(global::System.DateTime value);
-        partial void OnInsertDateChanged();
-
-        #endregion
-
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="LCCHPEntityModel", Name="TestTran")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class TestTran : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new TestTran object.
-        /// </summary>
-        /// <param name="cola">Initial value of the Cola property.</param>
-        /// <param name="colb">Initial value of the Colb property.</param>
-        public static TestTran CreateTestTran(global::System.Int32 cola, global::System.String colb)
-        {
-            TestTran testTran = new TestTran();
-            testTran.Cola = cola;
-            testTran.Colb = colb;
-            return testTran;
-        }
-
-        #endregion
-
-        #region Simple Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 Cola
-        {
-            get
-            {
-                return _Cola;
-            }
-            set
-            {
-                if (_Cola != value)
-                {
-                    OnColaChanging(value);
-                    ReportPropertyChanging("Cola");
-                    _Cola = StructuralObject.SetValidValue(value, "Cola");
-                    ReportPropertyChanged("Cola");
-                    OnColaChanged();
-                }
-            }
-        }
-        private global::System.Int32 _Cola;
-        partial void OnColaChanging(global::System.Int32 value);
-        partial void OnColaChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String Colb
-        {
-            get
-            {
-                return _Colb;
-            }
-            set
-            {
-                OnColbChanging(value);
-                ReportPropertyChanging("Colb");
-                _Colb = StructuralObject.SetValidValue(value, false, "Colb");
-                ReportPropertyChanged("Colb");
-                OnColbChanged();
-            }
-        }
-        private global::System.String _Colb;
-        partial void OnColbChanging(global::System.String value);
-        partial void OnColbChanged();
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
 
         #endregion
 
@@ -16311,6 +18512,54 @@ namespace LCCHPEntityModel
         private global::System.String _UnitsDescription;
         partial void OnUnitsDescriptionChanging(global::System.String value);
         partial void OnUnitsDescriptionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ModifiedDate
+        {
+            get
+            {
+                return _ModifiedDate;
+            }
+            set
+            {
+                OnModifiedDateChanging(value);
+                ReportPropertyChanging("ModifiedDate");
+                _ModifiedDate = StructuralObject.SetValidValue(value, "ModifiedDate");
+                ReportPropertyChanged("ModifiedDate");
+                OnModifiedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ModifiedDate;
+        partial void OnModifiedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnModifiedDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreatedDate
+        {
+            get
+            {
+                return _CreatedDate;
+            }
+            set
+            {
+                OnCreatedDateChanging(value);
+                ReportPropertyChanging("CreatedDate");
+                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
+                ReportPropertyChanged("CreatedDate");
+                OnCreatedDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreatedDate;
+        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreatedDateChanged();
 
         #endregion
 
