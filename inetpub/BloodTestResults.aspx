@@ -90,14 +90,14 @@
                 <td>Lab:</td>
                 <td><asp:TextBox ID="tbLab" runat="server"></asp:TextBox></td>
             </tr>
-
+<!--
             <tr>
                 <td>Lab ID:</td>
                 <td><asp:TextBox ID="tbLabID" runat="server"></asp:TextBox>
                     <asp:CompareValidator ID="cvLabID" runat="server" ControlToValidate="tbLabID" Type="Integer" Operator="DataTypeCheck" ErrorMessage="Value must be an integer!" ForeColor="Red" />
                 </td>
             </tr>
-            
+-->        
             <tr><td colspan="2"><hr /></td></tr>
 
             <tr>

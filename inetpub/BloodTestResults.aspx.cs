@@ -86,7 +86,7 @@ public partial class BloodTestResults : System.Web.UI.Page
             }
             else
             {
-                lbOutput.Text = "Failed to Insert New Questionnaire";
+                lbOutput.Text = "Failed to Insert New Blood Test Results";
                 lbPopUp.Text = lbOutput.Text;
                 ModalPopupExtender1.Show();
             }

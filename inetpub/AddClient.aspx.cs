@@ -137,7 +137,7 @@ order by f.Lastname
             }
             else
             {
-                lbOutput.Text = "Failed to Insert New Researh Subject";
+                lbOutput.Text = "Failed to Insert New Client";
                 lbPopUp.Text = lbOutput.Text;
                 ModalPopupExtender1.Show();
             }
