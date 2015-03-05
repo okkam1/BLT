@@ -23,7 +23,12 @@
 
             <tr>
                 <td>First Name:</td>
-                <td><asp:TextBox ID="tbFirstName" runat="server"></asp:TextBox></td>
+                <td><asp:TextBox ID="tbFirstName" runat="server"></asp:TextBox>
+
+
+                    <asp:RequiredFieldValidator ID="rfvFirstName" runat="server" InitialValue="" ErrorMessage="Please provide a first name" ControlToValidate="tbFirstName" ForeColor="Red"></asp:RequiredFieldValidator>
+
+                </td>
             </tr>
    
         <tr>
@@ -86,7 +91,7 @@
         <tr>
                 <td>Child ID:</td>
             <td>
-        <asp:TextBox ID="tbChildID" runat="server" Width="20px"></asp:TextBox></td>
+        <asp:TextBox ID="tbChildID" runat="server" Width="100px"></asp:TextBox></td>
             </tr>
 
         <tr>
@@ -140,7 +145,7 @@
             </tr>
 
         <tr>
-                <td>Out of Site:</td>
+                <td>Moved Out of County:</td>
             <td>
 
             <asp:RadioButtonList ID="rblOutOfSite" runat="server" RepeatDirection="Horizontal">

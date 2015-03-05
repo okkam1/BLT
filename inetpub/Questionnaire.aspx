@@ -240,16 +240,6 @@
             <tr><td colspan="2"><hr /></td></tr>
 
             <tr>
-                <td>Review:</td>
-                <td>
-<asp:RadioButtonList ID="rblReview" runat="server" RepeatDirection="Horizontal">
-                    <asp:ListItem Value="1">Entered</asp:ListItem>
-                    <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
-                </asp:RadioButtonList>
-                </td>
-            </tr>
-
-            <tr>
                 <td>Daycare:</td>
                 <td>
                     <asp:RadioButtonList ID="rblDayCare" runat="server" RepeatDirection="Horizontal">

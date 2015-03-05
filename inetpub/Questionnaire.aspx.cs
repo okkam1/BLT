@@ -53,9 +53,11 @@ public partial class Questionnaire : System.Web.UI.Page
             command.Parameters.Add("@Person_ID", SqlDbType.Int).Value = Convert.ToInt32(ClientID);
             command.Parameters.Add("@QuestionnaireDate", SqlDbType.DateTime).Value = tbQuestionnaireDate.Text;
             command.Parameters.Add("@PaintPeeling", SqlDbType.Bit).Value = Convert.ToByte(rblPaintPeeling.SelectedValue);
-            command.Parameters.Add("@PaintDate", SqlDbType.Date).Value = tbPaintDate.Text;
+            if (tbPaintDate.Text!="")
+                command.Parameters.Add("@PaintDate", SqlDbType.Date).Value = tbPaintDate.Text;
             command.Parameters.Add("@VisitRemodel", SqlDbType.Bit).Value = Convert.ToByte(rblVisitRemodel.SelectedValue);
-            command.Parameters.Add("@RemodelDate", SqlDbType.Date).Value = tbRemodelDate.Text;
+            if (tbRemodelDate.Text!="")
+                command.Parameters.Add("@RemodelDate", SqlDbType.Date).Value = tbRemodelDate.Text;
             command.Parameters.Add("@Vitamins", SqlDbType.Bit).Value = Convert.ToByte(rblVitamins.SelectedValue);
             command.Parameters.Add("@HandWash", SqlDbType.Bit).Value = Convert.ToByte(rblHandWash.SelectedValue);
             command.Parameters.Add("@Bottle", SqlDbType.Bit).Value = Convert.ToByte(rblBottle.SelectedValue);

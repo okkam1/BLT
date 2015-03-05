@@ -72,8 +72,17 @@
 
             <tr>
                 <td>Flag:</td>
-                <td><asp:TextBox ID="tbFlag" runat="server"></asp:TextBox>
-                    <asp:CompareValidator ID="cvFlag" runat="server" ControlToValidate="tbFlag" Type="Integer" Operator="DataTypeCheck" ErrorMessage="Value must be an integer!" ForeColor="Red" />
+                <td>
+
+                    <asp:DropDownList ID="ddlFlag" runat="server">
+                    <asp:ListItem>30</asp:ListItem> 
+                    <asp:ListItem>60</asp:ListItem>
+                    <asp:ListItem>90</asp:ListItem> 
+                    <asp:ListItem>180</asp:ListItem> 
+                    <asp:ListItem Selected="True">365</asp:ListItem>
+                    </asp:DropDownList>
+
+                    <asp:CompareValidator ID="cvFlag" runat="server" ControlToValidate="ddlFlag" Type="Integer" Operator="DataTypeCheck" ErrorMessage="Value must be an integer!" ForeColor="Red" />
                 </td>
             </tr>
 
@@ -101,7 +110,7 @@
             <tr><td colspan="2"><hr /></td></tr>
 
             <tr>
-                <td>Child Status Code:</td>
+                <td>Client Status Code:</td>
                 <td><asp:TextBox ID="tbChildStatusCode" runat="server"></asp:TextBox>
                     <asp:CompareValidator ID="cvChildStatusCode" runat="server" ControlToValidate="tbChildStatusCode" Type="Integer" Operator="DataTypeCheck" ErrorMessage="Value must be an integer!" ForeColor="Red" />
                 </td>
