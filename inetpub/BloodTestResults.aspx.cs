@@ -28,6 +28,8 @@ public partial class BloodTestResults : System.Web.UI.Page
 
             lblHeader.Text += "for " + FirstName + " " + LastName + " (" + ClientID + ") ";
 
+            cvFutureSampleDate.ValueToCompare = DateTime.Now.ToString("MM/dd/yyyy");
+            cvFutureLabDate.ValueToCompare = DateTime.Now.ToString("MM/dd/yyyy");
 
             Trace.Write("connectionString: " + connectionString);
 

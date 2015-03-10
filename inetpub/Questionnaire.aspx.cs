@@ -25,6 +25,10 @@ public partial class Questionnaire : System.Web.UI.Page
             //set default date to today
             tbQuestionnaireDate.Text = DateTime.Today.ToShortDateString();
 
+            cvFuturePaintDate.ValueToCompare = DateTime.Now.ToString("MM/dd/yyyy");
+            cvFutureQuestionnaireDate.ValueToCompare = DateTime.Now.ToString("MM/dd/yyyy");
+            cvFutureRemodelDate.ValueToCompare = DateTime.Now.ToString("MM/dd/yyyy");
+
             string FirstName = (string)(Session["FirstName"]);
             string LastName = (string)(Session["LastName"]);
             string ClientID = (string)(Session["ClientID"]);

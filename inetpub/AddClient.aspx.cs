@@ -21,6 +21,8 @@ public partial class AddChild : System.Web.UI.Page
        // if (tbBirthDate.Text=="")
          //   tbBirthDate.Text = DateTime.Today.ToShortDateString();
 
+        futureDateValidator.ValueToCompare = DateTime.Now.ToString("MM/dd/yyyy");
+
         NextButton.Visible = false;
 
         if (!Page.IsPostBack)

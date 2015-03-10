@@ -31,6 +31,9 @@
     ErrorMessage="Please enter a valid sample date." ForeColor="Red">
 </asp:CompareValidator>
 
+                    <asp:CompareValidator ID="cvFutureSampleDate" runat="server"  ControlToValidate="tbSampleDate"
+ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type="Date" ForeColor="Red">
+</asp:CompareValidator>
                 </td>
             </tr>
 
@@ -55,7 +58,9 @@
     ErrorMessage="Please enter a valid lab date." ForeColor="Red">
 </asp:CompareValidator>
 
-                    
+<asp:CompareValidator ID="cvFutureLabDate" runat="server"  ControlToValidate="tbLabDate"
+ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type="Date" ForeColor="Red">
+</asp:CompareValidator>                    
                     
                 </td>
             </tr>

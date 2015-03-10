@@ -48,7 +48,7 @@
     Format="MM/dd/yyyy" >
 </ajaxtoolkit:CalendarExtender>
 
-                    <asp:CompareValidator
+<asp:CompareValidator
     id="dateValidator" runat="server" 
     Type="Date"
     Operator="DataTypeCheck"
@@ -56,6 +56,9 @@
     ErrorMessage="Please enter a valid date." ForeColor="Red">
 </asp:CompareValidator>
 
+<asp:CompareValidator ID="futureDateValidator" runat="server"  ControlToValidate="tbBirthDate"
+ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type="Date" ForeColor="Red">
+</asp:CompareValidator>
                     
                     <asp:RequiredFieldValidator ID="rfvBirthDate" runat="server" InitialValue="" ErrorMessage="Please enter the birthdate" ControlToValidate="tbBirthDate" ForeColor="Red"></asp:RequiredFieldValidator>
 
@@ -98,7 +101,13 @@
                 <td>Ethnicity:</td>
             <td>
         <asp:DropDownList ID="ddlEthnicity" runat="server" ViewStateMode="Enabled"></asp:DropDownList>
-                <a href="AddEthnicity.aspx" class="small">Add a New Ethnicity</a></td>
+                <a href="AddEthnicity.aspx" class="small">Add a New Ethnicity</a>
+
+                <asp:RequiredFieldValidator ID="rfvEthnicity" runat="server" InitialValue="-" ErrorMessage="Please select an ethnicity" ControlToValidate="ddlEthnicity" ForeColor="Red"></asp:RequiredFieldValidator>
+
+
+
+            </td>
             </tr>
 
         <tr>
