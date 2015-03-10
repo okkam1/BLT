@@ -25,6 +25,7 @@
     Format="MM/dd/yyyy">  
 </ajaxtoolkit:CalendarExtender>
 
+
                                         <asp:CompareValidator
     id="dateValidator" runat="server" 
     Type="Date"
@@ -33,8 +34,14 @@
     ErrorMessage="Please enter a valid date." ForeColor="Red">
 </asp:CompareValidator>
 
+                    <asp:CompareValidator ID="cvFutureQuestionnaireDate" runat="server"  ControlToValidate="tbQuestionnaireDate"
+ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type="Date" ForeColor="Red">
+</asp:CompareValidator>
+
                     <asp:RequiredFieldValidator ID="rfvQuestionnaireDate" runat="server" InitialValue="" ErrorMessage="Please enter the date" ControlToValidate="tbQuestionnaireDate" ForeColor="Red"></asp:RequiredFieldValidator>
       
+
+
                 </td>
             </tr>
    
@@ -70,6 +77,9 @@
     ErrorMessage="Please enter a valid date." ForeColor="Red">
 </asp:CompareValidator>
 
+                    <asp:CompareValidator ID="cvFuturePaintDate" runat="server"  ControlToValidate="tbPaintDate"
+ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type="Date" ForeColor="Red">
+</asp:CompareValidator>
       
                 </td>
             </tr>
@@ -106,6 +116,9 @@
     ErrorMessage="Please enter a valid date." ForeColor="Red">
 </asp:CompareValidator>
 
+                    <asp:CompareValidator ID="cvFutureRemodelDate" runat="server"  ControlToValidate="tbRemodelDate"
+ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type="Date" ForeColor="Red">
+</asp:CompareValidator>
       
                 </td>
             </tr>
