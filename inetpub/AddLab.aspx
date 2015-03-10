@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="AddHobby.aspx.cs" Inherits="AddHobby" %>
+﻿
+<%@ Page Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="AddLab.aspx.cs" Inherits="AddLab" %>
 
 <asp:Content ID="headContent" ContentPlaceHolderID="head" Runat="Server"></asp:Content>
 
@@ -8,24 +9,12 @@
     <div class="DD">
     
         
-        <h2 class="DDSubHeader">Add a NEW Hobby</h2>
+        <h2 class="DDSubHeader">Add a NEW Source of Blood Test Results</h2>
 
         <table>
             <tr>
-                <td>Hobby:</td>
-                <td><asp:TextBox ID="tbHobby" runat="server"></asp:TextBox></td>
-            </tr>
-
-            <tr>
-                <td>Hobby Description:</td>
-                <td><asp:TextBox ID="tbHobbyDescription" runat="server" TextMode="MultiLine"></asp:TextBox></td>
-            </tr>
-
-            <tr>
-                <td>Lead Exposure:</td>
-                <td>
-                    <asp:CheckBox ID="cbLeadExposure" runat="server" />
-                </td>
+                <td>Lab:</td>
+                <td><asp:TextBox ID="Lab" runat="server"></asp:TextBox></td>
             </tr>
    
         
@@ -36,7 +25,7 @@
 
         &nbsp;&nbsp;&nbsp;
         
-        <asp:Button ID="btnInsert" runat="server" OnClick="Insert_Click" Text="Insert New Hobby" />
+        <asp:Button ID="btnInsert" runat="server" OnClick="Insert_Click" Text="Insert New Source of Results" />
     
             <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" />
 
