@@ -11,12 +11,4 @@ public partial class Hobby : System.Web.UI.Page
     {
 
     }
-    protected void Button1_Click(object sender, EventArgs e)
-    {
-
-    }
-    protected void NextButton_Click(object sender, EventArgs e)
-    {
-
-    }
 }

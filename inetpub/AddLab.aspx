@@ -9,11 +9,7 @@
     <div class="DD">
     
         
-<<<<<<< HEAD
-        <h2 class="DDSubHeader">Add a NEW Lab</h2>
-=======
         <h2 class="DDSubHeader">Add a NEW Source of Blood Test Results</h2>
->>>>>>> develop
 
         <table>
             <tr>
@@ -29,11 +25,7 @@
 
         &nbsp;&nbsp;&nbsp;
         
-<<<<<<< HEAD
-        <asp:Button ID="btnInsert" runat="server" OnClick="Insert_Click" Text="Insert New Lab" />
-=======
         <asp:Button ID="btnInsert" runat="server" OnClick="Insert_Click" Text="Insert New Source of Results" />
->>>>>>> develop
     
             <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" />
 
