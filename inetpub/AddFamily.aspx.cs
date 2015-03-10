@@ -76,9 +76,15 @@ public partial class AddFamily : System.Web.UI.Page
                 command.Parameters.Add("@WorkPhone", SqlDbType.BigInt).Value = Convert.ToInt64(WorkPhoneTextBox.Text);
             command.Parameters.Add("@Pets", SqlDbType.Bit).Value = Convert.ToInt16(RadioButtonListPets.SelectedValue);
             command.Parameters.Add("@inandout", SqlDbType.Bit).Value = Convert.ToInt16(RadioButtonListPetsInOut.SelectedValue);
+<<<<<<< HEAD
            command.Parameters.Add("@PropertyNotes", SqlDbType.VarChar).Value = TextBoxFamilyNotes.Text;
+=======
+           command.Parameters.Add("@PropertyNotes", SqlDbType.VarChar).Value = tbFamilyNotes.Text;
+>>>>>>> develop
 
             command.Parameters.Add("@FamilyID", SqlDbType.Int).Direction = ParameterDirection.Output;  //usp returns ID upon completion
+
+            command.Parameters.Add("@ReturnValue", SqlDbType.Int).Direction = ParameterDirection.ReturnValue; 
       
             sqlConnection.Open();
 
@@ -90,14 +96,23 @@ public partial class AddFamily : System.Web.UI.Page
 
                String sID = command.Parameters["@FamilyID"].Value.ToString();
 
+               String sReturnValue = command.Parameters["@ReturnValue"].Value.ToString();
+
                Trace.Write("sID: " + sID);
 
-               if (sID != "")
+               if (sID != "" && sReturnValue == "0")
                {
                    lbOutput.Text = "New Family #" + sID + " Inserted at: " + DateTime.Now;
                    lbPopUp.Text = lbOutput.Text;
 
                    NextButton.Visible = true;
+                   ModalPopupExtender1.Show();
+               }
+               else if (sReturnValue == "50000")
+               {
+                   lbOutput.Text = "Possible Duplicate Family based on Last Name, Street Number, Street Name, City, State, and Zip Code";
+                   lbPopUp.Text = "Possible Duplicate Family based on Last Name, Street Number, Street Name, City, State, and Zip Code";
+
                    ModalPopupExtender1.Show();
                }
                else

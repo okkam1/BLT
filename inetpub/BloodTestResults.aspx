@@ -63,11 +63,19 @@
             <tr>
 
             <tr>
+<<<<<<< HEAD
                 <td>Lab:</td>
             <td>
                 <asp:DropDownList ID="ddlLab" runat="server">
                     <asp:ListItem>-</asp:ListItem>
                 </asp:DropDownList>  <a href="AddLab.aspx">Add Lab</a>
+=======
+                <td>Source of Results:</td>
+            <td>
+                <asp:DropDownList ID="ddlLab" runat="server">
+                    <asp:ListItem>-</asp:ListItem>
+                </asp:DropDownList>  <a href="AddLab.aspx" class="small">Add New Source of Results</a>
+>>>>>>> develop
 
                 <asp:RequiredFieldValidator ID="rfvLab" runat="server" InitialValue="-" ErrorMessage="Please select a lab" ControlToValidate="ddlLab" ForeColor="Red"></asp:RequiredFieldValidator>
 

@@ -207,7 +207,11 @@
                 <td>Family Notes:</td>
             <td>
 
+<<<<<<< HEAD
                 <asp:TextBox runat="server" ID="TextBoxFamilyNotes" TextMode="MultiLine"></asp:TextBox>
+=======
+                <asp:TextBox runat="server" ID="tbFamilyNotes" TextMode="MultiLine"></asp:TextBox>
+>>>>>>> develop
 
             </td>
             </tr>

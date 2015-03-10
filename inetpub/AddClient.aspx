@@ -97,7 +97,8 @@
         <tr>
                 <td>Ethnicity:</td>
             <td>
-        <asp:TextBox ID="tbEthnicity" runat="server"></asp:TextBox></td>
+        <asp:DropDownList ID="ddlEthnicity" runat="server" ViewStateMode="Enabled"></asp:DropDownList>
+                <a href="AddEthnicity.aspx" class="small">Add a New Ethnicity</a></td>
             </tr>
 
         <tr>

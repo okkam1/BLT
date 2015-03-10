@@ -64,6 +64,8 @@ order by f.Lastname
 
             Trace.Write("connectionString: " + connectionString);
 
+
+            //fill language drop down
             SqlConnection conLang = new SqlConnection(connectionString);
 
             string comLang = "Select LanguageID, Upper(LanguageName) as LanguageName from dbo.Language order by LanguageName asc";
@@ -84,6 +86,30 @@ order by f.Lastname
             ddlLanguage.DataBind();
             // if (!Page.IsPostBack)
             ddlLanguage.Items.Insert(0, "-");
+
+            //fill Ethnicity Drop down
+
+            SqlConnection conEthnicity = new SqlConnection(connectionString);
+
+            string comEthnicity = "Select EthnicityID, Upper(Ethnicity) as Ethnicity, HistoricEthnicityCode from dbo.Ethnicity order by Ethnicity asc";
+
+            SqlDataAdapter adptEthnicity = new SqlDataAdapter(comEthnicity, conEthnicity);
+
+            DataTable dtEthnicity = new DataTable();
+
+            adptEthnicity.Fill(dtEthnicity);
+
+            ddlEthnicity.DataSource = dtEthnicity;
+
+            ddlEthnicity.DataBind();
+
+           ddlEthnicity.DataTextField = "Ethnicity";
+           ddlEthnicity.DataValueField = "EthnicityID";
+
+            ddlEthnicity.DataBind();
+            ddlEthnicity.Items.Insert(0, "-");
+
+
         }
 
     }
@@ -133,6 +159,7 @@ order by f.Lastname
                 lbPopUp.Text = "New Research Subject " + sClientID + " Inserted at: " + DateTime.Now;
                 NextButton.Visible = true;
                 ModalPopupExtender1.Show();
+
 
                 Session["FirstName"] = tbFirstName.Text;
                 Session["LastName"] = FamilyNameList.SelectedItem.ToString();

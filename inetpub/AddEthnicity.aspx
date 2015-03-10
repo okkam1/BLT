@@ -1,5 +1,4 @@
-﻿
-<%@ Page Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="AddLab.aspx.cs" Inherits="AddLab" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="AddEthnicity.aspx.cs" Inherits="AddEthnicity" %>
 
 <asp:Content ID="headContent" ContentPlaceHolderID="head" Runat="Server"></asp:Content>
 
@@ -9,16 +8,12 @@
     <div class="DD">
     
         
-<<<<<<< HEAD
-        <h2 class="DDSubHeader">Add a NEW Lab</h2>
-=======
-        <h2 class="DDSubHeader">Add a NEW Source of Blood Test Results</h2>
->>>>>>> develop
+        <h2 class="DDSubHeader">Add a NEW Ethnicity</h2>
 
         <table>
             <tr>
-                <td>Lab:</td>
-                <td><asp:TextBox ID="Lab" runat="server"></asp:TextBox></td>
+                <td>Ethnicity:</td>
+                <td><asp:TextBox ID="tbEthnicity" runat="server"></asp:TextBox></td>
             </tr>
    
         
@@ -29,11 +24,7 @@
 
         &nbsp;&nbsp;&nbsp;
         
-<<<<<<< HEAD
-        <asp:Button ID="btnInsert" runat="server" OnClick="Insert_Click" Text="Insert New Lab" />
-=======
-        <asp:Button ID="btnInsert" runat="server" OnClick="Insert_Click" Text="Insert New Source of Results" />
->>>>>>> develop
+        <asp:Button ID="btnInsert" runat="server" OnClick="Insert_Click" Text="Insert New Ethnicity" />
     
             <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" />
 
@@ -62,3 +53,4 @@
 
 </div>    
 </asp:Content>
+
