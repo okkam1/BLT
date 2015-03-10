@@ -76,7 +76,7 @@ public partial class AddFamily : System.Web.UI.Page
                 command.Parameters.Add("@WorkPhone", SqlDbType.BigInt).Value = Convert.ToInt64(WorkPhoneTextBox.Text);
             command.Parameters.Add("@Pets", SqlDbType.Bit).Value = Convert.ToInt16(RadioButtonListPets.SelectedValue);
             command.Parameters.Add("@inandout", SqlDbType.Bit).Value = Convert.ToInt16(RadioButtonListPetsInOut.SelectedValue);
-           command.Parameters.Add("@OtherNotes", SqlDbType.VarChar).Value = TextBoxOtherNotes.Text;
+           command.Parameters.Add("@PropertyNotes", SqlDbType.VarChar).Value = TextBoxFamilyNotes.Text;
 
             command.Parameters.Add("@FamilyID", SqlDbType.Int).Direction = ParameterDirection.Output;  //usp returns ID upon completion
       

@@ -204,10 +204,10 @@
         --%>
 
         <tr>
-                <td>Other Notes:</td>
+                <td>Family Notes:</td>
             <td>
 
-                <asp:TextBox runat="server" ID="TextBoxOtherNotes" TextMode="MultiLine"></asp:TextBox>
+                <asp:TextBox runat="server" ID="TextBoxFamilyNotes" TextMode="MultiLine"></asp:TextBox>
 
             </td>
             </tr>

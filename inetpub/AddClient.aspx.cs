@@ -18,8 +18,8 @@ public partial class AddChild : System.Web.UI.Page
 
         Trace.Write("connectionString: " + connectionString);
 
-        if (tbBirthDate.Text=="")
-            tbBirthDate.Text = DateTime.Today.ToShortDateString();
+       // if (tbBirthDate.Text=="")
+         //   tbBirthDate.Text = DateTime.Today.ToShortDateString();
 
         NextButton.Visible = false;
 
@@ -115,15 +115,19 @@ order by f.Lastname
             command.Parameters.Add("@is_Smoker", SqlDbType.Bit).Value = Convert.ToByte(rblSmoker.SelectedValue);
             command.Parameters.Add("@ClientID", SqlDbType.Int).Direction = ParameterDirection.Output;  //usp returns ID upon completion
 
+            command.Parameters.Add("@ReturnValue", SqlDbType.Int).Direction = ParameterDirection.ReturnValue; 
+
             sqlConnection.Open();
             command.ExecuteNonQuery();
             sqlConnection.Close();
 
             String sClientID = command.Parameters["@ClientID"].Value.ToString();
 
+            String sReturnValue = command.Parameters["@ReturnValue"].Value.ToString();
+
             Trace.Write("sClientID: " +sClientID);
             
-            if (sClientID != "")
+            if (sClientID != "" && sReturnValue=="0")
             {
                 lbOutput.Text = "New Research Subject " + sClientID+" Inserted at: " + DateTime.Now;
                 lbPopUp.Text = "New Research Subject " + sClientID + " Inserted at: " + DateTime.Now;
@@ -134,6 +138,13 @@ order by f.Lastname
                 Session["LastName"] = FamilyNameList.SelectedItem.ToString();
                 Session["ClientID"] = sClientID;
 
+            }
+            else if (sReturnValue=="50000") 
+            {
+                lbOutput.Text = "Possible Duplicate Client based on Name and birthdate";
+                lbPopUp.Text = "Possible Duplicate Client based on Name and birthdate";
+
+                ModalPopupExtender1.Show();
             }
             else
             {
