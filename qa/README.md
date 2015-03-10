@@ -1,15 +1,17 @@
-# This is a browser automation testing using ruby and rspec
-# It assumes you have:
-- Rbenv installed
-- Ruby installed
-- Bundler installed
+# Automation testing
+## Assumptions:
+- Rbenv installed - http://octopress.org/docs/setup/rbenv/
+- Ruby installed 
+- Bundler installed - gem install bundler
 
-# How to run it
-- Run the following
+## How to run it
+1) Run the following
 
 ```
 cp .env_example .env
 ```
+2) Fill out the .env file
+
 ```
 bundle install
 ```
