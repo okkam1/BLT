@@ -6,8 +6,7 @@
 
 
     <div class="DD">
-    
-        
+
         <h2 class="DDSubHeader">Blood Lead Test Results <asp:Label runat="server" ID="lblHeader"></asp:Label></h2>
 
         <table>
@@ -60,6 +59,22 @@
                     
                 </td>
             </tr>
+                 
+            <tr>
+
+            <tr>
+                <td>Lab:</td>
+            <td>
+                <asp:DropDownList ID="ddlLab" runat="server">
+                    <asp:ListItem>-</asp:ListItem>
+                </asp:DropDownList>  <a href="AddLab.aspx">Add Lab</a>
+
+                <asp:RequiredFieldValidator ID="rfvLab" runat="server" InitialValue="-" ErrorMessage="Please select a lab" ControlToValidate="ddlLab" ForeColor="Red"></asp:RequiredFieldValidator>
+
+            
+            </td>
+            </tr>
+        
 
             <tr><td colspan="2"><hr /></td></tr>
 
@@ -92,21 +107,7 @@
                     <asp:CompareValidator ID="cvTestType" runat="server" ControlToValidate="tbTestType" Type="Integer" Operator="DataTypeCheck" ErrorMessage="Value must be an integer!" ForeColor="Red" />
                 </td>
             </tr>
-
-            <tr><td colspan="2"><hr /></td></tr>
-
-            <tr>
-                <td>Lab:</td>
-                <td><asp:TextBox ID="tbLab" runat="server"></asp:TextBox></td>
-            </tr>
-<!--
-            <tr>
-                <td>Lab ID:</td>
-                <td><asp:TextBox ID="tbLabID" runat="server"></asp:TextBox>
-                    <asp:CompareValidator ID="cvLabID" runat="server" ControlToValidate="tbLabID" Type="Integer" Operator="DataTypeCheck" ErrorMessage="Value must be an integer!" ForeColor="Red" />
-                </td>
-            </tr>
--->        
+       
             <tr><td colspan="2"><hr /></td></tr>
 
             <tr>

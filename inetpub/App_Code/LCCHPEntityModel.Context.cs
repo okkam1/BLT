@@ -24,9 +24,11 @@ public partial class LCCHPEntityModelContainer : DbContext
     }
 
     public DbSet<AccessAgreement> AccessAgreements { get; set; }
+    public DbSet<AccessAgreementNote> AccessAgreementNotes { get; set; }
     public DbSet<AccessPurpose> AccessPurposes { get; set; }
     public DbSet<Area> Areas { get; set; }
     public DbSet<BloodTestResult> BloodTestResults { get; set; }
+    public DbSet<BloodTestResultsNote> BloodTestResultsNotes { get; set; }
     public DbSet<CleanupStatu> CleanupStatus { get; set; }
     public DbSet<ConstructionType> ConstructionTypes { get; set; }
     public DbSet<Contractor> Contractors { get; set; }
@@ -34,6 +36,7 @@ public partial class LCCHPEntityModelContainer : DbContext
     public DbSet<ContractortoRemediation> ContractortoRemediations { get; set; }
     public DbSet<ContractortoRemediationActionPlan> ContractortoRemediationActionPlans { get; set; }
     public DbSet<Country> Countries { get; set; }
+    public DbSet<DateRange> DateRanges { get; set; }
     public DbSet<Daycare> Daycares { get; set; }
     public DbSet<DaycarePrimaryContact> DaycarePrimaryContacts { get; set; }
     public DbSet<DaycaretoProperty> DaycaretoProperties { get; set; }
@@ -43,44 +46,61 @@ public partial class LCCHPEntityModelContainer : DbContext
     public DbSet<ErrorLog> ErrorLogs { get; set; }
     public DbSet<Ethnicity> Ethnicities { get; set; }
     public DbSet<Family> Families { get; set; }
+    public DbSet<FamilyNote> FamilyNotes { get; set; }
+    public DbSet<FileType> FileTypes { get; set; }
     public DbSet<ForeignFood> ForeignFoods { get; set; }
+    public DbSet<ForeignFoodtoCountry> ForeignFoodtoCountries { get; set; }
     public DbSet<GiftCard> GiftCards { get; set; }
     public DbSet<Hobby> Hobbies { get; set; }
     public DbSet<HomeRemedy> HomeRemedies { get; set; }
     public DbSet<HouseholdSourcesofLead> HouseholdSourcesofLeads { get; set; }
     public DbSet<InsuranceProvider> InsuranceProviders { get; set; }
     public DbSet<Lab> Labs { get; set; }
+    public DbSet<LabNote> LabNotes { get; set; }
+    public DbSet<LabOriginal> LabOriginals { get; set; }
     public DbSet<Language> Languages { get; set; }
     public DbSet<Medium> Media { get; set; }
     public DbSet<MediumSampleResult> MediumSampleResults { get; set; }
+    public DbSet<MediumSampleResultsNote> MediumSampleResultsNotes { get; set; }
     public DbSet<Occupation> Occupations { get; set; }
+    public DbSet<OccupationNote> OccupationNotes { get; set; }
     public DbSet<Person> People { get; set; }
+    public DbSet<PersonNote> PersonNotes { get; set; }
     public DbSet<PersontoAccessAgreement> PersontoAccessAgreements { get; set; }
     public DbSet<PersontoDaycare> PersontoDaycares { get; set; }
     public DbSet<PersontoEmployer> PersontoEmployers { get; set; }
+    public DbSet<PersontoEthnicity> PersontoEthnicities { get; set; }
+    public DbSet<PersontoFamily> PersontoFamilies { get; set; }
+    public DbSet<PersontoForeignFood> PersontoForeignFoods { get; set; }
+    public DbSet<PersontoHobby> PersontoHobbies { get; set; }
+    public DbSet<PersontoHomeRemedy> PersontoHomeRemedies { get; set; }
     public DbSet<PersontoInsurance> PersontoInsurances { get; set; }
     public DbSet<PersontoLanguage> PersontoLanguages { get; set; }
     public DbSet<PersontoOccupation> PersontoOccupations { get; set; }
     public DbSet<PersontoPerson> PersontoPersons { get; set; }
     public DbSet<PersontoPhoneNumber> PersontoPhoneNumbers { get; set; }
     public DbSet<PersontoProperty> PersontoProperties { get; set; }
-    public DbSet<PersontoPropertyOriginal> PersontoPropertyOriginals { get; set; }
     public DbSet<PersonToStatu> PersonToStatus { get; set; }
     public DbSet<PersonToTravelCountry> PersonToTravelCountries { get; set; }
     public DbSet<PhoneNumber> PhoneNumbers { get; set; }
     public DbSet<PhoneNumberType> PhoneNumberTypes { get; set; }
     public DbSet<Property> Properties { get; set; }
+    public DbSet<PropertyNote> PropertyNotes { get; set; }
     public DbSet<PropertySampleResult> PropertySampleResults { get; set; }
+    public DbSet<PropertySampleResultsNote> PropertySampleResultsNotes { get; set; }
     public DbSet<PropertytoCleanupStatu> PropertytoCleanupStatus { get; set; }
+    public DbSet<PropertytoHouseholdSourcesofLead> PropertytoHouseholdSourcesofLeads { get; set; }
     public DbSet<PropertytoMedium> PropertytoMediums { get; set; }
     public DbSet<Questionnaire> Questionnaires { get; set; }
+    public DbSet<QuestionnaireNote> QuestionnaireNotes { get; set; }
+    public DbSet<RelationshipType> RelationshipTypes { get; set; }
     public DbSet<Remediation> Remediations { get; set; }
     public DbSet<RemediationActionPlan> RemediationActionPlans { get; set; }
+    public DbSet<RemediationNote> RemediationNotes { get; set; }
     public DbSet<SampleLevelCategory> SampleLevelCategories { get; set; }
     public DbSet<SampleType> SampleTypes { get; set; }
+    public DbSet<Source> Sources { get; set; }
     public DbSet<Status> Status { get; set; }
     public DbSet<sysdiagram> sysdiagrams { get; set; }
-    public DbSet<TempFamily> TempFamilies { get; set; }
-    public DbSet<TestTran> TestTrans { get; set; }
     public DbSet<Unit> Units { get; set; }
 }

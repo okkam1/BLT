@@ -28,30 +28,6 @@ public partial class BloodTestResults : System.Web.UI.Page
 
             lblHeader.Text += "for " + FirstName + " " + LastName + " (" + ClientID + ") ";
 
-
-            Trace.Write("connectionString: " + connectionString);
-
-            SqlConnection conLang = new SqlConnection(connectionString);
-
-            string comLang = "Select LabID, Upper(LabName) as LabName from dbo.Lab order by LabName asc";
-
-            SqlDataAdapter adptLang = new SqlDataAdapter(comLang, conLang);
-
-            DataTable dtLab = new DataTable();
-
-            adptLang.Fill(dtLab);
-
-            ddlLab.DataSource = dtLab; 
-
-            ddlLab.DataBind();
-
-            ddlLab.DataTextField = "LabName";
-            ddlLab.DataValueField = "LabID";
-
-            ddlLab.DataBind();
-            // if (!Page.IsPostBack)
-            ddlLab.Items.Insert(0, "-");
-
         }
     }
 
@@ -78,10 +54,10 @@ public partial class BloodTestResults : System.Web.UI.Page
                 command.Parameters.Add("@Blood_Lead_Result", SqlDbType.Decimal).Value = Convert.ToDecimal(tbBloodLeadResult.Text);
             if (tbTestType.Text != "")
                 command.Parameters.Add("@Test_Type", SqlDbType.Int).Value = Convert.ToInt32(tbTestType.Text);
-            //if (tbLab.Text != "")
-            //    command.Parameters.Add("@Lab", SqlDbType.VarChar).Value = tbLab.Text;
-            //if (tbLabID.Text != "")
-            //    command.Parameters.Add("@Lab_ID", SqlDbType.Int).Value = Convert.ToInt32(tbLabID.Text);
+            if (tbLab.Text != "")
+                command.Parameters.Add("@Lab", SqlDbType.VarChar).Value = tbLab.Text;
+            if (tbLabID.Text != "")
+                command.Parameters.Add("@Lab_ID", SqlDbType.Int).Value = Convert.ToInt32(tbLabID.Text);
             if (tbChildStatusCode.Text != "")
                 command.Parameters.Add("@Child_Status_Code", SqlDbType.Int).Value = Convert.ToInt32(tbChildStatusCode.Text);
             if (tbHemoglobin.Text != "")
