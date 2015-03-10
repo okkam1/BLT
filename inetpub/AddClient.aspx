@@ -37,7 +37,7 @@
         <asp:TextBox ID="tbMiddleName" runat="server" Width="50px"></asp:TextBox></td>
             </tr>
             <tr>
-                <td>Birth Date:</td>
+                <td>Birth Date: <br /> <em>(MM/DD/YYYY)</em></td>
                 <td><asp:TextBox ID="tbBirthDate" runat="server"></asp:TextBox>
 
 <ajaxtoolkit:CalendarExtender ID="CalendarExtender2" 
@@ -97,7 +97,8 @@
         <tr>
                 <td>Ethnicity:</td>
             <td>
-        <asp:TextBox ID="tbEthnicity" runat="server"></asp:TextBox></td>
+        <asp:DropDownList ID="ddlEthnicity" runat="server" ViewStateMode="Enabled"></asp:DropDownList>
+                <a href="AddEthnicity.aspx" class="small">Add a New Ethnicity</a></td>
             </tr>
 
         <tr>

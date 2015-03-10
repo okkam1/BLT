@@ -18,8 +18,8 @@ public partial class AddChild : System.Web.UI.Page
 
         Trace.Write("connectionString: " + connectionString);
 
-        if (tbBirthDate.Text=="")
-            tbBirthDate.Text = DateTime.Today.ToShortDateString();
+       // if (tbBirthDate.Text=="")
+         //   tbBirthDate.Text = DateTime.Today.ToShortDateString();
 
         NextButton.Visible = false;
 
@@ -64,6 +64,8 @@ order by f.Lastname
 
             Trace.Write("connectionString: " + connectionString);
 
+
+            //fill language drop down
             SqlConnection conLang = new SqlConnection(connectionString);
 
             string comLang = "Select LanguageID, Upper(LanguageName) as LanguageName from dbo.Language order by LanguageName asc";
@@ -84,6 +86,30 @@ order by f.Lastname
             ddlLanguage.DataBind();
             // if (!Page.IsPostBack)
             ddlLanguage.Items.Insert(0, "-");
+
+            //fill Ethnicity Drop down
+
+            SqlConnection conEthnicity = new SqlConnection(connectionString);
+
+            string comEthnicity = "Select EthnicityID, Upper(Ethnicity) as Ethnicity, HistoricEthnicityCode from dbo.Ethnicity order by Ethnicity asc";
+
+            SqlDataAdapter adptEthnicity = new SqlDataAdapter(comEthnicity, conEthnicity);
+
+            DataTable dtEthnicity = new DataTable();
+
+            adptEthnicity.Fill(dtEthnicity);
+
+            ddlEthnicity.DataSource = dtEthnicity;
+
+            ddlEthnicity.DataBind();
+
+           ddlEthnicity.DataTextField = "Ethnicity";
+           ddlEthnicity.DataValueField = "EthnicityID";
+
+            ddlEthnicity.DataBind();
+            ddlEthnicity.Items.Insert(0, "-");
+
+
         }
 
     }
@@ -115,25 +141,37 @@ order by f.Lastname
             command.Parameters.Add("@is_Smoker", SqlDbType.Bit).Value = Convert.ToByte(rblSmoker.SelectedValue);
             command.Parameters.Add("@ClientID", SqlDbType.Int).Direction = ParameterDirection.Output;  //usp returns ID upon completion
 
+            command.Parameters.Add("@ReturnValue", SqlDbType.Int).Direction = ParameterDirection.ReturnValue; 
+
             sqlConnection.Open();
             command.ExecuteNonQuery();
             sqlConnection.Close();
 
             String sClientID = command.Parameters["@ClientID"].Value.ToString();
 
+            String sReturnValue = command.Parameters["@ReturnValue"].Value.ToString();
+
             Trace.Write("sClientID: " +sClientID);
             
-            if (sClientID != "")
+            if (sClientID != "" && sReturnValue=="0")
             {
                 lbOutput.Text = "New Research Subject " + sClientID+" Inserted at: " + DateTime.Now;
                 lbPopUp.Text = "New Research Subject " + sClientID + " Inserted at: " + DateTime.Now;
                 NextButton.Visible = true;
                 ModalPopupExtender1.Show();
 
+
                 Session["FirstName"] = tbFirstName.Text;
                 Session["LastName"] = FamilyNameList.SelectedItem.ToString();
                 Session["ClientID"] = sClientID;
 
+            }
+            else if (sReturnValue=="50000") 
+            {
+                lbOutput.Text = "Possible Duplicate Client based on Name and birthdate";
+                lbPopUp.Text = "Possible Duplicate Client based on Name and birthdate";
+
+                ModalPopupExtender1.Show();
             }
             else
             {
