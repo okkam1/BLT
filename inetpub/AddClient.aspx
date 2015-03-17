@@ -92,12 +92,6 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
             </tr>
         
         <tr>
-                <td>Child ID:</td>
-            <td>
-        <asp:TextBox ID="tbChildID" runat="server" Width="100px"></asp:TextBox></td>
-            </tr>
-
-        <tr>
                 <td>Ethnicity:</td>
             <td>
         <asp:DropDownList ID="ddlEthnicity" runat="server" ViewStateMode="Enabled"></asp:DropDownList>
