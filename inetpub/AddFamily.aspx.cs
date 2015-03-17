@@ -62,9 +62,7 @@ public partial class AddFamily : System.Web.UI.Page
             SqlCommand command = new SqlCommand("usp_InsertNewFamilyWebScreen", sqlConnection);
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.Add("@FamilyLastName", SqlDbType.VarChar).Value = tbLastName.Text;
-            command.Parameters.Add("@StreetNum", SqlDbType.VarChar).Value = TextBoxStreetNumber.Text;
-            command.Parameters.Add("@StreetName", SqlDbType.VarChar).Value = TextBoxStreetName.Text;
-            command.Parameters.Add("@StreetSuff", SqlDbType.VarChar).Value = DropDownListStreetSuffix.Text;
+            command.Parameters.Add("@Address_Line1", SqlDbType.VarChar).Value = tbAddress.Text + " " + DropDownListStreetSuffix.Text;
             command.Parameters.Add("@ApartmentNum", SqlDbType.VarChar).Value = TextBoxApartmentNumber.Text;
             command.Parameters.Add("@CityName", SqlDbType.VarChar).Value = TextBoxCity.Text;
 
@@ -74,7 +72,11 @@ public partial class AddFamily : System.Web.UI.Page
                 command.Parameters.Add("@HomePhone", SqlDbType.BigInt).Value = Convert.ToInt64(HomePhoneTextBox.Text);
             if (WorkPhoneTextBox.Text != "")
                 command.Parameters.Add("@WorkPhone", SqlDbType.BigInt).Value = Convert.ToInt64(WorkPhoneTextBox.Text);
-            command.Parameters.Add("@Pets", SqlDbType.Bit).Value = Convert.ToInt16(RadioButtonListPets.SelectedValue);
+            command.Parameters.Add("@Pets", SqlDbType.Bit).Value = Convert.ToInt16(ddlPets.SelectedValue);
+
+            command.Parameters.Add("@NumSokers", SqlDbType.Bit).Value = Convert.ToInt16(ddlSmokers.SelectedValue);
+
+            
             command.Parameters.Add("@inandout", SqlDbType.Bit).Value = Convert.ToInt16(RadioButtonListPetsInOut.SelectedValue);
            command.Parameters.Add("@PropertyNotes", SqlDbType.VarChar).Value = tbFamilyNotes.Text;
 
@@ -149,5 +151,17 @@ public partial class AddFamily : System.Web.UI.Page
     {
         Response.Redirect("AddClient.aspx");
     }
-   
+
+    protected void ddlPets_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        if (ddlPets.SelectedIndex != 0)
+        {
+            RadioButtonListPetsInOut.Enabled = true;
+        }
+        else
+        {
+            RadioButtonListPetsInOut.SelectedIndex = 1;
+            RadioButtonListPetsInOut.Enabled = false;
+        }
+    }
 }

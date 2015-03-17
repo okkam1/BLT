@@ -36,7 +36,6 @@ public partial class BloodTestResults : System.Web.UI.Page
             SqlConnection conLang = new SqlConnection(connectionString);
 
             string comLang = "Select LabID, Upper(LabName) as LabName from dbo.Lab order by LabName asc";
-
             SqlDataAdapter adptLang = new SqlDataAdapter(comLang, conLang);
 
             DataTable dtLab = new DataTable();
@@ -53,6 +52,50 @@ public partial class BloodTestResults : System.Web.UI.Page
             ddlLab.DataBind();
             // if (!Page.IsPostBack)
             ddlLab.Items.Insert(0, "-");
+
+
+            //child status code
+
+            string comChildStatusTypeQuery = "Select LabID, Upper(LabName) as LabName from dbo.Lab order by LabName asc";
+
+            SqlDataAdapter adptChildStatusType = new SqlDataAdapter(comChildStatusTypeQuery, conLang);
+
+            DataTable dtChildStatusType = new DataTable();
+
+            adptChildStatusType.Fill(dtChildStatusType);
+
+            ddlClientStatusCode.DataSource = dtChildStatusType;
+
+            ddlClientStatusCode.DataBind();
+
+             ddlClientStatusCode.DataTextField = "LabName";
+             ddlClientStatusCode.DataValueField = "LabID";
+
+             ddlClientStatusCode.DataBind();
+            // if (!Page.IsPostBack)
+             ddlClientStatusCode.Items.Insert(0, "-");
+
+
+            //Test Type
+
+            string comTestType = "Select LabID, Upper(LabName) as LabName from dbo.Lab order by LabName asc";
+
+            SqlDataAdapter adptTestType = new SqlDataAdapter(comTestType, conLang);
+
+            DataTable dtTestType = new DataTable();
+
+            adptTestType.Fill(dtTestType);
+
+            ddlTestType.DataSource = dtTestType;
+
+            ddlTestType.DataBind();
+
+             ddlTestType.DataTextField = "LabName";
+             ddlTestType.DataValueField = "LabID";
+
+             ddlTestType.DataBind();
+            // if (!Page.IsPostBack)
+             ddlTestType.Items.Insert(0, "-");
 
         }
     }
@@ -84,8 +127,8 @@ public partial class BloodTestResults : System.Web.UI.Page
             //    command.Parameters.Add("@Lab", SqlDbType.VarChar).Value = tbLab.Text;
             //if (tbLabID.Text != "")
             //    command.Parameters.Add("@Lab_ID", SqlDbType.Int).Value = Convert.ToInt32(tbLabID.Text);
-            if (tbChildStatusCode.Text != "")
-                command.Parameters.Add("@Child_Status_Code", SqlDbType.Int).Value = Convert.ToInt32(tbChildStatusCode.Text);
+            if (ddlClientStatusCode.SelectedValue != "-")
+                command.Parameters.Add("@Child_Status_Code", SqlDbType.Int).Value = Convert.ToInt32(ddlClientStatusCode.SelectedValue);
             if (tbHemoglobin.Text != "")
                 command.Parameters.Add("@Hemoglobin_Value", SqlDbType.Decimal).Value = Convert.ToDecimal(tbHemoglobin.Text);
 

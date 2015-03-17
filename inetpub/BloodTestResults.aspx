@@ -108,8 +108,9 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
 
             <tr>
                 <td>Test Type:</td>
-                <td><asp:TextBox ID="tbTestType" runat="server"></asp:TextBox>
-                    <asp:CompareValidator ID="cvTestType" runat="server" ControlToValidate="tbTestType" Type="Integer" Operator="DataTypeCheck" ErrorMessage="Value must be an integer!" ForeColor="Red" />
+                <td><asp:DropDownList ID="ddlTestType" runat="server">
+                    <asp:ListItem>-</asp:ListItem>
+                </asp:DropDownList>
                 </td>
             </tr>
        
@@ -117,8 +118,10 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
 
             <tr>
                 <td>Client Status Code:</td>
-                <td><asp:TextBox ID="tbChildStatusCode" runat="server"></asp:TextBox>
-                    <asp:CompareValidator ID="cvChildStatusCode" runat="server" ControlToValidate="tbChildStatusCode" Type="Integer" Operator="DataTypeCheck" ErrorMessage="Value must be an integer!" ForeColor="Red" />
+                <td>
+                    <asp:DropDownList ID="ddlClientStatusCode" runat="server">
+                    <asp:ListItem>-</asp:ListItem>
+                </asp:DropDownList>
                 </td>
             </tr>
 

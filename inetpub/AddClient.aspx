@@ -23,18 +23,25 @@
 
             <tr>
                 <td>First Name:</td>
-                <td><asp:TextBox ID="tbFirstName" runat="server"></asp:TextBox>
+                <td><asp:TextBox ID="tbFirstName" runat="server" Width="300px"></asp:TextBox>
 
 
                     <asp:RequiredFieldValidator ID="rfvFirstName" runat="server" InitialValue="" ErrorMessage="Please provide a first name" ControlToValidate="tbFirstName" ForeColor="Red"></asp:RequiredFieldValidator>
 
                 </td>
             </tr>
+
+            <tr>
+                <td>Last Name:</td>
+                <td><asp:TextBox ID="tbLastName" runat="server" placeholder="Optional; if different than Family Last Name" Width="300px"></asp:TextBox>
+                </td>
+            </tr>
+   
    
         <tr>
                 <td>Middle Name:</td>
             <td>
-        <asp:TextBox ID="tbMiddleName" runat="server" Width="50px"></asp:TextBox></td>
+        <asp:TextBox ID="tbMiddleName" runat="server"></asp:TextBox></td>
             </tr>
             <tr>
                 <td>Birth Date: <br /> <em>(MM/DD/YYYY)</em></td>
@@ -92,12 +99,6 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
             </tr>
         
         <tr>
-                <td>Child ID:</td>
-            <td>
-        <asp:TextBox ID="tbChildID" runat="server" Width="100px"></asp:TextBox></td>
-            </tr>
-
-        <tr>
                 <td>Ethnicity:</td>
             <td>
         <asp:DropDownList ID="ddlEthnicity" runat="server" ViewStateMode="Enabled"></asp:DropDownList>
@@ -117,19 +118,6 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
                     <asp:ListItem Value="1">Yes</asp:ListItem>
                     <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
                 </asp:RadioButtonList>
-
-            </td>
-            </tr>
-
-                    <tr>
-                <td>Smoker:</td>
-            <td>
-            
-                <asp:RadioButtonList ID="rblSmoker" runat="server" RepeatDirection="Horizontal">
-                    <asp:ListItem Value="1">Yes</asp:ListItem>
-                    <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
-                </asp:RadioButtonList>
-
 
             </td>
             </tr>

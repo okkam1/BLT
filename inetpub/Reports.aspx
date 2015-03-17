@@ -11,7 +11,6 @@
         <h2 class="DDSubHeader">Available Reports</h2>
 
         <ul>
-            <li><a href="ReportPages/FullReport.aspx">Full Report</a></li>
             <li><a href="ReportPages/ListOfClients.aspx">List of ALL Clients </a></li>
         </ul>
 
