@@ -127,8 +127,8 @@ order by f.Lastname
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.Add("@Family_ID", SqlDbType.Int).Value = FamilyNameList.SelectedValue;
             command.Parameters.Add("@First_Name", SqlDbType.VarChar).Value = tbFirstName.Text;
-            command.Parameters.Add("@Middle_Name", SqlDbType.VarChar).Value = tbMiddleName.Text; 
-            //command.Parameters.Add("@Last_Name", SqlDbType.VarChar).Value = FamilyNameList.SelectedItem.ToString();
+            command.Parameters.Add("@Middle_Name", SqlDbType.VarChar).Value = tbMiddleName.Text;
+            command.Parameters.Add("@Last_Name", SqlDbType.VarChar).Value = tbLastName.Text;
             command.Parameters.Add("@Birth_Date", SqlDbType.DateTime).Value = tbBirthDate.Text;
             command.Parameters.Add("@Gender_", SqlDbType.Char).Value = rblGender.SelectedValue;
             command.Parameters.Add("@Language_ID", SqlDbType.TinyInt).Value = ddlLanguage.SelectedValue;
