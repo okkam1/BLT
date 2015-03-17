@@ -62,9 +62,7 @@ public partial class AddFamily : System.Web.UI.Page
             SqlCommand command = new SqlCommand("usp_InsertNewFamilyWebScreen", sqlConnection);
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.Add("@FamilyLastName", SqlDbType.VarChar).Value = tbLastName.Text;
-            command.Parameters.Add("@StreetNum", SqlDbType.VarChar).Value = TextBoxStreetNumber.Text;
-            command.Parameters.Add("@StreetName", SqlDbType.VarChar).Value = TextBoxStreetName.Text;
-            command.Parameters.Add("@StreetSuff", SqlDbType.VarChar).Value = DropDownListStreetSuffix.Text;
+            command.Parameters.Add("@Address_Line1", SqlDbType.VarChar).Value = tbAddress.Text + " " + DropDownListStreetSuffix.Text;
             command.Parameters.Add("@ApartmentNum", SqlDbType.VarChar).Value = TextBoxApartmentNumber.Text;
             command.Parameters.Add("@CityName", SqlDbType.VarChar).Value = TextBoxCity.Text;
 

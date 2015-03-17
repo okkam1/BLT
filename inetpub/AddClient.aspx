@@ -23,7 +23,7 @@
 
             <tr>
                 <td>First Name:</td>
-                <td><asp:TextBox ID="tbFirstName" runat="server"></asp:TextBox>
+                <td><asp:TextBox ID="tbFirstName" runat="server" Width="300px"></asp:TextBox>
 
 
                     <asp:RequiredFieldValidator ID="rfvFirstName" runat="server" InitialValue="" ErrorMessage="Please provide a first name" ControlToValidate="tbFirstName" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -32,8 +32,8 @@
             </tr>
 
             <tr>
-                <td>Last Name (optional; if different than Family Last Name):</td>
-                <td><asp:TextBox ID="tbLastName" runat="server"></asp:TextBox>
+                <td>Last Name:</td>
+                <td><asp:TextBox ID="tbLastName" runat="server" placeholder="Optional; if different than Family Last Name" Width="300px"></asp:TextBox>
                 </td>
             </tr>
    
@@ -41,7 +41,7 @@
         <tr>
                 <td>Middle Name:</td>
             <td>
-        <asp:TextBox ID="tbMiddleName" runat="server" Width="50px"></asp:TextBox></td>
+        <asp:TextBox ID="tbMiddleName" runat="server"></asp:TextBox></td>
             </tr>
             <tr>
                 <td>Birth Date: <br /> <em>(MM/DD/YYYY)</em></td>

@@ -21,19 +21,10 @@
             </tr>
    
         <tr>
-                <td>Street Number:</td>
+                <td>Address:</td>
             <td>
-        <asp:TextBox ID="TextBoxStreetNumber" runat="server"></asp:TextBox>
-
-
-
+        <asp:TextBox ID="tbAddress" runat="server"></asp:TextBox>
             </td>
-            </tr>
-
-            <tr>
-                <td>Street Name:</td>
-            <td>
-        <asp:TextBox ID="TextBoxStreetName" runat="server"></asp:TextBox></td>
             </tr>
 
             <tr>
