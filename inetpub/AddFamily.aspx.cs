@@ -72,7 +72,7 @@ public partial class AddFamily : System.Web.UI.Page
                 command.Parameters.Add("@HomePhone", SqlDbType.BigInt).Value = Convert.ToInt64(HomePhoneTextBox.Text);
             if (WorkPhoneTextBox.Text != "")
                 command.Parameters.Add("@WorkPhone", SqlDbType.BigInt).Value = Convert.ToInt64(WorkPhoneTextBox.Text);
-            command.Parameters.Add("@Pets", SqlDbType.Bit).Value = Convert.ToInt16(RadioButtonListPets.SelectedValue);
+            command.Parameters.Add("@Pets", SqlDbType.Bit).Value = Convert.ToInt16(ddlPets.SelectedValue);
             command.Parameters.Add("@inandout", SqlDbType.Bit).Value = Convert.ToInt16(RadioButtonListPetsInOut.SelectedValue);
            command.Parameters.Add("@PropertyNotes", SqlDbType.VarChar).Value = tbFamilyNotes.Text;
 

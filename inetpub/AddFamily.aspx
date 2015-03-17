@@ -151,13 +151,23 @@
             <tr><td colspan="2"><hr /></td></tr>
 
             <tr>
-                <td>Pets:</td>
+                <td>Number of Pets:</td>
             <td>
 
-                <asp:RadioButtonList ID="RadioButtonListPets" runat="server" RepeatDirection="Horizontal">
-                    <asp:ListItem Value="1">Yes</asp:ListItem>
-                    <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
-                </asp:RadioButtonList>
+                <asp:DropDownList ID="ddlPets" runat="server">
+            <asp:ListItem>0</asp:ListItem>
+                    <asp:ListItem>1</asp:ListItem>
+                    <asp:ListItem>2</asp:ListItem>
+                    <asp:ListItem>3</asp:ListItem>
+                    <asp:ListItem>4</asp:ListItem>
+                    <asp:ListItem>5</asp:ListItem>
+                    <asp:ListItem>6</asp:ListItem>
+                    <asp:ListItem>7</asp:ListItem>
+                    <asp:ListItem>8</asp:ListItem>
+                    <asp:ListItem>9</asp:ListItem>
+                    <asp:ListItem>10</asp:ListItem>
+
+        </asp:DropDownList>
 
             </td>
             </tr>
