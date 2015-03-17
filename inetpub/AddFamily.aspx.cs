@@ -147,5 +147,17 @@ public partial class AddFamily : System.Web.UI.Page
     {
         Response.Redirect("AddClient.aspx");
     }
-   
+
+    protected void ddlPets_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        if (ddlPets.SelectedIndex != 0)
+        {
+            RadioButtonListPetsInOut.Enabled = true;
+        }
+        else
+        {
+            RadioButtonListPetsInOut.SelectedIndex = 1;
+            RadioButtonListPetsInOut.Enabled = false;
+        }
+    }
 }

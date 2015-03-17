@@ -154,8 +154,8 @@
                 <td>Number of Pets:</td>
             <td>
 
-                <asp:DropDownList ID="ddlPets" runat="server">
-            <asp:ListItem>0</asp:ListItem>
+                <asp:DropDownList ID="ddlPets" runat="server" OnSelectedIndexChanged="ddlPets_SelectedIndexChanged" AutoPostBack="true">
+            <asp:ListItem Value="0">0</asp:ListItem>
                     <asp:ListItem>1</asp:ListItem>
                     <asp:ListItem>2</asp:ListItem>
                     <asp:ListItem>3</asp:ListItem>
@@ -172,17 +172,24 @@
             </td>
             </tr>
         
+
+    
+
+            <asp:Panel ID="pnlPets" runat="server" Visible="true">
+
         <tr>
                 <td>Pets In and Out:</td>
             <td>
 
-                <asp:RadioButtonList ID="RadioButtonListPetsInOut" runat="server" RepeatDirection="Horizontal">
+                <asp:RadioButtonList ID="RadioButtonListPetsInOut" runat="server" RepeatDirection="Horizontal" Enabled="False">
                     <asp:ListItem Value="1">Yes</asp:ListItem>
                     <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
                 </asp:RadioButtonList>
 
             </td>
             </tr>
+
+            </asp:Panel>
         
             <tr><td colspan="2"><hr /></td></tr>
         
