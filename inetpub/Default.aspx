@@ -12,6 +12,8 @@
         <ul>
     <li>
         <asp:HyperLink runat="server" NavigateUrl="AddClient.aspx"><img src="images/onboard.jpg" />Onboard Lead Research Study Client </asp:HyperLink></li>
+            <li>
+        <asp:HyperLink ID="hlEdit" runat="server" NavigateUrl="EditClient.aspx"><img src="images/edit.jpg" />Edit Existing Lead Research Study Client </asp:HyperLink></li>
     <li>
         <a href="Reports.aspx"><img src="images/graph3.jpg" />View Reports for Lead Research Study</a></li>
     <!--<li>
