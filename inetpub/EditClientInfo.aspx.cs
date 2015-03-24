@@ -263,7 +263,7 @@ order by f.Lastname
 
         SqlConnection con = new SqlConnection(connectionString);
 
-        string com = "select * from person where PersonID in (select PersonID from persontoFamily where PersonID = '" + sPersonIDIn + "')";
+        string com = "select * from person where PersonID  = '" + sPersonIDIn + "'";
 
 
         SqlDataAdapter adpt = new SqlDataAdapter(com, con);
@@ -274,24 +274,30 @@ order by f.Lastname
 
         ddlFamilyMembers.DataSource = dt;
 
-        ddlFamilyMembers.DataBind();
+        //fill UI screen with pre-selected values
+        tbFirstName.Text = dt.Rows[0]["FirstName"].ToString();
 
-        ddlFamilyMembers.DataTextField = "FirstName";
-        ddlFamilyMembers.DataValueField = "PersonID";
+        tbLastName.Text = dt.Rows[0]["LastName"].ToString();
+        tbMiddleName.Text = dt.Rows[0]["MiddleName"].ToString();
+        tbBirthDate.Text = dt.Rows[0]["BirthDate"].ToString();
+        if (dt.Rows[0]["Gender"].ToString().ToLower() == "f")
+            rblGender.SelectedValue = "F";
+        if (dt.Rows[0]["Gender"].ToString().ToLower() == "m")
+            rblGender.SelectedValue = "M";
+        tbFirstName.Text = dt.Rows[0]["FirstName"].ToString();
+        tbFirstName.Text = dt.Rows[0]["FirstName"].ToString();
+        tbFirstName.Text = dt.Rows[0]["FirstName"].ToString();
 
-        ddlFamilyMembers.DataBind();
+
 
         Trace.Write("connectionString: " + connectionString);
         
     }
 
-    protected void populateUIForm(String sPersonIDIn)
-    {
-    }
-
-
+    
     protected void ddlFamilyMembers_SelectedIndexChanged(object sender, EventArgs e)
     {
         //get indivifual
+        getIndividual(ddlFamilyMembers.SelectedValue.ToString());
     }
 }

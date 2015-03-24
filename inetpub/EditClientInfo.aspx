@@ -20,7 +20,7 @@
 
                 </td>
             </tr>
-            <asp:Panel runat="server" ID="pnlFamilyMembers" Visible="true">
+            <asp:Panel runat="server" ID="pnlFamilyMembers" Visible="false">
             <tr>
                 <td>Family Members:</td>
                 <td><asp:DropDownList ID="ddlFamilyMembers" runat="server" ViewStateMode="Enabled" AutoPostBack="True" OnSelectedIndexChanged="ddlFamilyMembers_SelectedIndexChanged"></asp:DropDownList>
@@ -31,6 +31,11 @@
             </tr>
 
             </asp:Panel>
+            
+            
+            <tr><td colspan="2"><hr /></td></tr>
+
+            
             <tr>
                 <td>First Name:</td>
                 <td><asp:TextBox ID="tbFirstName" runat="server" Width="300px"></asp:TextBox>
