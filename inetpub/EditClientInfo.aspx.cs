@@ -263,7 +263,7 @@ order by f.Lastname
 
         SqlConnection con = new SqlConnection(connectionString);
 
-        string com = "select * from person where PersonID  = '" + sPersonIDIn + "'";
+        string com = "select *, (select languageID from PersontoLanguage ptl where p.personid = ptl.personid) as LanguageID from person p where p.personid  = '" + sPersonIDIn + "'";
 
 
         SqlDataAdapter adpt = new SqlDataAdapter(com, con);
@@ -272,23 +272,27 @@ order by f.Lastname
 
         adpt.Fill(dt);
 
-        ddlFamilyMembers.DataSource = dt;
-
         //fill UI screen with pre-selected values
-        tbFirstName.Text = dt.Rows[0]["FirstName"].ToString();
+        if (dt.Rows.Count > 0)
+        {
 
-        tbLastName.Text = dt.Rows[0]["LastName"].ToString();
-        tbMiddleName.Text = dt.Rows[0]["MiddleName"].ToString();
-        tbBirthDate.Text = dt.Rows[0]["BirthDate"].ToString();
-        if (dt.Rows[0]["Gender"].ToString().ToLower() == "f")
-            rblGender.SelectedValue = "F";
-        if (dt.Rows[0]["Gender"].ToString().ToLower() == "m")
-            rblGender.SelectedValue = "M";
-        tbFirstName.Text = dt.Rows[0]["FirstName"].ToString();
-        tbFirstName.Text = dt.Rows[0]["FirstName"].ToString();
-        tbFirstName.Text = dt.Rows[0]["FirstName"].ToString();
+            tbFirstName.Text = dt.Rows[0]["FirstName"].ToString();
 
+            tbLastName.Text = dt.Rows[0]["LastName"].ToString();
+            tbMiddleName.Text = dt.Rows[0]["MiddleName"].ToString();
+            tbBirthDate.Text = dt.Rows[0]["BirthDate"].ToString();
+            if (dt.Rows[0]["Gender"].ToString().ToLower() == "f")
+                rblGender.SelectedValue = "F";
+            if (dt.Rows[0]["Gender"].ToString().ToLower() == "m")
+                rblGender.SelectedValue = "M";
+            
+           // if (dt.Rows[0]["LanguageID"].ToString() != null)
+           //     ddlLanguage.SelectedIndex = Convert.ToInt32( dt.Rows[0]["LanguageID"].ToString() );
+         
+          //  rblMoved.SelectedIndex = Convert.ToInt16(dt.Rows[0]["Moved"].ToString() );
+            tbFirstName.Text = dt.Rows[0]["FirstName"].ToString();
 
+        }
 
         Trace.Write("connectionString: " + connectionString);
         

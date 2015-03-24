@@ -87,7 +87,7 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
             <tr><td colspan="2"><hr /></td></tr>
 
         <tr>
-                <td>Language:</td>
+                <td>Primary Language:</td>
             <td>
         <asp:DropDownList ID="ddlLanguage" runat="server">
             <asp:ListItem>-</asp:ListItem>
