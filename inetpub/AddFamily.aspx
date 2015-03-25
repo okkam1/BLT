@@ -26,8 +26,13 @@
         <asp:TextBox ID="tbAddress" runat="server"></asp:TextBox>
             </td>
             </tr>
-
             <tr>
+                <td>Address2:</td>
+            <td>
+        <asp:TextBox ID="tbAddress2" runat="server"></asp:TextBox></td>
+            </tr>
+
+<%--            <tr>
                 <td>Street Suffix:</td>
             <td>
                 <asp:DropDownList ID="DropDownListStreetSuffix" runat="server">
@@ -41,13 +46,7 @@
                     </asp:DropDownList>
 
             </td>
-            </tr>
-
-            <tr>
-                <td>Apartment Number:</td>
-            <td>
-        <asp:TextBox ID="TextBoxApartmentNumber" runat="server"></asp:TextBox></td>
-            </tr>
+            </tr>--%>
 
         <tr>
                 <td>City:</td>
