@@ -56,7 +56,7 @@ public partial class BloodTestResults : System.Web.UI.Page
 
             //child status code
 
-            string comChildStatusTypeQuery = "Select LabID, Upper(LabName) as LabName from dbo.Lab order by LabName asc";
+            string comChildStatusTypeQuery = "EXEC [dbo].[usp_SlChildStatus]";
 
             SqlDataAdapter adptChildStatusType = new SqlDataAdapter(comChildStatusTypeQuery, conLang);
 
@@ -68,8 +68,8 @@ public partial class BloodTestResults : System.Web.UI.Page
 
             ddlClientStatusCode.DataBind();
 
-             ddlClientStatusCode.DataTextField = "LabName";
-             ddlClientStatusCode.DataValueField = "LabID";
+             ddlClientStatusCode.DataTextField = "StatusName";
+             ddlClientStatusCode.DataValueField = "StatusID";
 
              ddlClientStatusCode.DataBind();
             // if (!Page.IsPostBack)
@@ -125,8 +125,6 @@ public partial class BloodTestResults : System.Web.UI.Page
                 command.Parameters.Add("@Test_Type", SqlDbType.Int).Value = Convert.ToInt32(ddlTestType.Text);
             if (ddlLab.Text != "")
                 command.Parameters.Add("@Lab_ID", SqlDbType.Int).Value = Convert.ToInt32(ddlLab.Text);
-            //if (ddlLabID.Text != "")
-            //    command.Parameters.Add("@Lab_ID", SqlDbType.Int).Value = Convert.ToInt32(ddlLabID.Text);
             if (ddlClientStatusCode.SelectedValue != "-")
                 command.Parameters.Add("@Child_Status_Code", SqlDbType.Int).Value = Convert.ToInt32(ddlClientStatusCode.SelectedValue);
             if (tbHemoglobin.Text != "")
