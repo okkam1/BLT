@@ -78,8 +78,8 @@ public partial class BloodTestResults : System.Web.UI.Page
 
             //Test Type
 
-            string comTestType = "Select LabID, Upper(LabName) as LabName from dbo.Lab order by LabName asc";
-
+            //string comTestType = "Select LabID, Upper(LabName) as LabName from dbo.Lab order by LabName asc";
+            string comTestType = "EXEC usp_slTargetSampleType 'person'";
             SqlDataAdapter adptTestType = new SqlDataAdapter(comTestType, conLang);
 
             DataTable dtTestType = new DataTable();
@@ -90,8 +90,8 @@ public partial class BloodTestResults : System.Web.UI.Page
 
             ddlTestType.DataBind();
 
-             ddlTestType.DataTextField = "LabName";
-             ddlTestType.DataValueField = "LabID";
+             ddlTestType.DataTextField = "SampleTypeName";
+             ddlTestType.DataValueField = "SampleTypeID";
 
              ddlTestType.DataBind();
             // if (!Page.IsPostBack)
@@ -121,12 +121,12 @@ public partial class BloodTestResults : System.Web.UI.Page
                 command.Parameters.Add("@Lab_Date", SqlDbType.DateTime).Value = tbLabDate.Text;
             if (tbBloodLeadResult.Text != "")
                 command.Parameters.Add("@Blood_Lead_Result", SqlDbType.Decimal).Value = Convert.ToDecimal(tbBloodLeadResult.Text);
-            if (tbTestType.Text != "")
-                command.Parameters.Add("@Test_Type", SqlDbType.Int).Value = Convert.ToInt32(tbTestType.Text);
-            //if (tbLab.Text != "")
-            //    command.Parameters.Add("@Lab", SqlDbType.VarChar).Value = tbLab.Text;
-            //if (tbLabID.Text != "")
-            //    command.Parameters.Add("@Lab_ID", SqlDbType.Int).Value = Convert.ToInt32(tbLabID.Text);
+            if (ddlTestType.Text != "")
+                command.Parameters.Add("@Test_Type", SqlDbType.Int).Value = Convert.ToInt32(ddlTestType.Text);
+            if (ddlLab.Text != "")
+                command.Parameters.Add("@Lab_ID", SqlDbType.Int).Value = Convert.ToInt32(ddlLab.Text);
+            //if (ddlLabID.Text != "")
+            //    command.Parameters.Add("@Lab_ID", SqlDbType.Int).Value = Convert.ToInt32(ddlLabID.Text);
             if (ddlClientStatusCode.SelectedValue != "-")
                 command.Parameters.Add("@Child_Status_Code", SqlDbType.Int).Value = Convert.ToInt32(ddlClientStatusCode.SelectedValue);
             if (tbHemoglobin.Text != "")
