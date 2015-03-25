@@ -14,7 +14,7 @@
         <table>
 
             <tr>
-                <td>Date:</td>
+                <td>Questionnaire Date:</td>
                 <td><asp:TextBox ID="tbQuestionnaireDate" runat="server"></asp:TextBox>
 
                     <ajaxtoolkit:CalendarExtender ID="CalendarExtender1"   
