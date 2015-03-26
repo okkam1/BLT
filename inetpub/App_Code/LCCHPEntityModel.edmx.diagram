@@ -5,86 +5,86 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="2919ddc2b5fb42278e41f0b40e87cb4d" Name="Diagram1" ZoomLevel="81" >
-        <EntityTypeShape EntityType="LCCHPEntityModel.AccessAgreement" Width="1.5" PointX="2.4911162417806296" PointY="6.3355844199357483" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.AccessAgreementNote" Width="1.5" PointX="10.609949021884216" PointY="0.55324967231287137" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.AccessPurpose" Width="1.5" PointX="4.2894128990775968" PointY="9.3418355329622678" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.Area" Width="1.5" PointX="7.6799123471974919" PointY="2.3082050989885836" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.BloodTestResult" Width="1.5" PointX="6.7637299069965859" PointY="8.1592642255869059" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.BloodTestResultsNote" Width="1.5" PointX="4.4407440202500412" PointY="0.15896764405023661" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.CleanupStatu" Width="1.5" PointX="11.603047650122571" PointY="0.6153413805250737" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.ConstructionType" Width="1.5" PointX="9.0272954707161031" PointY="14.199907950218725" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.Contractor" Width="1.5" PointX="4.0671391152158094" PointY="9.4068421467239229" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.ContractortoProperty" Width="1.5" PointX="10.677126287797989" PointY="19.088700929232267" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.ContractortoRemediation" Width="1.5" PointX="9.24757114855925" PointY="25.039414775110508" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.ContractortoRemediationActionPlan" Width="1.5" PointX="3.9659342951913992" PointY="1.4867652959594342" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.Country" Width="1.5" PointX="0.44110921604610481" PointY="16.711215563449642" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.DateRange" Width="1.5" PointX="5.842395390310509" PointY="23.979280840595848" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.Daycare" Width="1.5" PointX="7.4566919056031349" PointY="9.2057687832069437" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.DaycarePrimaryContact" Width="1.5" PointX="11.546279791531283" PointY="12.415654873668986" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.DaycaretoProperty" Width="1.5" PointX="11.441793020554723" PointY="3.535854579664699" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.Employer" Width="1.5" PointX="11.912177391309374" PointY="21.6391033332977" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.EmployertoProperty" Width="1.5" PointX="7.3126457535254978" PointY="2.6635411543136187" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.EnvironmentalInvestigation" Width="1.5" PointX="9.9169105076775459" PointY="19.289529764693942" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.ErrorLog" Width="1.5" PointX="2.5136135772399664" PointY="1.6141800887948741" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.Ethnicity" Width="1.5" PointX="11.912358708638864" PointY="17.675092720275323" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.Family" Width="1.5" PointX="11.743211913734307" PointY="15.778123833135759" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.FamilyNote" Width="1.5" PointX="4.4477902000992513" PointY="12.555462992077443" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.FileType" Width="1.5" PointX="3.0224653291620616" PointY="10.120564539972955" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.ForeignFood" Width="1.5" PointX="7.5539714189031955" PointY="8.4325883129763355" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.ForeignFoodtoCountry" Width="1.5" PointX="0.664818160545462" PointY="15.030627943123983" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.GiftCard" Width="1.5" PointX="11.68429151535234" PointY="13.603561869637836" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.Hobby" Width="1.5" PointX="10.409909862284506" PointY="26.806432095731811" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.HomeRemedy" Width="1.5" PointX="11.766359411071223" PointY="26.727218834090614" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.HouseholdSourcesofLead" Width="1.5" PointX="9.6607929345503418" PointY="28.500485418597464" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.InsuranceProvider" Width="1.5" PointX="5.4088850065175844" PointY="8.8308443021172867" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.Lab" Width="1.5" PointX="3.5134442930638068" PointY="31.426329180331123" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.LabNote" Width="1.5" PointX="0.61781984596411688" PointY="27.40560582066216" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.LabOriginal" Width="1.5" PointX="0.3185756263875289" PointY="2.4336845886119103" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.Language" Width="1.5" PointX="10.012319727806522" PointY="8.18216315292854" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.Medium" Width="1.5" PointX="5.6106552973439241" PointY="9.1828070027673654" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.MediumSampleResult" Width="1.5" PointX="4.6446492712221339" PointY="23.046009640696465" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.MediumSampleResultsNote" Width="1.5" PointX="9.4774218320275754" PointY="24.900732066901742" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.Occupation" Width="1.5" PointX="0.81432507225048034" PointY="17.398167409653855" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.OccupationNote" Width="1.5" PointX="1.8189156361943648" PointY="3.02425804875058" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.Person" Width="1.5" PointX="5.9697649860613815" PointY="9.76394720830207" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.PersonNote" Width="1.5" PointX="7.8981918747994078" PointY="22.357491131107086" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.PersontoAccessAgreement" Width="1.5" PointX="3.9910524170804083" PointY="15.480820111688608" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.PersontoDaycare" Width="1.5" PointX="1.641653952021922" PointY="18.162244507187161" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.PersontoEmployer" Width="1.5" PointX="9.70475388770213" PointY="24.693956580336184" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.PersontoEthnicity" Width="1.5" PointX="1.2324685217963851" PointY="31.71787585304951" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.PersontoFamily" Width="1.5" PointX="9.5727807272098868" PointY="10.202484120709116" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.PersontoForeignFood" Width="1.5" PointX="7.1964325267804927" PointY="22.935445587586354" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.PersontoHobby" Width="1.5" PointX="3.1147154770394394" PointY="31.88890258962703" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.PersontoHomeRemedy" Width="1.5" PointX="5.298976591461793" PointY="16.455168046269179" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.PersontoInsurance" Width="1.5" PointX="4.3897229956415122" PointY="5.6262229558202543" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.PersontoLanguage" Width="1.5" PointX="5.7828919746833343" PointY="11.961760630813316" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.PersontoOccupation" Width="1.5" PointX="9.5515653200222026" PointY="24.590041425353867" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.PersontoPerson" Width="1.5" PointX="0.99183620744935985" PointY="8.1121010669097782" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.PersontoPhoneNumber" Width="1.5" PointX="7.6239138690866124" PointY="2.8590275658569428" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.PersontoProperty" Width="1.5" PointX="9.2380869636489482" PointY="13.978791019869405" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.PersonToStatu" Width="1.5" PointX="8.2037914265896159" PointY="22.737856443383663" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.PersonToTravelCountry" Width="1.5" PointX="4.7179170459126665" PointY="4.6597461424114863" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.PhoneNumber" Width="1.5" PointX="7.4133747384945741" PointY="19.0116936503964" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.PhoneNumberType" Width="1.5" PointX="7.793821025543763" PointY="18.166699477549038" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.Property" Width="1.5" PointX="8.6354482307263876" PointY="14.687290496512917" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.PropertyNote" Width="1.5" PointX="3.2078778330273359" PointY="2.0055626938145434" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.PropertySampleResult" Width="1.5" PointX="1.8358426605518174" PointY="15.243871606534286" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.PropertySampleResultsNote" Width="1.5" PointX="5.8707718988278748" PointY="2.1832472692165745" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.PropertytoCleanupStatu" Width="1.5" PointX="1.44582108848068" PointY="2.3376792978205154" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.PropertytoHouseholdSourcesofLead" Width="1.5" PointX="6.2230590480487145" PointY="2.2826309363742503" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.PropertytoMedium" Width="1.5" PointX="1.2253361871584021" PointY="20.395273650249127" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.Questionnaire" Width="1.5" PointX="8.7443737726399551" PointY="10.293150340343431" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.QuestionnaireNote" Width="1.5" PointX="9.8785882284299422" PointY="9.1000843686517729" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.RelationshipType" Width="1.5" PointX="10.832493854142955" PointY="18.052765020193888" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.Remediation" Width="1.5" PointX="4.813471334433868" PointY="28.26564280514868" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.RemediationActionPlan" Width="1.5" PointX="11.186927821108572" PointY="23.020316134682073" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.RemediationNote" Width="1.5" PointX="0.022146753977121205" PointY="21.307791704920955" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.SampleLevelCategory" Width="1.5" PointX="3.6904120183039515" PointY="2.789558829176034" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.SampleType" Width="1.5" PointX="11.108014499353251" PointY="14.53074059566983" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.Source" Width="1.5" PointX="1.1874173568503081" PointY="21.294214288375439" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.Status" Width="1.5" PointX="4.164517445566374" PointY="27.963904766349078" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.sysdiagram" Width="1.5" PointX="9.5352397866245546" PointY="29.01863749186445" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.Unit" Width="1.5" PointX="10.901955775405259" PointY="13.415482572007683" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.TargetStatu" Width="1.5" PointX="11.962667081487675" PointY="9.06705333714702" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.TravelNote" Width="1.5" PointX="10.545278554104865" PointY="9.1204049480708331" />
+        <AssociationConnector Association="LCCHPEntityModel.FK_TravelNotes_Family" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.AccessAgreement" Width="1.5" PointX="0.40005420725795171" PointY="14.758612073379855" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.AccessAgreementNote" Width="1.5" PointX="6.5299287710943865" PointY="6.6828131408816267" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.AccessPurpose" Width="1.5" PointX="3.9177935551469183" PointY="11.142286454859324" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.Area" Width="1.5" PointX="7.995619988066899" PointY="12.133790141033842" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.BloodTestResult" Width="1.5" PointX="3.9664396457217816" PointY="4.5822177848695862" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.BloodTestResultsNote" Width="1.5" PointX="1.5420709352670565" PointY="21.183074856727885" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.CleanupStatu" Width="1.5" PointX="0.12772478727983533" PointY="23.289450999018481" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.ConstructionType" Width="1.5" PointX="10.725338927807911" PointY="19.526868426951985" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.Contractor" Width="1.5" PointX="7.0271328962534358" PointY="20.420219356389818" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.ContractortoProperty" Width="1.5" PointX="10.232980883788773" PointY="6.3409162938319685" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.ContractortoRemediation" Width="1.5" PointX="10.573271204984408" PointY="23.206599201637598" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.ContractortoRemediationActionPlan" Width="1.5" PointX="3.8889828584571289" PointY="20.503286997090694" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.Country" Width="1.5" PointX="8.2033518684112234" PointY="12.4212752936507" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.Daycare" Width="1.5" PointX="9.961275915597227" PointY="9.32216711776432" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.DaycarePrimaryContact" Width="1.5" PointX="1.1199068376421493" PointY="29.7954433401094" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.DaycaretoProperty" Width="1.5" PointX="9.8883428470642976" PointY="1.7308643170310485" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.Employer" Width="1.5" PointX="7.2933656663137327" PointY="16.998345010447476" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.EmployertoProperty" Width="1.5" PointX="0.91746094865606209" PointY="14.023258975717825" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.EnvironmentalInvestigation" Width="1.5" PointX="3.6604992801605252" PointY="29.066185487930749" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.ErrorLog" Width="1.5" PointX="4.8413971815451031" PointY="0.84713622967113567" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.Ethnicity" Width="1.5" PointX="7.1790093384585392" PointY="3.8895769584409785" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.Family" Width="1.5" PointX="2.6777150364023239" PointY="18.432523795604951" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.FamilyNote" Width="1.5" PointX="1.0882965964676332" PointY="12.66476421647927" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.FileType" Width="1.5" PointX="9.4989693190432014" PointY="10.03238627781737" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.ForeignFood" Width="1.5" PointX="8.0932270214395725" PointY="12.373577123681818" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.ForeignFoodtoCountry" Width="1.5" PointX="8.3730121051766968" PointY="7.7005234545564853" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.GiftCard" Width="1.5" PointX="5.1871709717377881" PointY="10.312319730553925" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.Hobby" Width="1.5" PointX="4.7870839130073239" PointY="9.8602120177169379" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.HomeRemedy" Width="1.5" PointX="1.6454966690603161" PointY="28.909856392494337" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.HouseholdSourcesofLead" Width="1.5" PointX="6.3027030594193851" PointY="30.026174186741084" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.InsuranceProvider" Width="1.5" PointX="6.2170815049750168" PointY="11.999486183747409" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.Lab" Width="1.5" PointX="3.4302644652455418" PointY="12.781729048482017" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.LabNote" Width="1.5" PointX="3.8299888222617975" PointY="2.381324843681103" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.Language" Width="1.5" PointX="0.65028740495922388" PointY="15.342254422298751" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.Medium" Width="1.5" PointX="7.8160831759758675" PointY="14.577644831769934" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.MediumSampleResult" Width="1.5" PointX="3.6620763799464688" PointY="21.672835568745079" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.MediumSampleResultsNote" Width="1.5" PointX="2.8161850771010783" PointY="26.440812793765595" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.Occupation" Width="1.5" PointX="7.1988342717284493" PointY="24.305812921517443" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.OccupationNote" Width="1.5" PointX="6.0247596642117758" PointY="23.938097160280726" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.Person" Width="1.5" PointX="6.6004360274413774" PointY="9.2108407659506621" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.PersonNote" Width="1.5" PointX="7.1590089160758108" PointY="16.531016163775238" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.PersontoAccessAgreement" Width="1.5" PointX="7.4025856477220469" PointY="22.61284111003058" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.PersontoDaycare" Width="1.5" PointX="2.8002791473643294" PointY="18.668390804281639" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.PersontoEmployer" Width="1.5" PointX="7.4619031471488544" PointY="9.1366553796160286" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.PersontoEthnicity" Width="1.5" PointX="1.5872954659104792" PointY="24.58635051203256" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.PersontoFamily" Width="1.5" PointX="3.6132254468338685" PointY="12.851475021267065" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.PersontoForeignFood" Width="1.5" PointX="4.5971164985546453" PointY="14.884218297379194" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.PersontoHobby" Width="1.5" PointX="6.1005945811516575" PointY="7.1445387188086933" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.PersontoHomeRemedy" Width="1.5" PointX="10.028326894169826" PointY="26.358844381924179" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.PersontoInsurance" Width="1.5" PointX="3.0822076010900581" PointY="0.52079941356591852" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.PersontoLanguage" Width="1.5" PointX="4.0989991762205022" PointY="9.9883304284831187" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.PersontoOccupation" Width="1.5" PointX="7.9460616782056457" PointY="7.0042938920689251" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.PersontoPerson" Width="1.5" PointX="0.978015041434213" PointY="0.6551967117261126" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.PersontoPhoneNumber" Width="1.5" PointX="0.071511218357603629" PointY="19.391643130868506" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.PersontoProperty" Width="1.5" PointX="8.6682856272292721" PointY="20.459744179835425" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.PersonToStatu" Width="1.5" PointX="9.6728198424320766" PointY="12.449893957213449" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.PersonToTravelCountry" Width="1.5" PointX="4.2407601197439995" PointY="7.5963673925010333" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.PhoneNumber" Width="1.5" PointX="4.1008064039520944" PointY="0.04786784949147508" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.PhoneNumberType" Width="1.5" PointX="9.097221671183231" PointY="18.534530797290863" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.Property" Width="1.5" PointX="1.992869245816427" PointY="23.544912721749821" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.PropertyNote" Width="1.5" PointX="5.43109366923156" PointY="24.5974443669419" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.PropertySampleResult" Width="1.5" PointX="4.1660499424515525" PointY="28.256537957236421" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.PropertySampleResultsNote" Width="1.5" PointX="1.8533913650798572" PointY="28.914061991923518" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.PropertytoCleanupStatu" Width="1.5" PointX="3.5301968397247587" PointY="24.62560857489035" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.PropertytoHouseholdSourcesofLead" Width="1.5" PointX="3.8147102165104405" PointY="12.052352672467173" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.PropertytoMedium" Width="1.5" PointX="11.086352951399215" PointY="21.707181389307223" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.Questionnaire" Width="1.5" PointX="5.8945788340152143" PointY="17.080363326277752" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.QuestionnaireNote" Width="1.5" PointX="11.355066111010995" PointY="9.1023600143857113" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.RelationshipType" Width="1.5" PointX="10.253069383210068" PointY="12.735934501856535" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.Remediation" Width="1.5" PointX="7.5018003748272548" PointY="6.8122143479120982" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.RemediationActionPlan" Width="1.5" PointX="6.929135333248011" PointY="0.50676526152843859" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.RemediationNote" Width="1.5" PointX="6.7579601401267384" PointY="15.773043729259188" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.SampleLevelCategory" Width="1.5" PointX="11.547061599580134" PointY="29.1853739010102" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.SampleType" Width="1.5" PointX="0.57854301323115032" PointY="4.66260993697802" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.Source" Width="1.5" PointX="1.4807754575651024" PointY="16.220384366912945" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.sysdiagram" Width="1.5" PointX="5.5819803483700285" PointY="8.2076742538286727" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.Unit" Width="1.5" PointX="7.8916973974051405" PointY="16.67430754782367" />
         <AssociationConnector Association="LCCHPEntityModel.FK_AccessAgreement_AccessPurpose" />
         <AssociationConnector Association="LCCHPEntityModel.FK_AccessAgreement_Property" />
         <AssociationConnector Association="LCCHPEntityModel.FK_AccessAgreementNotes_AccessAgreement" />
@@ -123,6 +123,7 @@
         <AssociationConnector Association="LCCHPEntityModel.FK_PersontoEthnicity_Ethnicity" />
         <AssociationConnector Association="LCCHPEntityModel.FK_FamilyNotes_Family" />
         <AssociationConnector Association="LCCHPEntityModel.FK_PersontoFamily_Family" />
+        <AssociationConnector Association="LCCHPEntityModel.FK_TravelNotes_Family" />
         <AssociationConnector Association="LCCHPEntityModel.FK_ForeignFoodtoCountry_ForeignFood" />
         <AssociationConnector Association="LCCHPEntityModel.FK_PersontoForeignFood_ForeignFood" />
         <AssociationConnector Association="LCCHPEntityModel.FK_GiftCard_Person" />
@@ -176,7 +177,7 @@
         <AssociationConnector Association="LCCHPEntityModel.FK_QuestionnaireNotes_Questionnaire" />
         <AssociationConnector Association="LCCHPEntityModel.FK_Remediation_RemediationActionPlan" />
         <AssociationConnector Association="LCCHPEntityModel.FK_RemediationNotes_Remediation" />
-      </Diagram>
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>
