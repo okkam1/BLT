@@ -8,7 +8,8 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
 
-public partial class AddChild : System.Web.UI.Page
+
+public partial class EditClientInfo : System.Web.UI.Page
 {
     string connectionString = ConfigurationManager.ConnectionStrings["csLCCHP"].ConnectionString;
 
@@ -18,8 +19,8 @@ public partial class AddChild : System.Web.UI.Page
 
         Trace.Write("connectionString: " + connectionString);
 
-       // if (tbBirthDate.Text=="")
-         //   tbBirthDate.Text = DateTime.Today.ToShortDateString();
+        // if (tbBirthDate.Text=="")
+        //   tbBirthDate.Text = DateTime.Today.ToShortDateString();
 
         futureDateValidator.ValueToCompare = DateTime.Now.ToString("MM/dd/yyyy");
 
@@ -29,7 +30,7 @@ public partial class AddChild : System.Web.UI.Page
         {
             SqlConnection con = new SqlConnection(connectionString);
 
-//            string com = "Select Lastname, FamilyID from dbo.Family order by Lastname asc";
+            //            string com = "Select Lastname, FamilyID from dbo.Family order by Lastname asc";
 
 
             string com = @"Select f.FamilyID, p.PropertyID, f.Lastname, CONCAT(f.Lastname,' -- ', p.AddressLine1,' ',p.Zipcode ) NameAddress
@@ -105,8 +106,8 @@ order by f.Lastname
 
             ddlEthnicity.DataBind();
 
-           ddlEthnicity.DataTextField = "Ethnicity";
-           ddlEthnicity.DataValueField = "EthnicityID";
+            ddlEthnicity.DataTextField = "Ethnicity";
+            ddlEthnicity.DataValueField = "EthnicityID";
 
             ddlEthnicity.DataBind();
             ddlEthnicity.Items.Insert(0, "-");
@@ -128,8 +129,7 @@ order by f.Lastname
             command.Parameters.Add("@Family_ID", SqlDbType.Int).Value = FamilyNameList.SelectedValue;
             command.Parameters.Add("@First_Name", SqlDbType.VarChar).Value = tbFirstName.Text;
             command.Parameters.Add("@Middle_Name", SqlDbType.VarChar).Value = tbMiddleName.Text;
-            if (tbLastName.Text != "")
-                command.Parameters.Add("@Last_Name", SqlDbType.VarChar).Value = tbLastName.Text;
+            command.Parameters.Add("@Last_Name", SqlDbType.VarChar).Value = tbLastName.Text;
             command.Parameters.Add("@Birth_Date", SqlDbType.DateTime).Value = tbBirthDate.Text;
             command.Parameters.Add("@Gender_", SqlDbType.Char).Value = rblGender.SelectedValue;
             command.Parameters.Add("@Language_ID", SqlDbType.TinyInt).Value = ddlLanguage.SelectedValue;
@@ -143,7 +143,7 @@ order by f.Lastname
             command.Parameters.Add("@Release_Notes", SqlDbType.VarChar).Value = rblGender.Text;
             command.Parameters.Add("@ClientID", SqlDbType.Int).Direction = ParameterDirection.Output;  //usp returns ID upon completion
 
-            command.Parameters.Add("@ReturnValue", SqlDbType.Int).Direction = ParameterDirection.ReturnValue; 
+            command.Parameters.Add("@ReturnValue", SqlDbType.Int).Direction = ParameterDirection.ReturnValue;
 
             sqlConnection.Open();
             command.ExecuteNonQuery();
@@ -153,11 +153,11 @@ order by f.Lastname
 
             String sReturnValue = command.Parameters["@ReturnValue"].Value.ToString();
 
-            Trace.Write("sClientID: " +sClientID);
-            
-            if (sClientID != "" && sReturnValue=="0")
+            Trace.Write("sClientID: " + sClientID);
+
+            if (sClientID != "" && sReturnValue == "0")
             {
-                lbOutput.Text = "New Research Subject " + sClientID+" Inserted at: " + DateTime.Now;
+                lbOutput.Text = "New Research Subject " + sClientID + " Inserted at: " + DateTime.Now;
                 lbPopUp.Text = "New Research Subject " + sClientID + " Inserted at: " + DateTime.Now;
                 NextButton.Visible = true;
                 ModalPopupExtender1.Show();
@@ -168,7 +168,7 @@ order by f.Lastname
                 Session["ClientID"] = sClientID;
 
             }
-            else if (sReturnValue=="50000") 
+            else if (sReturnValue == "50000")
             {
                 lbOutput.Text = "Possible Duplicate Client based on Name and birthdate";
                 lbPopUp.Text = "Possible Duplicate Client based on Name and birthdate";
@@ -182,13 +182,13 @@ order by f.Lastname
                 ModalPopupExtender1.Show();
             }
 
-            
+
         }
         catch (SqlException exSQL)
         {
-            
-            lbOutput.Text = "SQL ERROR: " + exSQL.Message.ToString() +  " " + DateTime.Now;
-            
+
+            lbOutput.Text = "SQL ERROR: " + exSQL.Message.ToString() + " " + DateTime.Now;
+
             lbPopUp.Text = lbOutput.Text;
             ModalPopupExtender1.Show();
 
@@ -205,10 +205,103 @@ order by f.Lastname
             Trace.Write("Error" + ex.Message.ToString());
         }
 
- 
+
     }
+
     protected void NextButton_Click(object sender, EventArgs e)
     {
-        Response.Redirect("Questionnaire.aspx");
+
+    }
+
+    protected void getFamilyMembers(String sFamilyIDIn)
+    {
+
+        SqlConnection con = new SqlConnection(connectionString);
+
+        string com = "select PersonID,FirstName,MiddleName from person where PersonID in (select PersonID from persontoFamily where FamilyID = '" + sFamilyIDIn + "')";
+
+
+        SqlDataAdapter adpt = new SqlDataAdapter(com, con);
+
+        DataTable dt = new DataTable();
+
+        adpt.Fill(dt);
+
+        ddlFamilyMembers.DataSource = dt;
+                                                                                                                                      
+        ddlFamilyMembers.DataBind();
+
+        ddlFamilyMembers.DataTextField = "FirstName";
+        ddlFamilyMembers.DataValueField = "PersonID";
+
+        ddlFamilyMembers.DataBind();
+
+
+        Trace.Write("connectionString: " + connectionString);
+
+        //if (dt.Rows.Count>1)
+        if (ddlFamilyMembers.Items.Count > 1)
+        {
+            pnlFamilyMembers.Visible = true;
+        }
+        else
+        {
+            pnlFamilyMembers.Visible = false;
+            getIndividual(ddlFamilyMembers.SelectedValue.ToString());
+        }
+
+
+    }
+    
+    protected void FamilyNameList_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        getFamilyMembers(FamilyNameList.SelectedValue);
+    }
+
+    protected void getIndividual(String sPersonIDIn)
+    {
+
+        SqlConnection con = new SqlConnection(connectionString);
+
+        string com = "select *, (select languageID from PersontoLanguage ptl where p.personid = ptl.personid) as LanguageID from person p where p.personid  = '" + sPersonIDIn + "'";
+
+
+        SqlDataAdapter adpt = new SqlDataAdapter(com, con);
+
+        DataTable dt = new DataTable();
+
+        adpt.Fill(dt);
+
+        //fill UI screen with pre-selected values
+        if (dt.Rows.Count > 0)
+        {
+
+            tbFirstName.Text = dt.Rows[0]["FirstName"].ToString();
+
+            tbLastName.Text = dt.Rows[0]["LastName"].ToString();
+            tbMiddleName.Text = dt.Rows[0]["MiddleName"].ToString();
+            tbBirthDate.Text = dt.Rows[0]["BirthDate"].ToString();
+            if (dt.Rows[0]["Gender"].ToString().ToLower() == "f")
+                rblGender.SelectedValue = "F";
+            if (dt.Rows[0]["Gender"].ToString().ToLower() == "m")
+                rblGender.SelectedValue = "M";
+            
+           // if (dt.Rows[0]["LanguageID"].ToString() != null)
+           //     ddlLanguage.SelectedIndex = Convert.ToInt32( dt.Rows[0]["LanguageID"].ToString() );
+         
+          //  rblMoved.SelectedIndex = Convert.ToInt16(dt.Rows[0]["Moved"].ToString() );
+            tbFirstName.Text = dt.Rows[0]["FirstName"].ToString();
+
+        }
+
+        Trace.Write("connectionString: " + connectionString);
+        
+    }
+
+    
+    protected void ddlFamilyMembers_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        //get indivifual
+        getIndividual(ddlFamilyMembers.SelectedValue.ToString());
     }
 }

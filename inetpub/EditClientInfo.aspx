@@ -1,5 +1,5 @@
 ﻿
-<%@ Page Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="AddClient.aspx.cs" Inherits="AddChild" Trace="false" EnableViewState="true"%>
+<%@ Page Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="EditClientInfo.aspx.cs" Inherits="EditClientInfo" Trace="false" EnableViewState="true" %>
 
 <asp:Content ID="headContent" ContentPlaceHolderID="head" Runat="Server"></asp:Content>
 
@@ -8,19 +8,34 @@
 
     <div class="DD">
 
-        <h2 class="DDSubHeader">Onboard Client for Lead Research Study</h2>
+        <h2 class="DDSubHeader">Edit Existing Client Information</h2>
 
         <table>
             <tr>
                 <td>Family:</td>
-                <td><asp:DropDownList ID="FamilyNameList" runat="server" ViewStateMode="Enabled"></asp:DropDownList>
+                <td><asp:DropDownList ID="FamilyNameList" runat="server" ViewStateMode="Enabled" OnSelectedIndexChanged="FamilyNameList_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
                 <a href="AddFamily.aspx" class="small">Add a New Family</a>
                     
                     <asp:RequiredFieldValidator ID="rfvFamilyName" runat="server" InitialValue="(Family name -- PRIMARY residence)" ErrorMessage="Please select a family" ControlToValidate="FamilyNameList" ForeColor="Red"></asp:RequiredFieldValidator>
 
                 </td>
             </tr>
+            <asp:Panel runat="server" ID="pnlFamilyMembers" Visible="false">
+            <tr>
+                <td>Family Members:</td>
+                <td><asp:DropDownList ID="ddlFamilyMembers" runat="server" ViewStateMode="Enabled" AutoPostBack="True" OnSelectedIndexChanged="ddlFamilyMembers_SelectedIndexChanged"></asp:DropDownList>
+                    
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" InitialValue="(Family name -- PRIMARY residence)" ErrorMessage="Please select a family" ControlToValidate="FamilyNameList" ForeColor="Red"></asp:RequiredFieldValidator>
 
+                </td>
+            </tr>
+
+            </asp:Panel>
+            
+            
+            <tr><td colspan="2"><hr /></td></tr>
+
+            
             <tr>
                 <td>First Name:</td>
                 <td><asp:TextBox ID="tbFirstName" runat="server" Width="300px"></asp:TextBox>

@@ -56,10 +56,10 @@
     private static void RegisterScripts() {
         ScriptManager.ScriptResourceMapping.AddDefinition("jquery", new ScriptResourceDefinition
         {
-            Path = "~/Scripts/jquery-1.7.1.min.js",
-            DebugPath = "~/Scripts/jquery-1.7.1.js",
-            CdnPath = "http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js",
-            CdnDebugPath = "http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.js",
+            Path = "~/Scripts/jquery-1.11.2.min.js",
+            DebugPath = "~/Scripts/jquery-1.11.2.js",
+            CdnPath = "http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.2.min.js",
+            CdnDebugPath = "http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.2.js",
             CdnSupportsSecureConnection = true,
             LoadSuccessExpression = "window.jQuery"
         });

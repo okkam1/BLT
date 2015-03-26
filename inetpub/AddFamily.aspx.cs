@@ -62,8 +62,8 @@ public partial class AddFamily : System.Web.UI.Page
             SqlCommand command = new SqlCommand("usp_InsertNewFamilyWebScreen", sqlConnection);
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.Add("@FamilyLastName", SqlDbType.VarChar).Value = tbLastName.Text;
-            command.Parameters.Add("@Address_Line1", SqlDbType.VarChar).Value = tbAddress.Text + " " + DropDownListStreetSuffix.Text;
-            command.Parameters.Add("@ApartmentNum", SqlDbType.VarChar).Value = TextBoxApartmentNumber.Text;
+            command.Parameters.Add("@Address_Line1", SqlDbType.VarChar).Value = tbAddress.Text; // +" " + DropDownListStreetSuffix.Text;
+            command.Parameters.Add("@Address_Line2", SqlDbType.VarChar).Value = tbAddressLine2.Text;
             command.Parameters.Add("@CityName", SqlDbType.VarChar).Value = TextBoxCity.Text;
 
             command.Parameters.Add("@StateAbbr", SqlDbType.VarChar).Value = ddlState.SelectedValue;
@@ -77,7 +77,7 @@ public partial class AddFamily : System.Web.UI.Page
             command.Parameters.Add("@NumSmokers", SqlDbType.Bit).Value = Convert.ToInt16(ddlSmokers.SelectedValue);
 
             
-            command.Parameters.Add("@inandout", SqlDbType.Bit).Value = Convert.ToInt16(RadioButtonListPetsInOut.SelectedValue);
+            command.Parameters.Add("@Petsinandout", SqlDbType.Bit).Value = Convert.ToInt16(RadioButtonListPetsInOut.SelectedValue);
            command.Parameters.Add("@PropertyNotes", SqlDbType.VarChar).Value = tbFamilyNotes.Text;
 
             command.Parameters.Add("@FamilyID", SqlDbType.Int).Direction = ParameterDirection.Output;  //usp returns ID upon completion

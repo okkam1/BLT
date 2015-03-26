@@ -26,7 +26,7 @@
         <asp:TextBox ID="tbAddress" runat="server"></asp:TextBox>
             </td>
             </tr>
-
+<!--
             <tr>
                 <td>Street Suffix:</td>
             <td>
@@ -42,11 +42,11 @@
 
             </td>
             </tr>
-
+            -->
             <tr>
-                <td>Apartment Number:</td>
+                <td>Address Line 2:</td>
             <td>
-        <asp:TextBox ID="TextBoxApartmentNumber" runat="server"></asp:TextBox></td>
+        <asp:TextBox ID="tbAddressLine2" runat="server"></asp:TextBox></td>
             </tr>
 
         <tr>
