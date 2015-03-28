@@ -1,5 +1,5 @@
 ﻿
-<%@ Page Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="EditClientInfo.aspx.cs" Inherits="EditClientInfo" Trace="false" EnableViewState="true" %>
+<%@ Page Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="EditClientInfo.aspx.cs" Inherits="EditClientInfo" Trace="true" EnableViewState="true" %>
 
 <asp:Content ID="headContent" ContentPlaceHolderID="head" Runat="Server"></asp:Content>
 
@@ -131,7 +131,7 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
             <td>
                 <asp:RadioButtonList ID="rblMoved" runat="server" RepeatDirection="Horizontal">
                     <asp:ListItem Value="1">Yes</asp:ListItem>
-                    <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
+                    <asp:ListItem Value="0">No</asp:ListItem>
                 </asp:RadioButtonList>
 
             </td>
@@ -143,7 +143,20 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
             
                 <asp:RadioButtonList ID="rblTravel" runat="server" RepeatDirection="Horizontal">
                     <asp:ListItem Value="1">Yes</asp:ListItem>
-                    <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
+                    <asp:ListItem Value="0">No</asp:ListItem>
+                </asp:RadioButtonList>
+
+
+            </td>
+            </tr>
+
+                    <tr>
+                <td>TravelNEW:</td>
+            <td>
+            
+                <asp:RadioButtonList ID="rblTravelNew" runat="server" RepeatDirection="Horizontal">
+                    <asp:ListItem Value="True">Yes</asp:ListItem>
+                    <asp:ListItem Value="False">No</asp:ListItem>
                 </asp:RadioButtonList>
 
 
@@ -163,7 +176,7 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
 
             <asp:RadioButtonList ID="rblOutOfSite" runat="server" RepeatDirection="Horizontal">
                     <asp:ListItem Value="1">Yes</asp:ListItem>
-                    <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
+                    <asp:ListItem Value="0">No</asp:ListItem>
                 </asp:RadioButtonList>
 
             </td>
@@ -176,7 +189,7 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
             <td>
             <asp:RadioButtonList ID="rblHobby" runat="server" RepeatDirection="Horizontal">
                     <asp:ListItem Value="1">Yes</asp:ListItem>
-                    <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
+                    <asp:ListItem Value="0">No</asp:ListItem>
                 </asp:RadioButtonList>
             </td>
             </tr>

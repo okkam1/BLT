@@ -216,6 +216,8 @@ order by f.Lastname
     protected void getFamilyMembers(String sFamilyIDIn)
     {
 
+        resetFields();
+
         SqlConnection con = new SqlConnection(connectionString);
 
         string com = "select PersonID,FirstName,MiddleName from person where PersonID in (select PersonID from persontoFamily where FamilyID = '" + sFamilyIDIn + "')";
@@ -235,6 +237,7 @@ order by f.Lastname
         ddlFamilyMembers.DataValueField = "PersonID";
 
         ddlFamilyMembers.DataBind();
+        ddlFamilyMembers.Items.Insert(0, "-");
 
 
         Trace.Write("connectionString: " + connectionString);
@@ -255,7 +258,31 @@ order by f.Lastname
     
     protected void FamilyNameList_SelectedIndexChanged(object sender, EventArgs e)
     {
+        resetFields();
         getFamilyMembers(FamilyNameList.SelectedValue);
+    }
+
+    protected void resetFields()
+    {
+        tbFirstName.Text = "";
+        tbLastName.Text = "";
+        tbMiddleName.Text = "";
+        tbBirthDate.Text = "";
+        rblGender.ClearSelection();
+        ddlLanguage.SelectedIndex = 0;
+        ddlEthnicity.SelectedIndex = 0;
+
+        rblMoved.ClearSelection();
+        rblTravel.ClearSelection();
+
+        tbTravelNotes.Text = "";
+
+        rblOutOfSite.ClearSelection();
+        rblHobby.ClearSelection();
+
+        tbHobbyNotes.Text = "";
+
+        pnlFamilyMembers.Visible = false;
     }
 
     protected void getIndividual(String sPersonIDIn)
@@ -263,7 +290,11 @@ order by f.Lastname
 
         SqlConnection con = new SqlConnection(connectionString);
 
-        string com = "select *, (select languageID from PersontoLanguage ptl where p.personid = ptl.personid) as LanguageID from person p where p.personid  = '" + sPersonIDIn + "'";
+        string com = @"select *, (select languageID from PersontoLanguage ptl where p.personid = ptl.personid) as LanguageID,
+(select EthnicityID from PersontoEthnicity pte where p.personid = pte.personid) as EthnicityID,
+CAST (ForeignTravel as bit) as travelBit,
+CAST (ForeignTravel as varchar) as travelV
+from person p where p.personid  = '" + sPersonIDIn + "'";
 
 
         SqlDataAdapter adpt = new SqlDataAdapter(com, con);
@@ -285,9 +316,39 @@ order by f.Lastname
                 rblGender.SelectedValue = "F";
             if (dt.Rows[0]["Gender"].ToString().ToLower() == "m")
                 rblGender.SelectedValue = "M";
-            
-           // if (dt.Rows[0]["LanguageID"].ToString() != null)
-           //     ddlLanguage.SelectedIndex = Convert.ToInt32( dt.Rows[0]["LanguageID"].ToString() );
+
+            if ((dt.Rows[0]["LanguageID"].ToString() != null) && (ddlLanguage.Items.FindByValue(dt.Rows[0]["LanguageID"].ToString().Trim()) != null))
+            {
+                ddlLanguage.SelectedValue = dt.Rows[0]["LanguageID"].ToString().Trim();
+            }
+
+
+
+            if ((dt.Rows[0]["EthnicityID"].ToString() != null) && (ddlEthnicity.Items.FindByValue(dt.Rows[0]["EthnicityID"].ToString().Trim()) != null))
+            {
+                ddlEthnicity.SelectedValue = dt.Rows[0]["EthnicityID"].ToString().Trim();
+            }
+
+            //lbOutput.Text = dt.Rows[0]["LanguageID"].ToString();
+
+            Trace.Write("LanguageID: " + dt.Rows[0]["LanguageID"].ToString());
+            Trace.Write("EthnicityID: " + dt.Rows[0]["EthnicityID"].ToString() );
+
+            if (dt.Rows[0]["Moved"].ToString().ToLower() == "true")
+                rblMoved.SelectedValue = "1";
+
+            if (dt.Rows[0]["Moved"].ToString().ToLower() == "false")
+                rblMoved.SelectedValue = "0";
+
+            rblTravel.SelectedValue = dt.Rows[0]["travelV"].ToString();
+
+            rblTravelNew.SelectedValue = dt.Rows[0]["ForeignTravel"].ToString();
+
+            lbOutput.Text = dt.Rows[0]["ForeignTravel"].ToString();// rblTravel.Items.FindByValue(dt.Rows[0]["ForeignTravel"].ToString()).ToString();
+
+            Trace.Write("Moved: " + dt.Rows[0]["Moved"].ToString()) ;
+
+            //ddlLanguage.SelectedIndex = 3;
          
           //  rblMoved.SelectedIndex = Convert.ToInt16(dt.Rows[0]["Moved"].ToString() );
             tbFirstName.Text = dt.Rows[0]["FirstName"].ToString();
