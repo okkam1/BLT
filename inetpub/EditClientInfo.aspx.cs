@@ -24,7 +24,7 @@ public partial class EditClientInfo : System.Web.UI.Page
 
         futureDateValidator.ValueToCompare = DateTime.Now.ToString("MM/dd/yyyy");
 
-        NextButton.Visible = false;
+        //NextButton.Visible = false;
 
         if (!Page.IsPostBack)
         {
@@ -124,7 +124,7 @@ order by f.Lastname
             lbOutput.Text = "";
 
             SqlConnection sqlConnection = new SqlConnection(connectionString);
-            SqlCommand command = new SqlCommand("usp_upNewClientWebScreen", sqlConnection);
+            SqlCommand command = new SqlCommand("usp_upClientWebScreen", sqlConnection);
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.Add("@Family_ID", SqlDbType.Int).Value = FamilyNameList.SelectedValue;
             command.Parameters.Add("@Person_ID", SqlDbType.Int).Value = ddlFamilyMembers.SelectedValue;
@@ -136,18 +136,19 @@ order by f.Lastname
             command.Parameters.Add("@New_LanguageID", SqlDbType.TinyInt).Value = ddlLanguage.SelectedValue;
             command.Parameters.Add("@New_Moved", SqlDbType.Bit).Value = Convert.ToByte(rblMoved.SelectedValue);
             command.Parameters.Add("@New_ForeignTravel", SqlDbType.Bit).Value = Convert.ToByte(rblTravel.SelectedValue);
-            //command.Parameters.Add("@Travel_Notes", SqlDbType.VarChar).Value = tbTravelNotes.Text;
+            command.Parameters.Add("@New_Notes", SqlDbType.VarChar).Value = tbClientNotes.Text;
             
-            //command.Parameters.Add("@New_Out_of_Site", SqlDbType.Bit).Value = Convert.ToByte(rblOutOfSite.SelectedValue);
+            command.Parameters.Add("@New_OutofSite", SqlDbType.Bit).Value = Convert.ToByte(rblOutOfSite.SelectedValue);
             
             //command.Parameters.Add("@Hobby_ID", SqlDbType.SmallInt).Value = rblGender.Text;
             //command.Parameters.Add("@Hobby_Notes", SqlDbType.VarChar).Value = tbHobbyNotes.Text;
             //command.Parameters.Add("@Child_Notes", SqlDbType.VarChar).Value = tbChildNotes.Text;
             //command.Parameters.Add("@Release_Notes", SqlDbType.VarChar).Value = rblGender.Text;
-           // command.Parameters.Add("@ClientID", SqlDbType.Int).Direction = ParameterDirection.Output;  //usp returns ID upon completion
+           
+            //command.Parameters.Add("@ClientID", SqlDbType.Int).Direction = ParameterDirection.Output;  //usp returns ID upon completion
             //****No output param???
 
-            //command.Parameters.Add("@ReturnValue", SqlDbType.Int).Direction = ParameterDirection.ReturnValue;
+            command.Parameters.Add("@ReturnValue", SqlDbType.Int).Direction = ParameterDirection.ReturnValue;
 
             sqlConnection.Open();
             command.ExecuteNonQuery();
@@ -155,15 +156,15 @@ order by f.Lastname
 
             String sClientID = ""; //command.Parameters["@ClientID"].Value.ToString();
 
-            String sReturnValue = ""; //command.Parameters["@ReturnValue"].Value.ToString();
+            String sReturnValue = command.Parameters["@ReturnValue"].Value.ToString();
 
             Trace.Write("sClientID: " + sClientID);
 
-            if (sClientID != "" && sReturnValue == "0")
+            if (sReturnValue == "0")
             {
-                lbOutput.Text = "New Research Subject " + sClientID + " Inserted at: " + DateTime.Now;
-                lbPopUp.Text = "New Research Subject " + sClientID + " Inserted at: " + DateTime.Now;
-                NextButton.Visible = true;
+                lbOutput.Text = "Research Subject " + sClientID + " Updated at: " + DateTime.Now;
+                lbPopUp.Text = "Research Subject " + sClientID + " Updated at: " + DateTime.Now;
+                //NextButton.Visible = true;
                 ModalPopupExtender1.Show();
 
 
@@ -181,7 +182,7 @@ order by f.Lastname
             }
             else
             {
-                lbOutput.Text = "Failed to Insert New Client";
+                lbOutput.Text = "Failed to Update Client";
                 lbPopUp.Text = lbOutput.Text;
                 ModalPopupExtender1.Show();
             }
@@ -209,11 +210,6 @@ order by f.Lastname
             Trace.Write("Error" + ex.Message.ToString());
         }
 
-
-    }
-
-    protected void NextButton_Click(object sender, EventArgs e)
-    {
 
     }
 
@@ -279,12 +275,13 @@ order by f.Lastname
         rblMoved.ClearSelection();
         rblTravel.ClearSelection();
 
-        tbTravelNotes.Text = "";
+        //tbTravelNotes.Text = "";
+        tbClientNotes.Text = "";
 
         rblOutOfSite.ClearSelection();
-        rblHobby.ClearSelection();
+       // rblHobby.ClearSelection();
 
-        tbHobbyNotes.Text = "";
+       // tbHobbyNotes.Text = "";
 
         pnlFamilyMembers.Visible = false;
     }
@@ -294,8 +291,9 @@ order by f.Lastname
 
         SqlConnection con = new SqlConnection(connectionString);
 
-        string com = @"select *, (select languageID from PersontoLanguage ptl where p.personid = ptl.personid) as LanguageID,
-(select EthnicityID from PersontoEthnicity pte where p.personid = pte.personid) as EthnicityID,
+        string com = @"select *, 
+(select top 1 LanguageID from PersontoLanguage ptl where p.personid = ptl.personid order by ModifiedDate DESC) as LanguageID,
+(select top 1 EthnicityID from PersontoEthnicity pte where p.personid = pte.personid  order by ModifiedDate DESC) as EthnicityID,
 CAST (ForeignTravel as bit) as travelBit,
 CAST (ForeignTravel as varchar) as travelV
 from person p 
@@ -347,14 +345,15 @@ where p.personid  = '" + sPersonIDIn + "'";
 
             rblTravel.SelectedValue = dt.Rows[0]["travelV"].ToString();
 
-            rblTravelNew.SelectedValue = dt.Rows[0]["ForeignTravel"].ToString();
+            //rblTravelNew.SelectedValue = dt.Rows[0]["ForeignTravel"].ToString();
 
           //  tbTravelNotes.Text = dt.Rows[0]["TravelNotes"].ToString();
 
-            //lbOutput.Text = dt.Rows[0]["ForeignTravel"].ToString();// rblTravel.Items.FindByValue(dt.Rows[0]["ForeignTravel"].ToString()).ToString();
+            Trace.Write("foreign travel: " + dt.Rows[0]["Moved"].ToString() );// rblTravel.Items.FindByValue(dt.Rows[0]["ForeignTravel"].ToString()).ToString();
 
             Trace.Write("Moved: " + dt.Rows[0]["Moved"].ToString()) ;
 
+            Trace.Write("Client ID: "+dt.Rows[0]["PersonID"].ToString() );
             //ddlLanguage.SelectedIndex = 3;
          
           //  rblMoved.SelectedIndex = Convert.ToInt16(dt.Rows[0]["Moved"].ToString() );
