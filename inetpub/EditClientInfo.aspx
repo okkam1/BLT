@@ -211,13 +211,13 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
 </table>
 
         <br /><br />
-        <asp:Button ID="InsertButton" runat="server" OnClick="Button1_Click" Text="Save and Continue &gt;&gt;" />
+        <asp:Button ID="InsertButton" runat="server" OnClick="Button1_Click" Text="Update" />
 
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" />
 
     <asp:Button ID="Button1" runat="server" style="visibility:hidden;" />
 
-        <asp:Button ID="Button2" runat="server" OnClick="Button1_Click" Text="Save and Continue &gt;&gt;" style="visibility:hidden;" />
+        <asp:Button ID="Button2" runat="server" OnClick="Button1_Click" Text="Update" style="visibility:hidden;" />
 
         <asp:Panel ID="ModalPanel" runat="server" Width="500px" Height="100px" BackColor="#CCFF99" BorderColor="Black" BorderWidth="1" HorizontalAlign="Center" ScrollBars="Vertical">
             <br />

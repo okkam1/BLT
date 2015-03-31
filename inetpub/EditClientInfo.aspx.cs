@@ -124,34 +124,38 @@ order by f.Lastname
             lbOutput.Text = "";
 
             SqlConnection sqlConnection = new SqlConnection(connectionString);
-            SqlCommand command = new SqlCommand("usp_InsertNewClientWebScreen", sqlConnection);
+            SqlCommand command = new SqlCommand("usp_upNewClientWebScreen", sqlConnection);
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.Add("@Family_ID", SqlDbType.Int).Value = FamilyNameList.SelectedValue;
-            command.Parameters.Add("@First_Name", SqlDbType.VarChar).Value = tbFirstName.Text;
-            command.Parameters.Add("@Middle_Name", SqlDbType.VarChar).Value = tbMiddleName.Text;
-            command.Parameters.Add("@Last_Name", SqlDbType.VarChar).Value = tbLastName.Text;
-            command.Parameters.Add("@Birth_Date", SqlDbType.DateTime).Value = tbBirthDate.Text;
-            command.Parameters.Add("@Gender_", SqlDbType.Char).Value = rblGender.SelectedValue;
-            command.Parameters.Add("@Language_ID", SqlDbType.TinyInt).Value = ddlLanguage.SelectedValue;
-            command.Parameters.Add("@Moved_", SqlDbType.Bit).Value = Convert.ToByte(rblMoved.SelectedValue);
-            command.Parameters.Add("@Travel", SqlDbType.Bit).Value = Convert.ToByte(rblTravel.SelectedValue);
-            command.Parameters.Add("@Travel_Notes", SqlDbType.VarChar).Value = tbTravelNotes.Text;
-            command.Parameters.Add("@Out_of_Site", SqlDbType.Bit).Value = Convert.ToByte(rblOutOfSite.SelectedValue);
+            command.Parameters.Add("@Person_ID", SqlDbType.Int).Value = ddlFamilyMembers.SelectedValue;
+            command.Parameters.Add("@New_FirstName", SqlDbType.VarChar).Value = tbFirstName.Text;
+            command.Parameters.Add("@New_MiddleName", SqlDbType.VarChar).Value = tbMiddleName.Text;
+            command.Parameters.Add("@New_LastName", SqlDbType.VarChar).Value = tbLastName.Text;
+            command.Parameters.Add("@New_BirthDate", SqlDbType.DateTime).Value = tbBirthDate.Text;
+            command.Parameters.Add("@New_Gender", SqlDbType.Char).Value = rblGender.SelectedValue;
+            command.Parameters.Add("@New_LanguageID", SqlDbType.TinyInt).Value = ddlLanguage.SelectedValue;
+            command.Parameters.Add("@New_Moved", SqlDbType.Bit).Value = Convert.ToByte(rblMoved.SelectedValue);
+            command.Parameters.Add("@New_ForeignTravel", SqlDbType.Bit).Value = Convert.ToByte(rblTravel.SelectedValue);
+            //command.Parameters.Add("@Travel_Notes", SqlDbType.VarChar).Value = tbTravelNotes.Text;
+            
+            //command.Parameters.Add("@New_Out_of_Site", SqlDbType.Bit).Value = Convert.ToByte(rblOutOfSite.SelectedValue);
+            
             //command.Parameters.Add("@Hobby_ID", SqlDbType.SmallInt).Value = rblGender.Text;
-            command.Parameters.Add("@Hobby_Notes", SqlDbType.VarChar).Value = tbHobbyNotes.Text;
-            command.Parameters.Add("@Child_Notes", SqlDbType.VarChar).Value = tbChildNotes.Text;
-            command.Parameters.Add("@Release_Notes", SqlDbType.VarChar).Value = rblGender.Text;
-            command.Parameters.Add("@ClientID", SqlDbType.Int).Direction = ParameterDirection.Output;  //usp returns ID upon completion
+            //command.Parameters.Add("@Hobby_Notes", SqlDbType.VarChar).Value = tbHobbyNotes.Text;
+            //command.Parameters.Add("@Child_Notes", SqlDbType.VarChar).Value = tbChildNotes.Text;
+            //command.Parameters.Add("@Release_Notes", SqlDbType.VarChar).Value = rblGender.Text;
+           // command.Parameters.Add("@ClientID", SqlDbType.Int).Direction = ParameterDirection.Output;  //usp returns ID upon completion
+            //****No output param???
 
-            command.Parameters.Add("@ReturnValue", SqlDbType.Int).Direction = ParameterDirection.ReturnValue;
+            //command.Parameters.Add("@ReturnValue", SqlDbType.Int).Direction = ParameterDirection.ReturnValue;
 
             sqlConnection.Open();
             command.ExecuteNonQuery();
             sqlConnection.Close();
 
-            String sClientID = command.Parameters["@ClientID"].Value.ToString();
+            String sClientID = ""; //command.Parameters["@ClientID"].Value.ToString();
 
-            String sReturnValue = command.Parameters["@ReturnValue"].Value.ToString();
+            String sReturnValue = ""; //command.Parameters["@ReturnValue"].Value.ToString();
 
             Trace.Write("sClientID: " + sClientID);
 
@@ -294,7 +298,8 @@ order by f.Lastname
 (select EthnicityID from PersontoEthnicity pte where p.personid = pte.personid) as EthnicityID,
 CAST (ForeignTravel as bit) as travelBit,
 CAST (ForeignTravel as varchar) as travelV
-from person p where p.personid  = '" + sPersonIDIn + "'";
+from person p 
+where p.personid  = '" + sPersonIDIn + "'";
 
 
         SqlDataAdapter adpt = new SqlDataAdapter(com, con);
@@ -344,7 +349,9 @@ from person p where p.personid  = '" + sPersonIDIn + "'";
 
             rblTravelNew.SelectedValue = dt.Rows[0]["ForeignTravel"].ToString();
 
-            lbOutput.Text = dt.Rows[0]["ForeignTravel"].ToString();// rblTravel.Items.FindByValue(dt.Rows[0]["ForeignTravel"].ToString()).ToString();
+          //  tbTravelNotes.Text = dt.Rows[0]["TravelNotes"].ToString();
+
+            //lbOutput.Text = dt.Rows[0]["ForeignTravel"].ToString();// rblTravel.Items.FindByValue(dt.Rows[0]["ForeignTravel"].ToString()).ToString();
 
             Trace.Write("Moved: " + dt.Rows[0]["Moved"].ToString()) ;
 
