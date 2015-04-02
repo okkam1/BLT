@@ -18,7 +18,7 @@
             </LocalReport>
         </rsweb:ReportViewer>
 
-        <asp:SqlDataSource ID="SqlDataSourcePerson" runat="server" ConnectionString="<%$ ConnectionStrings:csLCCHP%>" SelectCommand="SELECT * FROM [Person] where CreatedDate >= DateDiff(d,60,GetDate())"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSourcePerson" runat="server" ConnectionString="<%$ ConnectionStrings:csLCCHP%>" SelectCommand="SELECT * FROM [Person] where CreatedDate >= DateDiff(d,60,GetDate()) and isClient=1"></asp:SqlDataSource>
 
         </div>
 

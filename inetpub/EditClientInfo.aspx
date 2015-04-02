@@ -1,5 +1,5 @@
 ﻿
-<%@ Page Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="EditClientInfo.aspx.cs" Inherits="EditClientInfo" Trace="false" EnableViewState="true" %>
+<%@ Page Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="EditClientInfo.aspx.cs" Inherits="EditClientInfo" Trace="true" EnableViewState="true" %>
 
 <asp:Content ID="headContent" ContentPlaceHolderID="head" Runat="Server"></asp:Content>
 
@@ -12,7 +12,7 @@
 
         <table>
             <tr>
-                <td>Family:</td>
+                <td style="width:100px">Family:</td>
                 <td><asp:DropDownList ID="FamilyNameList" runat="server" ViewStateMode="Enabled" OnSelectedIndexChanged="FamilyNameList_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
                 <a href="AddFamily.aspx" class="small">Add a New Family</a>
                     
@@ -131,7 +131,7 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
             <td>
                 <asp:RadioButtonList ID="rblMoved" runat="server" RepeatDirection="Horizontal">
                     <asp:ListItem Value="1">Yes</asp:ListItem>
-                    <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
+                    <asp:ListItem Value="0">No</asp:ListItem>
                 </asp:RadioButtonList>
 
             </td>
@@ -143,17 +143,10 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
             
                 <asp:RadioButtonList ID="rblTravel" runat="server" RepeatDirection="Horizontal">
                     <asp:ListItem Value="1">Yes</asp:ListItem>
-                    <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
+                    <asp:ListItem Value="0">No</asp:ListItem>
                 </asp:RadioButtonList>
 
 
-            </td>
-            </tr>
-
-        <tr>
-                <td>Travel Notes:</td>
-            <td>
-                <asp:TextBox runat="server" ID="tbTravelNotes" TextMode="MultiLine"></asp:TextBox>
             </td>
             </tr>
 
@@ -163,7 +156,7 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
 
             <asp:RadioButtonList ID="rblOutOfSite" runat="server" RepeatDirection="Horizontal">
                     <asp:ListItem Value="1">Yes</asp:ListItem>
-                    <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
+                    <asp:ListItem Value="0">No</asp:ListItem>
                 </asp:RadioButtonList>
 
             </td>
@@ -171,40 +164,26 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
 
             <tr><td colspan="2"><hr /></td></tr>
             
-            <tr>
-                <td>Hobby:</td>
-            <td>
-            <asp:RadioButtonList ID="rblHobby" runat="server" RepeatDirection="Horizontal">
-                    <asp:ListItem Value="1">Yes</asp:ListItem>
-                    <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
-                </asp:RadioButtonList>
-            </td>
-            </tr>
-        
-            <tr>
-                <td>Hobby Notes:</td>
-            <td><asp:TextBox runat="server" ID="tbHobbyNotes" TextMode="MultiLine"></asp:TextBox></td>
-            </tr>
-
-        <tr><td colspan="2"><hr /></td></tr>
-
+            
         <tr>
-                <td>Child Notes:</td>
-            <td>
-                <asp:TextBox runat="server" ID="tbChildNotes" TextMode="MultiLine"></asp:TextBox>
+                <td style="vertical-align:top;"><span style="vertical-align:top;">Add New Client Notes: <br />
+                    <span class="small"><em>Historic notes are only available via Advanced Data Management</em></span></span>
+                </td>
+            <td style="vertical-align:top;">
+                <asp:TextBox runat="server" ID="tbClientNotes" TextMode="MultiLine" Height="80px" Width="250px"></asp:TextBox>
             </td>
             </tr>
         
 </table>
 
         <br /><br />
-        <asp:Button ID="InsertButton" runat="server" OnClick="Button1_Click" Text="Save and Continue &gt;&gt;" />
+        <asp:Button ID="InsertButton" runat="server" OnClick="Button1_Click" Text="Update" />
 
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" />
 
     <asp:Button ID="Button1" runat="server" style="visibility:hidden;" />
 
-        <asp:Button ID="Button2" runat="server" OnClick="Button1_Click" Text="Save and Continue &gt;&gt;" style="visibility:hidden;" />
+        <asp:Button ID="Button2" runat="server" OnClick="Button1_Click" Text="Update" style="visibility:hidden;" />
 
         <asp:Panel ID="ModalPanel" runat="server" Width="500px" Height="100px" BackColor="#CCFF99" BorderColor="Black" BorderWidth="1" HorizontalAlign="Center" ScrollBars="Vertical">
             <br />
@@ -213,8 +192,7 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
  
             
             <asp:Button ID="OKButton" runat="server" Text="Close" />
-            <asp:Button ID="NextButton" runat="server" Text="Next &gt;&gt;" Visible="false" OnClick="NextButton_Click" />
-
+            
 </asp:Panel>
  
 

@@ -133,6 +133,7 @@ order by f.Lastname
             command.Parameters.Add("@Birth_Date", SqlDbType.DateTime).Value = tbBirthDate.Text;
             command.Parameters.Add("@Gender_", SqlDbType.Char).Value = rblGender.SelectedValue;
             command.Parameters.Add("@Language_ID", SqlDbType.TinyInt).Value = ddlLanguage.SelectedValue;
+            command.Parameters.Add("@Ethnicity_ID", SqlDbType.TinyInt).Value = ddlEthnicity.SelectedValue;
             command.Parameters.Add("@Moved_", SqlDbType.Bit).Value = Convert.ToByte(rblMoved.SelectedValue);
             command.Parameters.Add("@Travel", SqlDbType.Bit).Value = Convert.ToByte(rblTravel.SelectedValue);
             command.Parameters.Add("@Travel_Notes", SqlDbType.VarChar).Value = tbTravelNotes.Text;
