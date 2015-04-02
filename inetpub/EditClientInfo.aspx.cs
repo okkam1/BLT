@@ -298,8 +298,8 @@ order by f.Lastname
         SqlConnection con = new SqlConnection(connectionString);
 
         string com = @"select *,
-(select top 1 LanguageID from PersontoLanguage ptl where p.personid = ptl.personid order by ModifiedDate DESC) as LanguageID,
-(select top 1 EthnicityID from PersontoEthnicity pte where p.personid = pte.personid  order by ModifiedDate DESC) as EthnicityID,
+(select top 1 LanguageID from PersontoLanguage ptl where p.personid = ptl.personid order by CreatedDate DESC) as LanguageID,
+(select top 1 EthnicityID from PersontoEthnicity pte where p.personid = pte.personid  order by CreatedDate DESC) as EthnicityID,
 CAST (OutofSite as varchar) as OutofSiteV,
 CAST (CONVERT(VARCHAR(10),BirthDate,101) as varchar) as BirthDateV,
 CAST (ForeignTravel as varchar) as travelV

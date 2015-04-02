@@ -18,7 +18,7 @@
             </LocalReport>
         </rsweb:ReportViewer>
 
-        <asp:SqlDataSource ID="SqlDataSourcePerson" runat="server" ConnectionString="<%$ ConnectionStrings:csLCCHP%>" SelectCommand="SELECT * FROM [Person]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSourcePerson" runat="server" ConnectionString="<%$ ConnectionStrings:csLCCHP%>" SelectCommand="SELECT * FROM [Person] where isClient=1"></asp:SqlDataSource>
 
         </div>
 
