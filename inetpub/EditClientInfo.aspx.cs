@@ -134,6 +134,7 @@ order by f.Lastname
             command.Parameters.Add("@New_BirthDate", SqlDbType.DateTime).Value = tbBirthDate.Text;
             command.Parameters.Add("@New_Gender", SqlDbType.Char).Value = rblGender.SelectedValue;
             command.Parameters.Add("@New_LanguageID", SqlDbType.TinyInt).Value = ddlLanguage.SelectedValue;
+            command.Parameters.Add("@New_EthnicityID", SqlDbType.TinyInt).Value = ddlEthnicity.SelectedValue;
             command.Parameters.Add("@New_Moved", SqlDbType.Bit).Value = Convert.ToByte(rblMoved.SelectedValue);
             command.Parameters.Add("@New_ForeignTravel", SqlDbType.Bit).Value = Convert.ToByte(rblTravel.SelectedValue);
             command.Parameters.Add("@New_Notes", SqlDbType.VarChar).Value = tbClientNotes.Text;
@@ -259,6 +260,7 @@ order by f.Lastname
     protected void FamilyNameList_SelectedIndexChanged(object sender, EventArgs e)
     {
         resetFields();
+        pnlFamilyMembers.Visible = false;
         getFamilyMembers(FamilyNameList.SelectedValue);
     }
 
@@ -283,18 +285,20 @@ order by f.Lastname
 
        // tbHobbyNotes.Text = "";
 
-        pnlFamilyMembers.Visible = false;
+        
     }
 
     protected void getIndividual(String sPersonIDIn)
     {
+        
+        resetFields();
 
         SqlConnection con = new SqlConnection(connectionString);
 
         string com = @"select *, 
 (select top 1 LanguageID from PersontoLanguage ptl where p.personid = ptl.personid order by ModifiedDate DESC) as LanguageID,
 (select top 1 EthnicityID from PersontoEthnicity pte where p.personid = pte.personid  order by ModifiedDate DESC) as EthnicityID,
-CAST (ForeignTravel as bit) as travelBit,
+CAST (OutofSite as varchar) as OutofSiteV,
 CAST (ForeignTravel as varchar) as travelV
 from person p 
 where p.personid  = '" + sPersonIDIn + "'";
@@ -324,12 +328,20 @@ where p.personid  = '" + sPersonIDIn + "'";
             {
                 ddlLanguage.SelectedValue = dt.Rows[0]["LanguageID"].ToString().Trim();
             }
+            else
+            {
+                ddlLanguage.SelectedIndex = 0;
+            }
 
 
 
             if ((dt.Rows[0]["EthnicityID"].ToString() != null) && (ddlEthnicity.Items.FindByValue(dt.Rows[0]["EthnicityID"].ToString().Trim()) != null))
             {
                 ddlEthnicity.SelectedValue = dt.Rows[0]["EthnicityID"].ToString().Trim();
+            }
+            else
+            {
+                ddlEthnicity.SelectedIndex = 0;
             }
 
             //lbOutput.Text = dt.Rows[0]["LanguageID"].ToString();
@@ -344,6 +356,8 @@ where p.personid  = '" + sPersonIDIn + "'";
                 rblMoved.SelectedValue = "0";
 
             rblTravel.SelectedValue = dt.Rows[0]["travelV"].ToString();
+
+            rblOutOfSite.SelectedValue = dt.Rows[0]["OutofSiteV"].ToString();
 
             //rblTravelNew.SelectedValue = dt.Rows[0]["ForeignTravel"].ToString();
 
