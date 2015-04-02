@@ -137,7 +137,9 @@ order by f.Lastname
             command.Parameters.Add("@New_EthnicityID", SqlDbType.TinyInt).Value = ddlEthnicity.SelectedValue;
             command.Parameters.Add("@New_Moved", SqlDbType.Bit).Value = Convert.ToByte(rblMoved.SelectedValue);
             command.Parameters.Add("@New_ForeignTravel", SqlDbType.Bit).Value = Convert.ToByte(rblTravel.SelectedValue);
-            command.Parameters.Add("@New_Notes", SqlDbType.VarChar).Value = tbClientNotes.Text;
+
+            if (tbClientNotes.Text != "")
+                command.Parameters.Add("@New_Notes", SqlDbType.VarChar).Value = tbClientNotes.Text;
             
             command.Parameters.Add("@New_OutofSite", SqlDbType.Bit).Value = Convert.ToByte(rblOutOfSite.SelectedValue);
             
