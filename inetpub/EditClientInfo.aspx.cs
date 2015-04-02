@@ -295,12 +295,13 @@ order by f.Lastname
 
         SqlConnection con = new SqlConnection(connectionString);
 
-        string com = @"select *, 
+        string com = @"select *,
 (select top 1 LanguageID from PersontoLanguage ptl where p.personid = ptl.personid order by ModifiedDate DESC) as LanguageID,
 (select top 1 EthnicityID from PersontoEthnicity pte where p.personid = pte.personid  order by ModifiedDate DESC) as EthnicityID,
 CAST (OutofSite as varchar) as OutofSiteV,
+CAST (CONVERT(VARCHAR(10),BirthDate,101) as varchar) as BirthDateV,
 CAST (ForeignTravel as varchar) as travelV
-from person p 
+from person p
 where p.personid  = '" + sPersonIDIn + "'";
 
 
@@ -318,7 +319,7 @@ where p.personid  = '" + sPersonIDIn + "'";
 
             tbLastName.Text = dt.Rows[0]["LastName"].ToString();
             tbMiddleName.Text = dt.Rows[0]["MiddleName"].ToString();
-            tbBirthDate.Text = dt.Rows[0]["BirthDate"].ToString();
+            tbBirthDate.Text = dt.Rows[0]["BirthDateV"].ToString();
             if (dt.Rows[0]["Gender"].ToString().ToLower() == "f")
                 rblGender.SelectedValue = "F";
             if (dt.Rows[0]["Gender"].ToString().ToLower() == "m")
