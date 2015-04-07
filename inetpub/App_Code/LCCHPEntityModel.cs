@@ -93,10 +93,13 @@ public partial class BloodTestResult
     public Nullable<int> LabID { get; set; }
     public Nullable<decimal> BloodTestCosts { get; set; }
     public Nullable<byte> SampleTypeID { get; set; }
-    public Nullable<decimal> HematocritValue { get; set; }
     public Nullable<bool> TakenAfterPropertyRemediationCompleted { get; set; }
     public Nullable<System.DateTime> ModifiedDate { get; set; }
     public Nullable<System.DateTime> CreatedDate { get; set; }
+    public Nullable<decimal> HematocritValue { get; set; }
+    public Nullable<bool> ExcludeResult { get; set; }
+    public Nullable<int> HistoricBloodTestResultsID { get; set; }
+    public string HistoricLabResultsID { get; set; }
 
     public virtual SampleLevelCategory SampleLevelCategory { get; set; }
     public virtual SampleLevelCategory SampleLevelCategory1 { get; set; }
@@ -233,12 +236,6 @@ public partial class Country
     public virtual ICollection<PersonToTravelCountry> PersonToTravelCountries { get; set; }
 }
 
-public partial class DateRange
-{
-    public System.DateTime StartDate { get; set; }
-    public System.DateTime EndDate { get; set; }
-}
-
 public partial class Daycare
 {
     public Daycare()
@@ -373,21 +370,24 @@ public partial class Family
     {
         this.FamilyNotes = new HashSet<FamilyNote>();
         this.PersontoFamilies = new HashSet<PersontoFamily>();
+        this.TravelNotes = new HashSet<TravelNote>();
     }
 
     public int FamilyID { get; set; }
     public string Lastname { get; set; }
     public Nullable<byte> NumberofSmokers { get; set; }
     public Nullable<byte> PrimaryLanguageID { get; set; }
-    public Nullable<bool> Pets { get; set; }
+    public Nullable<byte> Pets { get; set; }
     public Nullable<bool> inandout { get; set; }
     public Nullable<short> HistoricFamilyID { get; set; }
     public Nullable<int> PrimaryPropertyID { get; set; }
     public Nullable<System.DateTime> ModifiedDate { get; set; }
     public Nullable<System.DateTime> CreatedDate { get; set; }
+    public Nullable<bool> FrequentlyWashPets { get; set; }
 
     public virtual ICollection<FamilyNote> FamilyNotes { get; set; }
     public virtual ICollection<PersontoFamily> PersontoFamilies { get; set; }
+    public virtual ICollection<TravelNote> TravelNotes { get; set; }
 }
 
 public partial class FamilyNote
@@ -526,7 +526,6 @@ public partial class Lab
     public int LabID { get; set; }
     public string LabName { get; set; }
     public string LabDescription { get; set; }
-    public string HistoricLabID { get; set; }
     public Nullable<System.DateTime> CreatedDate { get; set; }
     public Nullable<System.DateTime> ModifiedDate { get; set; }
 
@@ -543,17 +542,6 @@ public partial class LabNote
     public string Notes { get; set; }
 
     public virtual Lab Lab { get; set; }
-}
-
-public partial class LabOriginal
-{
-    public int LabID { get; set; }
-    public string LabName { get; set; }
-    public string LabDescription { get; set; }
-    public string Notes { get; set; }
-    public string HistoricLabID { get; set; }
-    public Nullable<System.DateTime> CreatedDate { get; set; }
-    public Nullable<System.DateTime> ModifiedDate { get; set; }
 }
 
 public partial class Language
@@ -921,7 +909,7 @@ public partial class PersonToStatu
     public Nullable<System.DateTime> CreatedDate { get; set; }
 
     public virtual Person Person { get; set; }
-    public virtual Status Status { get; set; }
+    public virtual TargetStatu TargetStatu { get; set; }
 }
 
 public partial class PersonToTravelCountry
@@ -997,13 +985,12 @@ public partial class Property
     public Nullable<System.DateTime> RemodelDate { get; set; }
     public Nullable<bool> isinCityLimits { get; set; }
     public string StreetNumber { get; set; }
-    public string Street { get; set; }
+    public string AddressLine1 { get; set; }
     public string StreetSuffix { get; set; }
-    public string ApartmentNumber { get; set; }
+    public string AddressLine2 { get; set; }
     public string City { get; set; }
     public string State { get; set; }
     public string Zipcode { get; set; }
-    public Nullable<short> YearBuilt { get; set; }
     public Nullable<int> OwnerID { get; set; }
     public Nullable<bool> isOwnerOccuppied { get; set; }
     public Nullable<byte> ReplacedPipesFaucets { get; set; }
@@ -1016,6 +1003,8 @@ public partial class Property
     public Nullable<short> HistoricPropertyID { get; set; }
     public Nullable<System.DateTime> CreatedDate { get; set; }
     public Nullable<System.DateTime> ModifiedDate { get; set; }
+    public Nullable<System.DateTime> YearBuilt { get; set; }
+    public string Street { get; set; }
 
     public virtual ICollection<AccessAgreement> AccessAgreements { get; set; }
     public virtual Area Area { get; set; }
@@ -1286,22 +1275,6 @@ public partial class Source
     public string SourceDescription { get; set; }
 }
 
-public partial class Status
-{
-    public Status()
-    {
-        this.PersonToStatus = new HashSet<PersonToStatu>();
-    }
-
-    public short StatusID { get; set; }
-    public string StatusName { get; set; }
-    public string StatusDescription { get; set; }
-    public Nullable<System.DateTime> ModifiedDate { get; set; }
-    public Nullable<System.DateTime> CreatedDate { get; set; }
-
-    public virtual ICollection<PersonToStatu> PersonToStatus { get; set; }
-}
-
 public partial class sysdiagram
 {
     public string name { get; set; }
@@ -1311,6 +1284,35 @@ public partial class sysdiagram
     public byte[] definition { get; set; }
     public Nullable<System.DateTime> ModifiedDate { get; set; }
     public Nullable<System.DateTime> CreatedDate { get; set; }
+}
+
+public partial class TargetStatu
+{
+    public TargetStatu()
+    {
+        this.PersonToStatus = new HashSet<PersonToStatu>();
+    }
+
+    public short StatusID { get; set; }
+    public string StatusName { get; set; }
+    public string StatusDescription { get; set; }
+    public Nullable<System.DateTime> ModifiedDate { get; set; }
+    public Nullable<System.DateTime> CreatedDate { get; set; }
+    public string TargetType { get; set; }
+
+    public virtual ICollection<PersonToStatu> PersonToStatus { get; set; }
+}
+
+public partial class TravelNote
+{
+    public int TravelNotesID { get; set; }
+    public int FamilyID { get; set; }
+    public Nullable<System.DateTime> CreatedDate { get; set; }
+    public string Notes { get; set; }
+    public Nullable<System.DateTime> StartDate { get; set; }
+    public Nullable<System.DateTime> EndDate { get; set; }
+
+    public virtual Family Family { get; set; }
 }
 
 public partial class Unit
