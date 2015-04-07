@@ -111,7 +111,6 @@ order by f.Lastname
             ddlEthnicity.DataBind();
             ddlEthnicity.Items.Insert(0, "-");
 
-
         }
 
     }
