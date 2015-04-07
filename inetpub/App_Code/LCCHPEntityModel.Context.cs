@@ -36,7 +36,6 @@ public partial class LCCHPEntityModelContainer : DbContext
     public DbSet<ContractortoRemediation> ContractortoRemediations { get; set; }
     public DbSet<ContractortoRemediationActionPlan> ContractortoRemediationActionPlans { get; set; }
     public DbSet<Country> Countries { get; set; }
-    public DbSet<DateRange> DateRanges { get; set; }
     public DbSet<Daycare> Daycares { get; set; }
     public DbSet<DaycarePrimaryContact> DaycarePrimaryContacts { get; set; }
     public DbSet<DaycaretoProperty> DaycaretoProperties { get; set; }
@@ -57,7 +56,6 @@ public partial class LCCHPEntityModelContainer : DbContext
     public DbSet<InsuranceProvider> InsuranceProviders { get; set; }
     public DbSet<Lab> Labs { get; set; }
     public DbSet<LabNote> LabNotes { get; set; }
-    public DbSet<LabOriginal> LabOriginals { get; set; }
     public DbSet<Language> Languages { get; set; }
     public DbSet<Medium> Media { get; set; }
     public DbSet<MediumSampleResult> MediumSampleResults { get; set; }
@@ -100,7 +98,6 @@ public partial class LCCHPEntityModelContainer : DbContext
     public DbSet<SampleLevelCategory> SampleLevelCategories { get; set; }
     public DbSet<SampleType> SampleTypes { get; set; }
     public DbSet<Source> Sources { get; set; }
-    public DbSet<Status> Status { get; set; }
     public DbSet<sysdiagram> sysdiagrams { get; set; }
     public DbSet<Unit> Units { get; set; }
 }

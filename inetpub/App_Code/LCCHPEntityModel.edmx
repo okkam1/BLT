@@ -4,461 +4,461 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="LCCHPEntityModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Alias="Self" Namespace="LCCHPEntityModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008">
         <EntityContainer Name="LCCHPEntityModelStoreContainer">
-          <EntitySet Name="AccessAgreement" EntityType="LCCHPEntityModel.Store.AccessAgreement" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="AccessAgreementNotes" EntityType="LCCHPEntityModel.Store.AccessAgreementNotes" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="AccessPurpose" EntityType="LCCHPEntityModel.Store.AccessPurpose" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Area" EntityType="LCCHPEntityModel.Store.Area" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="BloodTestResults" EntityType="LCCHPEntityModel.Store.BloodTestResults" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="BloodTestResultsNotes" EntityType="LCCHPEntityModel.Store.BloodTestResultsNotes" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="CleanupStatus" EntityType="LCCHPEntityModel.Store.CleanupStatus" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="ConstructionType" EntityType="LCCHPEntityModel.Store.ConstructionType" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Contractor" EntityType="LCCHPEntityModel.Store.Contractor" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="ContractortoProperty" EntityType="LCCHPEntityModel.Store.ContractortoProperty" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="ContractortoRemediation" EntityType="LCCHPEntityModel.Store.ContractortoRemediation" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="ContractortoRemediationActionPlan" EntityType="LCCHPEntityModel.Store.ContractortoRemediationActionPlan" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Country" EntityType="LCCHPEntityModel.Store.Country" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Daycare" EntityType="LCCHPEntityModel.Store.Daycare" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="DaycarePrimaryContact" EntityType="LCCHPEntityModel.Store.DaycarePrimaryContact" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="DaycaretoProperty" EntityType="LCCHPEntityModel.Store.DaycaretoProperty" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Employer" EntityType="LCCHPEntityModel.Store.Employer" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="EmployertoProperty" EntityType="LCCHPEntityModel.Store.EmployertoProperty" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="EnvironmentalInvestigation" EntityType="LCCHPEntityModel.Store.EnvironmentalInvestigation" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="ErrorLog" EntityType="LCCHPEntityModel.Store.ErrorLog" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Ethnicity" EntityType="LCCHPEntityModel.Store.Ethnicity" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Family" EntityType="LCCHPEntityModel.Store.Family" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="FamilyNotes" EntityType="LCCHPEntityModel.Store.FamilyNotes" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="FileType" EntityType="LCCHPEntityModel.Store.FileType" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="ForeignFood" EntityType="LCCHPEntityModel.Store.ForeignFood" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="ForeignFoodtoCountry" EntityType="LCCHPEntityModel.Store.ForeignFoodtoCountry" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="GiftCard" EntityType="LCCHPEntityModel.Store.GiftCard" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Hobby" EntityType="LCCHPEntityModel.Store.Hobby" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="HomeRemedy" EntityType="LCCHPEntityModel.Store.HomeRemedy" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="HouseholdSourcesofLead" EntityType="LCCHPEntityModel.Store.HouseholdSourcesofLead" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="InsuranceProvider" EntityType="LCCHPEntityModel.Store.InsuranceProvider" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Lab" EntityType="LCCHPEntityModel.Store.Lab" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="LabNotes" EntityType="LCCHPEntityModel.Store.LabNotes" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Language" EntityType="LCCHPEntityModel.Store.Language" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Medium" EntityType="LCCHPEntityModel.Store.Medium" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="MediumSampleResults" EntityType="LCCHPEntityModel.Store.MediumSampleResults" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="MediumSampleResultsNotes" EntityType="LCCHPEntityModel.Store.MediumSampleResultsNotes" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Occupation" EntityType="LCCHPEntityModel.Store.Occupation" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="OccupationNotes" EntityType="LCCHPEntityModel.Store.OccupationNotes" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Person" EntityType="LCCHPEntityModel.Store.Person" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="PersonNotes" EntityType="LCCHPEntityModel.Store.PersonNotes" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="PersontoAccessAgreement" EntityType="LCCHPEntityModel.Store.PersontoAccessAgreement" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="PersontoDaycare" EntityType="LCCHPEntityModel.Store.PersontoDaycare" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="PersontoEmployer" EntityType="LCCHPEntityModel.Store.PersontoEmployer" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="PersontoEthnicity" EntityType="LCCHPEntityModel.Store.PersontoEthnicity" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="PersontoFamily" EntityType="LCCHPEntityModel.Store.PersontoFamily" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="PersontoForeignFood" EntityType="LCCHPEntityModel.Store.PersontoForeignFood" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="PersontoHobby" EntityType="LCCHPEntityModel.Store.PersontoHobby" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="PersontoHomeRemedy" EntityType="LCCHPEntityModel.Store.PersontoHomeRemedy" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="PersontoInsurance" EntityType="LCCHPEntityModel.Store.PersontoInsurance" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="PersontoLanguage" EntityType="LCCHPEntityModel.Store.PersontoLanguage" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="PersontoOccupation" EntityType="LCCHPEntityModel.Store.PersontoOccupation" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="PersontoPerson" EntityType="LCCHPEntityModel.Store.PersontoPerson" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="PersontoPhoneNumber" EntityType="LCCHPEntityModel.Store.PersontoPhoneNumber" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="PersontoProperty" EntityType="LCCHPEntityModel.Store.PersontoProperty" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="PersonToStatus" EntityType="LCCHPEntityModel.Store.PersonToStatus" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="PersonToTravelCountry" EntityType="LCCHPEntityModel.Store.PersonToTravelCountry" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="PhoneNumber" EntityType="LCCHPEntityModel.Store.PhoneNumber" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="PhoneNumberType" EntityType="LCCHPEntityModel.Store.PhoneNumberType" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Property" EntityType="LCCHPEntityModel.Store.Property" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="PropertyNotes" EntityType="LCCHPEntityModel.Store.PropertyNotes" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="PropertySampleResults" EntityType="LCCHPEntityModel.Store.PropertySampleResults" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="PropertySampleResultsNotes" EntityType="LCCHPEntityModel.Store.PropertySampleResultsNotes" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="PropertytoCleanupStatus" EntityType="LCCHPEntityModel.Store.PropertytoCleanupStatus" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="PropertytoHouseholdSourcesofLead" EntityType="LCCHPEntityModel.Store.PropertytoHouseholdSourcesofLead" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="PropertytoMedium" EntityType="LCCHPEntityModel.Store.PropertytoMedium" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Questionnaire" EntityType="LCCHPEntityModel.Store.Questionnaire" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="QuestionnaireNotes" EntityType="LCCHPEntityModel.Store.QuestionnaireNotes" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="RelationshipType" EntityType="LCCHPEntityModel.Store.RelationshipType" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Remediation" EntityType="LCCHPEntityModel.Store.Remediation" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="RemediationActionPlan" EntityType="LCCHPEntityModel.Store.RemediationActionPlan" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="RemediationNotes" EntityType="LCCHPEntityModel.Store.RemediationNotes" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="SampleLevelCategory" EntityType="LCCHPEntityModel.Store.SampleLevelCategory" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="SampleType" EntityType="LCCHPEntityModel.Store.SampleType" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Source" EntityType="LCCHPEntityModel.Store.Source" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="sysdiagrams" EntityType="LCCHPEntityModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="TargetStatus" EntityType="LCCHPEntityModel.Store.TargetStatus" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="TravelNotes" EntityType="LCCHPEntityModel.Store.TravelNotes" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Units" EntityType="LCCHPEntityModel.Store.Units" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="AccessAgreement" EntityType="LCCHPEntityModel.Store.AccessAgreement" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AccessAgreementNotes" EntityType="LCCHPEntityModel.Store.AccessAgreementNotes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AccessPurpose" EntityType="LCCHPEntityModel.Store.AccessPurpose" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Area" EntityType="LCCHPEntityModel.Store.Area" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BloodTestResults" EntityType="LCCHPEntityModel.Store.BloodTestResults" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BloodTestResultsNotes" EntityType="LCCHPEntityModel.Store.BloodTestResultsNotes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CleanupStatus" EntityType="LCCHPEntityModel.Store.CleanupStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ConstructionType" EntityType="LCCHPEntityModel.Store.ConstructionType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contractor" EntityType="LCCHPEntityModel.Store.Contractor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ContractortoProperty" EntityType="LCCHPEntityModel.Store.ContractortoProperty" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ContractortoRemediation" EntityType="LCCHPEntityModel.Store.ContractortoRemediation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ContractortoRemediationActionPlan" EntityType="LCCHPEntityModel.Store.ContractortoRemediationActionPlan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Country" EntityType="LCCHPEntityModel.Store.Country" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Daycare" EntityType="LCCHPEntityModel.Store.Daycare" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DaycarePrimaryContact" EntityType="LCCHPEntityModel.Store.DaycarePrimaryContact" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DaycaretoProperty" EntityType="LCCHPEntityModel.Store.DaycaretoProperty" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employer" EntityType="LCCHPEntityModel.Store.Employer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployertoProperty" EntityType="LCCHPEntityModel.Store.EmployertoProperty" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EnvironmentalInvestigation" EntityType="LCCHPEntityModel.Store.EnvironmentalInvestigation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ErrorLog" EntityType="LCCHPEntityModel.Store.ErrorLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ethnicity" EntityType="LCCHPEntityModel.Store.Ethnicity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Family" EntityType="LCCHPEntityModel.Store.Family" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FamilyNotes" EntityType="LCCHPEntityModel.Store.FamilyNotes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FileType" EntityType="LCCHPEntityModel.Store.FileType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ForeignFood" EntityType="LCCHPEntityModel.Store.ForeignFood" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ForeignFoodtoCountry" EntityType="LCCHPEntityModel.Store.ForeignFoodtoCountry" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GiftCard" EntityType="LCCHPEntityModel.Store.GiftCard" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hobby" EntityType="LCCHPEntityModel.Store.Hobby" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HomeRemedy" EntityType="LCCHPEntityModel.Store.HomeRemedy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HouseholdSourcesofLead" EntityType="LCCHPEntityModel.Store.HouseholdSourcesofLead" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InsuranceProvider" EntityType="LCCHPEntityModel.Store.InsuranceProvider" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Lab" EntityType="LCCHPEntityModel.Store.Lab" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LabNotes" EntityType="LCCHPEntityModel.Store.LabNotes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Language" EntityType="LCCHPEntityModel.Store.Language" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Medium" EntityType="LCCHPEntityModel.Store.Medium" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MediumSampleResults" EntityType="LCCHPEntityModel.Store.MediumSampleResults" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MediumSampleResultsNotes" EntityType="LCCHPEntityModel.Store.MediumSampleResultsNotes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Occupation" EntityType="LCCHPEntityModel.Store.Occupation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OccupationNotes" EntityType="LCCHPEntityModel.Store.OccupationNotes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Person" EntityType="LCCHPEntityModel.Store.Person" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersonNotes" EntityType="LCCHPEntityModel.Store.PersonNotes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersontoAccessAgreement" EntityType="LCCHPEntityModel.Store.PersontoAccessAgreement" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersontoDaycare" EntityType="LCCHPEntityModel.Store.PersontoDaycare" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersontoEmployer" EntityType="LCCHPEntityModel.Store.PersontoEmployer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersontoEthnicity" EntityType="LCCHPEntityModel.Store.PersontoEthnicity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersontoFamily" EntityType="LCCHPEntityModel.Store.PersontoFamily" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersontoForeignFood" EntityType="LCCHPEntityModel.Store.PersontoForeignFood" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersontoHobby" EntityType="LCCHPEntityModel.Store.PersontoHobby" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersontoHomeRemedy" EntityType="LCCHPEntityModel.Store.PersontoHomeRemedy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersontoInsurance" EntityType="LCCHPEntityModel.Store.PersontoInsurance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersontoLanguage" EntityType="LCCHPEntityModel.Store.PersontoLanguage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersontoOccupation" EntityType="LCCHPEntityModel.Store.PersontoOccupation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersontoPerson" EntityType="LCCHPEntityModel.Store.PersontoPerson" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersontoPhoneNumber" EntityType="LCCHPEntityModel.Store.PersontoPhoneNumber" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersontoProperty" EntityType="LCCHPEntityModel.Store.PersontoProperty" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersonToStatus" EntityType="LCCHPEntityModel.Store.PersonToStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersonToTravelCountry" EntityType="LCCHPEntityModel.Store.PersonToTravelCountry" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PhoneNumber" EntityType="LCCHPEntityModel.Store.PhoneNumber" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PhoneNumberType" EntityType="LCCHPEntityModel.Store.PhoneNumberType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Property" EntityType="LCCHPEntityModel.Store.Property" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PropertyNotes" EntityType="LCCHPEntityModel.Store.PropertyNotes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PropertySampleResults" EntityType="LCCHPEntityModel.Store.PropertySampleResults" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PropertySampleResultsNotes" EntityType="LCCHPEntityModel.Store.PropertySampleResultsNotes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PropertytoCleanupStatus" EntityType="LCCHPEntityModel.Store.PropertytoCleanupStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PropertytoHouseholdSourcesofLead" EntityType="LCCHPEntityModel.Store.PropertytoHouseholdSourcesofLead" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PropertytoMedium" EntityType="LCCHPEntityModel.Store.PropertytoMedium" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Questionnaire" EntityType="LCCHPEntityModel.Store.Questionnaire" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QuestionnaireNotes" EntityType="LCCHPEntityModel.Store.QuestionnaireNotes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RelationshipType" EntityType="LCCHPEntityModel.Store.RelationshipType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Remediation" EntityType="LCCHPEntityModel.Store.Remediation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RemediationActionPlan" EntityType="LCCHPEntityModel.Store.RemediationActionPlan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RemediationNotes" EntityType="LCCHPEntityModel.Store.RemediationNotes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SampleLevelCategory" EntityType="LCCHPEntityModel.Store.SampleLevelCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SampleType" EntityType="LCCHPEntityModel.Store.SampleType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Source" EntityType="LCCHPEntityModel.Store.Source" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="LCCHPEntityModel.Store.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TargetStatus" EntityType="LCCHPEntityModel.Store.TargetStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TravelNotes" EntityType="LCCHPEntityModel.Store.TravelNotes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Units" EntityType="LCCHPEntityModel.Store.Units" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_AccessAgreement_AccessPurpose" Association="LCCHPEntityModel.Store.FK_AccessAgreement_AccessPurpose">
-            <End Role="AccessPurpose" EntitySet="AccessPurpose" />
-            <End Role="AccessAgreement" EntitySet="AccessAgreement" />
+            <End EntitySet="AccessPurpose" Role="AccessPurpose" />
+            <End EntitySet="AccessAgreement" Role="AccessAgreement" />
           </AssociationSet>
           <AssociationSet Name="FK_AccessAgreement_Property" Association="LCCHPEntityModel.Store.FK_AccessAgreement_Property">
-            <End Role="Property" EntitySet="Property" />
-            <End Role="AccessAgreement" EntitySet="AccessAgreement" />
+            <End EntitySet="Property" Role="Property" />
+            <End EntitySet="AccessAgreement" Role="AccessAgreement" />
           </AssociationSet>
           <AssociationSet Name="FK_AccessAgreementNotes_AccessAgreement" Association="LCCHPEntityModel.Store.FK_AccessAgreementNotes_AccessAgreement">
-            <End Role="AccessAgreement" EntitySet="AccessAgreement" />
-            <End Role="AccessAgreementNotes" EntitySet="AccessAgreementNotes" />
+            <End EntitySet="AccessAgreement" Role="AccessAgreement" />
+            <End EntitySet="AccessAgreementNotes" Role="AccessAgreementNotes" />
           </AssociationSet>
           <AssociationSet Name="FK_BloodTestResults_HematocritLevelCategory" Association="LCCHPEntityModel.Store.FK_BloodTestResults_HematocritLevelCategory">
-            <End Role="SampleLevelCategory" EntitySet="SampleLevelCategory" />
-            <End Role="BloodTestResults" EntitySet="BloodTestResults" />
+            <End EntitySet="SampleLevelCategory" Role="SampleLevelCategory" />
+            <End EntitySet="BloodTestResults" Role="BloodTestResults" />
           </AssociationSet>
           <AssociationSet Name="FK_BloodTestResults_HemoglobinLevelCategory" Association="LCCHPEntityModel.Store.FK_BloodTestResults_HemoglobinLevelCategory">
-            <End Role="SampleLevelCategory" EntitySet="SampleLevelCategory" />
-            <End Role="BloodTestResults" EntitySet="BloodTestResults" />
+            <End EntitySet="SampleLevelCategory" Role="SampleLevelCategory" />
+            <End EntitySet="BloodTestResults" Role="BloodTestResults" />
           </AssociationSet>
           <AssociationSet Name="FK_BloodTestResults_Lab" Association="LCCHPEntityModel.Store.FK_BloodTestResults_Lab">
-            <End Role="Lab" EntitySet="Lab" />
-            <End Role="BloodTestResults" EntitySet="BloodTestResults" />
+            <End EntitySet="Lab" Role="Lab" />
+            <End EntitySet="BloodTestResults" Role="BloodTestResults" />
           </AssociationSet>
           <AssociationSet Name="FK_BloodTestResults_LeadLevelCategory" Association="LCCHPEntityModel.Store.FK_BloodTestResults_LeadLevelCategory">
-            <End Role="SampleLevelCategory" EntitySet="SampleLevelCategory" />
-            <End Role="BloodTestResults" EntitySet="BloodTestResults" />
+            <End EntitySet="SampleLevelCategory" Role="SampleLevelCategory" />
+            <End EntitySet="BloodTestResults" Role="BloodTestResults" />
           </AssociationSet>
           <AssociationSet Name="FK_BloodTestResults_Person" Association="LCCHPEntityModel.Store.FK_BloodTestResults_Person">
-            <End Role="Person" EntitySet="Person" />
-            <End Role="BloodTestResults" EntitySet="BloodTestResults" />
+            <End EntitySet="Person" Role="Person" />
+            <End EntitySet="BloodTestResults" Role="BloodTestResults" />
           </AssociationSet>
           <AssociationSet Name="FK_BloodTestResults_SampleType" Association="LCCHPEntityModel.Store.FK_BloodTestResults_SampleType">
-            <End Role="SampleType" EntitySet="SampleType" />
-            <End Role="BloodTestResults" EntitySet="BloodTestResults" />
+            <End EntitySet="SampleType" Role="SampleType" />
+            <End EntitySet="BloodTestResults" Role="BloodTestResults" />
           </AssociationSet>
           <AssociationSet Name="FK_BloodTestResultsNotes_BloodTestResults" Association="LCCHPEntityModel.Store.FK_BloodTestResultsNotes_BloodTestResults">
-            <End Role="BloodTestResults" EntitySet="BloodTestResults" />
-            <End Role="BloodTestResultsNotes" EntitySet="BloodTestResultsNotes" />
+            <End EntitySet="BloodTestResults" Role="BloodTestResults" />
+            <End EntitySet="BloodTestResultsNotes" Role="BloodTestResultsNotes" />
           </AssociationSet>
           <AssociationSet Name="FK_ContractortoProperty_Contractor" Association="LCCHPEntityModel.Store.FK_ContractortoProperty_Contractor">
-            <End Role="Contractor" EntitySet="Contractor" />
-            <End Role="ContractortoProperty" EntitySet="ContractortoProperty" />
+            <End EntitySet="Contractor" Role="Contractor" />
+            <End EntitySet="ContractortoProperty" Role="ContractortoProperty" />
           </AssociationSet>
           <AssociationSet Name="FK_ContractortoProperty_Property" Association="LCCHPEntityModel.Store.FK_ContractortoProperty_Property">
-            <End Role="Property" EntitySet="Property" />
-            <End Role="ContractortoProperty" EntitySet="ContractortoProperty" />
+            <End EntitySet="Property" Role="Property" />
+            <End EntitySet="ContractortoProperty" Role="ContractortoProperty" />
           </AssociationSet>
           <AssociationSet Name="FK_ContractortoRemediation_Contractor" Association="LCCHPEntityModel.Store.FK_ContractortoRemediation_Contractor">
-            <End Role="Contractor" EntitySet="Contractor" />
-            <End Role="ContractortoRemediation" EntitySet="ContractortoRemediation" />
+            <End EntitySet="Contractor" Role="Contractor" />
+            <End EntitySet="ContractortoRemediation" Role="ContractortoRemediation" />
           </AssociationSet>
           <AssociationSet Name="FK_ContractortoRemediation_Remediation" Association="LCCHPEntityModel.Store.FK_ContractortoRemediation_Remediation">
-            <End Role="Remediation" EntitySet="Remediation" />
-            <End Role="ContractortoRemediation" EntitySet="ContractortoRemediation" />
+            <End EntitySet="Remediation" Role="Remediation" />
+            <End EntitySet="ContractortoRemediation" Role="ContractortoRemediation" />
           </AssociationSet>
           <AssociationSet Name="FK_ContractortoRemediationActionPlan_Contractor" Association="LCCHPEntityModel.Store.FK_ContractortoRemediationActionPlan_Contractor">
-            <End Role="Contractor" EntitySet="Contractor" />
-            <End Role="ContractortoRemediationActionPlan" EntitySet="ContractortoRemediationActionPlan" />
+            <End EntitySet="Contractor" Role="Contractor" />
+            <End EntitySet="ContractortoRemediationActionPlan" Role="ContractortoRemediationActionPlan" />
           </AssociationSet>
           <AssociationSet Name="FK_ContractortoRemediationActionPlan_RemediationActionPlan" Association="LCCHPEntityModel.Store.FK_ContractortoRemediationActionPlan_RemediationActionPlan">
-            <End Role="RemediationActionPlan" EntitySet="RemediationActionPlan" />
-            <End Role="ContractortoRemediationActionPlan" EntitySet="ContractortoRemediationActionPlan" />
+            <End EntitySet="RemediationActionPlan" Role="RemediationActionPlan" />
+            <End EntitySet="ContractortoRemediationActionPlan" Role="ContractortoRemediationActionPlan" />
           </AssociationSet>
           <AssociationSet Name="FK_ContractortoRemediationPlan_RemediationActionPlan" Association="LCCHPEntityModel.Store.FK_ContractortoRemediationPlan_RemediationActionPlan">
-            <End Role="RemediationActionPlan" EntitySet="RemediationActionPlan" />
-            <End Role="ContractortoRemediationActionPlan" EntitySet="ContractortoRemediationActionPlan" />
+            <End EntitySet="RemediationActionPlan" Role="RemediationActionPlan" />
+            <End EntitySet="ContractortoRemediationActionPlan" Role="ContractortoRemediationActionPlan" />
           </AssociationSet>
           <AssociationSet Name="FK_ContractortoSamplingPlan_Contractor" Association="LCCHPEntityModel.Store.FK_ContractortoSamplingPlan_Contractor">
-            <End Role="Contractor" EntitySet="Contractor" />
-            <End Role="ContractortoRemediationActionPlan" EntitySet="ContractortoRemediationActionPlan" />
+            <End EntitySet="Contractor" Role="Contractor" />
+            <End EntitySet="ContractortoRemediationActionPlan" Role="ContractortoRemediationActionPlan" />
           </AssociationSet>
           <AssociationSet Name="FK_DaycareContactPerson_Person" Association="LCCHPEntityModel.Store.FK_DaycareContactPerson_Person">
-            <End Role="Person" EntitySet="Person" />
-            <End Role="DaycarePrimaryContact" EntitySet="DaycarePrimaryContact" />
+            <End EntitySet="Person" Role="Person" />
+            <End EntitySet="DaycarePrimaryContact" Role="DaycarePrimaryContact" />
           </AssociationSet>
           <AssociationSet Name="FK_DaycarePrimaryContact_PersontoPhoneNumber" Association="LCCHPEntityModel.Store.FK_DaycarePrimaryContact_PersontoPhoneNumber">
-            <End Role="PersontoPhoneNumber" EntitySet="PersontoPhoneNumber" />
-            <End Role="DaycarePrimaryContact" EntitySet="DaycarePrimaryContact" />
+            <End EntitySet="PersontoPhoneNumber" Role="PersontoPhoneNumber" />
+            <End EntitySet="DaycarePrimaryContact" Role="DaycarePrimaryContact" />
           </AssociationSet>
           <AssociationSet Name="FK_DaycarePrimaryContact_PhoneNumber" Association="LCCHPEntityModel.Store.FK_DaycarePrimaryContact_PhoneNumber">
-            <End Role="PhoneNumber" EntitySet="PhoneNumber" />
-            <End Role="DaycarePrimaryContact" EntitySet="DaycarePrimaryContact" />
+            <End EntitySet="PhoneNumber" Role="PhoneNumber" />
+            <End EntitySet="DaycarePrimaryContact" Role="DaycarePrimaryContact" />
           </AssociationSet>
           <AssociationSet Name="FK_DaycaretoProperty_Daycare" Association="LCCHPEntityModel.Store.FK_DaycaretoProperty_Daycare">
-            <End Role="Daycare" EntitySet="Daycare" />
-            <End Role="DaycaretoProperty" EntitySet="DaycaretoProperty" />
+            <End EntitySet="Daycare" Role="Daycare" />
+            <End EntitySet="DaycaretoProperty" Role="DaycaretoProperty" />
           </AssociationSet>
           <AssociationSet Name="FK_DaycaretoProperty_Property" Association="LCCHPEntityModel.Store.FK_DaycaretoProperty_Property">
-            <End Role="Property" EntitySet="Property" />
-            <End Role="DaycaretoProperty" EntitySet="DaycaretoProperty" />
+            <End EntitySet="Property" Role="Property" />
+            <End EntitySet="DaycaretoProperty" Role="DaycaretoProperty" />
           </AssociationSet>
           <AssociationSet Name="FK_EmployertoProperty_Employer" Association="LCCHPEntityModel.Store.FK_EmployertoProperty_Employer">
-            <End Role="Employer" EntitySet="Employer" />
-            <End Role="EmployertoProperty" EntitySet="EmployertoProperty" />
+            <End EntitySet="Employer" Role="Employer" />
+            <End EntitySet="EmployertoProperty" Role="EmployertoProperty" />
           </AssociationSet>
           <AssociationSet Name="FK_EmployertoProperty_Property" Association="LCCHPEntityModel.Store.FK_EmployertoProperty_Property">
-            <End Role="Property" EntitySet="Property" />
-            <End Role="EmployertoProperty" EntitySet="EmployertoProperty" />
+            <End EntitySet="Property" Role="Property" />
+            <End EntitySet="EmployertoProperty" Role="EmployertoProperty" />
           </AssociationSet>
           <AssociationSet Name="FK_EnvironmentalInvestigation_Property" Association="LCCHPEntityModel.Store.FK_EnvironmentalInvestigation_Property">
-            <End Role="Property" EntitySet="Property" />
-            <End Role="EnvironmentalInvestigation" EntitySet="EnvironmentalInvestigation" />
+            <End EntitySet="Property" Role="Property" />
+            <End EntitySet="EnvironmentalInvestigation" Role="EnvironmentalInvestigation" />
           </AssociationSet>
           <AssociationSet Name="FK_FamilyNotes_Family" Association="LCCHPEntityModel.Store.FK_FamilyNotes_Family">
-            <End Role="Family" EntitySet="Family" />
-            <End Role="FamilyNotes" EntitySet="FamilyNotes" />
+            <End EntitySet="Family" Role="Family" />
+            <End EntitySet="FamilyNotes" Role="FamilyNotes" />
           </AssociationSet>
           <AssociationSet Name="FK_ForeignFoodtoCountry_Country" Association="LCCHPEntityModel.Store.FK_ForeignFoodtoCountry_Country">
-            <End Role="Country" EntitySet="Country" />
-            <End Role="ForeignFoodtoCountry" EntitySet="ForeignFoodtoCountry" />
+            <End EntitySet="Country" Role="Country" />
+            <End EntitySet="ForeignFoodtoCountry" Role="ForeignFoodtoCountry" />
           </AssociationSet>
           <AssociationSet Name="FK_ForeignFoodtoCountry_ForeignFood" Association="LCCHPEntityModel.Store.FK_ForeignFoodtoCountry_ForeignFood">
-            <End Role="ForeignFood" EntitySet="ForeignFood" />
-            <End Role="ForeignFoodtoCountry" EntitySet="ForeignFoodtoCountry" />
+            <End EntitySet="ForeignFood" Role="ForeignFood" />
+            <End EntitySet="ForeignFoodtoCountry" Role="ForeignFoodtoCountry" />
           </AssociationSet>
           <AssociationSet Name="FK_GiftCard_Person" Association="LCCHPEntityModel.Store.FK_GiftCard_Person">
-            <End Role="Person" EntitySet="Person" />
-            <End Role="GiftCard" EntitySet="GiftCard" />
+            <End EntitySet="Person" Role="Person" />
+            <End EntitySet="GiftCard" Role="GiftCard" />
           </AssociationSet>
           <AssociationSet Name="FK_HouseholdSourcesofLead_PropertytoHouseholdSourcesofLead" Association="LCCHPEntityModel.Store.FK_HouseholdSourcesofLead_PropertytoHouseholdSourcesofLead">
-            <End Role="HouseholdSourcesofLead" EntitySet="HouseholdSourcesofLead" />
-            <End Role="PropertytoHouseholdSourcesofLead" EntitySet="PropertytoHouseholdSourcesofLead" />
+            <End EntitySet="HouseholdSourcesofLead" Role="HouseholdSourcesofLead" />
+            <End EntitySet="PropertytoHouseholdSourcesofLead" Role="PropertytoHouseholdSourcesofLead" />
           </AssociationSet>
           <AssociationSet Name="FK_LabNotes_Lab" Association="LCCHPEntityModel.Store.FK_LabNotes_Lab">
-            <End Role="Lab" EntitySet="Lab" />
-            <End Role="LabNotes" EntitySet="LabNotes" />
+            <End EntitySet="Lab" Role="Lab" />
+            <End EntitySet="LabNotes" Role="LabNotes" />
           </AssociationSet>
           <AssociationSet Name="FK_MediumSampleResults_Lab" Association="LCCHPEntityModel.Store.FK_MediumSampleResults_Lab">
-            <End Role="Lab" EntitySet="Lab" />
-            <End Role="MediumSampleResults" EntitySet="MediumSampleResults" />
+            <End EntitySet="Lab" Role="Lab" />
+            <End EntitySet="MediumSampleResults" Role="MediumSampleResults" />
           </AssociationSet>
           <AssociationSet Name="FK_MediumSampleResults_Medium" Association="LCCHPEntityModel.Store.FK_MediumSampleResults_Medium">
-            <End Role="Medium" EntitySet="Medium" />
-            <End Role="MediumSampleResults" EntitySet="MediumSampleResults" />
+            <End EntitySet="Medium" Role="Medium" />
+            <End EntitySet="MediumSampleResults" Role="MediumSampleResults" />
           </AssociationSet>
           <AssociationSet Name="FK_MediumSampleResults_SampleLevelCategory" Association="LCCHPEntityModel.Store.FK_MediumSampleResults_SampleLevelCategory">
-            <End Role="SampleLevelCategory" EntitySet="SampleLevelCategory" />
-            <End Role="MediumSampleResults" EntitySet="MediumSampleResults" />
+            <End EntitySet="SampleLevelCategory" Role="SampleLevelCategory" />
+            <End EntitySet="MediumSampleResults" Role="MediumSampleResults" />
           </AssociationSet>
           <AssociationSet Name="FK_MediumSampleResults_Units" Association="LCCHPEntityModel.Store.FK_MediumSampleResults_Units">
-            <End Role="Units" EntitySet="Units" />
-            <End Role="MediumSampleResults" EntitySet="MediumSampleResults" />
+            <End EntitySet="Units" Role="Units" />
+            <End EntitySet="MediumSampleResults" Role="MediumSampleResults" />
           </AssociationSet>
           <AssociationSet Name="FK_MediumSampleResultsNotes_MediumSampleResults" Association="LCCHPEntityModel.Store.FK_MediumSampleResultsNotes_MediumSampleResults">
-            <End Role="MediumSampleResults" EntitySet="MediumSampleResults" />
-            <End Role="MediumSampleResultsNotes" EntitySet="MediumSampleResultsNotes" />
+            <End EntitySet="MediumSampleResults" Role="MediumSampleResults" />
+            <End EntitySet="MediumSampleResultsNotes" Role="MediumSampleResultsNotes" />
           </AssociationSet>
           <AssociationSet Name="FK_OccupationNotes_Occupation" Association="LCCHPEntityModel.Store.FK_OccupationNotes_Occupation">
-            <End Role="Occupation" EntitySet="Occupation" />
-            <End Role="OccupationNotes" EntitySet="OccupationNotes" />
+            <End EntitySet="Occupation" Role="Occupation" />
+            <End EntitySet="OccupationNotes" Role="OccupationNotes" />
           </AssociationSet>
           <AssociationSet Name="FK_PersonNotes_Person" Association="LCCHPEntityModel.Store.FK_PersonNotes_Person">
-            <End Role="Person" EntitySet="Person" />
-            <End Role="PersonNotes" EntitySet="PersonNotes" />
+            <End EntitySet="Person" Role="Person" />
+            <End EntitySet="PersonNotes" Role="PersonNotes" />
           </AssociationSet>
           <AssociationSet Name="FK_PersontoAccessAgreement_AccessAgreement" Association="LCCHPEntityModel.Store.FK_PersontoAccessAgreement_AccessAgreement">
-            <End Role="AccessAgreement" EntitySet="AccessAgreement" />
-            <End Role="PersontoAccessAgreement" EntitySet="PersontoAccessAgreement" />
+            <End EntitySet="AccessAgreement" Role="AccessAgreement" />
+            <End EntitySet="PersontoAccessAgreement" Role="PersontoAccessAgreement" />
           </AssociationSet>
           <AssociationSet Name="FK_PersontoAccessAgreement_Person" Association="LCCHPEntityModel.Store.FK_PersontoAccessAgreement_Person">
-            <End Role="Person" EntitySet="Person" />
-            <End Role="PersontoAccessAgreement" EntitySet="PersontoAccessAgreement" />
+            <End EntitySet="Person" Role="Person" />
+            <End EntitySet="PersontoAccessAgreement" Role="PersontoAccessAgreement" />
           </AssociationSet>
           <AssociationSet Name="FK_PersontoDaycare_Daycare" Association="LCCHPEntityModel.Store.FK_PersontoDaycare_Daycare">
-            <End Role="Daycare" EntitySet="Daycare" />
-            <End Role="PersontoDaycare" EntitySet="PersontoDaycare" />
+            <End EntitySet="Daycare" Role="Daycare" />
+            <End EntitySet="PersontoDaycare" Role="PersontoDaycare" />
           </AssociationSet>
           <AssociationSet Name="FK_PersontoDaycare_PersontoDaycare" Association="LCCHPEntityModel.Store.FK_PersontoDaycare_PersontoDaycare">
-            <End Role="Person" EntitySet="Person" />
-            <End Role="PersontoDaycare" EntitySet="PersontoDaycare" />
+            <End EntitySet="Person" Role="Person" />
+            <End EntitySet="PersontoDaycare" Role="PersontoDaycare" />
           </AssociationSet>
           <AssociationSet Name="FK_PersontoEmployer_Employer" Association="LCCHPEntityModel.Store.FK_PersontoEmployer_Employer">
-            <End Role="Employer" EntitySet="Employer" />
-            <End Role="PersontoEmployer" EntitySet="PersontoEmployer" />
+            <End EntitySet="Employer" Role="Employer" />
+            <End EntitySet="PersontoEmployer" Role="PersontoEmployer" />
           </AssociationSet>
           <AssociationSet Name="FK_PersontoEmployer_Person" Association="LCCHPEntityModel.Store.FK_PersontoEmployer_Person">
-            <End Role="Person" EntitySet="Person" />
-            <End Role="PersontoEmployer" EntitySet="PersontoEmployer" />
+            <End EntitySet="Person" Role="Person" />
+            <End EntitySet="PersontoEmployer" Role="PersontoEmployer" />
           </AssociationSet>
           <AssociationSet Name="FK_PersontoEthnicity_Ethnicity" Association="LCCHPEntityModel.Store.FK_PersontoEthnicity_Ethnicity">
-            <End Role="Ethnicity" EntitySet="Ethnicity" />
-            <End Role="PersontoEthnicity" EntitySet="PersontoEthnicity" />
+            <End EntitySet="Ethnicity" Role="Ethnicity" />
+            <End EntitySet="PersontoEthnicity" Role="PersontoEthnicity" />
           </AssociationSet>
           <AssociationSet Name="FK_PersontoEthnicity_Person" Association="LCCHPEntityModel.Store.FK_PersontoEthnicity_Person">
-            <End Role="Person" EntitySet="Person" />
-            <End Role="PersontoEthnicity" EntitySet="PersontoEthnicity" />
+            <End EntitySet="Person" Role="Person" />
+            <End EntitySet="PersontoEthnicity" Role="PersontoEthnicity" />
           </AssociationSet>
           <AssociationSet Name="FK_PersontoFamily_Family" Association="LCCHPEntityModel.Store.FK_PersontoFamily_Family">
-            <End Role="Family" EntitySet="Family" />
-            <End Role="PersontoFamily" EntitySet="PersontoFamily" />
+            <End EntitySet="Family" Role="Family" />
+            <End EntitySet="PersontoFamily" Role="PersontoFamily" />
           </AssociationSet>
           <AssociationSet Name="FK_PersontoFamily_Person" Association="LCCHPEntityModel.Store.FK_PersontoFamily_Person">
-            <End Role="Person" EntitySet="Person" />
-            <End Role="PersontoFamily" EntitySet="PersontoFamily" />
+            <End EntitySet="Person" Role="Person" />
+            <End EntitySet="PersontoFamily" Role="PersontoFamily" />
           </AssociationSet>
           <AssociationSet Name="FK_PersontoForeignFood_ForeignFood" Association="LCCHPEntityModel.Store.FK_PersontoForeignFood_ForeignFood">
-            <End Role="ForeignFood" EntitySet="ForeignFood" />
-            <End Role="PersontoForeignFood" EntitySet="PersontoForeignFood" />
+            <End EntitySet="ForeignFood" Role="ForeignFood" />
+            <End EntitySet="PersontoForeignFood" Role="PersontoForeignFood" />
           </AssociationSet>
           <AssociationSet Name="FK_PersontoForeignFood_Person" Association="LCCHPEntityModel.Store.FK_PersontoForeignFood_Person">
-            <End Role="Person" EntitySet="Person" />
-            <End Role="PersontoForeignFood" EntitySet="PersontoForeignFood" />
+            <End EntitySet="Person" Role="Person" />
+            <End EntitySet="PersontoForeignFood" Role="PersontoForeignFood" />
           </AssociationSet>
           <AssociationSet Name="FK_PersontoHobby_Hobby" Association="LCCHPEntityModel.Store.FK_PersontoHobby_Hobby">
-            <End Role="Hobby" EntitySet="Hobby" />
-            <End Role="PersontoHobby" EntitySet="PersontoHobby" />
+            <End EntitySet="Hobby" Role="Hobby" />
+            <End EntitySet="PersontoHobby" Role="PersontoHobby" />
           </AssociationSet>
           <AssociationSet Name="FK_PersontoHobby_Person" Association="LCCHPEntityModel.Store.FK_PersontoHobby_Person">
-            <End Role="Person" EntitySet="Person" />
-            <End Role="PersontoHobby" EntitySet="PersontoHobby" />
+            <End EntitySet="Person" Role="Person" />
+            <End EntitySet="PersontoHobby" Role="PersontoHobby" />
           </AssociationSet>
           <AssociationSet Name="FK_PersontoHomeRemedy_Person" Association="LCCHPEntityModel.Store.FK_PersontoHomeRemedy_Person">
-            <End Role="Person" EntitySet="Person" />
-            <End Role="PersontoHomeRemedy" EntitySet="PersontoHomeRemedy" />
+            <End EntitySet="Person" Role="Person" />
+            <End EntitySet="PersontoHomeRemedy" Role="PersontoHomeRemedy" />
           </AssociationSet>
           <AssociationSet Name="FK_PersontoHomeRemedy_PersontoHomeRemedy" Association="LCCHPEntityModel.Store.FK_PersontoHomeRemedy_PersontoHomeRemedy">
-            <End Role="HomeRemedy" EntitySet="HomeRemedy" />
-            <End Role="PersontoHomeRemedy" EntitySet="PersontoHomeRemedy" />
+            <End EntitySet="HomeRemedy" Role="HomeRemedy" />
+            <End EntitySet="PersontoHomeRemedy" Role="PersontoHomeRemedy" />
           </AssociationSet>
           <AssociationSet Name="FK_PersontoInsurance_Person" Association="LCCHPEntityModel.Store.FK_PersontoInsurance_Person">
-            <End Role="Person" EntitySet="Person" />
-            <End Role="PersontoInsurance" EntitySet="PersontoInsurance" />
+            <End EntitySet="Person" Role="Person" />
+            <End EntitySet="PersontoInsurance" Role="PersontoInsurance" />
           </AssociationSet>
           <AssociationSet Name="FK_PersontoInsurance_PersontoInsurance" Association="LCCHPEntityModel.Store.FK_PersontoInsurance_PersontoInsurance">
-            <End Role="InsuranceProvider" EntitySet="InsuranceProvider" />
-            <End Role="PersontoInsurance" EntitySet="PersontoInsurance" />
+            <End EntitySet="InsuranceProvider" Role="InsuranceProvider" />
+            <End EntitySet="PersontoInsurance" Role="PersontoInsurance" />
           </AssociationSet>
           <AssociationSet Name="FK_PersontoLanguage_Language" Association="LCCHPEntityModel.Store.FK_PersontoLanguage_Language">
-            <End Role="Language" EntitySet="Language" />
-            <End Role="PersontoLanguage" EntitySet="PersontoLanguage" />
+            <End EntitySet="Language" Role="Language" />
+            <End EntitySet="PersontoLanguage" Role="PersontoLanguage" />
           </AssociationSet>
           <AssociationSet Name="FK_PersontoLanguage_Person" Association="LCCHPEntityModel.Store.FK_PersontoLanguage_Person">
-            <End Role="Person" EntitySet="Person" />
-            <End Role="PersontoLanguage" EntitySet="PersontoLanguage" />
+            <End EntitySet="Person" Role="Person" />
+            <End EntitySet="PersontoLanguage" Role="PersontoLanguage" />
           </AssociationSet>
           <AssociationSet Name="FK_PersontoOccupation_Occupation" Association="LCCHPEntityModel.Store.FK_PersontoOccupation_Occupation">
-            <End Role="Occupation" EntitySet="Occupation" />
-            <End Role="PersontoOccupation" EntitySet="PersontoOccupation" />
+            <End EntitySet="Occupation" Role="Occupation" />
+            <End EntitySet="PersontoOccupation" Role="PersontoOccupation" />
           </AssociationSet>
           <AssociationSet Name="FK_PersontoOccupation_Person" Association="LCCHPEntityModel.Store.FK_PersontoOccupation_Person">
-            <End Role="Person" EntitySet="Person" />
-            <End Role="PersontoOccupation" EntitySet="PersontoOccupation" />
+            <End EntitySet="Person" Role="Person" />
+            <End EntitySet="PersontoOccupation" Role="PersontoOccupation" />
           </AssociationSet>
           <AssociationSet Name="FK_PersontoPerson_Person1ID" Association="LCCHPEntityModel.Store.FK_PersontoPerson_Person1ID">
-            <End Role="Person" EntitySet="Person" />
-            <End Role="PersontoPerson" EntitySet="PersontoPerson" />
+            <End EntitySet="Person" Role="Person" />
+            <End EntitySet="PersontoPerson" Role="PersontoPerson" />
           </AssociationSet>
           <AssociationSet Name="FK_PersontoPerson_Person2ID" Association="LCCHPEntityModel.Store.FK_PersontoPerson_Person2ID">
-            <End Role="Person" EntitySet="Person" />
-            <End Role="PersontoPerson" EntitySet="PersontoPerson" />
+            <End EntitySet="Person" Role="Person" />
+            <End EntitySet="PersontoPerson" Role="PersontoPerson" />
           </AssociationSet>
           <AssociationSet Name="FK_PersontoPerson_RelationshipType" Association="LCCHPEntityModel.Store.FK_PersontoPerson_RelationshipType">
-            <End Role="RelationshipType" EntitySet="RelationshipType" />
-            <End Role="PersontoPerson" EntitySet="PersontoPerson" />
+            <End EntitySet="RelationshipType" Role="RelationshipType" />
+            <End EntitySet="PersontoPerson" Role="PersontoPerson" />
           </AssociationSet>
           <AssociationSet Name="FK_PersontoPhoneNumber_Person" Association="LCCHPEntityModel.Store.FK_PersontoPhoneNumber_Person">
-            <End Role="Person" EntitySet="Person" />
-            <End Role="PersontoPhoneNumber" EntitySet="PersontoPhoneNumber" />
+            <End EntitySet="Person" Role="Person" />
+            <End EntitySet="PersontoPhoneNumber" Role="PersontoPhoneNumber" />
           </AssociationSet>
           <AssociationSet Name="FK_PersontoPhoneNumber_PhoneNumber" Association="LCCHPEntityModel.Store.FK_PersontoPhoneNumber_PhoneNumber">
-            <End Role="PhoneNumber" EntitySet="PhoneNumber" />
-            <End Role="PersontoPhoneNumber" EntitySet="PersontoPhoneNumber" />
+            <End EntitySet="PhoneNumber" Role="PhoneNumber" />
+            <End EntitySet="PersontoPhoneNumber" Role="PersontoPhoneNumber" />
           </AssociationSet>
           <AssociationSet Name="FK_PersontoProperty_Person" Association="LCCHPEntityModel.Store.FK_PersontoProperty_Person">
-            <End Role="Person" EntitySet="Person" />
-            <End Role="PersontoProperty" EntitySet="PersontoProperty" />
+            <End EntitySet="Person" Role="Person" />
+            <End EntitySet="PersontoProperty" Role="PersontoProperty" />
           </AssociationSet>
           <AssociationSet Name="FK_PersontoProperty_Property" Association="LCCHPEntityModel.Store.FK_PersontoProperty_Property">
-            <End Role="Property" EntitySet="Property" />
-            <End Role="PersontoProperty" EntitySet="PersontoProperty" />
+            <End EntitySet="Property" Role="Property" />
+            <End EntitySet="PersontoProperty" Role="PersontoProperty" />
           </AssociationSet>
           <AssociationSet Name="FK_PersonToStatus_Person" Association="LCCHPEntityModel.Store.FK_PersonToStatus_Person">
-            <End Role="Person" EntitySet="Person" />
-            <End Role="PersonToStatus" EntitySet="PersonToStatus" />
+            <End EntitySet="Person" Role="Person" />
+            <End EntitySet="PersonToStatus" Role="PersonToStatus" />
           </AssociationSet>
           <AssociationSet Name="FK_PersonToStatus_Status" Association="LCCHPEntityModel.Store.FK_PersonToStatus_Status">
-            <End Role="TargetStatus" EntitySet="TargetStatus" />
-            <End Role="PersonToStatus" EntitySet="PersonToStatus" />
+            <End EntitySet="TargetStatus" Role="TargetStatus" />
+            <End EntitySet="PersonToStatus" Role="PersonToStatus" />
           </AssociationSet>
           <AssociationSet Name="FK_PersonToTravelCountry_Country" Association="LCCHPEntityModel.Store.FK_PersonToTravelCountry_Country">
-            <End Role="Country" EntitySet="Country" />
-            <End Role="PersonToTravelCountry" EntitySet="PersonToTravelCountry" />
+            <End EntitySet="Country" Role="Country" />
+            <End EntitySet="PersonToTravelCountry" Role="PersonToTravelCountry" />
           </AssociationSet>
           <AssociationSet Name="FK_PersonToTravelCountry_Person" Association="LCCHPEntityModel.Store.FK_PersonToTravelCountry_Person">
-            <End Role="Person" EntitySet="Person" />
-            <End Role="PersonToTravelCountry" EntitySet="PersonToTravelCountry" />
+            <End EntitySet="Person" Role="Person" />
+            <End EntitySet="PersonToTravelCountry" Role="PersonToTravelCountry" />
           </AssociationSet>
           <AssociationSet Name="FK_PhoneNumber_PhoneNumber" Association="LCCHPEntityModel.Store.FK_PhoneNumber_PhoneNumber">
-            <End Role="PhoneNumberType" EntitySet="PhoneNumberType" />
-            <End Role="PhoneNumber" EntitySet="PhoneNumber" />
+            <End EntitySet="PhoneNumberType" Role="PhoneNumberType" />
+            <End EntitySet="PhoneNumber" Role="PhoneNumber" />
           </AssociationSet>
           <AssociationSet Name="FK_Property_Area" Association="LCCHPEntityModel.Store.FK_Property_Area">
-            <End Role="Area" EntitySet="Area" />
-            <End Role="Property" EntitySet="Property" />
+            <End EntitySet="Area" Role="Area" />
+            <End EntitySet="Property" Role="Property" />
           </AssociationSet>
           <AssociationSet Name="FK_Property_ConstructionType" Association="LCCHPEntityModel.Store.FK_Property_ConstructionType">
-            <End Role="ConstructionType" EntitySet="ConstructionType" />
-            <End Role="Property" EntitySet="Property" />
+            <End EntitySet="ConstructionType" Role="ConstructionType" />
+            <End EntitySet="Property" Role="Property" />
           </AssociationSet>
           <AssociationSet Name="FK_Property_Person" Association="LCCHPEntityModel.Store.FK_Property_Person">
-            <End Role="Person" EntitySet="Person" />
-            <End Role="Property" EntitySet="Property" />
+            <End EntitySet="Person" Role="Person" />
+            <End EntitySet="Property" Role="Property" />
           </AssociationSet>
           <AssociationSet Name="FK_Property_PropertytoHouseholdSourcesofLead" Association="LCCHPEntityModel.Store.FK_Property_PropertytoHouseholdSourcesofLead">
-            <End Role="Property" EntitySet="Property" />
-            <End Role="PropertytoHouseholdSourcesofLead" EntitySet="PropertytoHouseholdSourcesofLead" />
+            <End EntitySet="Property" Role="Property" />
+            <End EntitySet="PropertytoHouseholdSourcesofLead" Role="PropertytoHouseholdSourcesofLead" />
           </AssociationSet>
           <AssociationSet Name="FK_PropertyNotes_Property" Association="LCCHPEntityModel.Store.FK_PropertyNotes_Property">
-            <End Role="Property" EntitySet="Property" />
-            <End Role="PropertyNotes" EntitySet="PropertyNotes" />
+            <End EntitySet="Property" Role="Property" />
+            <End EntitySet="PropertyNotes" Role="PropertyNotes" />
           </AssociationSet>
           <AssociationSet Name="FK_PropertySampleResults_SampleType" Association="LCCHPEntityModel.Store.FK_PropertySampleResults_SampleType">
-            <End Role="SampleType" EntitySet="SampleType" />
-            <End Role="PropertySampleResults" EntitySet="PropertySampleResults" />
+            <End EntitySet="SampleType" Role="SampleType" />
+            <End EntitySet="PropertySampleResults" Role="PropertySampleResults" />
           </AssociationSet>
           <AssociationSet Name="FK_PropertySampleResultsNotes_PropertySampleResults" Association="LCCHPEntityModel.Store.FK_PropertySampleResultsNotes_PropertySampleResults">
-            <End Role="PropertySampleResults" EntitySet="PropertySampleResults" />
-            <End Role="PropertySampleResultsNotes" EntitySet="PropertySampleResultsNotes" />
+            <End EntitySet="PropertySampleResults" Role="PropertySampleResults" />
+            <End EntitySet="PropertySampleResultsNotes" Role="PropertySampleResultsNotes" />
           </AssociationSet>
           <AssociationSet Name="FK_PropertySampletResults_Property" Association="LCCHPEntityModel.Store.FK_PropertySampletResults_Property">
-            <End Role="Property" EntitySet="Property" />
-            <End Role="PropertySampleResults" EntitySet="PropertySampleResults" />
+            <End EntitySet="Property" Role="Property" />
+            <End EntitySet="PropertySampleResults" Role="PropertySampleResults" />
           </AssociationSet>
           <AssociationSet Name="FK_PropertytoCleanupStatus_CleanupStatus" Association="LCCHPEntityModel.Store.FK_PropertytoCleanupStatus_CleanupStatus">
-            <End Role="CleanupStatus" EntitySet="CleanupStatus" />
-            <End Role="PropertytoCleanupStatus" EntitySet="PropertytoCleanupStatus" />
+            <End EntitySet="CleanupStatus" Role="CleanupStatus" />
+            <End EntitySet="PropertytoCleanupStatus" Role="PropertytoCleanupStatus" />
           </AssociationSet>
           <AssociationSet Name="FK_PropertytoCleanupStatus_Property" Association="LCCHPEntityModel.Store.FK_PropertytoCleanupStatus_Property">
-            <End Role="Property" EntitySet="Property" />
-            <End Role="PropertytoCleanupStatus" EntitySet="PropertytoCleanupStatus" />
+            <End EntitySet="Property" Role="Property" />
+            <End EntitySet="PropertytoCleanupStatus" Role="PropertytoCleanupStatus" />
           </AssociationSet>
           <AssociationSet Name="FK_PropertytoMedium_Medium" Association="LCCHPEntityModel.Store.FK_PropertytoMedium_Medium">
-            <End Role="Medium" EntitySet="Medium" />
-            <End Role="PropertytoMedium" EntitySet="PropertytoMedium" />
+            <End EntitySet="Medium" Role="Medium" />
+            <End EntitySet="PropertytoMedium" Role="PropertytoMedium" />
           </AssociationSet>
           <AssociationSet Name="FK_PropertytoMedium_Property" Association="LCCHPEntityModel.Store.FK_PropertytoMedium_Property">
-            <End Role="Property" EntitySet="Property" />
-            <End Role="PropertytoMedium" EntitySet="PropertytoMedium" />
+            <End EntitySet="Property" Role="Property" />
+            <End EntitySet="PropertytoMedium" Role="PropertytoMedium" />
           </AssociationSet>
           <AssociationSet Name="FK_Questionnaire_Person" Association="LCCHPEntityModel.Store.FK_Questionnaire_Person">
-            <End Role="Person" EntitySet="Person" />
-            <End Role="Questionnaire" EntitySet="Questionnaire" />
+            <End EntitySet="Person" Role="Person" />
+            <End EntitySet="Questionnaire" Role="Questionnaire" />
           </AssociationSet>
           <AssociationSet Name="FK_QuestionnaireNotes_Questionnaire" Association="LCCHPEntityModel.Store.FK_QuestionnaireNotes_Questionnaire">
-            <End Role="Questionnaire" EntitySet="Questionnaire" />
-            <End Role="QuestionnaireNotes" EntitySet="QuestionnaireNotes" />
+            <End EntitySet="Questionnaire" Role="Questionnaire" />
+            <End EntitySet="QuestionnaireNotes" Role="QuestionnaireNotes" />
           </AssociationSet>
           <AssociationSet Name="FK_Remediation_Property" Association="LCCHPEntityModel.Store.FK_Remediation_Property">
-            <End Role="Property" EntitySet="Property" />
-            <End Role="Remediation" EntitySet="Remediation" />
+            <End EntitySet="Property" Role="Property" />
+            <End EntitySet="Remediation" Role="Remediation" />
           </AssociationSet>
           <AssociationSet Name="FK_Remediation_RemediationActionPlan" Association="LCCHPEntityModel.Store.FK_Remediation_RemediationActionPlan">
-            <End Role="RemediationActionPlan" EntitySet="RemediationActionPlan" />
-            <End Role="Remediation" EntitySet="Remediation" />
+            <End EntitySet="RemediationActionPlan" Role="RemediationActionPlan" />
+            <End EntitySet="Remediation" Role="Remediation" />
           </AssociationSet>
           <AssociationSet Name="FK_RemediationActionPlan_EnvironmentalInvestigation" Association="LCCHPEntityModel.Store.FK_RemediationActionPlan_EnvironmentalInvestigation">
-            <End Role="EnvironmentalInvestigation" EntitySet="EnvironmentalInvestigation" />
-            <End Role="RemediationActionPlan" EntitySet="RemediationActionPlan" />
+            <End EntitySet="EnvironmentalInvestigation" Role="EnvironmentalInvestigation" />
+            <End EntitySet="RemediationActionPlan" Role="RemediationActionPlan" />
           </AssociationSet>
           <AssociationSet Name="FK_RemediationNotes_Remediation" Association="LCCHPEntityModel.Store.FK_RemediationNotes_Remediation">
-            <End Role="Remediation" EntitySet="Remediation" />
-            <End Role="RemediationNotes" EntitySet="RemediationNotes" />
+            <End EntitySet="Remediation" Role="Remediation" />
+            <End EntitySet="RemediationNotes" Role="RemediationNotes" />
           </AssociationSet>
           <AssociationSet Name="FK_TravelNotes_Family" Association="LCCHPEntityModel.Store.FK_TravelNotes_Family">
-            <End Role="Family" EntitySet="Family" />
-            <End Role="TravelNotes" EntitySet="TravelNotes" />
+            <End EntitySet="Family" Role="Family" />
+            <End EntitySet="TravelNotes" Role="TravelNotes" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="AccessAgreement">
           <Key>
             <PropertyRef Name="AccessAgreementID" />
           </Key>
-          <Property Name="AccessAgreementID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AccessAgreementID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
           <Property Name="AccessPurposeID" Type="int" />
           <Property Name="AccessAgreementFile" Type="varbinary(max)" />
           <Property Name="PropertyID" Type="int" />
@@ -469,18 +469,18 @@
           <Key>
             <PropertyRef Name="AccessAgreementNotesID" />
           </Key>
-          <Property Name="AccessAgreementNotesID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="AccessAgreementID" Type="int" Nullable="false" />
+          <Property Name="AccessAgreementNotesID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="AccessAgreementID" Nullable="false" Type="int" />
           <Property Name="CreatedDate" Type="datetime" />
-          <Property Name="Notes" Type="varchar" MaxLength="3000" />
+          <Property Name="Notes" MaxLength="3000" Type="varchar" />
         </EntityType>
         <EntityType Name="AccessPurpose">
           <Key>
             <PropertyRef Name="AccessPurposeID" />
           </Key>
-          <Property Name="AccessPurposeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="AccessPurposeName" Type="varchar" MaxLength="50" />
-          <Property Name="AccessPurposeDescription" Type="varchar" MaxLength="253" />
+          <Property Name="AccessPurposeID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="AccessPurposeName" MaxLength="50" Type="varchar" />
+          <Property Name="AccessPurposeDescription" MaxLength="253" Type="varchar" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="CreatedDate" Type="datetime" />
         </EntityType>
@@ -488,9 +488,9 @@
           <Key>
             <PropertyRef Name="AreaID" />
           </Key>
-          <Property Name="AreaID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="AreaDescription" Type="varchar" MaxLength="253" />
-          <Property Name="AreaName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="AreaID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="AreaDescription" MaxLength="253" Type="varchar" />
+          <Property Name="AreaName" Nullable="false" MaxLength="50" Type="varchar" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="CreatedDate" Type="datetime" />
         </EntityType>
@@ -498,14 +498,14 @@
           <Key>
             <PropertyRef Name="BloodTestResultsID" />
           </Key>
-          <Property Name="BloodTestResultsID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="isBaseline" Type="bit" Nullable="false" />
+          <Property Name="BloodTestResultsID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="isBaseline" Nullable="false" Type="bit" />
           <Property Name="PersonID" Type="int" />
-          <Property Name="SampleDate" Type="date" Nullable="false" />
+          <Property Name="SampleDate" Nullable="false" Type="date" />
           <Property Name="LabSubmissionDate" Type="date" />
-          <Property Name="LeadValue" Type="numeric" Precision="4" Scale="1" />
+          <Property Name="LeadValue" Precision="4" Scale="1" Type="numeric" />
           <Property Name="LeadValueCategoryID" Type="tinyint" />
-          <Property Name="HemoglobinValue" Type="numeric" Precision="4" Scale="1" />
+          <Property Name="HemoglobinValue" Precision="4" Scale="1" Type="numeric" />
           <Property Name="HemoglobinValueCategoryID" Type="tinyint" />
           <Property Name="HematocritValueCategoryID" Type="tinyint" />
           <Property Name="LabID" Type="int" />
@@ -514,28 +514,28 @@
           <Property Name="TakenAfterPropertyRemediationCompleted" Type="bit" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="CreatedDate" Type="datetime" />
-          <Property Name="HematocritValue" Type="numeric" Precision="6" Scale="1" StoreGeneratedPattern="Computed" />
+          <Property Name="HematocritValue" Precision="6" Scale="1" StoreGeneratedPattern="Computed" Type="numeric" />
           <Property Name="ExcludeResult" Type="bit" />
           <Property Name="HistoricBloodTestResultsID" Type="int" />
-          <Property Name="HistoricLabResultsID" Type="varchar" MaxLength="10" />
+          <Property Name="HistoricLabResultsID" MaxLength="10" Type="varchar" />
         </EntityType>
         <EntityType Name="BloodTestResultsNotes">
           <Key>
             <PropertyRef Name="BloodTestResultsNotesID" />
           </Key>
-          <Property Name="BloodTestResultsNotesID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="BloodTestResultsID" Type="int" Nullable="false" />
+          <Property Name="BloodTestResultsNotesID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="BloodTestResultsID" Nullable="false" Type="int" />
           <Property Name="CreatedDate" Type="datetime" />
-          <Property Name="Notes" Type="varchar" Nullable="false" MaxLength="3000" />
+          <Property Name="Notes" Nullable="false" MaxLength="3000" Type="varchar" />
         </EntityType>
         <EntityType Name="CleanupStatus">
           <Key>
             <PropertyRef Name="CleanupStatusID" />
           </Key>
-          <Property Name="CleanupStatusID" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="CleanupStatusDescription" Type="varchar" MaxLength="253" />
-          <Property Name="CleanupStatusName" Type="varchar" MaxLength="50" />
-          <Property Name="HistoricCleanupStatusID" Type="char" MaxLength="1" />
+          <Property Name="CleanupStatusID" Nullable="false" StoreGeneratedPattern="Identity" Type="tinyint" />
+          <Property Name="CleanupStatusDescription" MaxLength="253" Type="varchar" />
+          <Property Name="CleanupStatusName" MaxLength="50" Type="varchar" />
+          <Property Name="HistoricCleanupStatusID" MaxLength="1" Type="char" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="CreatedDate" Type="datetime" />
         </EntityType>
@@ -543,10 +543,10 @@
           <Key>
             <PropertyRef Name="ConstructionTypeID" />
           </Key>
-          <Property Name="ConstructionTypeID" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="ConstructionTypeName" Type="varchar" Nullable="false" MaxLength="50" />
-          <Property Name="ConstructionTypeDescription" Type="varchar" MaxLength="253" />
-          <Property Name="HistoricConstructionTypeID" Type="char" MaxLength="1" />
+          <Property Name="ConstructionTypeID" Nullable="false" StoreGeneratedPattern="Identity" Type="tinyint" />
+          <Property Name="ConstructionTypeName" Nullable="false" MaxLength="50" Type="varchar" />
+          <Property Name="ConstructionTypeDescription" MaxLength="253" Type="varchar" />
+          <Property Name="HistoricConstructionTypeID" MaxLength="1" Type="char" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="CreatedDate" Type="datetime" />
         </EntityType>
@@ -554,9 +554,9 @@
           <Key>
             <PropertyRef Name="ContractorID" />
           </Key>
-          <Property Name="ContractorID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="ContractorName" Type="varchar" MaxLength="50" />
-          <Property Name="ContractorDescription" Type="varchar" MaxLength="253" />
+          <Property Name="ContractorID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="ContractorName" MaxLength="50" Type="varchar" />
+          <Property Name="ContractorDescription" MaxLength="253" Type="varchar" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="CreatedDate" Type="datetime" />
         </EntityType>
@@ -565,8 +565,8 @@
             <PropertyRef Name="ContractorID" />
             <PropertyRef Name="PropertyID" />
           </Key>
-          <Property Name="ContractorID" Type="int" Nullable="false" />
-          <Property Name="PropertyID" Type="int" Nullable="false" />
+          <Property Name="ContractorID" Nullable="false" Type="int" />
+          <Property Name="PropertyID" Nullable="false" Type="int" />
           <Property Name="StartDate" Type="date" />
           <Property Name="EndDate" Type="date" />
           <Property Name="ModifiedDate" Type="datetime" />
@@ -577,8 +577,8 @@
             <PropertyRef Name="ContractorID" />
             <PropertyRef Name="RemediationID" />
           </Key>
-          <Property Name="ContractorID" Type="int" Nullable="false" />
-          <Property Name="RemediationID" Type="int" Nullable="false" />
+          <Property Name="ContractorID" Nullable="false" Type="int" />
+          <Property Name="RemediationID" Nullable="false" Type="int" />
           <Property Name="StartDate" Type="date" />
           <Property Name="EndDate" Type="date" />
           <Property Name="isSubContractor" Type="bit" />
@@ -590,8 +590,8 @@
             <PropertyRef Name="ContractorID" />
             <PropertyRef Name="RemediationActionPlanID" />
           </Key>
-          <Property Name="ContractorID" Type="int" Nullable="false" />
-          <Property Name="RemediationActionPlanID" Type="int" Nullable="false" />
+          <Property Name="ContractorID" Nullable="false" Type="int" />
+          <Property Name="RemediationActionPlanID" Nullable="false" Type="int" />
           <Property Name="StartDate" Type="date" />
           <Property Name="EndDate" Type="date" />
           <Property Name="isSubContractor" Type="bit" />
@@ -602,8 +602,8 @@
           <Key>
             <PropertyRef Name="CountryID" />
           </Key>
-          <Property Name="CountryID" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="CountryName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="CountryID" Nullable="false" StoreGeneratedPattern="Identity" Type="tinyint" />
+          <Property Name="CountryName" Nullable="false" MaxLength="50" Type="varchar" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="CreatedDate" Type="datetime" />
         </EntityType>
@@ -611,9 +611,9 @@
           <Key>
             <PropertyRef Name="DaycareID" />
           </Key>
-          <Property Name="DaycareID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="DaycareName" Type="varchar" Nullable="false" MaxLength="50" />
-          <Property Name="DaycareDescription" Type="varchar" MaxLength="253" />
+          <Property Name="DaycareID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="DaycareName" Nullable="false" MaxLength="50" Type="varchar" />
+          <Property Name="DaycareDescription" MaxLength="253" Type="varchar" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="CreatedDate" Type="datetime" />
         </EntityType>
@@ -623,9 +623,9 @@
             <PropertyRef Name="PersonID" />
             <PropertyRef Name="ContactPriority" />
           </Key>
-          <Property Name="DaycareID" Type="int" Nullable="false" />
-          <Property Name="PersonID" Type="int" Nullable="false" />
-          <Property Name="ContactPriority" Type="tinyint" Nullable="false" />
+          <Property Name="DaycareID" Nullable="false" Type="int" />
+          <Property Name="PersonID" Nullable="false" Type="int" />
+          <Property Name="ContactPriority" Nullable="false" Type="tinyint" />
           <Property Name="PrimaryPhoneNumberID" Type="int" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="CreatedDate" Type="datetime" />
@@ -636,9 +636,9 @@
             <PropertyRef Name="PropertyID" />
             <PropertyRef Name="StartDate" />
           </Key>
-          <Property Name="DaycareID" Type="int" Nullable="false" />
-          <Property Name="PropertyID" Type="int" Nullable="false" />
-          <Property Name="StartDate" Type="date" Nullable="false" />
+          <Property Name="DaycareID" Nullable="false" Type="int" />
+          <Property Name="PropertyID" Nullable="false" Type="int" />
+          <Property Name="StartDate" Nullable="false" Type="date" />
           <Property Name="EndDate" Type="date" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="CreatedDate" Type="datetime" />
@@ -647,8 +647,8 @@
           <Key>
             <PropertyRef Name="EmployerID" />
           </Key>
-          <Property Name="EmployerID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="EmployerName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="EmployerID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="EmployerName" Nullable="false" MaxLength="50" Type="varchar" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="CreatedDate" Type="datetime" />
         </EntityType>
@@ -658,9 +658,9 @@
             <PropertyRef Name="PropertyID" />
             <PropertyRef Name="StartDate" />
           </Key>
-          <Property Name="EmployerID" Type="int" Nullable="false" />
-          <Property Name="PropertyID" Type="int" Nullable="false" />
-          <Property Name="StartDate" Type="date" Nullable="false" />
+          <Property Name="EmployerID" Nullable="false" Type="int" />
+          <Property Name="PropertyID" Nullable="false" Type="int" />
+          <Property Name="StartDate" Nullable="false" Type="date" />
           <Property Name="EndDate" Type="date" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="CreatedDate" Type="datetime" />
@@ -669,12 +669,12 @@
           <Key>
             <PropertyRef Name="EnvironmentalInvestigationID" />
           </Key>
-          <Property Name="EnvironmentalInvestigationID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EnvironmentalInvestigationID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
           <Property Name="ConductEnvironmentalInvestigation" Type="bit" />
           <Property Name="ConductEnvironmentalInvestigationDecisionDate" Type="date" />
           <Property Name="Cost" Type="money" />
           <Property Name="EnvironmentalInvestigationDate" Type="date" />
-          <Property Name="PropertyID" Type="int" Nullable="false" />
+          <Property Name="PropertyID" Nullable="false" Type="int" />
           <Property Name="StartDate" Type="date" />
           <Property Name="EndDate" Type="date" />
           <Property Name="ModifiedDate" Type="datetime" />
@@ -684,12 +684,12 @@
           <Key>
             <PropertyRef Name="ErrorID" />
           </Key>
-          <Property Name="ErrorID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Username" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="ErrorID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="Username" Nullable="false" MaxLength="128" Type="nvarchar" />
           <Property Name="ErrorNumber" Type="int" />
           <Property Name="ErrorSeverity" Type="int" />
           <Property Name="ErrorState" Type="int" />
-          <Property Name="ErrorProcedure" Type="nvarchar" MaxLength="128" />
+          <Property Name="ErrorProcedure" MaxLength="128" Type="nvarchar" />
           <Property Name="ErrorLine" Type="int" />
           <Property Name="ErrorMessage" Type="nvarchar" />
           <Property Name="ErrorTime" Type="datetime" />
@@ -700,9 +700,9 @@
           <Key>
             <PropertyRef Name="EthnicityID" />
           </Key>
-          <Property Name="EthnicityID" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Ethnicity" Type="varchar" Nullable="false" MaxLength="50" />
-          <Property Name="HistoricEthnicityCode" Type="char" MaxLength="1" />
+          <Property Name="EthnicityID" Nullable="false" StoreGeneratedPattern="Identity" Type="tinyint" />
+          <Property Name="Ethnicity" Nullable="false" MaxLength="50" Type="varchar" />
+          <Property Name="HistoricEthnicityCode" MaxLength="1" Type="char" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="CreatedDate" Type="datetime" />
         </EntityType>
@@ -710,8 +710,8 @@
           <Key>
             <PropertyRef Name="FamilyID" />
           </Key>
-          <Property Name="FamilyID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Lastname" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="FamilyID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="Lastname" Nullable="false" MaxLength="50" Type="varchar" />
           <Property Name="NumberofSmokers" Type="tinyint" />
           <Property Name="PrimaryLanguageID" Type="tinyint" />
           <Property Name="Pets" Type="tinyint" />
@@ -726,18 +726,18 @@
           <Key>
             <PropertyRef Name="FamilyNotesID" />
           </Key>
-          <Property Name="FamilyNotesID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="FamilyID" Type="int" Nullable="false" />
+          <Property Name="FamilyNotesID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="FamilyID" Nullable="false" Type="int" />
           <Property Name="CreatedDate" Type="datetime" />
-          <Property Name="Notes" Type="varchar" Nullable="false" MaxLength="3000" />
+          <Property Name="Notes" Nullable="false" MaxLength="3000" Type="varchar" />
         </EntityType>
         <EntityType Name="FileType">
           <Key>
             <PropertyRef Name="FileTypeID" />
           </Key>
-          <Property Name="FileTypeID" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="FileTypeName" Type="varchar" Nullable="false" MaxLength="50" />
-          <Property Name="FileTypeDescription" Type="varchar" MaxLength="253" />
+          <Property Name="FileTypeID" Nullable="false" StoreGeneratedPattern="Identity" Type="smallint" />
+          <Property Name="FileTypeName" Nullable="false" MaxLength="50" Type="varchar" />
+          <Property Name="FileTypeDescription" MaxLength="253" Type="varchar" />
           <Property Name="CreatedDate" Type="datetime" />
           <Property Name="ModifiedDate" Type="datetime" />
         </EntityType>
@@ -745,9 +745,9 @@
           <Key>
             <PropertyRef Name="ForeignFoodID" />
           </Key>
-          <Property Name="ForeignFoodID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="ForeignFoodName" Type="varchar" MaxLength="50" />
-          <Property Name="ForeignFoodDescription" Type="varchar" MaxLength="253" />
+          <Property Name="ForeignFoodID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="ForeignFoodName" MaxLength="50" Type="varchar" />
+          <Property Name="ForeignFoodDescription" MaxLength="253" Type="varchar" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="CreatedDate" Type="datetime" />
         </EntityType>
@@ -756,8 +756,8 @@
             <PropertyRef Name="ForeignFoodID" />
             <PropertyRef Name="CountryID" />
           </Key>
-          <Property Name="ForeignFoodID" Type="int" Nullable="false" />
-          <Property Name="CountryID" Type="tinyint" Nullable="false" />
+          <Property Name="ForeignFoodID" Nullable="false" Type="int" />
+          <Property Name="CountryID" Nullable="false" Type="tinyint" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="CreatedDate" Type="datetime" />
         </EntityType>
@@ -765,10 +765,10 @@
           <Key>
             <PropertyRef Name="GiftCardID" />
           </Key>
-          <Property Name="GiftCardID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="GiftCardValue" Type="money" Nullable="false" />
-          <Property Name="IssueDate" Type="date" Nullable="false" />
-          <Property Name="PersonID" Type="int" Nullable="false" />
+          <Property Name="GiftCardID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="GiftCardValue" Nullable="false" Type="money" />
+          <Property Name="IssueDate" Nullable="false" Type="date" />
+          <Property Name="PersonID" Nullable="false" Type="int" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="CreatedDate" Type="datetime" />
         </EntityType>
@@ -776,9 +776,9 @@
           <Key>
             <PropertyRef Name="HobbyID" />
           </Key>
-          <Property Name="HobbyID" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="HobbyDescription" Type="varchar" MaxLength="253" />
-          <Property Name="HobbyName" Type="varchar" MaxLength="50" />
+          <Property Name="HobbyID" Nullable="false" StoreGeneratedPattern="Identity" Type="smallint" />
+          <Property Name="HobbyDescription" MaxLength="253" Type="varchar" />
+          <Property Name="HobbyName" MaxLength="50" Type="varchar" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="CreatedDate" Type="datetime" />
           <Property Name="LeadExposure" Type="bit" />
@@ -787,9 +787,9 @@
           <Key>
             <PropertyRef Name="HomeRemedyID" />
           </Key>
-          <Property Name="HomeRemedyID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="HomeRemedyName" Type="varchar" Nullable="false" MaxLength="50" />
-          <Property Name="HomeRemedyDescription" Type="varchar" MaxLength="253" />
+          <Property Name="HomeRemedyID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="HomeRemedyName" Nullable="false" MaxLength="50" Type="varchar" />
+          <Property Name="HomeRemedyDescription" MaxLength="253" Type="varchar" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="CreatedDate" Type="datetime" />
         </EntityType>
@@ -797,9 +797,9 @@
           <Key>
             <PropertyRef Name="HouseholdSourcesofLeadID" />
           </Key>
-          <Property Name="HouseholdSourcesofLeadID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="HouseholdItemName" Type="varchar" MaxLength="50" />
-          <Property Name="HouseholdItemDescription" Type="varchar" MaxLength="253" />
+          <Property Name="HouseholdSourcesofLeadID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="HouseholdItemName" MaxLength="50" Type="varchar" />
+          <Property Name="HouseholdItemDescription" MaxLength="253" Type="varchar" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="CreatedDate" Type="datetime" />
         </EntityType>
@@ -807,8 +807,8 @@
           <Key>
             <PropertyRef Name="InsuranceProviderID" />
           </Key>
-          <Property Name="InsuranceProviderID" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="InsuranceProviderName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="InsuranceProviderID" Nullable="false" StoreGeneratedPattern="Identity" Type="smallint" />
+          <Property Name="InsuranceProviderName" Nullable="false" MaxLength="50" Type="varchar" />
           <Property Name="CreatedDate" Type="datetime" />
           <Property Name="ModifiedDate" Type="datetime" />
         </EntityType>
@@ -816,9 +816,9 @@
           <Key>
             <PropertyRef Name="LabID" />
           </Key>
-          <Property Name="LabID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="LabName" Type="varchar" MaxLength="50" />
-          <Property Name="LabDescription" Type="varchar" MaxLength="253" />
+          <Property Name="LabID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="LabName" MaxLength="50" Type="varchar" />
+          <Property Name="LabDescription" MaxLength="253" Type="varchar" />
           <Property Name="CreatedDate" Type="datetime" />
           <Property Name="ModifiedDate" Type="datetime" />
         </EntityType>
@@ -826,18 +826,18 @@
           <Key>
             <PropertyRef Name="LabNotesID" />
           </Key>
-          <Property Name="LabNotesID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="LabID" Type="int" Nullable="false" />
+          <Property Name="LabNotesID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="LabID" Nullable="false" Type="int" />
           <Property Name="CreatedDate" Type="datetime" />
-          <Property Name="Notes" Type="varchar" Nullable="false" MaxLength="3000" />
+          <Property Name="Notes" Nullable="false" MaxLength="3000" Type="varchar" />
         </EntityType>
         <EntityType Name="Language">
           <Key>
             <PropertyRef Name="LanguageID" />
           </Key>
-          <Property Name="LanguageID" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="LanguageName" Type="varchar" Nullable="false" MaxLength="50" />
-          <Property Name="PrimLanguageCode" Type="char" MaxLength="1" />
+          <Property Name="LanguageID" Nullable="false" StoreGeneratedPattern="Identity" Type="tinyint" />
+          <Property Name="LanguageName" Nullable="false" MaxLength="50" Type="varchar" />
+          <Property Name="PrimLanguageCode" MaxLength="1" Type="char" />
           <Property Name="CreatedDate" Type="datetime" />
           <Property Name="ModifiedDate" Type="datetime" />
         </EntityType>
@@ -845,12 +845,12 @@
           <Key>
             <PropertyRef Name="MediumID" />
           </Key>
-          <Property Name="MediumID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="MediumName" Type="varchar" Nullable="false" MaxLength="50" />
-          <Property Name="MediumDescription" Type="varchar" MaxLength="253" />
+          <Property Name="MediumID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="MediumName" Nullable="false" MaxLength="50" Type="varchar" />
+          <Property Name="MediumDescription" MaxLength="253" Type="varchar" />
           <Property Name="TriggerLevel" Type="int" />
           <Property Name="TriggerLevelUnitsID" Type="int" />
-          <Property Name="HistoricMediumCode" Type="char" MaxLength="1" />
+          <Property Name="HistoricMediumCode" MaxLength="1" Type="char" />
           <Property Name="CreatedDate" Type="datetime" />
           <Property Name="ModifiedDate" Type="datetime" />
         </EntityType>
@@ -858,11 +858,11 @@
           <Key>
             <PropertyRef Name="MediumSampleResultsID" />
           </Key>
-          <Property Name="MediumSampleResultsID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="MediumID" Type="int" Nullable="false" />
-          <Property Name="MediumSampleValue" Type="numeric" Precision="9" Scale="4" />
+          <Property Name="MediumSampleResultsID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="MediumID" Nullable="false" Type="int" />
+          <Property Name="MediumSampleValue" Precision="9" Scale="4" Type="numeric" />
           <Property Name="SampleLevelCategoryID" Type="tinyint" />
-          <Property Name="MediumSampleDate" Type="date" Nullable="false" />
+          <Property Name="MediumSampleDate" Nullable="false" Type="date" />
           <Property Name="LabID" Type="int" />
           <Property Name="LabSubmissionDate" Type="date" />
           <Property Name="IsAboveTriggerLevel" Type="bit" />
@@ -874,17 +874,17 @@
           <Key>
             <PropertyRef Name="MediumSampleResultsNotesID" />
           </Key>
-          <Property Name="MediumSampleResultsNotesID" Type="int" Nullable="false" />
-          <Property Name="MediumSampleResultsID" Type="int" Nullable="false" />
+          <Property Name="MediumSampleResultsNotesID" Nullable="false" Type="int" />
+          <Property Name="MediumSampleResultsID" Nullable="false" Type="int" />
           <Property Name="CreatedDate" Type="datetime" />
         </EntityType>
         <EntityType Name="Occupation">
           <Key>
             <PropertyRef Name="OccupationID" />
           </Key>
-          <Property Name="OccupationID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="OccupationName" Type="varchar" Nullable="false" MaxLength="50" />
-          <Property Name="OccupationDescription" Type="varchar" MaxLength="253" />
+          <Property Name="OccupationID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="OccupationName" Nullable="false" MaxLength="50" Type="varchar" />
+          <Property Name="OccupationDescription" MaxLength="253" Type="varchar" />
           <Property Name="CreatedDate" Type="datetime" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="LeadExposure" Type="bit" />
@@ -893,21 +893,21 @@
           <Key>
             <PropertyRef Name="OccupationNotesID" />
           </Key>
-          <Property Name="OccupationNotesID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="OccupationID" Type="int" Nullable="false" />
+          <Property Name="OccupationNotesID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="OccupationID" Nullable="false" Type="int" />
           <Property Name="CreatedDate" Type="datetime" />
-          <Property Name="Notes" Type="varchar" Nullable="false" MaxLength="3000" />
+          <Property Name="Notes" Nullable="false" MaxLength="3000" Type="varchar" />
         </EntityType>
         <EntityType Name="Person">
           <Key>
             <PropertyRef Name="PersonID" />
           </Key>
-          <Property Name="PersonID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="50" />
-          <Property Name="MiddleName" Type="varchar" MaxLength="50" />
-          <Property Name="LastName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="PersonID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="FirstName" Nullable="false" MaxLength="50" Type="varchar" />
+          <Property Name="MiddleName" MaxLength="50" Type="varchar" />
+          <Property Name="LastName" Nullable="false" MaxLength="50" Type="varchar" />
           <Property Name="BirthDate" Type="date" />
-          <Property Name="Gender" Type="char" MaxLength="1" />
+          <Property Name="Gender" MaxLength="1" Type="char" />
           <Property Name="StatusID" Type="smallint" />
           <Property Name="ForeignTravel" Type="bit" />
           <Property Name="OutofSite" Type="bit" />
@@ -923,24 +923,24 @@
           <Property Name="isSmoker" Type="bit" />
           <Property Name="CreatedDate" Type="datetime" />
           <Property Name="ModifiedDate" Type="datetime" />
-          <Property Name="Age" Type="int" StoreGeneratedPattern="Computed" />
+          <Property Name="Age" StoreGeneratedPattern="Computed" Type="int" />
         </EntityType>
         <EntityType Name="PersonNotes">
           <Key>
             <PropertyRef Name="PersonNotesID" />
           </Key>
-          <Property Name="PersonNotesID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="PersonID" Type="int" Nullable="false" />
+          <Property Name="PersonNotesID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="PersonID" Nullable="false" Type="int" />
           <Property Name="CreatedDate" Type="datetime" />
-          <Property Name="Notes" Type="varchar" Nullable="false" MaxLength="3000" />
+          <Property Name="Notes" Nullable="false" MaxLength="3000" Type="varchar" />
         </EntityType>
         <EntityType Name="PersontoAccessAgreement">
           <Key>
             <PropertyRef Name="PersonID" />
             <PropertyRef Name="AccessAgreementID" />
           </Key>
-          <Property Name="PersonID" Type="int" Nullable="false" />
-          <Property Name="AccessAgreementID" Type="int" Nullable="false" />
+          <Property Name="PersonID" Nullable="false" Type="int" />
+          <Property Name="AccessAgreementID" Nullable="false" Type="int" />
           <Property Name="AccessAgreementDate" Type="date" />
           <Property Name="CreatedDate" Type="datetime" />
         </EntityType>
@@ -950,11 +950,11 @@
             <PropertyRef Name="DaycareID" />
             <PropertyRef Name="StartDate" />
           </Key>
-          <Property Name="PersonID" Type="int" Nullable="false" />
-          <Property Name="DaycareID" Type="int" Nullable="false" />
-          <Property Name="StartDate" Type="date" Nullable="false" />
+          <Property Name="PersonID" Nullable="false" Type="int" />
+          <Property Name="DaycareID" Nullable="false" Type="int" />
+          <Property Name="StartDate" Nullable="false" Type="date" />
           <Property Name="EndDate" Type="date" />
-          <Property Name="DaycareNotes" Type="varchar" MaxLength="3000" />
+          <Property Name="DaycareNotes" MaxLength="3000" Type="varchar" />
           <Property Name="CreatedDate" Type="datetime" />
         </EntityType>
         <EntityType Name="PersontoEmployer">
@@ -963,9 +963,9 @@
             <PropertyRef Name="EmployerID" />
             <PropertyRef Name="StartDate" />
           </Key>
-          <Property Name="PersonID" Type="int" Nullable="false" />
-          <Property Name="EmployerID" Type="int" Nullable="false" />
-          <Property Name="StartDate" Type="date" Nullable="false" />
+          <Property Name="PersonID" Nullable="false" Type="int" />
+          <Property Name="EmployerID" Nullable="false" Type="int" />
+          <Property Name="StartDate" Nullable="false" Type="date" />
           <Property Name="EndDate" Type="date" />
           <Property Name="CreatedDate" Type="datetime" />
         </EntityType>
@@ -974,8 +974,8 @@
             <PropertyRef Name="PersonID" />
             <PropertyRef Name="EthnicityID" />
           </Key>
-          <Property Name="PersonID" Type="int" Nullable="false" />
-          <Property Name="EthnicityID" Type="tinyint" Nullable="false" />
+          <Property Name="PersonID" Nullable="false" Type="int" />
+          <Property Name="EthnicityID" Nullable="false" Type="tinyint" />
           <Property Name="CreatedDate" Type="datetime" />
         </EntityType>
         <EntityType Name="PersontoFamily">
@@ -983,8 +983,8 @@
             <PropertyRef Name="PersonID" />
             <PropertyRef Name="FamilyID" />
           </Key>
-          <Property Name="PersonID" Type="int" Nullable="false" />
-          <Property Name="FamilyID" Type="int" Nullable="false" />
+          <Property Name="PersonID" Nullable="false" Type="int" />
+          <Property Name="FamilyID" Nullable="false" Type="int" />
           <Property Name="CreatedDate" Type="datetime" />
         </EntityType>
         <EntityType Name="PersontoForeignFood">
@@ -992,8 +992,8 @@
             <PropertyRef Name="PersonID" />
             <PropertyRef Name="ForeignFoodID" />
           </Key>
-          <Property Name="PersonID" Type="int" Nullable="false" />
-          <Property Name="ForeignFoodID" Type="int" Nullable="false" />
+          <Property Name="PersonID" Nullable="false" Type="int" />
+          <Property Name="ForeignFoodID" Nullable="false" Type="int" />
           <Property Name="CreatedDate" Type="datetime" />
         </EntityType>
         <EntityType Name="PersontoHobby">
@@ -1001,8 +1001,8 @@
             <PropertyRef Name="PersonID" />
             <PropertyRef Name="HobbyID" />
           </Key>
-          <Property Name="PersonID" Type="int" Nullable="false" />
-          <Property Name="HobbyID" Type="smallint" Nullable="false" />
+          <Property Name="PersonID" Nullable="false" Type="int" />
+          <Property Name="HobbyID" Nullable="false" Type="smallint" />
           <Property Name="CreatedDate" Type="datetime" />
         </EntityType>
         <EntityType Name="PersontoHomeRemedy">
@@ -1010,8 +1010,8 @@
             <PropertyRef Name="PersonID" />
             <PropertyRef Name="HomeRemedyID" />
           </Key>
-          <Property Name="PersonID" Type="int" Nullable="false" />
-          <Property Name="HomeRemedyID" Type="int" Nullable="false" />
+          <Property Name="PersonID" Nullable="false" Type="int" />
+          <Property Name="HomeRemedyID" Nullable="false" Type="int" />
           <Property Name="CreatedDate" Type="datetime" />
         </EntityType>
         <EntityType Name="PersontoInsurance">
@@ -1019,11 +1019,11 @@
             <PropertyRef Name="PersonID" />
             <PropertyRef Name="InsuranceID" />
           </Key>
-          <Property Name="PersonID" Type="int" Nullable="false" />
-          <Property Name="InsuranceID" Type="smallint" Nullable="false" />
+          <Property Name="PersonID" Nullable="false" Type="int" />
+          <Property Name="InsuranceID" Nullable="false" Type="smallint" />
           <Property Name="StartDate" Type="date" />
           <Property Name="EndDate" Type="date" />
-          <Property Name="GroupID" Type="varchar" MaxLength="20" />
+          <Property Name="GroupID" MaxLength="20" Type="varchar" />
           <Property Name="CreatedDate" Type="datetime" />
         </EntityType>
         <EntityType Name="PersontoLanguage">
@@ -1031,9 +1031,9 @@
             <PropertyRef Name="PersonID" />
             <PropertyRef Name="LanguageID" />
           </Key>
-          <Property Name="PersonID" Type="int" Nullable="false" />
-          <Property Name="LanguageID" Type="tinyint" Nullable="false" />
-          <Property Name="isPrimaryLanguage" Type="bit" Nullable="false" />
+          <Property Name="PersonID" Nullable="false" Type="int" />
+          <Property Name="LanguageID" Nullable="false" Type="tinyint" />
+          <Property Name="isPrimaryLanguage" Nullable="false" Type="bit" />
           <Property Name="CreatedDate" Type="datetime" />
         </EntityType>
         <EntityType Name="PersontoOccupation">
@@ -1042,9 +1042,9 @@
             <PropertyRef Name="OccupationID" />
             <PropertyRef Name="StartDate" />
           </Key>
-          <Property Name="PersonID" Type="int" Nullable="false" />
-          <Property Name="OccupationID" Type="int" Nullable="false" />
-          <Property Name="StartDate" Type="date" Nullable="false" />
+          <Property Name="PersonID" Nullable="false" Type="int" />
+          <Property Name="OccupationID" Nullable="false" Type="int" />
+          <Property Name="StartDate" Nullable="false" Type="date" />
           <Property Name="EndDate" Type="date" />
           <Property Name="CreatedDate" Type="datetime" />
         </EntityType>
@@ -1054,9 +1054,9 @@
             <PropertyRef Name="Person2ID" />
             <PropertyRef Name="RelationshipTypeID" />
           </Key>
-          <Property Name="Person1ID" Type="int" Nullable="false" />
-          <Property Name="Person2ID" Type="int" Nullable="false" />
-          <Property Name="RelationshipTypeID" Type="int" Nullable="false" />
+          <Property Name="Person1ID" Nullable="false" Type="int" />
+          <Property Name="Person2ID" Nullable="false" Type="int" />
+          <Property Name="RelationshipTypeID" Nullable="false" Type="int" />
           <Property Name="isGuardian" Type="bit" />
           <Property Name="isPrimaryContact" Type="bit" />
           <Property Name="CreatedDate" Type="datetime" />
@@ -1067,8 +1067,8 @@
             <PropertyRef Name="PersonID" />
             <PropertyRef Name="PhoneNumberID" />
           </Key>
-          <Property Name="PersonID" Type="int" Nullable="false" />
-          <Property Name="PhoneNumberID" Type="int" Nullable="false" />
+          <Property Name="PersonID" Nullable="false" Type="int" />
+          <Property Name="PhoneNumberID" Nullable="false" Type="int" />
           <Property Name="NumberPriority" Type="tinyint" />
           <Property Name="CreatedDate" Type="datetime" />
         </EntityType>
@@ -1076,13 +1076,13 @@
           <Key>
             <PropertyRef Name="PersontoPropertyID" />
           </Key>
-          <Property Name="PersonID" Type="int" Nullable="false" />
-          <Property Name="PropertyID" Type="int" Nullable="false" />
-          <Property Name="StartDate" Type="date" Nullable="false" />
+          <Property Name="PersonID" Nullable="false" Type="int" />
+          <Property Name="PropertyID" Nullable="false" Type="int" />
+          <Property Name="StartDate" Nullable="false" Type="date" />
           <Property Name="EndDate" Type="date" />
           <Property Name="isPrimaryResidence" Type="bit" />
           <Property Name="FamilyID" Type="int" />
-          <Property Name="PersontoPropertyID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PersontoPropertyID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
           <Property Name="CreatedDate" Type="datetime" />
         </EntityType>
         <EntityType Name="PersonToStatus">
@@ -1091,9 +1091,9 @@
             <PropertyRef Name="StatusID" />
             <PropertyRef Name="StatusDate" />
           </Key>
-          <Property Name="PersonID" Type="int" Nullable="false" />
-          <Property Name="StatusID" Type="smallint" Nullable="false" />
-          <Property Name="StatusDate" Type="date" Nullable="false" />
+          <Property Name="PersonID" Nullable="false" Type="int" />
+          <Property Name="StatusID" Nullable="false" Type="smallint" />
+          <Property Name="StatusDate" Nullable="false" Type="date" />
           <Property Name="CreatedDate" Type="datetime" />
         </EntityType>
         <EntityType Name="PersonToTravelCountry">
@@ -1102,9 +1102,9 @@
             <PropertyRef Name="CountryID" />
             <PropertyRef Name="StartDate" />
           </Key>
-          <Property Name="PersonID" Type="int" Nullable="false" />
-          <Property Name="CountryID" Type="tinyint" Nullable="false" />
-          <Property Name="StartDate" Type="date" Nullable="false" />
+          <Property Name="PersonID" Nullable="false" Type="int" />
+          <Property Name="CountryID" Nullable="false" Type="tinyint" />
+          <Property Name="StartDate" Nullable="false" Type="date" />
           <Property Name="EndDate" Type="date" />
           <Property Name="CreatedDate" Type="datetime" />
         </EntityType>
@@ -1112,8 +1112,8 @@
           <Key>
             <PropertyRef Name="PhoneNumberID" />
           </Key>
-          <Property Name="PhoneNumberID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="CountryCode" Type="tinyint" Nullable="false" />
+          <Property Name="PhoneNumberID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="CountryCode" Nullable="false" Type="tinyint" />
           <Property Name="PhoneNumber" Type="bigint" />
           <Property Name="PhoneNumberTypeID" Type="tinyint" />
           <Property Name="CreatedDate" Type="datetime" />
@@ -1123,8 +1123,8 @@
           <Key>
             <PropertyRef Name="PhoneNumberTypeID" />
           </Key>
-          <Property Name="PhoneNumberTypeID" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="PhoneNumberTypeName" Type="varchar" MaxLength="50" />
+          <Property Name="PhoneNumberTypeID" Nullable="false" StoreGeneratedPattern="Identity" Type="tinyint" />
+          <Property Name="PhoneNumberTypeName" MaxLength="50" Type="varchar" />
           <Property Name="CreatedDate" Type="datetime" />
           <Property Name="ModifiedDate" Type="datetime" />
         </EntityType>
@@ -1132,20 +1132,20 @@
           <Key>
             <PropertyRef Name="PropertyID" />
           </Key>
-          <Property Name="PropertyID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PropertyID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
           <Property Name="ConstructionTypeID" Type="tinyint" />
           <Property Name="AreaID" Type="int" />
           <Property Name="isinHistoricDistrict" Type="bit" />
           <Property Name="isRemodeled" Type="bit" />
           <Property Name="RemodelDate" Type="date" />
           <Property Name="isinCityLimits" Type="bit" />
-          <Property Name="StreetNumber" Type="varchar" MaxLength="15" />
-          <Property Name="AddressLine1" Type="varchar" MaxLength="100" />
-          <Property Name="StreetSuffix" Type="varchar" MaxLength="20" />
-          <Property Name="AddressLine2" Type="varchar" MaxLength="100" />
-          <Property Name="City" Type="varchar" MaxLength="50" />
-          <Property Name="State" Type="char" MaxLength="2" />
-          <Property Name="Zipcode" Type="varchar" MaxLength="12" />
+          <Property Name="StreetNumber" MaxLength="15" Type="varchar" />
+          <Property Name="AddressLine1" MaxLength="100" Type="varchar" />
+          <Property Name="StreetSuffix" MaxLength="20" Type="varchar" />
+          <Property Name="AddressLine2" MaxLength="100" Type="varchar" />
+          <Property Name="City" MaxLength="50" Type="varchar" />
+          <Property Name="State" MaxLength="2" Type="char" />
+          <Property Name="Zipcode" MaxLength="12" Type="varchar" />
           <Property Name="OwnerID" Type="int" />
           <Property Name="isOwnerOccuppied" Type="bit" />
           <Property Name="ReplacedPipesFaucets" Type="tinyint" />
@@ -1153,30 +1153,30 @@
           <Property Name="isResidential" Type="bit" />
           <Property Name="isCurrentlyBeingRemodeled" Type="bit" />
           <Property Name="hasPeelingChippingPaint" Type="bit" />
-          <Property Name="County" Type="varchar" MaxLength="50" />
+          <Property Name="County" MaxLength="50" Type="varchar" />
           <Property Name="isRental" Type="bit" />
           <Property Name="HistoricPropertyID" Type="smallint" />
           <Property Name="CreatedDate" Type="datetime" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="YearBuilt" Type="date" />
-          <Property Name="Street" Type="varchar" MaxLength="50" />
+          <Property Name="Street" MaxLength="50" Type="varchar" />
         </EntityType>
         <EntityType Name="PropertyNotes">
           <Key>
             <PropertyRef Name="PropertyNotesID" />
           </Key>
-          <Property Name="PropertyNotesID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="PropertyID" Type="int" Nullable="false" />
+          <Property Name="PropertyNotesID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="PropertyID" Nullable="false" Type="int" />
           <Property Name="CreatedDate" Type="datetime" />
-          <Property Name="Notes" Type="varchar" Nullable="false" MaxLength="3000" />
+          <Property Name="Notes" Nullable="false" MaxLength="3000" Type="varchar" />
         </EntityType>
         <EntityType Name="PropertySampleResults">
           <Key>
             <PropertyRef Name="PropertySampleResultsID" />
           </Key>
-          <Property Name="PropertySampleResultsID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="isBaseline" Type="bit" Nullable="false" />
-          <Property Name="PropertyID" Type="int" Nullable="false" />
+          <Property Name="PropertySampleResultsID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="isBaseline" Nullable="false" Type="bit" />
+          <Property Name="PropertyID" Nullable="false" Type="int" />
           <Property Name="LabSubmissionDate" Type="date" />
           <Property Name="LabID" Type="int" />
           <Property Name="SampleTypeID" Type="tinyint" />
@@ -1187,10 +1187,10 @@
           <Key>
             <PropertyRef Name="PropertySampleResultsNotesID" />
           </Key>
-          <Property Name="PropertySampleResultsNotesID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="PropertySampleResultsID" Type="int" Nullable="false" />
+          <Property Name="PropertySampleResultsNotesID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="PropertySampleResultsID" Nullable="false" Type="int" />
           <Property Name="CreatedDate" Type="datetime" />
-          <Property Name="Notes" Type="varchar" Nullable="false" MaxLength="3000" />
+          <Property Name="Notes" Nullable="false" MaxLength="3000" Type="varchar" />
         </EntityType>
         <EntityType Name="PropertytoCleanupStatus">
           <Key>
@@ -1198,9 +1198,9 @@
             <PropertyRef Name="CleanupStatusID" />
             <PropertyRef Name="CleanupStatusDate" />
           </Key>
-          <Property Name="PropertyID" Type="int" Nullable="false" />
-          <Property Name="CleanupStatusID" Type="tinyint" Nullable="false" />
-          <Property Name="CleanupStatusDate" Type="date" Nullable="false" />
+          <Property Name="PropertyID" Nullable="false" Type="int" />
+          <Property Name="CleanupStatusID" Nullable="false" Type="tinyint" />
+          <Property Name="CleanupStatusDate" Nullable="false" Type="date" />
           <Property Name="CostofCleanup" Type="money" />
           <Property Name="CreatedDate" Type="datetime" />
           <Property Name="ModifiedDate" Type="datetime" />
@@ -1210,8 +1210,8 @@
             <PropertyRef Name="PropertyID" />
             <PropertyRef Name="HouseholdSourcesofLeadID" />
           </Key>
-          <Property Name="PropertyID" Type="int" Nullable="false" />
-          <Property Name="HouseholdSourcesofLeadID" Type="int" Nullable="false" />
+          <Property Name="PropertyID" Nullable="false" Type="int" />
+          <Property Name="HouseholdSourcesofLeadID" Nullable="false" Type="int" />
           <Property Name="CreatedDate" Type="datetime" />
           <Property Name="ModifiedDate" Type="datetime" />
         </EntityType>
@@ -1220,9 +1220,9 @@
             <PropertyRef Name="PropertyID" />
             <PropertyRef Name="MediumID" />
           </Key>
-          <Property Name="PropertyID" Type="int" Nullable="false" />
-          <Property Name="MediumID" Type="int" Nullable="false" />
-          <Property Name="MediumTested" Type="bit" Nullable="false" />
+          <Property Name="PropertyID" Nullable="false" Type="int" />
+          <Property Name="MediumID" Nullable="false" Type="int" />
+          <Property Name="MediumTested" Nullable="false" Type="bit" />
           <Property Name="CreatedDate" Type="datetime" />
           <Property Name="ModifiedDate" Type="datetime" />
         </EntityType>
@@ -1230,8 +1230,8 @@
           <Key>
             <PropertyRef Name="QuestionnaireID" />
           </Key>
-          <Property Name="QuestionnaireID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="PersonID" Type="int" Nullable="false" />
+          <Property Name="QuestionnaireID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="PersonID" Nullable="false" Type="int" />
           <Property Name="QuestionnaireDate" Type="date" />
           <Property Name="Source" Type="int" />
           <Property Name="VisitRemodeledProperty" Type="bit" />
@@ -1250,26 +1250,26 @@
           <Property Name="CreatedDate" Type="datetime" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="RemodelPropertyDate" Type="datetime" />
-          <Property Name="RemodeledPropertyAge" Type="int" StoreGeneratedPattern="Computed" />
+          <Property Name="RemodeledPropertyAge" StoreGeneratedPattern="Computed" Type="int" />
           <Property Name="PaintDate" Type="datetime" />
-          <Property Name="PaintAge" Type="int" StoreGeneratedPattern="Computed" />
+          <Property Name="PaintAge" StoreGeneratedPattern="Computed" Type="int" />
         </EntityType>
         <EntityType Name="QuestionnaireNotes">
           <Key>
             <PropertyRef Name="QuestionnaireNotesID" />
           </Key>
-          <Property Name="QuestionnaireNotesID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="QuestionnaireID" Type="int" Nullable="false" />
+          <Property Name="QuestionnaireNotesID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="QuestionnaireID" Nullable="false" Type="int" />
           <Property Name="CreatedDate" Type="datetime" />
-          <Property Name="Notes" Type="varchar" Nullable="false" MaxLength="3000" />
+          <Property Name="Notes" Nullable="false" MaxLength="3000" Type="varchar" />
         </EntityType>
         <EntityType Name="RelationshipType">
           <Key>
             <PropertyRef Name="RelationshipTypeID" />
           </Key>
-          <Property Name="RelationshipTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="RelationshipTypeName" Type="varchar" MaxLength="50" />
-          <Property Name="RelationshipTypeDescription" Type="varchar" MaxLength="253" />
+          <Property Name="RelationshipTypeID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="RelationshipTypeName" MaxLength="50" Type="varchar" />
+          <Property Name="RelationshipTypeDescription" MaxLength="253" Type="varchar" />
           <Property Name="CreatedDate" Type="datetime" />
           <Property Name="ModifiedDate" Type="datetime" />
         </EntityType>
@@ -1277,7 +1277,7 @@
           <Key>
             <PropertyRef Name="RemediationID" />
           </Key>
-          <Property Name="RemediationID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RemediationID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
           <Property Name="RemediationApprovalDate" Type="date" />
           <Property Name="RemediationStartDate" Type="date" />
           <Property Name="RemediationEndDate" Type="date" />
@@ -1296,7 +1296,7 @@
           <Key>
             <PropertyRef Name="RemediationActionPlanID" />
           </Key>
-          <Property Name="RemediationActionPlanID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RemediationActionPlanID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
           <Property Name="RemediationActionPlanApprovalDate" Type="date" />
           <Property Name="HomeOwnerConsultationDate" Type="date" />
           <Property Name="ContractorCompletedInvestigationDate" Type="date" />
@@ -1311,18 +1311,18 @@
           <Key>
             <PropertyRef Name="RemediationNotesID" />
           </Key>
-          <Property Name="RemediationNotesID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="RemediationID" Type="int" Nullable="false" />
+          <Property Name="RemediationNotesID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="RemediationID" Nullable="false" Type="int" />
           <Property Name="CreatedDate" Type="datetime" />
-          <Property Name="Notes" Type="varchar" Nullable="false" MaxLength="3000" />
+          <Property Name="Notes" Nullable="false" MaxLength="3000" Type="varchar" />
         </EntityType>
         <EntityType Name="SampleLevelCategory">
           <Key>
             <PropertyRef Name="SampleLevelCategoryID" />
           </Key>
-          <Property Name="SampleLevelCategoryID" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="SampleLevelCategoryName" Type="varchar" MaxLength="50" />
-          <Property Name="SampleLevelCategoryDescription" Type="varchar" MaxLength="253" />
+          <Property Name="SampleLevelCategoryID" Nullable="false" StoreGeneratedPattern="Identity" Type="tinyint" />
+          <Property Name="SampleLevelCategoryName" MaxLength="50" Type="varchar" />
+          <Property Name="SampleLevelCategoryDescription" MaxLength="253" Type="varchar" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="CreatedDate" Type="datetime" />
         </EntityType>
@@ -1330,11 +1330,11 @@
           <Key>
             <PropertyRef Name="SampleTypeID" />
           </Key>
-          <Property Name="SampleTypeID" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="SampleTypeName" Type="varchar" MaxLength="50" />
-          <Property Name="SampleTypeDescription" Type="varchar" MaxLength="253" />
-          <Property Name="historicSampleType" Type="char" MaxLength="1" />
-          <Property Name="SampleTarget" Type="varchar" MaxLength="50" />
+          <Property Name="SampleTypeID" Nullable="false" StoreGeneratedPattern="Identity" Type="tinyint" />
+          <Property Name="SampleTypeName" MaxLength="50" Type="varchar" />
+          <Property Name="SampleTypeDescription" MaxLength="253" Type="varchar" />
+          <Property Name="historicSampleType" MaxLength="1" Type="char" />
+          <Property Name="SampleTarget" MaxLength="50" Type="varchar" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="CreatedDate" Type="datetime" />
         </EntityType>
@@ -1342,17 +1342,17 @@
           <Key>
             <PropertyRef Name="SourceID" />
           </Key>
-          <Property Name="SourceID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="SourceName" Type="varchar" Nullable="false" MaxLength="50" />
-          <Property Name="SourceDescription" Type="varchar" MaxLength="253" />
+          <Property Name="SourceID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="SourceName" Nullable="false" MaxLength="50" Type="varchar" />
+          <Property Name="SourceDescription" MaxLength="253" Type="varchar" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
           </Key>
-          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Nullable="false" MaxLength="128" Type="nvarchar" />
+          <Property Name="principal_id" Nullable="false" Type="int" />
+          <Property Name="diagram_id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
           <Property Name="ModifiedDate" Type="datetime" />
@@ -1362,21 +1362,21 @@
           <Key>
             <PropertyRef Name="StatusID" />
           </Key>
-          <Property Name="StatusID" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="StatusName" Type="varchar" MaxLength="50" />
-          <Property Name="StatusDescription" Type="varchar" MaxLength="253" />
+          <Property Name="StatusID" Nullable="false" StoreGeneratedPattern="Identity" Type="smallint" />
+          <Property Name="StatusName" MaxLength="50" Type="varchar" />
+          <Property Name="StatusDescription" MaxLength="253" Type="varchar" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="CreatedDate" Type="datetime" />
-          <Property Name="TargetType" Type="varchar" MaxLength="50" />
+          <Property Name="TargetType" MaxLength="50" Type="varchar" />
         </EntityType>
         <EntityType Name="TravelNotes">
           <Key>
             <PropertyRef Name="TravelNotesID" />
           </Key>
-          <Property Name="TravelNotesID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="FamilyID" Type="int" Nullable="false" />
+          <Property Name="TravelNotesID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="FamilyID" Nullable="false" Type="int" />
           <Property Name="CreatedDate" Type="datetime" />
-          <Property Name="Notes" Type="varchar" Nullable="false" MaxLength="3000" />
+          <Property Name="Notes" Nullable="false" MaxLength="3000" Type="varchar" />
           <Property Name="StartDate" Type="date" />
           <Property Name="EndDate" Type="date" />
         </EntityType>
@@ -1384,15 +1384,15 @@
           <Key>
             <PropertyRef Name="UnitsID" />
           </Key>
-          <Property Name="UnitsID" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Units" Type="varchar" Nullable="false" MaxLength="20" />
-          <Property Name="UnitsDescription" Type="varchar" MaxLength="253" />
+          <Property Name="UnitsID" Nullable="false" StoreGeneratedPattern="Identity" Type="smallint" />
+          <Property Name="Units" Nullable="false" MaxLength="20" Type="varchar" />
+          <Property Name="UnitsDescription" MaxLength="253" Type="varchar" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="CreatedDate" Type="datetime" />
         </EntityType>
         <Association Name="FK_AccessAgreement_AccessPurpose">
-          <End Role="AccessPurpose" Type="LCCHPEntityModel.Store.AccessPurpose" Multiplicity="0..1" />
-          <End Role="AccessAgreement" Type="LCCHPEntityModel.Store.AccessAgreement" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.AccessPurpose" Multiplicity="0..1" Role="AccessPurpose" />
+          <End Type="LCCHPEntityModel.Store.AccessAgreement" Multiplicity="*" Role="AccessAgreement" />
           <ReferentialConstraint>
             <Principal Role="AccessPurpose">
               <PropertyRef Name="AccessPurposeID" />
@@ -1403,8 +1403,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_AccessAgreement_Property">
-          <End Role="Property" Type="LCCHPEntityModel.Store.Property" Multiplicity="0..1" />
-          <End Role="AccessAgreement" Type="LCCHPEntityModel.Store.AccessAgreement" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Property" Multiplicity="0..1" Role="Property" />
+          <End Type="LCCHPEntityModel.Store.AccessAgreement" Multiplicity="*" Role="AccessAgreement" />
           <ReferentialConstraint>
             <Principal Role="Property">
               <PropertyRef Name="PropertyID" />
@@ -1415,8 +1415,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_AccessAgreementNotes_AccessAgreement">
-          <End Role="AccessAgreement" Type="LCCHPEntityModel.Store.AccessAgreement" Multiplicity="1" />
-          <End Role="AccessAgreementNotes" Type="LCCHPEntityModel.Store.AccessAgreementNotes" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.AccessAgreement" Multiplicity="1" Role="AccessAgreement" />
+          <End Type="LCCHPEntityModel.Store.AccessAgreementNotes" Multiplicity="*" Role="AccessAgreementNotes" />
           <ReferentialConstraint>
             <Principal Role="AccessAgreement">
               <PropertyRef Name="AccessAgreementID" />
@@ -1427,8 +1427,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_BloodTestResults_HematocritLevelCategory">
-          <End Role="SampleLevelCategory" Type="LCCHPEntityModel.Store.SampleLevelCategory" Multiplicity="0..1" />
-          <End Role="BloodTestResults" Type="LCCHPEntityModel.Store.BloodTestResults" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.SampleLevelCategory" Multiplicity="0..1" Role="SampleLevelCategory" />
+          <End Type="LCCHPEntityModel.Store.BloodTestResults" Multiplicity="*" Role="BloodTestResults" />
           <ReferentialConstraint>
             <Principal Role="SampleLevelCategory">
               <PropertyRef Name="SampleLevelCategoryID" />
@@ -1439,8 +1439,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_BloodTestResults_HemoglobinLevelCategory">
-          <End Role="SampleLevelCategory" Type="LCCHPEntityModel.Store.SampleLevelCategory" Multiplicity="0..1" />
-          <End Role="BloodTestResults" Type="LCCHPEntityModel.Store.BloodTestResults" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.SampleLevelCategory" Multiplicity="0..1" Role="SampleLevelCategory" />
+          <End Type="LCCHPEntityModel.Store.BloodTestResults" Multiplicity="*" Role="BloodTestResults" />
           <ReferentialConstraint>
             <Principal Role="SampleLevelCategory">
               <PropertyRef Name="SampleLevelCategoryID" />
@@ -1451,8 +1451,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_BloodTestResults_Lab">
-          <End Role="Lab" Type="LCCHPEntityModel.Store.Lab" Multiplicity="0..1" />
-          <End Role="BloodTestResults" Type="LCCHPEntityModel.Store.BloodTestResults" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Lab" Multiplicity="0..1" Role="Lab" />
+          <End Type="LCCHPEntityModel.Store.BloodTestResults" Multiplicity="*" Role="BloodTestResults" />
           <ReferentialConstraint>
             <Principal Role="Lab">
               <PropertyRef Name="LabID" />
@@ -1463,8 +1463,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_BloodTestResults_LeadLevelCategory">
-          <End Role="SampleLevelCategory" Type="LCCHPEntityModel.Store.SampleLevelCategory" Multiplicity="0..1" />
-          <End Role="BloodTestResults" Type="LCCHPEntityModel.Store.BloodTestResults" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.SampleLevelCategory" Multiplicity="0..1" Role="SampleLevelCategory" />
+          <End Type="LCCHPEntityModel.Store.BloodTestResults" Multiplicity="*" Role="BloodTestResults" />
           <ReferentialConstraint>
             <Principal Role="SampleLevelCategory">
               <PropertyRef Name="SampleLevelCategoryID" />
@@ -1475,8 +1475,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_BloodTestResults_Person">
-          <End Role="Person" Type="LCCHPEntityModel.Store.Person" Multiplicity="0..1" />
-          <End Role="BloodTestResults" Type="LCCHPEntityModel.Store.BloodTestResults" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Person" Multiplicity="0..1" Role="Person" />
+          <End Type="LCCHPEntityModel.Store.BloodTestResults" Multiplicity="*" Role="BloodTestResults" />
           <ReferentialConstraint>
             <Principal Role="Person">
               <PropertyRef Name="PersonID" />
@@ -1487,8 +1487,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_BloodTestResults_SampleType">
-          <End Role="SampleType" Type="LCCHPEntityModel.Store.SampleType" Multiplicity="0..1" />
-          <End Role="BloodTestResults" Type="LCCHPEntityModel.Store.BloodTestResults" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.SampleType" Multiplicity="0..1" Role="SampleType" />
+          <End Type="LCCHPEntityModel.Store.BloodTestResults" Multiplicity="*" Role="BloodTestResults" />
           <ReferentialConstraint>
             <Principal Role="SampleType">
               <PropertyRef Name="SampleTypeID" />
@@ -1499,8 +1499,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_BloodTestResultsNotes_BloodTestResults">
-          <End Role="BloodTestResults" Type="LCCHPEntityModel.Store.BloodTestResults" Multiplicity="1" />
-          <End Role="BloodTestResultsNotes" Type="LCCHPEntityModel.Store.BloodTestResultsNotes" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.BloodTestResults" Multiplicity="1" Role="BloodTestResults" />
+          <End Type="LCCHPEntityModel.Store.BloodTestResultsNotes" Multiplicity="*" Role="BloodTestResultsNotes" />
           <ReferentialConstraint>
             <Principal Role="BloodTestResults">
               <PropertyRef Name="BloodTestResultsID" />
@@ -1511,8 +1511,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ContractortoProperty_Contractor">
-          <End Role="Contractor" Type="LCCHPEntityModel.Store.Contractor" Multiplicity="1" />
-          <End Role="ContractortoProperty" Type="LCCHPEntityModel.Store.ContractortoProperty" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Contractor" Multiplicity="1" Role="Contractor" />
+          <End Type="LCCHPEntityModel.Store.ContractortoProperty" Multiplicity="*" Role="ContractortoProperty" />
           <ReferentialConstraint>
             <Principal Role="Contractor">
               <PropertyRef Name="ContractorID" />
@@ -1523,8 +1523,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ContractortoProperty_Property">
-          <End Role="Property" Type="LCCHPEntityModel.Store.Property" Multiplicity="1" />
-          <End Role="ContractortoProperty" Type="LCCHPEntityModel.Store.ContractortoProperty" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Property" Multiplicity="1" Role="Property" />
+          <End Type="LCCHPEntityModel.Store.ContractortoProperty" Multiplicity="*" Role="ContractortoProperty" />
           <ReferentialConstraint>
             <Principal Role="Property">
               <PropertyRef Name="PropertyID" />
@@ -1535,8 +1535,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ContractortoRemediation_Contractor">
-          <End Role="Contractor" Type="LCCHPEntityModel.Store.Contractor" Multiplicity="1" />
-          <End Role="ContractortoRemediation" Type="LCCHPEntityModel.Store.ContractortoRemediation" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Contractor" Multiplicity="1" Role="Contractor" />
+          <End Type="LCCHPEntityModel.Store.ContractortoRemediation" Multiplicity="*" Role="ContractortoRemediation" />
           <ReferentialConstraint>
             <Principal Role="Contractor">
               <PropertyRef Name="ContractorID" />
@@ -1547,8 +1547,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ContractortoRemediation_Remediation">
-          <End Role="Remediation" Type="LCCHPEntityModel.Store.Remediation" Multiplicity="1" />
-          <End Role="ContractortoRemediation" Type="LCCHPEntityModel.Store.ContractortoRemediation" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Remediation" Multiplicity="1" Role="Remediation" />
+          <End Type="LCCHPEntityModel.Store.ContractortoRemediation" Multiplicity="*" Role="ContractortoRemediation" />
           <ReferentialConstraint>
             <Principal Role="Remediation">
               <PropertyRef Name="RemediationID" />
@@ -1559,8 +1559,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ContractortoRemediationActionPlan_Contractor">
-          <End Role="Contractor" Type="LCCHPEntityModel.Store.Contractor" Multiplicity="1" />
-          <End Role="ContractortoRemediationActionPlan" Type="LCCHPEntityModel.Store.ContractortoRemediationActionPlan" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Contractor" Multiplicity="1" Role="Contractor" />
+          <End Type="LCCHPEntityModel.Store.ContractortoRemediationActionPlan" Multiplicity="*" Role="ContractortoRemediationActionPlan" />
           <ReferentialConstraint>
             <Principal Role="Contractor">
               <PropertyRef Name="ContractorID" />
@@ -1571,8 +1571,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ContractortoRemediationActionPlan_RemediationActionPlan">
-          <End Role="RemediationActionPlan" Type="LCCHPEntityModel.Store.RemediationActionPlan" Multiplicity="1" />
-          <End Role="ContractortoRemediationActionPlan" Type="LCCHPEntityModel.Store.ContractortoRemediationActionPlan" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.RemediationActionPlan" Multiplicity="1" Role="RemediationActionPlan" />
+          <End Type="LCCHPEntityModel.Store.ContractortoRemediationActionPlan" Multiplicity="*" Role="ContractortoRemediationActionPlan" />
           <ReferentialConstraint>
             <Principal Role="RemediationActionPlan">
               <PropertyRef Name="RemediationActionPlanID" />
@@ -1583,8 +1583,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ContractortoRemediationPlan_RemediationActionPlan">
-          <End Role="RemediationActionPlan" Type="LCCHPEntityModel.Store.RemediationActionPlan" Multiplicity="1" />
-          <End Role="ContractortoRemediationActionPlan" Type="LCCHPEntityModel.Store.ContractortoRemediationActionPlan" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.RemediationActionPlan" Multiplicity="1" Role="RemediationActionPlan" />
+          <End Type="LCCHPEntityModel.Store.ContractortoRemediationActionPlan" Multiplicity="*" Role="ContractortoRemediationActionPlan" />
           <ReferentialConstraint>
             <Principal Role="RemediationActionPlan">
               <PropertyRef Name="RemediationActionPlanID" />
@@ -1595,8 +1595,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ContractortoSamplingPlan_Contractor">
-          <End Role="Contractor" Type="LCCHPEntityModel.Store.Contractor" Multiplicity="1" />
-          <End Role="ContractortoRemediationActionPlan" Type="LCCHPEntityModel.Store.ContractortoRemediationActionPlan" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Contractor" Multiplicity="1" Role="Contractor" />
+          <End Type="LCCHPEntityModel.Store.ContractortoRemediationActionPlan" Multiplicity="*" Role="ContractortoRemediationActionPlan" />
           <ReferentialConstraint>
             <Principal Role="Contractor">
               <PropertyRef Name="ContractorID" />
@@ -1607,8 +1607,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_DaycareContactPerson_Person">
-          <End Role="Person" Type="LCCHPEntityModel.Store.Person" Multiplicity="1" />
-          <End Role="DaycarePrimaryContact" Type="LCCHPEntityModel.Store.DaycarePrimaryContact" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Person" Multiplicity="1" Role="Person" />
+          <End Type="LCCHPEntityModel.Store.DaycarePrimaryContact" Multiplicity="*" Role="DaycarePrimaryContact" />
           <ReferentialConstraint>
             <Principal Role="Person">
               <PropertyRef Name="PersonID" />
@@ -1619,8 +1619,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_DaycarePrimaryContact_PersontoPhoneNumber">
-          <End Role="PersontoPhoneNumber" Type="LCCHPEntityModel.Store.PersontoPhoneNumber" Multiplicity="0..1" />
-          <End Role="DaycarePrimaryContact" Type="LCCHPEntityModel.Store.DaycarePrimaryContact" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.PersontoPhoneNumber" Multiplicity="0..1" Role="PersontoPhoneNumber" />
+          <End Type="LCCHPEntityModel.Store.DaycarePrimaryContact" Multiplicity="*" Role="DaycarePrimaryContact" />
           <ReferentialConstraint>
             <Principal Role="PersontoPhoneNumber">
               <PropertyRef Name="PersonID" />
@@ -1633,8 +1633,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_DaycarePrimaryContact_PhoneNumber">
-          <End Role="PhoneNumber" Type="LCCHPEntityModel.Store.PhoneNumber" Multiplicity="0..1" />
-          <End Role="DaycarePrimaryContact" Type="LCCHPEntityModel.Store.DaycarePrimaryContact" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.PhoneNumber" Multiplicity="0..1" Role="PhoneNumber" />
+          <End Type="LCCHPEntityModel.Store.DaycarePrimaryContact" Multiplicity="*" Role="DaycarePrimaryContact" />
           <ReferentialConstraint>
             <Principal Role="PhoneNumber">
               <PropertyRef Name="PhoneNumberID" />
@@ -1645,8 +1645,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_DaycaretoProperty_Daycare">
-          <End Role="Daycare" Type="LCCHPEntityModel.Store.Daycare" Multiplicity="1" />
-          <End Role="DaycaretoProperty" Type="LCCHPEntityModel.Store.DaycaretoProperty" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Daycare" Multiplicity="1" Role="Daycare" />
+          <End Type="LCCHPEntityModel.Store.DaycaretoProperty" Multiplicity="*" Role="DaycaretoProperty" />
           <ReferentialConstraint>
             <Principal Role="Daycare">
               <PropertyRef Name="DaycareID" />
@@ -1657,8 +1657,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_DaycaretoProperty_Property">
-          <End Role="Property" Type="LCCHPEntityModel.Store.Property" Multiplicity="1" />
-          <End Role="DaycaretoProperty" Type="LCCHPEntityModel.Store.DaycaretoProperty" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Property" Multiplicity="1" Role="Property" />
+          <End Type="LCCHPEntityModel.Store.DaycaretoProperty" Multiplicity="*" Role="DaycaretoProperty" />
           <ReferentialConstraint>
             <Principal Role="Property">
               <PropertyRef Name="PropertyID" />
@@ -1669,8 +1669,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_EmployertoProperty_Employer">
-          <End Role="Employer" Type="LCCHPEntityModel.Store.Employer" Multiplicity="1" />
-          <End Role="EmployertoProperty" Type="LCCHPEntityModel.Store.EmployertoProperty" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Employer" Multiplicity="1" Role="Employer" />
+          <End Type="LCCHPEntityModel.Store.EmployertoProperty" Multiplicity="*" Role="EmployertoProperty" />
           <ReferentialConstraint>
             <Principal Role="Employer">
               <PropertyRef Name="EmployerID" />
@@ -1681,8 +1681,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_EmployertoProperty_Property">
-          <End Role="Property" Type="LCCHPEntityModel.Store.Property" Multiplicity="1" />
-          <End Role="EmployertoProperty" Type="LCCHPEntityModel.Store.EmployertoProperty" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Property" Multiplicity="1" Role="Property" />
+          <End Type="LCCHPEntityModel.Store.EmployertoProperty" Multiplicity="*" Role="EmployertoProperty" />
           <ReferentialConstraint>
             <Principal Role="Property">
               <PropertyRef Name="PropertyID" />
@@ -1693,8 +1693,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_EnvironmentalInvestigation_Property">
-          <End Role="Property" Type="LCCHPEntityModel.Store.Property" Multiplicity="1" />
-          <End Role="EnvironmentalInvestigation" Type="LCCHPEntityModel.Store.EnvironmentalInvestigation" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Property" Multiplicity="1" Role="Property" />
+          <End Type="LCCHPEntityModel.Store.EnvironmentalInvestigation" Multiplicity="*" Role="EnvironmentalInvestigation" />
           <ReferentialConstraint>
             <Principal Role="Property">
               <PropertyRef Name="PropertyID" />
@@ -1705,8 +1705,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_FamilyNotes_Family">
-          <End Role="Family" Type="LCCHPEntityModel.Store.Family" Multiplicity="1" />
-          <End Role="FamilyNotes" Type="LCCHPEntityModel.Store.FamilyNotes" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Family" Multiplicity="1" Role="Family" />
+          <End Type="LCCHPEntityModel.Store.FamilyNotes" Multiplicity="*" Role="FamilyNotes" />
           <ReferentialConstraint>
             <Principal Role="Family">
               <PropertyRef Name="FamilyID" />
@@ -1717,8 +1717,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ForeignFoodtoCountry_Country">
-          <End Role="Country" Type="LCCHPEntityModel.Store.Country" Multiplicity="1" />
-          <End Role="ForeignFoodtoCountry" Type="LCCHPEntityModel.Store.ForeignFoodtoCountry" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Country" Multiplicity="1" Role="Country" />
+          <End Type="LCCHPEntityModel.Store.ForeignFoodtoCountry" Multiplicity="*" Role="ForeignFoodtoCountry" />
           <ReferentialConstraint>
             <Principal Role="Country">
               <PropertyRef Name="CountryID" />
@@ -1729,8 +1729,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ForeignFoodtoCountry_ForeignFood">
-          <End Role="ForeignFood" Type="LCCHPEntityModel.Store.ForeignFood" Multiplicity="1" />
-          <End Role="ForeignFoodtoCountry" Type="LCCHPEntityModel.Store.ForeignFoodtoCountry" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.ForeignFood" Multiplicity="1" Role="ForeignFood" />
+          <End Type="LCCHPEntityModel.Store.ForeignFoodtoCountry" Multiplicity="*" Role="ForeignFoodtoCountry" />
           <ReferentialConstraint>
             <Principal Role="ForeignFood">
               <PropertyRef Name="ForeignFoodID" />
@@ -1741,8 +1741,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_GiftCard_Person">
-          <End Role="Person" Type="LCCHPEntityModel.Store.Person" Multiplicity="1" />
-          <End Role="GiftCard" Type="LCCHPEntityModel.Store.GiftCard" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Person" Multiplicity="1" Role="Person" />
+          <End Type="LCCHPEntityModel.Store.GiftCard" Multiplicity="*" Role="GiftCard" />
           <ReferentialConstraint>
             <Principal Role="Person">
               <PropertyRef Name="PersonID" />
@@ -1753,8 +1753,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_HouseholdSourcesofLead_PropertytoHouseholdSourcesofLead">
-          <End Role="HouseholdSourcesofLead" Type="LCCHPEntityModel.Store.HouseholdSourcesofLead" Multiplicity="1" />
-          <End Role="PropertytoHouseholdSourcesofLead" Type="LCCHPEntityModel.Store.PropertytoHouseholdSourcesofLead" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.HouseholdSourcesofLead" Multiplicity="1" Role="HouseholdSourcesofLead" />
+          <End Type="LCCHPEntityModel.Store.PropertytoHouseholdSourcesofLead" Multiplicity="*" Role="PropertytoHouseholdSourcesofLead" />
           <ReferentialConstraint>
             <Principal Role="HouseholdSourcesofLead">
               <PropertyRef Name="HouseholdSourcesofLeadID" />
@@ -1765,8 +1765,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_LabNotes_Lab">
-          <End Role="Lab" Type="LCCHPEntityModel.Store.Lab" Multiplicity="1" />
-          <End Role="LabNotes" Type="LCCHPEntityModel.Store.LabNotes" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Lab" Multiplicity="1" Role="Lab" />
+          <End Type="LCCHPEntityModel.Store.LabNotes" Multiplicity="*" Role="LabNotes" />
           <ReferentialConstraint>
             <Principal Role="Lab">
               <PropertyRef Name="LabID" />
@@ -1777,8 +1777,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_MediumSampleResults_Lab">
-          <End Role="Lab" Type="LCCHPEntityModel.Store.Lab" Multiplicity="0..1" />
-          <End Role="MediumSampleResults" Type="LCCHPEntityModel.Store.MediumSampleResults" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Lab" Multiplicity="0..1" Role="Lab" />
+          <End Type="LCCHPEntityModel.Store.MediumSampleResults" Multiplicity="*" Role="MediumSampleResults" />
           <ReferentialConstraint>
             <Principal Role="Lab">
               <PropertyRef Name="LabID" />
@@ -1789,8 +1789,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_MediumSampleResults_Medium">
-          <End Role="Medium" Type="LCCHPEntityModel.Store.Medium" Multiplicity="1" />
-          <End Role="MediumSampleResults" Type="LCCHPEntityModel.Store.MediumSampleResults" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Medium" Multiplicity="1" Role="Medium" />
+          <End Type="LCCHPEntityModel.Store.MediumSampleResults" Multiplicity="*" Role="MediumSampleResults" />
           <ReferentialConstraint>
             <Principal Role="Medium">
               <PropertyRef Name="MediumID" />
@@ -1801,8 +1801,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_MediumSampleResults_SampleLevelCategory">
-          <End Role="SampleLevelCategory" Type="LCCHPEntityModel.Store.SampleLevelCategory" Multiplicity="0..1" />
-          <End Role="MediumSampleResults" Type="LCCHPEntityModel.Store.MediumSampleResults" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.SampleLevelCategory" Multiplicity="0..1" Role="SampleLevelCategory" />
+          <End Type="LCCHPEntityModel.Store.MediumSampleResults" Multiplicity="*" Role="MediumSampleResults" />
           <ReferentialConstraint>
             <Principal Role="SampleLevelCategory">
               <PropertyRef Name="SampleLevelCategoryID" />
@@ -1813,8 +1813,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_MediumSampleResults_Units">
-          <End Role="Units" Type="LCCHPEntityModel.Store.Units" Multiplicity="0..1" />
-          <End Role="MediumSampleResults" Type="LCCHPEntityModel.Store.MediumSampleResults" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Units" Multiplicity="0..1" Role="Units" />
+          <End Type="LCCHPEntityModel.Store.MediumSampleResults" Multiplicity="*" Role="MediumSampleResults" />
           <ReferentialConstraint>
             <Principal Role="Units">
               <PropertyRef Name="UnitsID" />
@@ -1825,8 +1825,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_MediumSampleResultsNotes_MediumSampleResults">
-          <End Role="MediumSampleResults" Type="LCCHPEntityModel.Store.MediumSampleResults" Multiplicity="1" />
-          <End Role="MediumSampleResultsNotes" Type="LCCHPEntityModel.Store.MediumSampleResultsNotes" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.MediumSampleResults" Multiplicity="1" Role="MediumSampleResults" />
+          <End Type="LCCHPEntityModel.Store.MediumSampleResultsNotes" Multiplicity="*" Role="MediumSampleResultsNotes" />
           <ReferentialConstraint>
             <Principal Role="MediumSampleResults">
               <PropertyRef Name="MediumSampleResultsID" />
@@ -1837,8 +1837,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OccupationNotes_Occupation">
-          <End Role="Occupation" Type="LCCHPEntityModel.Store.Occupation" Multiplicity="1" />
-          <End Role="OccupationNotes" Type="LCCHPEntityModel.Store.OccupationNotes" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Occupation" Multiplicity="1" Role="Occupation" />
+          <End Type="LCCHPEntityModel.Store.OccupationNotes" Multiplicity="*" Role="OccupationNotes" />
           <ReferentialConstraint>
             <Principal Role="Occupation">
               <PropertyRef Name="OccupationID" />
@@ -1849,8 +1849,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersonNotes_Person">
-          <End Role="Person" Type="LCCHPEntityModel.Store.Person" Multiplicity="1" />
-          <End Role="PersonNotes" Type="LCCHPEntityModel.Store.PersonNotes" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Person" Multiplicity="1" Role="Person" />
+          <End Type="LCCHPEntityModel.Store.PersonNotes" Multiplicity="*" Role="PersonNotes" />
           <ReferentialConstraint>
             <Principal Role="Person">
               <PropertyRef Name="PersonID" />
@@ -1861,8 +1861,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersontoAccessAgreement_AccessAgreement">
-          <End Role="AccessAgreement" Type="LCCHPEntityModel.Store.AccessAgreement" Multiplicity="1" />
-          <End Role="PersontoAccessAgreement" Type="LCCHPEntityModel.Store.PersontoAccessAgreement" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.AccessAgreement" Multiplicity="1" Role="AccessAgreement" />
+          <End Type="LCCHPEntityModel.Store.PersontoAccessAgreement" Multiplicity="*" Role="PersontoAccessAgreement" />
           <ReferentialConstraint>
             <Principal Role="AccessAgreement">
               <PropertyRef Name="AccessAgreementID" />
@@ -1873,8 +1873,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersontoAccessAgreement_Person">
-          <End Role="Person" Type="LCCHPEntityModel.Store.Person" Multiplicity="1" />
-          <End Role="PersontoAccessAgreement" Type="LCCHPEntityModel.Store.PersontoAccessAgreement" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Person" Multiplicity="1" Role="Person" />
+          <End Type="LCCHPEntityModel.Store.PersontoAccessAgreement" Multiplicity="*" Role="PersontoAccessAgreement" />
           <ReferentialConstraint>
             <Principal Role="Person">
               <PropertyRef Name="PersonID" />
@@ -1885,8 +1885,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersontoDaycare_Daycare">
-          <End Role="Daycare" Type="LCCHPEntityModel.Store.Daycare" Multiplicity="1" />
-          <End Role="PersontoDaycare" Type="LCCHPEntityModel.Store.PersontoDaycare" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Daycare" Multiplicity="1" Role="Daycare" />
+          <End Type="LCCHPEntityModel.Store.PersontoDaycare" Multiplicity="*" Role="PersontoDaycare" />
           <ReferentialConstraint>
             <Principal Role="Daycare">
               <PropertyRef Name="DaycareID" />
@@ -1897,8 +1897,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersontoDaycare_PersontoDaycare">
-          <End Role="Person" Type="LCCHPEntityModel.Store.Person" Multiplicity="1" />
-          <End Role="PersontoDaycare" Type="LCCHPEntityModel.Store.PersontoDaycare" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Person" Multiplicity="1" Role="Person" />
+          <End Type="LCCHPEntityModel.Store.PersontoDaycare" Multiplicity="*" Role="PersontoDaycare" />
           <ReferentialConstraint>
             <Principal Role="Person">
               <PropertyRef Name="PersonID" />
@@ -1909,8 +1909,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersontoEmployer_Employer">
-          <End Role="Employer" Type="LCCHPEntityModel.Store.Employer" Multiplicity="1" />
-          <End Role="PersontoEmployer" Type="LCCHPEntityModel.Store.PersontoEmployer" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Employer" Multiplicity="1" Role="Employer" />
+          <End Type="LCCHPEntityModel.Store.PersontoEmployer" Multiplicity="*" Role="PersontoEmployer" />
           <ReferentialConstraint>
             <Principal Role="Employer">
               <PropertyRef Name="EmployerID" />
@@ -1921,8 +1921,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersontoEmployer_Person">
-          <End Role="Person" Type="LCCHPEntityModel.Store.Person" Multiplicity="1" />
-          <End Role="PersontoEmployer" Type="LCCHPEntityModel.Store.PersontoEmployer" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Person" Multiplicity="1" Role="Person" />
+          <End Type="LCCHPEntityModel.Store.PersontoEmployer" Multiplicity="*" Role="PersontoEmployer" />
           <ReferentialConstraint>
             <Principal Role="Person">
               <PropertyRef Name="PersonID" />
@@ -1933,8 +1933,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersontoEthnicity_Ethnicity">
-          <End Role="Ethnicity" Type="LCCHPEntityModel.Store.Ethnicity" Multiplicity="1" />
-          <End Role="PersontoEthnicity" Type="LCCHPEntityModel.Store.PersontoEthnicity" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Ethnicity" Multiplicity="1" Role="Ethnicity" />
+          <End Type="LCCHPEntityModel.Store.PersontoEthnicity" Multiplicity="*" Role="PersontoEthnicity" />
           <ReferentialConstraint>
             <Principal Role="Ethnicity">
               <PropertyRef Name="EthnicityID" />
@@ -1945,8 +1945,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersontoEthnicity_Person">
-          <End Role="Person" Type="LCCHPEntityModel.Store.Person" Multiplicity="1" />
-          <End Role="PersontoEthnicity" Type="LCCHPEntityModel.Store.PersontoEthnicity" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Person" Multiplicity="1" Role="Person" />
+          <End Type="LCCHPEntityModel.Store.PersontoEthnicity" Multiplicity="*" Role="PersontoEthnicity" />
           <ReferentialConstraint>
             <Principal Role="Person">
               <PropertyRef Name="PersonID" />
@@ -1957,8 +1957,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersontoFamily_Family">
-          <End Role="Family" Type="LCCHPEntityModel.Store.Family" Multiplicity="1" />
-          <End Role="PersontoFamily" Type="LCCHPEntityModel.Store.PersontoFamily" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Family" Multiplicity="1" Role="Family" />
+          <End Type="LCCHPEntityModel.Store.PersontoFamily" Multiplicity="*" Role="PersontoFamily" />
           <ReferentialConstraint>
             <Principal Role="Family">
               <PropertyRef Name="FamilyID" />
@@ -1969,8 +1969,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersontoFamily_Person">
-          <End Role="Person" Type="LCCHPEntityModel.Store.Person" Multiplicity="1" />
-          <End Role="PersontoFamily" Type="LCCHPEntityModel.Store.PersontoFamily" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Person" Multiplicity="1" Role="Person" />
+          <End Type="LCCHPEntityModel.Store.PersontoFamily" Multiplicity="*" Role="PersontoFamily" />
           <ReferentialConstraint>
             <Principal Role="Person">
               <PropertyRef Name="PersonID" />
@@ -1981,8 +1981,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersontoForeignFood_ForeignFood">
-          <End Role="ForeignFood" Type="LCCHPEntityModel.Store.ForeignFood" Multiplicity="1" />
-          <End Role="PersontoForeignFood" Type="LCCHPEntityModel.Store.PersontoForeignFood" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.ForeignFood" Multiplicity="1" Role="ForeignFood" />
+          <End Type="LCCHPEntityModel.Store.PersontoForeignFood" Multiplicity="*" Role="PersontoForeignFood" />
           <ReferentialConstraint>
             <Principal Role="ForeignFood">
               <PropertyRef Name="ForeignFoodID" />
@@ -1993,8 +1993,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersontoForeignFood_Person">
-          <End Role="Person" Type="LCCHPEntityModel.Store.Person" Multiplicity="1" />
-          <End Role="PersontoForeignFood" Type="LCCHPEntityModel.Store.PersontoForeignFood" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Person" Multiplicity="1" Role="Person" />
+          <End Type="LCCHPEntityModel.Store.PersontoForeignFood" Multiplicity="*" Role="PersontoForeignFood" />
           <ReferentialConstraint>
             <Principal Role="Person">
               <PropertyRef Name="PersonID" />
@@ -2005,8 +2005,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersontoHobby_Hobby">
-          <End Role="Hobby" Type="LCCHPEntityModel.Store.Hobby" Multiplicity="1" />
-          <End Role="PersontoHobby" Type="LCCHPEntityModel.Store.PersontoHobby" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Hobby" Multiplicity="1" Role="Hobby" />
+          <End Type="LCCHPEntityModel.Store.PersontoHobby" Multiplicity="*" Role="PersontoHobby" />
           <ReferentialConstraint>
             <Principal Role="Hobby">
               <PropertyRef Name="HobbyID" />
@@ -2017,8 +2017,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersontoHobby_Person">
-          <End Role="Person" Type="LCCHPEntityModel.Store.Person" Multiplicity="1" />
-          <End Role="PersontoHobby" Type="LCCHPEntityModel.Store.PersontoHobby" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Person" Multiplicity="1" Role="Person" />
+          <End Type="LCCHPEntityModel.Store.PersontoHobby" Multiplicity="*" Role="PersontoHobby" />
           <ReferentialConstraint>
             <Principal Role="Person">
               <PropertyRef Name="PersonID" />
@@ -2029,8 +2029,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersontoHomeRemedy_Person">
-          <End Role="Person" Type="LCCHPEntityModel.Store.Person" Multiplicity="1" />
-          <End Role="PersontoHomeRemedy" Type="LCCHPEntityModel.Store.PersontoHomeRemedy" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Person" Multiplicity="1" Role="Person" />
+          <End Type="LCCHPEntityModel.Store.PersontoHomeRemedy" Multiplicity="*" Role="PersontoHomeRemedy" />
           <ReferentialConstraint>
             <Principal Role="Person">
               <PropertyRef Name="PersonID" />
@@ -2041,8 +2041,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersontoHomeRemedy_PersontoHomeRemedy">
-          <End Role="HomeRemedy" Type="LCCHPEntityModel.Store.HomeRemedy" Multiplicity="1" />
-          <End Role="PersontoHomeRemedy" Type="LCCHPEntityModel.Store.PersontoHomeRemedy" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.HomeRemedy" Multiplicity="1" Role="HomeRemedy" />
+          <End Type="LCCHPEntityModel.Store.PersontoHomeRemedy" Multiplicity="*" Role="PersontoHomeRemedy" />
           <ReferentialConstraint>
             <Principal Role="HomeRemedy">
               <PropertyRef Name="HomeRemedyID" />
@@ -2053,8 +2053,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersontoInsurance_Person">
-          <End Role="Person" Type="LCCHPEntityModel.Store.Person" Multiplicity="1" />
-          <End Role="PersontoInsurance" Type="LCCHPEntityModel.Store.PersontoInsurance" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Person" Multiplicity="1" Role="Person" />
+          <End Type="LCCHPEntityModel.Store.PersontoInsurance" Multiplicity="*" Role="PersontoInsurance" />
           <ReferentialConstraint>
             <Principal Role="Person">
               <PropertyRef Name="PersonID" />
@@ -2065,8 +2065,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersontoInsurance_PersontoInsurance">
-          <End Role="InsuranceProvider" Type="LCCHPEntityModel.Store.InsuranceProvider" Multiplicity="1" />
-          <End Role="PersontoInsurance" Type="LCCHPEntityModel.Store.PersontoInsurance" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.InsuranceProvider" Multiplicity="1" Role="InsuranceProvider" />
+          <End Type="LCCHPEntityModel.Store.PersontoInsurance" Multiplicity="*" Role="PersontoInsurance" />
           <ReferentialConstraint>
             <Principal Role="InsuranceProvider">
               <PropertyRef Name="InsuranceProviderID" />
@@ -2077,8 +2077,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersontoLanguage_Language">
-          <End Role="Language" Type="LCCHPEntityModel.Store.Language" Multiplicity="1" />
-          <End Role="PersontoLanguage" Type="LCCHPEntityModel.Store.PersontoLanguage" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Language" Multiplicity="1" Role="Language" />
+          <End Type="LCCHPEntityModel.Store.PersontoLanguage" Multiplicity="*" Role="PersontoLanguage" />
           <ReferentialConstraint>
             <Principal Role="Language">
               <PropertyRef Name="LanguageID" />
@@ -2089,8 +2089,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersontoLanguage_Person">
-          <End Role="Person" Type="LCCHPEntityModel.Store.Person" Multiplicity="1" />
-          <End Role="PersontoLanguage" Type="LCCHPEntityModel.Store.PersontoLanguage" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Person" Multiplicity="1" Role="Person" />
+          <End Type="LCCHPEntityModel.Store.PersontoLanguage" Multiplicity="*" Role="PersontoLanguage" />
           <ReferentialConstraint>
             <Principal Role="Person">
               <PropertyRef Name="PersonID" />
@@ -2101,8 +2101,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersontoOccupation_Occupation">
-          <End Role="Occupation" Type="LCCHPEntityModel.Store.Occupation" Multiplicity="1" />
-          <End Role="PersontoOccupation" Type="LCCHPEntityModel.Store.PersontoOccupation" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Occupation" Multiplicity="1" Role="Occupation" />
+          <End Type="LCCHPEntityModel.Store.PersontoOccupation" Multiplicity="*" Role="PersontoOccupation" />
           <ReferentialConstraint>
             <Principal Role="Occupation">
               <PropertyRef Name="OccupationID" />
@@ -2113,8 +2113,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersontoOccupation_Person">
-          <End Role="Person" Type="LCCHPEntityModel.Store.Person" Multiplicity="1" />
-          <End Role="PersontoOccupation" Type="LCCHPEntityModel.Store.PersontoOccupation" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Person" Multiplicity="1" Role="Person" />
+          <End Type="LCCHPEntityModel.Store.PersontoOccupation" Multiplicity="*" Role="PersontoOccupation" />
           <ReferentialConstraint>
             <Principal Role="Person">
               <PropertyRef Name="PersonID" />
@@ -2125,8 +2125,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersontoPerson_Person1ID">
-          <End Role="Person" Type="LCCHPEntityModel.Store.Person" Multiplicity="1" />
-          <End Role="PersontoPerson" Type="LCCHPEntityModel.Store.PersontoPerson" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Person" Multiplicity="1" Role="Person" />
+          <End Type="LCCHPEntityModel.Store.PersontoPerson" Multiplicity="*" Role="PersontoPerson" />
           <ReferentialConstraint>
             <Principal Role="Person">
               <PropertyRef Name="PersonID" />
@@ -2137,8 +2137,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersontoPerson_Person2ID">
-          <End Role="Person" Type="LCCHPEntityModel.Store.Person" Multiplicity="1" />
-          <End Role="PersontoPerson" Type="LCCHPEntityModel.Store.PersontoPerson" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Person" Multiplicity="1" Role="Person" />
+          <End Type="LCCHPEntityModel.Store.PersontoPerson" Multiplicity="*" Role="PersontoPerson" />
           <ReferentialConstraint>
             <Principal Role="Person">
               <PropertyRef Name="PersonID" />
@@ -2149,8 +2149,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersontoPerson_RelationshipType">
-          <End Role="RelationshipType" Type="LCCHPEntityModel.Store.RelationshipType" Multiplicity="1" />
-          <End Role="PersontoPerson" Type="LCCHPEntityModel.Store.PersontoPerson" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.RelationshipType" Multiplicity="1" Role="RelationshipType" />
+          <End Type="LCCHPEntityModel.Store.PersontoPerson" Multiplicity="*" Role="PersontoPerson" />
           <ReferentialConstraint>
             <Principal Role="RelationshipType">
               <PropertyRef Name="RelationshipTypeID" />
@@ -2161,8 +2161,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersontoPhoneNumber_Person">
-          <End Role="Person" Type="LCCHPEntityModel.Store.Person" Multiplicity="1" />
-          <End Role="PersontoPhoneNumber" Type="LCCHPEntityModel.Store.PersontoPhoneNumber" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Person" Multiplicity="1" Role="Person" />
+          <End Type="LCCHPEntityModel.Store.PersontoPhoneNumber" Multiplicity="*" Role="PersontoPhoneNumber" />
           <ReferentialConstraint>
             <Principal Role="Person">
               <PropertyRef Name="PersonID" />
@@ -2173,8 +2173,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersontoPhoneNumber_PhoneNumber">
-          <End Role="PhoneNumber" Type="LCCHPEntityModel.Store.PhoneNumber" Multiplicity="1" />
-          <End Role="PersontoPhoneNumber" Type="LCCHPEntityModel.Store.PersontoPhoneNumber" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.PhoneNumber" Multiplicity="1" Role="PhoneNumber" />
+          <End Type="LCCHPEntityModel.Store.PersontoPhoneNumber" Multiplicity="*" Role="PersontoPhoneNumber" />
           <ReferentialConstraint>
             <Principal Role="PhoneNumber">
               <PropertyRef Name="PhoneNumberID" />
@@ -2185,8 +2185,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersontoProperty_Person">
-          <End Role="Person" Type="LCCHPEntityModel.Store.Person" Multiplicity="1" />
-          <End Role="PersontoProperty" Type="LCCHPEntityModel.Store.PersontoProperty" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Person" Multiplicity="1" Role="Person" />
+          <End Type="LCCHPEntityModel.Store.PersontoProperty" Multiplicity="*" Role="PersontoProperty" />
           <ReferentialConstraint>
             <Principal Role="Person">
               <PropertyRef Name="PersonID" />
@@ -2197,8 +2197,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersontoProperty_Property">
-          <End Role="Property" Type="LCCHPEntityModel.Store.Property" Multiplicity="1" />
-          <End Role="PersontoProperty" Type="LCCHPEntityModel.Store.PersontoProperty" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Property" Multiplicity="1" Role="Property" />
+          <End Type="LCCHPEntityModel.Store.PersontoProperty" Multiplicity="*" Role="PersontoProperty" />
           <ReferentialConstraint>
             <Principal Role="Property">
               <PropertyRef Name="PropertyID" />
@@ -2209,8 +2209,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersonToStatus_Person">
-          <End Role="Person" Type="LCCHPEntityModel.Store.Person" Multiplicity="1" />
-          <End Role="PersonToStatus" Type="LCCHPEntityModel.Store.PersonToStatus" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Person" Multiplicity="1" Role="Person" />
+          <End Type="LCCHPEntityModel.Store.PersonToStatus" Multiplicity="*" Role="PersonToStatus" />
           <ReferentialConstraint>
             <Principal Role="Person">
               <PropertyRef Name="PersonID" />
@@ -2221,8 +2221,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersonToStatus_Status">
-          <End Role="TargetStatus" Type="LCCHPEntityModel.Store.TargetStatus" Multiplicity="1" />
-          <End Role="PersonToStatus" Type="LCCHPEntityModel.Store.PersonToStatus" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.TargetStatus" Multiplicity="1" Role="TargetStatus" />
+          <End Type="LCCHPEntityModel.Store.PersonToStatus" Multiplicity="*" Role="PersonToStatus" />
           <ReferentialConstraint>
             <Principal Role="TargetStatus">
               <PropertyRef Name="StatusID" />
@@ -2233,8 +2233,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersonToTravelCountry_Country">
-          <End Role="Country" Type="LCCHPEntityModel.Store.Country" Multiplicity="1" />
-          <End Role="PersonToTravelCountry" Type="LCCHPEntityModel.Store.PersonToTravelCountry" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Country" Multiplicity="1" Role="Country" />
+          <End Type="LCCHPEntityModel.Store.PersonToTravelCountry" Multiplicity="*" Role="PersonToTravelCountry" />
           <ReferentialConstraint>
             <Principal Role="Country">
               <PropertyRef Name="CountryID" />
@@ -2245,8 +2245,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersonToTravelCountry_Person">
-          <End Role="Person" Type="LCCHPEntityModel.Store.Person" Multiplicity="1" />
-          <End Role="PersonToTravelCountry" Type="LCCHPEntityModel.Store.PersonToTravelCountry" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Person" Multiplicity="1" Role="Person" />
+          <End Type="LCCHPEntityModel.Store.PersonToTravelCountry" Multiplicity="*" Role="PersonToTravelCountry" />
           <ReferentialConstraint>
             <Principal Role="Person">
               <PropertyRef Name="PersonID" />
@@ -2257,8 +2257,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PhoneNumber_PhoneNumber">
-          <End Role="PhoneNumberType" Type="LCCHPEntityModel.Store.PhoneNumberType" Multiplicity="0..1" />
-          <End Role="PhoneNumber" Type="LCCHPEntityModel.Store.PhoneNumber" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.PhoneNumberType" Multiplicity="0..1" Role="PhoneNumberType" />
+          <End Type="LCCHPEntityModel.Store.PhoneNumber" Multiplicity="*" Role="PhoneNumber" />
           <ReferentialConstraint>
             <Principal Role="PhoneNumberType">
               <PropertyRef Name="PhoneNumberTypeID" />
@@ -2269,8 +2269,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Property_Area">
-          <End Role="Area" Type="LCCHPEntityModel.Store.Area" Multiplicity="0..1" />
-          <End Role="Property" Type="LCCHPEntityModel.Store.Property" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Area" Multiplicity="0..1" Role="Area" />
+          <End Type="LCCHPEntityModel.Store.Property" Multiplicity="*" Role="Property" />
           <ReferentialConstraint>
             <Principal Role="Area">
               <PropertyRef Name="AreaID" />
@@ -2281,8 +2281,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Property_ConstructionType">
-          <End Role="ConstructionType" Type="LCCHPEntityModel.Store.ConstructionType" Multiplicity="0..1" />
-          <End Role="Property" Type="LCCHPEntityModel.Store.Property" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.ConstructionType" Multiplicity="0..1" Role="ConstructionType" />
+          <End Type="LCCHPEntityModel.Store.Property" Multiplicity="*" Role="Property" />
           <ReferentialConstraint>
             <Principal Role="ConstructionType">
               <PropertyRef Name="ConstructionTypeID" />
@@ -2293,8 +2293,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Property_Person">
-          <End Role="Person" Type="LCCHPEntityModel.Store.Person" Multiplicity="0..1" />
-          <End Role="Property" Type="LCCHPEntityModel.Store.Property" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Person" Multiplicity="0..1" Role="Person" />
+          <End Type="LCCHPEntityModel.Store.Property" Multiplicity="*" Role="Property" />
           <ReferentialConstraint>
             <Principal Role="Person">
               <PropertyRef Name="PersonID" />
@@ -2305,8 +2305,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Property_PropertytoHouseholdSourcesofLead">
-          <End Role="Property" Type="LCCHPEntityModel.Store.Property" Multiplicity="1" />
-          <End Role="PropertytoHouseholdSourcesofLead" Type="LCCHPEntityModel.Store.PropertytoHouseholdSourcesofLead" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Property" Multiplicity="1" Role="Property" />
+          <End Type="LCCHPEntityModel.Store.PropertytoHouseholdSourcesofLead" Multiplicity="*" Role="PropertytoHouseholdSourcesofLead" />
           <ReferentialConstraint>
             <Principal Role="Property">
               <PropertyRef Name="PropertyID" />
@@ -2317,8 +2317,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PropertyNotes_Property">
-          <End Role="Property" Type="LCCHPEntityModel.Store.Property" Multiplicity="1" />
-          <End Role="PropertyNotes" Type="LCCHPEntityModel.Store.PropertyNotes" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Property" Multiplicity="1" Role="Property" />
+          <End Type="LCCHPEntityModel.Store.PropertyNotes" Multiplicity="*" Role="PropertyNotes" />
           <ReferentialConstraint>
             <Principal Role="Property">
               <PropertyRef Name="PropertyID" />
@@ -2329,8 +2329,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PropertySampleResults_SampleType">
-          <End Role="SampleType" Type="LCCHPEntityModel.Store.SampleType" Multiplicity="0..1" />
-          <End Role="PropertySampleResults" Type="LCCHPEntityModel.Store.PropertySampleResults" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.SampleType" Multiplicity="0..1" Role="SampleType" />
+          <End Type="LCCHPEntityModel.Store.PropertySampleResults" Multiplicity="*" Role="PropertySampleResults" />
           <ReferentialConstraint>
             <Principal Role="SampleType">
               <PropertyRef Name="SampleTypeID" />
@@ -2341,8 +2341,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PropertySampleResultsNotes_PropertySampleResults">
-          <End Role="PropertySampleResults" Type="LCCHPEntityModel.Store.PropertySampleResults" Multiplicity="1" />
-          <End Role="PropertySampleResultsNotes" Type="LCCHPEntityModel.Store.PropertySampleResultsNotes" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.PropertySampleResults" Multiplicity="1" Role="PropertySampleResults" />
+          <End Type="LCCHPEntityModel.Store.PropertySampleResultsNotes" Multiplicity="*" Role="PropertySampleResultsNotes" />
           <ReferentialConstraint>
             <Principal Role="PropertySampleResults">
               <PropertyRef Name="PropertySampleResultsID" />
@@ -2353,8 +2353,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PropertySampletResults_Property">
-          <End Role="Property" Type="LCCHPEntityModel.Store.Property" Multiplicity="1" />
-          <End Role="PropertySampleResults" Type="LCCHPEntityModel.Store.PropertySampleResults" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Property" Multiplicity="1" Role="Property" />
+          <End Type="LCCHPEntityModel.Store.PropertySampleResults" Multiplicity="*" Role="PropertySampleResults" />
           <ReferentialConstraint>
             <Principal Role="Property">
               <PropertyRef Name="PropertyID" />
@@ -2365,8 +2365,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PropertytoCleanupStatus_CleanupStatus">
-          <End Role="CleanupStatus" Type="LCCHPEntityModel.Store.CleanupStatus" Multiplicity="1" />
-          <End Role="PropertytoCleanupStatus" Type="LCCHPEntityModel.Store.PropertytoCleanupStatus" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.CleanupStatus" Multiplicity="1" Role="CleanupStatus" />
+          <End Type="LCCHPEntityModel.Store.PropertytoCleanupStatus" Multiplicity="*" Role="PropertytoCleanupStatus" />
           <ReferentialConstraint>
             <Principal Role="CleanupStatus">
               <PropertyRef Name="CleanupStatusID" />
@@ -2377,8 +2377,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PropertytoCleanupStatus_Property">
-          <End Role="Property" Type="LCCHPEntityModel.Store.Property" Multiplicity="1" />
-          <End Role="PropertytoCleanupStatus" Type="LCCHPEntityModel.Store.PropertytoCleanupStatus" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Property" Multiplicity="1" Role="Property" />
+          <End Type="LCCHPEntityModel.Store.PropertytoCleanupStatus" Multiplicity="*" Role="PropertytoCleanupStatus" />
           <ReferentialConstraint>
             <Principal Role="Property">
               <PropertyRef Name="PropertyID" />
@@ -2389,8 +2389,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PropertytoMedium_Medium">
-          <End Role="Medium" Type="LCCHPEntityModel.Store.Medium" Multiplicity="1" />
-          <End Role="PropertytoMedium" Type="LCCHPEntityModel.Store.PropertytoMedium" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Medium" Multiplicity="1" Role="Medium" />
+          <End Type="LCCHPEntityModel.Store.PropertytoMedium" Multiplicity="*" Role="PropertytoMedium" />
           <ReferentialConstraint>
             <Principal Role="Medium">
               <PropertyRef Name="MediumID" />
@@ -2401,8 +2401,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PropertytoMedium_Property">
-          <End Role="Property" Type="LCCHPEntityModel.Store.Property" Multiplicity="1" />
-          <End Role="PropertytoMedium" Type="LCCHPEntityModel.Store.PropertytoMedium" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Property" Multiplicity="1" Role="Property" />
+          <End Type="LCCHPEntityModel.Store.PropertytoMedium" Multiplicity="*" Role="PropertytoMedium" />
           <ReferentialConstraint>
             <Principal Role="Property">
               <PropertyRef Name="PropertyID" />
@@ -2413,8 +2413,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Questionnaire_Person">
-          <End Role="Person" Type="LCCHPEntityModel.Store.Person" Multiplicity="1" />
-          <End Role="Questionnaire" Type="LCCHPEntityModel.Store.Questionnaire" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Person" Multiplicity="1" Role="Person" />
+          <End Type="LCCHPEntityModel.Store.Questionnaire" Multiplicity="*" Role="Questionnaire" />
           <ReferentialConstraint>
             <Principal Role="Person">
               <PropertyRef Name="PersonID" />
@@ -2425,8 +2425,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_QuestionnaireNotes_Questionnaire">
-          <End Role="Questionnaire" Type="LCCHPEntityModel.Store.Questionnaire" Multiplicity="1" />
-          <End Role="QuestionnaireNotes" Type="LCCHPEntityModel.Store.QuestionnaireNotes" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Questionnaire" Multiplicity="1" Role="Questionnaire" />
+          <End Type="LCCHPEntityModel.Store.QuestionnaireNotes" Multiplicity="*" Role="QuestionnaireNotes" />
           <ReferentialConstraint>
             <Principal Role="Questionnaire">
               <PropertyRef Name="QuestionnaireID" />
@@ -2437,8 +2437,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Remediation_Property">
-          <End Role="Property" Type="LCCHPEntityModel.Store.Property" Multiplicity="0..1" />
-          <End Role="Remediation" Type="LCCHPEntityModel.Store.Remediation" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Property" Multiplicity="0..1" Role="Property" />
+          <End Type="LCCHPEntityModel.Store.Remediation" Multiplicity="*" Role="Remediation" />
           <ReferentialConstraint>
             <Principal Role="Property">
               <PropertyRef Name="PropertyID" />
@@ -2449,8 +2449,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Remediation_RemediationActionPlan">
-          <End Role="RemediationActionPlan" Type="LCCHPEntityModel.Store.RemediationActionPlan" Multiplicity="0..1" />
-          <End Role="Remediation" Type="LCCHPEntityModel.Store.Remediation" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.RemediationActionPlan" Multiplicity="0..1" Role="RemediationActionPlan" />
+          <End Type="LCCHPEntityModel.Store.Remediation" Multiplicity="*" Role="Remediation" />
           <ReferentialConstraint>
             <Principal Role="RemediationActionPlan">
               <PropertyRef Name="RemediationActionPlanID" />
@@ -2461,8 +2461,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_RemediationActionPlan_EnvironmentalInvestigation">
-          <End Role="EnvironmentalInvestigation" Type="LCCHPEntityModel.Store.EnvironmentalInvestigation" Multiplicity="0..1" />
-          <End Role="RemediationActionPlan" Type="LCCHPEntityModel.Store.RemediationActionPlan" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.EnvironmentalInvestigation" Multiplicity="0..1" Role="EnvironmentalInvestigation" />
+          <End Type="LCCHPEntityModel.Store.RemediationActionPlan" Multiplicity="*" Role="RemediationActionPlan" />
           <ReferentialConstraint>
             <Principal Role="EnvironmentalInvestigation">
               <PropertyRef Name="EnvironmentalInvestigationID" />
@@ -2473,8 +2473,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_RemediationNotes_Remediation">
-          <End Role="Remediation" Type="LCCHPEntityModel.Store.Remediation" Multiplicity="1" />
-          <End Role="RemediationNotes" Type="LCCHPEntityModel.Store.RemediationNotes" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Remediation" Multiplicity="1" Role="Remediation" />
+          <End Type="LCCHPEntityModel.Store.RemediationNotes" Multiplicity="*" Role="RemediationNotes" />
           <ReferentialConstraint>
             <Principal Role="Remediation">
               <PropertyRef Name="RemediationID" />
@@ -2485,8 +2485,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TravelNotes_Family">
-          <End Role="Family" Type="LCCHPEntityModel.Store.Family" Multiplicity="1" />
-          <End Role="TravelNotes" Type="LCCHPEntityModel.Store.TravelNotes" Multiplicity="*" />
+          <End Type="LCCHPEntityModel.Store.Family" Multiplicity="1" Role="Family" />
+          <End Type="LCCHPEntityModel.Store.TravelNotes" Multiplicity="*" Role="TravelNotes" />
           <ReferentialConstraint>
             <Principal Role="Family">
               <PropertyRef Name="FamilyID" />

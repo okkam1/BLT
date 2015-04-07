@@ -123,7 +123,6 @@
         <AssociationConnector Association="LCCHPEntityModel.FK_PersontoEthnicity_Ethnicity" />
         <AssociationConnector Association="LCCHPEntityModel.FK_FamilyNotes_Family" />
         <AssociationConnector Association="LCCHPEntityModel.FK_PersontoFamily_Family" />
-        <AssociationConnector Association="LCCHPEntityModel.FK_TravelNotes_Family" />
         <AssociationConnector Association="LCCHPEntityModel.FK_ForeignFoodtoCountry_ForeignFood" />
         <AssociationConnector Association="LCCHPEntityModel.FK_PersontoForeignFood_ForeignFood" />
         <AssociationConnector Association="LCCHPEntityModel.FK_GiftCard_Person" />
