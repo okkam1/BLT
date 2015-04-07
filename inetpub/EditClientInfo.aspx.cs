@@ -135,13 +135,18 @@ order by f.Lastname
             command.Parameters.Add("@New_Gender", SqlDbType.Char).Value = rblGender.SelectedValue;
             command.Parameters.Add("@New_LanguageID", SqlDbType.TinyInt).Value = ddlLanguage.SelectedValue;
             command.Parameters.Add("@New_EthnicityID", SqlDbType.TinyInt).Value = ddlEthnicity.SelectedValue;
-            command.Parameters.Add("@New_Moved", SqlDbType.Bit).Value = Convert.ToByte(rblMoved.SelectedValue);
-            command.Parameters.Add("@New_ForeignTravel", SqlDbType.Bit).Value = Convert.ToByte(rblTravel.SelectedValue);
+
+            if (rblMoved.SelectedValue != "" && rblMoved.SelectedValue != null)
+                command.Parameters.Add("@New_Moved", SqlDbType.Bit).Value = Convert.ToByte(rblMoved.SelectedValue);
+
+            if (rblTravel.SelectedValue != "" && rblTravel.SelectedValue != null)
+                command.Parameters.Add("@New_ForeignTravel", SqlDbType.Bit).Value = Convert.ToByte(rblTravel.SelectedValue);
 
             if (tbClientNotes.Text != "")
                 command.Parameters.Add("@New_Notes", SqlDbType.VarChar).Value = tbClientNotes.Text;
-            
-            command.Parameters.Add("@New_OutofSite", SqlDbType.Bit).Value = Convert.ToByte(rblOutOfSite.SelectedValue);
+
+            if (rblOutOfSite.SelectedValue != "" && rblOutOfSite.SelectedValue!=null)
+                command.Parameters.Add("@New_OutofSite", SqlDbType.Bit).Value = Convert.ToByte(rblOutOfSite.SelectedValue);
             
             //command.Parameters.Add("@Hobby_ID", SqlDbType.SmallInt).Value = rblGender.Text;
             //command.Parameters.Add("@Hobby_Notes", SqlDbType.VarChar).Value = tbHobbyNotes.Text;
