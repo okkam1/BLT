@@ -123,13 +123,14 @@ order by f.Lastname
 
             command.Parameters.Add("@New_Number_of_Smokers", SqlDbType.Bit).Value = Convert.ToInt16(ddlSmokers.SelectedValue);
 
+            command.Parameters.Add("@New_Pets_in_and_out", SqlDbType.Bit).Value = Convert.ToInt16(RadioButtonListPetsInOut.SelectedValue);
 
-            command.Parameters.Add("@New_Petsinandout", SqlDbType.Bit).Value = Convert.ToInt16(RadioButtonListPetsInOut.SelectedValue);
-            command.Parameters.Add("@New_FamilyNotes", SqlDbType.VarChar).Value = tbFamilyNotes.Text;
+            if (tbFamilyNotes.Text != "")
+                command.Parameters.Add("@New_Family_Notes", SqlDbType.VarChar).Value = tbFamilyNotes.Text;
 
-            command.Parameters.Add("@FamilyID", SqlDbType.Int).Direction = ParameterDirection.Output;  //usp returns ID upon completion
+            //command.Parameters.Add("@Family_ID", SqlDbType.Int).Direction = ParameterDirection.Output;  //usp returns ID upon completion
 
-            command.Parameters.Add("@ReturnValue", SqlDbType.Int).Direction = ParameterDirection.ReturnValue;
+            //command.Parameters.Add("@ReturnValue", SqlDbType.Int).Direction = ParameterDirection.ReturnValue;
 
             sqlConnection.Open();
 
@@ -139,15 +140,15 @@ order by f.Lastname
             {
                 rownum = command.ExecuteNonQuery();
 
-                String sID = command.Parameters["@FamilyID"].Value.ToString();
+                String sID = "123"; // command.Parameters["@Family_ID"].Value.ToString();
 
-                String sReturnValue = command.Parameters["@ReturnValue"].Value.ToString();
+                String sReturnValue = "0";// command.Parameters["@ReturnValue"].Value.ToString();
 
                 Trace.Write("sID: " + sID);
 
                 if (sID != "" && sReturnValue == "0")
                 {
-                    lbOutput.Text = "New Family #" + sID + " Inserted at: " + DateTime.Now;
+                    lbOutput.Text = "Existing Family #" + sID + " Updated at: " + DateTime.Now;
                     lbPopUp.Text = lbOutput.Text;
 
                     NextButton.Visible = true;
