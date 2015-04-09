@@ -106,26 +106,26 @@ order by f.Lastname
             lbOutput.Text = "";
 
             SqlConnection sqlConnection = new SqlConnection(connectionString);
-            SqlCommand command = new SqlCommand("usp_InsertNewFamilyWebScreen", sqlConnection);
+            SqlCommand command = new SqlCommand("usp_upFamilyWebScreen", sqlConnection);
             command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.Add("@FamilyLastName", SqlDbType.VarChar).Value = tbLastName.Text;
-            command.Parameters.Add("@Address_Line1", SqlDbType.VarChar).Value = tbAddress.Text; // +" " + DropDownListStreetSuffix.Text;
-            command.Parameters.Add("@Address_Line2", SqlDbType.VarChar).Value = tbAddressLine2.Text;
-            command.Parameters.Add("@CityName", SqlDbType.VarChar).Value = tbCity.Text;
+            command.Parameters.Add("@New_Last_Name", SqlDbType.VarChar).Value = tbLastName.Text;
+            command.Parameters.Add("@New_Address_Line1", SqlDbType.VarChar).Value = tbAddress.Text; // +" " + DropDownListStreetSuffix.Text;
+            command.Parameters.Add("@New_Address_Line2", SqlDbType.VarChar).Value = tbAddressLine2.Text;
+            command.Parameters.Add("@New_CityName", SqlDbType.VarChar).Value = tbCity.Text;
 
-            command.Parameters.Add("@StateAbbr", SqlDbType.VarChar).Value = ddlState.SelectedValue;
-            command.Parameters.Add("@ZipCode", SqlDbType.VarChar).Value = tbZip.Text;
+            command.Parameters.Add("@New_StateAbbr", SqlDbType.VarChar).Value = ddlState.SelectedValue;
+            command.Parameters.Add("@New_ZipCode", SqlDbType.VarChar).Value = tbZip.Text;
             if (tbHomePhone.Text != "")
-                command.Parameters.Add("@HomePhone", SqlDbType.BigInt).Value = Convert.ToInt64(tbHomePhone.Text);
+                command.Parameters.Add("@New_HomePhone", SqlDbType.BigInt).Value = Convert.ToInt64(tbHomePhone.Text);
             if (tbWorkPhone.Text != "")
-                command.Parameters.Add("@WorkPhone", SqlDbType.BigInt).Value = Convert.ToInt64(tbWorkPhone.Text);
-            command.Parameters.Add("@Pets", SqlDbType.Bit).Value = Convert.ToInt16(ddlPets.SelectedValue);
+                command.Parameters.Add("@New_WorkPhone", SqlDbType.BigInt).Value = Convert.ToInt64(tbWorkPhone.Text);
+            command.Parameters.Add("@New_Pets", SqlDbType.Bit).Value = Convert.ToInt16(ddlPets.SelectedValue);
 
-            command.Parameters.Add("@NumSmokers", SqlDbType.Bit).Value = Convert.ToInt16(ddlSmokers.SelectedValue);
+            command.Parameters.Add("@New_Number_of_Smokers", SqlDbType.Bit).Value = Convert.ToInt16(ddlSmokers.SelectedValue);
 
 
-            command.Parameters.Add("@Petsinandout", SqlDbType.Bit).Value = Convert.ToInt16(RadioButtonListPetsInOut.SelectedValue);
-            command.Parameters.Add("@FamilyNotes", SqlDbType.VarChar).Value = tbFamilyNotes.Text;
+            command.Parameters.Add("@New_Petsinandout", SqlDbType.Bit).Value = Convert.ToInt16(RadioButtonListPetsInOut.SelectedValue);
+            command.Parameters.Add("@New_FamilyNotes", SqlDbType.VarChar).Value = tbFamilyNotes.Text;
 
             command.Parameters.Add("@FamilyID", SqlDbType.Int).Direction = ParameterDirection.Output;  //usp returns ID upon completion
 
@@ -255,10 +255,42 @@ order by f.Lastname
             tbAddressLine2.Text = dt.Rows[0]["AddressLine2"].ToString();
             tbCity.Text = dt.Rows[0]["city"].ToString();
 
+            if ((dt.Rows[0]["State"].ToString() != null) && (ddlState.Items.FindByValue(dt.Rows[0]["State"].ToString().Trim()) != null))
+            {
+                ddlState.SelectedValue = dt.Rows[0]["State"].ToString().Trim();
+            }
+            else
+            {
+                ddlState.SelectedIndex = 0;
+            }
+
+
             tbZip.Text = dt.Rows[0]["zipCode"].ToString();
 
             tbHomePhone.Text = dt.Rows[0]["HomePhoneNumber"].ToString();
             tbWorkPhone.Text = dt.Rows[0]["WorkPhoneNumber"].ToString();
+
+            if ((dt.Rows[0]["NumberofSmokers"].ToString() != null) && (ddlSmokers.Items.FindByValue(dt.Rows[0]["NumberofSmokers"].ToString().Trim()) != null))
+            {
+                ddlSmokers.SelectedValue = dt.Rows[0]["NumberofSmokers"].ToString().Trim();
+            }
+            else
+            {
+                ddlSmokers.SelectedIndex = 0;
+            }
+
+            if ((dt.Rows[0]["Pets"].ToString() != null) && (ddlPets.Items.FindByValue(dt.Rows[0]["Pets"].ToString().Trim()) != null))
+            {
+                ddlPets.SelectedValue = dt.Rows[0]["Pets"].ToString().Trim();
+            }
+            else
+            {
+                ddlPets.SelectedIndex = 0;
+            }
+
+            //RadioButtonListPetsInOut.SelectedValue = dt.Rows[0]["petsinandout"].ToString();
+
+            
 
             //dt.Rows[0]["LastName"].ToString();
             
