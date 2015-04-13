@@ -36,8 +36,9 @@
             <td>
         <asp:TextBox ID="tbAddress" runat="server" Enabled="False"></asp:TextBox>
                 <span class="small">
-                <asp:HyperLink runat="server" ID="hlEditCurrent">Edit</asp:HyperLink>
-                <asp:HyperLink runat="server" ID="hlAddNew">Add New</asp:HyperLink></span>
+                    <asp:Button runat="server" ID="bEditCurrentAddress" Text="Edit" OnClick="bEditCurrentAddress_Click" />
+                    |
+                    <asp:Button runat="server" ID="bAddNewAddress" Text="Add New Address" OnClick="bAddNewAddress_Click" />
             </td>
             </tr>
 <!--
@@ -73,6 +74,7 @@
                 <td>State:</td>
             <td>
         <asp:DropDownList ID="ddlState" runat="server" Enabled="False">
+            <asp:ListItem value="">-</asp:ListItem> 
             <asp:ListItem value="AL">Alabama</asp:ListItem> 
             <asp:ListItem value="AK">Alaska</asp:ListItem> 
             <asp:ListItem value="AZ">Arizona</asp:ListItem> 

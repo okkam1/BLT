@@ -302,4 +302,26 @@ order by f.Lastname
     }
 
 
+    protected void bEditCurrentAddress_Click(object sender, EventArgs e)
+    {
+        tbAddress.Enabled = true;
+        tbAddressLine2.Enabled = true;
+        tbCity.Enabled = true;
+        ddlState.Enabled = true;
+        tbZip.Enabled = true;
+    }
+    protected void bAddNewAddress_Click(object sender, EventArgs e)
+    {
+        tbAddress.Enabled = true;
+        tbAddressLine2.Enabled = true;
+        tbCity.Enabled = true;
+        ddlState.Enabled = true;
+        tbZip.Enabled = true;
+
+        tbAddress.Text = "";
+        tbAddressLine2.Text = "";
+        tbCity.Text = "";
+        ddlState.SelectedIndex = 0;
+        tbZip.Text = "";
+    }
 }
