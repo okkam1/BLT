@@ -8,7 +8,7 @@
 
     <div class="DD">
 
-        <h2 class="DDSubHeader">Edit a Existing Family</h2>
+        <h2 class="DDSubHeader">Edit an Existing Family</h2>
 
         <table>
 
