@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,7 +15,8 @@ public partial class EditFamily : System.Web.UI.Page
     string connectionString = ConfigurationManager.ConnectionStrings["csLCCHP"].ConnectionString;
 
     string sCurrentFamilyName = "";
-    string sCurrentFamilyID = ""; 
+    string sCurrentFamilyID = "";
+    bool bIsNewAddress = false;
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -128,9 +130,15 @@ order by f.Lastname
             if (tbFamilyNotes.Text != "")
                 command.Parameters.Add("@New_Family_Notes", SqlDbType.VarChar).Value = tbFamilyNotes.Text;
 
-            //command.Parameters.Add("@Family_ID", SqlDbType.Int).Direction = ParameterDirection.Output;  //usp returns ID upon completion
+            command.Parameters.Add("@isNewAddress", SqlDbType.Bit).Value = Convert.ToInt16(bIsNewAddress);
 
-            //command.Parameters.Add("@ReturnValue", SqlDbType.Int).Direction = ParameterDirection.ReturnValue;
+            command.Parameters.Add("@DEBUG", SqlDbType.Bit).Value = 1;
+
+            //command.Parameters.Add("@Family_ID", SqlDbType.Bit).Value = Convert.ToInt16(FamilyNameList.SelectedValue);
+
+           //command.Parameters.Add("@Family_ID", SqlDbType.Int).Direction = ParameterDirection.Output;  //usp returns ID upon completion
+
+            command.Parameters.Add("@ReturnValue", SqlDbType.Int).Direction = ParameterDirection.ReturnValue;
 
             sqlConnection.Open();
 
@@ -142,16 +150,18 @@ order by f.Lastname
 
                 String sID = "123"; // command.Parameters["@Family_ID"].Value.ToString();
 
-                String sReturnValue = "0";// command.Parameters["@ReturnValue"].Value.ToString();
+                String sReturnValue = command.Parameters["@ReturnValue"].Value.ToString();
 
                 Trace.Write("sID: " + sID);
+
+                Trace.Write("sReturnValue: " + sReturnValue);
 
                 if (sID != "" && sReturnValue == "0")
                 {
                     lbOutput.Text = "Existing Family #" + sID + " Updated at: " + DateTime.Now;
                     lbPopUp.Text = lbOutput.Text;
 
-                    NextButton.Visible = true;
+                    //NextButton.Visible = true;
                     ModalPopupExtender1.Show();
                 }
                 else if (sReturnValue == "50000")
@@ -161,9 +171,18 @@ order by f.Lastname
 
                     ModalPopupExtender1.Show();
                 }
+
+                else if (sReturnValue == "50001") // || sReturnValue=="50002")
+                {
+                    lbOutput.Text = "Please provide Family_ID.";
+                    lbPopUp.Text = "Please provide Family_ID.";
+
+                    ModalPopupExtender1.Show();
+                }
+
                 else
                 {
-                    lbOutput.Text = "Failed to Insert New Family";
+                    lbOutput.Text = "Failed to Update Family";
                     lbPopUp.Text = lbOutput.Text;
                     ModalPopupExtender1.Show();
                 }
@@ -194,12 +213,7 @@ order by f.Lastname
         }
 
     }
-
-    protected void NextButton_Click(object sender, EventArgs e)
-    {
-        Response.Redirect("AddClient.aspx");
-    }
-
+    
     protected void ddlPets_SelectedIndexChanged(object sender, EventArgs e)
     {
         if (ddlPets.SelectedIndex != 0)
@@ -218,6 +232,10 @@ order by f.Lastname
         resetFields();
 
         disableAddress();
+        
+        pnlEditAddress.Visible = false;
+
+        btnUpdate.Visible = false;
 
         getFamilyDetails(FamilyNameList.SelectedValue.ToString());
 
@@ -252,6 +270,10 @@ order by f.Lastname
         //fill UI screen with pre-selected values
         if (dt.Rows.Count > 0)
         {
+
+            pnlEditAddress.Visible = true;
+
+            btnUpdate.Visible = true;
 
             tbLastName.Text = dt.Rows[0]["LastName"].ToString();
             tbAddress.Text = dt.Rows[0]["AddressLine1"].ToString();
@@ -325,6 +347,7 @@ order by f.Lastname
     protected void bEditCurrentAddress_Click(object sender, EventArgs e)
     {
         enableAddress();
+        bIsNewAddress = false;
     }
 
     protected void bAddNewAddress_Click(object sender, EventArgs e)
@@ -336,5 +359,7 @@ order by f.Lastname
         tbCity.Text = "";
         ddlState.SelectedIndex = 0;
         tbZip.Text = "";
+
+        bIsNewAddress = true;
     }
 }

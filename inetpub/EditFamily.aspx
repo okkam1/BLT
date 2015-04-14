@@ -22,6 +22,8 @@
                 </td>
             </tr>
 
+<asp:Panel runat="server" ID="pnlEditAddress" Visible="false">
+   
             <tr>
                 <td>Family Last Name:</td>
                 <td><asp:TextBox ID="tbLastName" runat="server"></asp:TextBox>
@@ -30,15 +32,19 @@
 
                 </td>
             </tr>
-   
         <tr>
                 <td>Address:</td>
             <td>
         <asp:TextBox ID="tbAddress" runat="server" Enabled="False"></asp:TextBox>
+                
+                
                 <span class="small">
-                    <asp:Button runat="server" ID="bEditCurrentAddress" Text="Edit" OnClick="bEditCurrentAddress_Click" />
+                    <asp:Button runat="server" ID="bEditCurrentAddress" Text="Edit Existing Address" OnClick="bEditCurrentAddress_Click" />
                     |
                     <asp:Button runat="server" ID="bAddNewAddress" Text="Add New Address" OnClick="bAddNewAddress_Click" />
+                    </span>
+
+                    
             </td>
             </tr>
 <!--
@@ -138,7 +144,8 @@
             </tr>
 
             <tr><td colspan="2"><hr /></td></tr>
-
+            
+   
         <tr>
                 <td>Home Phone:</td>
             <td>
@@ -258,13 +265,14 @@
 
             </td>
             </tr>
+        
+           </asp:Panel>
 
 </table>
         <br /><br />
-        <input id="back" type="button" value="&lt;&lt; Back" OnClick="javascript: history.back();" />
         
         &nbsp;&nbsp;&nbsp;
-        <asp:Button ID="Insert" runat="server" OnClick="Button1_Click" Text="Insert New Family" />
+        <asp:Button ID="btnUpdate" runat="server" OnClick="Button1_Click" Text="Update Family Information" visible="false" />
 
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" />
 
@@ -279,8 +287,7 @@
  
             
             <asp:Button ID="OKButton" runat="server" Text="Close" />
-            <asp:Button ID="NextButton" runat="server" Text="Done &gt;&gt;" Visible="false" OnClick="NextButton_Click" />
-
+            
 </asp:Panel>
  
 
