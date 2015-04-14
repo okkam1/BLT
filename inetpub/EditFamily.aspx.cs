@@ -217,6 +217,8 @@ order by f.Lastname
     {
         resetFields();
 
+        disableAddress();
+
         getFamilyDetails(FamilyNameList.SelectedValue.ToString());
 
         //tbLastName.Text = sCurrentFamilyName;
@@ -301,8 +303,16 @@ order by f.Lastname
 
     }
 
+    protected void disableAddress()
+    {
+        tbAddress.Enabled = false;
+        tbAddressLine2.Enabled = false;
+        tbCity.Enabled = false;
+        ddlState.Enabled = false;
+        tbZip.Enabled = false;
+    }
 
-    protected void bEditCurrentAddress_Click(object sender, EventArgs e)
+    protected void enableAddress()
     {
         tbAddress.Enabled = true;
         tbAddressLine2.Enabled = true;
@@ -310,13 +320,16 @@ order by f.Lastname
         ddlState.Enabled = true;
         tbZip.Enabled = true;
     }
+
+
+    protected void bEditCurrentAddress_Click(object sender, EventArgs e)
+    {
+        enableAddress();
+    }
+
     protected void bAddNewAddress_Click(object sender, EventArgs e)
     {
-        tbAddress.Enabled = true;
-        tbAddressLine2.Enabled = true;
-        tbCity.Enabled = true;
-        ddlState.Enabled = true;
-        tbZip.Enabled = true;
+        enableAddress();
 
         tbAddress.Text = "";
         tbAddressLine2.Text = "";
