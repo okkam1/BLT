@@ -22,46 +22,10 @@ public partial class EditFamily : System.Web.UI.Page
     {
         //updateLanguage();
 
+        
         if (!Page.IsPostBack)
         {
-            SqlConnection con = new SqlConnection(connectionString);
-
-            //            string com = "Select Lastname, FamilyID from dbo.Family order by Lastname asc";
-
-
-            string com = @"Select f.FamilyID, p.PropertyID, f.Lastname, CONCAT(f.Lastname,' -- ', p.AddressLine1,' ',p.Zipcode ) NameAddress
-from dbo.Family f 
-     join Property p 
-       on p.PropertyID = f.PrimaryPropertyID
-order by f.Lastname
-";
-
-            SqlDataAdapter adpt = new SqlDataAdapter(com, con);
-
-            DataTable dt = new DataTable();
-
-            adpt.Fill(dt);
-
-            //sCurrentFamilyName = dt.Rows[0]["Lastname"].ToString();
-            //sCurrentFamilyID = dt.Rows[0]["FamilyID"].ToString();
-
-            //Trace.Write("sCurrentFamilyName: " + sCurrentFamilyName);
-            //Trace.Write("sCurrentFamilyID: " + sCurrentFamilyID);
-
-            FamilyNameList.DataSource = dt;
-
-            FamilyNameList.DataBind();
-
-            Random r1 = new Random();
-
-            FamilyNameList.DataTextField = "NameAddress";
-            FamilyNameList.DataValueField = "FamilyID";
-
-            FamilyNameList.DataBind();
-            FamilyNameList.Items.Insert(0, "(Family name -- PRIMARY residence)");
-
-            Trace.Write("connectionString: " + connectionString);
-
+            updateFamilyList();
         }
 
 
@@ -69,8 +33,7 @@ order by f.Lastname
 
     protected void updateLanguage()
     {
-        //string connectionString = ConfigurationManager.ConnectionStrings["csLeadTrackingProgram2"].ConnectionString;
-
+        
         Trace.Write("connectionString: " + connectionString);
 
         SqlConnection con = new SqlConnection(connectionString);
@@ -83,23 +46,39 @@ order by f.Lastname
 
         adpt.Fill(dt);
 
-        //ddlLanguage.DataSource = dt;
-
-        //ddlLanguage.DataBind();
-
-        //ddlLanguage.DataTextField = "LanguageName";
-
-        //ddlLanguage.DataValueField = "LanguageID";
-        //ddlLanguage.DataBind();
-        //ddlLanguage.Items.Insert(0, "-");
-
+        
     }
 
-    protected void RefreshLanguage_Click(object sender, EventArgs e)
+    protected void updateFamilyList()
     {
-        updateLanguage();
-    }
+        SqlConnection con = new SqlConnection(connectionString);
 
+        string com = @"Select f.FamilyID, p.PropertyID, f.Lastname, CONCAT(f.Lastname,' -- ', p.AddressLine1,' ',p.Zipcode ) NameAddress
+from dbo.Family f 
+     join Property p 
+       on p.PropertyID = f.PrimaryPropertyID
+order by f.Lastname
+";
+
+        SqlDataAdapter adpt = new SqlDataAdapter(com, con);
+
+        DataTable dt = new DataTable();
+
+        adpt.Fill(dt);
+
+        FamilyNameList.DataSource = dt;
+
+        FamilyNameList.DataBind();
+
+        FamilyNameList.DataTextField = "NameAddress";
+        FamilyNameList.DataValueField = "FamilyID";
+
+        FamilyNameList.DataBind();
+        FamilyNameList.Items.Insert(0, "(Family name -- PRIMARY residence)");
+
+        Trace.Write("connectionString: " + connectionString);
+
+    }
     protected void Button1_Click(object sender, EventArgs e)
     {
         try
@@ -121,9 +100,9 @@ order by f.Lastname
                 command.Parameters.Add("@New_HomePhone", SqlDbType.BigInt).Value = Convert.ToInt64(tbHomePhone.Text);
             if (tbWorkPhone.Text != "")
                 command.Parameters.Add("@New_WorkPhone", SqlDbType.BigInt).Value = Convert.ToInt64(tbWorkPhone.Text);
-            command.Parameters.Add("@New_Pets", SqlDbType.Bit).Value = Convert.ToInt16(ddlPets.SelectedValue);
+            command.Parameters.Add("@New_Pets", SqlDbType.TinyInt).Value = Convert.ToInt16(ddlPets.SelectedValue);
 
-            command.Parameters.Add("@New_Number_of_Smokers", SqlDbType.Bit).Value = Convert.ToInt16(ddlSmokers.SelectedValue);
+            command.Parameters.Add("@New_Number_of_Smokers", SqlDbType.TinyInt).Value = Convert.ToInt16(ddlSmokers.SelectedValue);
 
             command.Parameters.Add("@New_Pets_in_and_out", SqlDbType.Bit).Value = Convert.ToInt16(RadioButtonListPetsInOut.SelectedValue);
 
@@ -132,12 +111,13 @@ order by f.Lastname
 
             command.Parameters.Add("@isNewAddress", SqlDbType.Bit).Value = Convert.ToInt16(bIsNewAddress);
 
+            Trace.Write("FamilyNameList.SelectedValue.ToString(): " + FamilyNameList.SelectedValue.ToString());
+
+            command.Parameters.Add("@Family_ID", SqlDbType.Int).Value = Convert.ToInt16(FamilyNameList.SelectedValue.ToString());
+
             command.Parameters.Add("@DEBUG", SqlDbType.Bit).Value = 1;
 
-            //command.Parameters.Add("@Family_ID", SqlDbType.Bit).Value = Convert.ToInt16(FamilyNameList.SelectedValue);
-
-           //command.Parameters.Add("@Family_ID", SqlDbType.Int).Direction = ParameterDirection.Output;  //usp returns ID upon completion
-
+            
             command.Parameters.Add("@ReturnValue", SqlDbType.Int).Direction = ParameterDirection.ReturnValue;
 
             sqlConnection.Open();
@@ -148,21 +128,20 @@ order by f.Lastname
             {
                 rownum = command.ExecuteNonQuery();
 
-                String sID = "123"; // command.Parameters["@Family_ID"].Value.ToString();
-
                 String sReturnValue = command.Parameters["@ReturnValue"].Value.ToString();
-
-                Trace.Write("sID: " + sID);
 
                 Trace.Write("sReturnValue: " + sReturnValue);
 
-                if (sID != "" && sReturnValue == "0")
+                if (sReturnValue == "0")
                 {
-                    lbOutput.Text = "Existing Family #" + sID + " Updated at: " + DateTime.Now;
+                    lbOutput.Text = "Existing Family #" + FamilyNameList.SelectedValue.ToString() + " Updated at: " + DateTime.Now;
                     lbPopUp.Text = lbOutput.Text;
 
                     //NextButton.Visible = true;
                     ModalPopupExtender1.Show();
+
+                    //updateFamilyList();
+
                 }
                 else if (sReturnValue == "50000")
                 {
@@ -256,33 +235,33 @@ order by f.Lastname
 
         //resetFields();
 
-        SqlConnection con = new SqlConnection(connectionString);
+        SqlConnection conFamilyDetails = new SqlConnection(connectionString);
 
-        string com = @"exec usp_SLEditFamilyWebScreenInformation @Family_ID='" + sFamilyIDIn + "'";
+        string comFamilyDetails = @"exec usp_SLEditFamilyWebScreenInformation @Family_ID='" + sFamilyIDIn + "'";
 
 
-        SqlDataAdapter adpt = new SqlDataAdapter(com, con);
+        SqlDataAdapter adptFamilyDetails = new SqlDataAdapter(comFamilyDetails, conFamilyDetails);
 
-        DataTable dt = new DataTable();
+        DataTable dtFamilyDetails = new DataTable();
 
-        adpt.Fill(dt);
+        adptFamilyDetails.Fill(dtFamilyDetails);
 
         //fill UI screen with pre-selected values
-        if (dt.Rows.Count > 0)
+        if (dtFamilyDetails.Rows.Count > 0)
         {
 
             pnlEditAddress.Visible = true;
 
             btnUpdate.Visible = true;
 
-            tbLastName.Text = dt.Rows[0]["LastName"].ToString();
-            tbAddress.Text = dt.Rows[0]["AddressLine1"].ToString();
-            tbAddressLine2.Text = dt.Rows[0]["AddressLine2"].ToString();
-            tbCity.Text = dt.Rows[0]["city"].ToString();
+            tbLastName.Text = dtFamilyDetails.Rows[0]["LastName"].ToString();
+            tbAddress.Text = dtFamilyDetails.Rows[0]["AddressLine1"].ToString();
+            tbAddressLine2.Text = dtFamilyDetails.Rows[0]["AddressLine2"].ToString();
+            tbCity.Text = dtFamilyDetails.Rows[0]["city"].ToString();
 
-            if ((dt.Rows[0]["State"].ToString() != null) && (ddlState.Items.FindByValue(dt.Rows[0]["State"].ToString().Trim()) != null))
+            if ((dtFamilyDetails.Rows[0]["State"].ToString() != null) && (ddlState.Items.FindByValue(dtFamilyDetails.Rows[0]["State"].ToString().Trim()) != null))
             {
-                ddlState.SelectedValue = dt.Rows[0]["State"].ToString().Trim();
+                ddlState.SelectedValue = dtFamilyDetails.Rows[0]["State"].ToString().Trim();
             }
             else
             {
@@ -290,23 +269,23 @@ order by f.Lastname
             }
 
 
-            tbZip.Text = dt.Rows[0]["zipCode"].ToString();
+            tbZip.Text = dtFamilyDetails.Rows[0]["zipCode"].ToString();
 
-            tbHomePhone.Text = dt.Rows[0]["HomePhoneNumber"].ToString();
-            tbWorkPhone.Text = dt.Rows[0]["WorkPhoneNumber"].ToString();
+            tbHomePhone.Text = dtFamilyDetails.Rows[0]["HomePhoneNumber"].ToString();
+            tbWorkPhone.Text = dtFamilyDetails.Rows[0]["WorkPhoneNumber"].ToString();
 
-            if ((dt.Rows[0]["NumberofSmokers"].ToString() != null) && (ddlSmokers.Items.FindByValue(dt.Rows[0]["NumberofSmokers"].ToString().Trim()) != null))
+            if ((dtFamilyDetails.Rows[0]["NumberofSmokers"].ToString() != null) && (ddlSmokers.Items.FindByValue(dtFamilyDetails.Rows[0]["NumberofSmokers"].ToString().Trim()) != null))
             {
-                ddlSmokers.SelectedValue = dt.Rows[0]["NumberofSmokers"].ToString().Trim();
+                ddlSmokers.SelectedValue = dtFamilyDetails.Rows[0]["NumberofSmokers"].ToString().Trim();
             }
             else
             {
                 ddlSmokers.SelectedIndex = 0;
             }
 
-            if ((dt.Rows[0]["Pets"].ToString() != null) && (ddlPets.Items.FindByValue(dt.Rows[0]["Pets"].ToString().Trim()) != null))
+            if ((dtFamilyDetails.Rows[0]["Pets"].ToString() != null) && (ddlPets.Items.FindByValue(dtFamilyDetails.Rows[0]["Pets"].ToString().Trim()) != null))
             {
-                ddlPets.SelectedValue = dt.Rows[0]["Pets"].ToString().Trim();
+                ddlPets.SelectedValue = dtFamilyDetails.Rows[0]["Pets"].ToString().Trim();
             }
             else
             {
