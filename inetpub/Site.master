@@ -17,7 +17,7 @@
 
         <h1 class="DDMainHeader">
             <a href="/"><asp:Image ImageUrl="images/LakeCountySeal.jpg" runat="server" ID="CountySeal" border="0" /></a>
-            Lake County Blood Lead Tracking Software <span class="small">v2.2</span> 
+            Lake County Blood Lead Tracking Software <span class="small">v2.7</span> 
             <span runat="server" visible="false" id="userLabel" class="DDFloatRight" style="font-size:medium;">User: 
                 <asp:LoginName ID="LoginName1" runat="server" /> |
                 <span class="small">
