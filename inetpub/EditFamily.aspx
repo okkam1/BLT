@@ -1,5 +1,5 @@
 ﻿
-<%@ Page Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="EditFamily.aspx.cs" Inherits="EditFamily" Trace="true" %>
+<%@ Page Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="EditFamily.aspx.cs" Inherits="EditFamily" Trace="false" %>
 
 <asp:Content ID="headContent" ContentPlaceHolderID="head" Runat="Server"></asp:Content>
 

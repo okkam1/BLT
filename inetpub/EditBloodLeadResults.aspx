@@ -1,5 +1,5 @@
 ﻿
-<%@ Page Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="EditBloodLeadResults.aspx.cs" Inherits="EditBloodLeadResults" Trace="true" EnableViewState="true" %>
+<%@ Page Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="EditBloodLeadResults.aspx.cs" Inherits="EditBloodLeadResults" Trace="false" EnableViewState="true" %>
 
 <asp:Content ID="headContent" ContentPlaceHolderID="head" Runat="Server"></asp:Content>
 
