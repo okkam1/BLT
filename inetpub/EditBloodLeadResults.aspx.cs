@@ -94,6 +94,9 @@ order by f.Lastname
     {
         pnlFamilyMembers.Visible = false;
         getFamilyMembers(FamilyNameList.SelectedValue);
+
+        GridView1.Visible = false;
+        btnInsertResults.Visible = false;
     }
 
  
@@ -109,10 +112,16 @@ order by f.Lastname
 
         GridView1.DataBind();
 
-        if (GridView1.Rows.Count < 1)
+        if (GridView1.Rows.Count > 0)
+        {
+            GridView1.Visible = true;
+        }
+        else
         {
             gridText.Text = "No Results Found";
         }
+
+        btnInsertResults.Visible = true;
     }
     protected void Button1_Click(object sender, EventArgs e)
     {
