@@ -80,7 +80,7 @@
       ,[ExcludeResult]
       ,[HistoricBloodTestResultsID]
       ,[HistoricLabResultsID]
-  FROM [LCCHPDev].[dbo].[BloodTestResults] WHERE [PersonID] = @PersonID"
+  FROM [dbo].[BloodTestResults] WHERE [PersonID] = @PersonID"
         
           UpdateCommand="UPDATE [BloodTestResults] SET [LeadValue] = @LeadValue, [SampleDate] = @SampleDate, [LabSubmissionDate] = @LabSubmissionDate, [HemoglobinValue] = @HemoglobinValue, [BloodTestCosts] = @BloodTestCosts WHERE [BloodTestResultsID] = @BloodTestResultsID"
 
