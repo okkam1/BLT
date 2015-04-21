@@ -135,7 +135,7 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
 </table>
 
         <br /><br />
-        <asp:Button ID="Insert" runat="server" OnClick="Button1_Click" Text="Save and Done" />
+        <asp:Button ID="Insert" runat="server" OnClick="Button1_Click" Text="Save" />
 
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" />
 
@@ -149,7 +149,7 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
             <br /><br />
  
             
-            <asp:Button ID="OKButton" runat="server" Text="Close" />
+            <asp:Button ID="OKButton" runat="server" Text="Add Another" />
             <asp:Button ID="NextButton" runat="server" Text="Done &gt;&gt;" Visible="false" OnClick="NextButton_Click" />
 
 </asp:Panel>
