@@ -255,10 +255,15 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
             <tr>
                 <td>Daycare:</td>
                 <td>
-                    <asp:RadioButtonList ID="rblDayCare" runat="server" RepeatDirection="Horizontal">
-                    <asp:ListItem Value="1">Yes</asp:ListItem>
-                    <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
-                </asp:RadioButtonList>
+            
+
+         <asp:DropDownList ID="ddlDayCare" runat="server" DataSourceID="SqlDataSourceDayCare"
+            DataTextField="DaycareName" DataValueField="DaycareID" AppendDataBoundItems="True">
+             <asp:ListItem>-</asp:ListItem>
+        </asp:DropDownList>
+
+        <asp:SqlDataSource ID="SqlDataSourceDayCare" runat="server" SelectCommandType="StoredProcedure"
+            SelectCommand="dbo.usp_SLDaycare" ConnectionString="<%$ ConnectionStrings:csLCCHP%>"></asp:SqlDataSource>
 
                 </td>
             </tr>

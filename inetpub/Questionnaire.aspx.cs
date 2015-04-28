@@ -35,8 +35,35 @@ public partial class Questionnaire : System.Web.UI.Page
 
             lblHeader.Text += "for " + FirstName + " " + LastName + " (" + ClientID + ") ";
 
+            //fill daycare drop down
+            /*
+            SqlConnection conLang = new SqlConnection(connectionString);
+
+            string comLang = "Select LanguageID, Upper(LanguageName) as LanguageName from dbo.Language order by LanguageName asc";
+
+            SqlDataAdapter adptLang = new SqlDataAdapter(comLang, conLang);
+
+            DataTable dtLang = new DataTable();
+
+            adptLang.Fill(dtLang);
+
+            ddlDayCare.DataSource = dtLang;
+
+            ddlDayCare.DataBind();
+
+            ddlDayCare.DataTextField = "LanguageName";
+            ddlDayCare.DataValueField = "LanguageID";
+
+            ddlDayCare.DataBind();
+            // if (!Page.IsPostBack)
+            ddlDayCare.Items.Insert(0, "-");
+
+            */
+
 
         }
+
+        ddlDayCare.Items.Insert(0, "-");
     }
 
 
@@ -73,7 +100,7 @@ public partial class Questionnaire : System.Web.UI.Page
             command.Parameters.Add("@EatsNonFood", SqlDbType.Bit).Value = Convert.ToByte(rblEatsNonFood.SelectedValue);
             command.Parameters.Add("@SucksThumb", SqlDbType.Bit).Value = Convert.ToByte(rblSucksThumb.SelectedValue);
             command.Parameters.Add("@Mouthing", SqlDbType.Bit).Value = Convert.ToByte(rblMouthing.SelectedValue);
-            command.Parameters.Add("@Daycare", SqlDbType.Bit).Value = Convert.ToByte(rblDayCare.SelectedValue);
+            command.Parameters.Add("@DaycareID", SqlDbType.Int).Value = ddlDayCare.SelectedValue;
             command.Parameters.Add("@DayCareNotes", SqlDbType.VarChar).Value = tbDaycareNotes.Text;
             command.Parameters.Add("@Source", SqlDbType.Int).Value = Convert.ToInt32(rblSource.SelectedValue);
             command.Parameters.Add("@QuestionnaireNotes", SqlDbType.VarChar).Value = tbQuestionnaireNotes.Text;
