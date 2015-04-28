@@ -121,6 +121,36 @@
         <asp:TextBox ID="TextBoxZip" runat="server" Width="50px"></asp:TextBox></td>
             </tr>
 
+                        <tr>
+                <td>Date Built: <br /> <em>(MM/DD/YYYY)</em></td>
+                <td><asp:TextBox ID="tbDateBuilt" runat="server"></asp:TextBox>
+
+<ajaxtoolkit:CalendarExtender ID="CalendarExtender2" 
+    runat="server" 
+    PopupPosition="Right"
+    PopupButtonID="tbDateBuilt" 
+    TargetControlID="tbDateBuilt" 
+    Format="MM/dd/yyyy" >
+</ajaxtoolkit:CalendarExtender>
+
+<asp:CompareValidator
+    id="dateValidator" runat="server" 
+    Type="Date"
+    Operator="DataTypeCheck"
+    ControlToValidate="tbDateBuilt" 
+    ErrorMessage="Please enter a valid date." ForeColor="Red">
+</asp:CompareValidator>
+
+<asp:CompareValidator ID="futureDateValidator" runat="server"  ControlToValidate="tbDateBuilt"
+ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type="Date" ForeColor="Red">
+</asp:CompareValidator>
+                    
+                    <asp:RequiredFieldValidator ID="rfvDateBuilt" runat="server" InitialValue="" ErrorMessage="Please enter the date built" ControlToValidate="tbDateBuilt" ForeColor="Red"></asp:RequiredFieldValidator>
+
+                </td>
+            </tr>
+
+
             <tr><td colspan="2"><hr /></td></tr>
 
         <tr>

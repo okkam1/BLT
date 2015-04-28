@@ -16,6 +16,9 @@ public partial class AddFamily : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         //updateLanguage();
+
+        futureDateValidator.ValueToCompare = DateTime.Now.ToString("MM/dd/yyyy");
+
     }
 
     protected void updateLanguage()
@@ -67,6 +70,10 @@ public partial class AddFamily : System.Web.UI.Page
             command.Parameters.Add("@CityName", SqlDbType.VarChar).Value = TextBoxCity.Text;
 
             command.Parameters.Add("@StateAbbr", SqlDbType.VarChar).Value = ddlState.SelectedValue;
+
+            if (tbDateBuilt.Text != "")
+                command.Parameters.Add("@Year_Built", SqlDbType.DateTime).Value = tbDateBuilt.Text;
+
             command.Parameters.Add("@ZipCode", SqlDbType.VarChar).Value = TextBoxZip.Text;
             if (HomePhoneTextBox.Text != "")
                 command.Parameters.Add("@HomePhone", SqlDbType.BigInt).Value = Convert.ToInt64(HomePhoneTextBox.Text);
