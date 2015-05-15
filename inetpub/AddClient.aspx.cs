@@ -113,6 +113,15 @@ order by f.Lastname
 
         }
 
+        //choose new family by default if one was added
+        string LastName = (string)(Session["LastName"]);
+        string FamilyID = (string)(Session["FamilyID"]);
+
+        Trace.Write("FamilyID: " + FamilyID);
+
+        if (FamilyID != "")
+            FamilyNameList.SelectedValue = FamilyID;
+
     }
     protected void Button1_Click(object sender, EventArgs e)
     {

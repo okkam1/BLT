@@ -110,6 +110,9 @@ public partial class AddFamily : System.Web.UI.Page
                    lbOutput.Text = "New Family #" + sID + " Inserted at: " + DateTime.Now;
                    lbPopUp.Text = lbOutput.Text;
 
+                   Session["FamilyID"] = sID;
+                   Session["LastName"] = tbLastName.Text;
+
                    NextButton.Visible = true;
                    ModalPopupExtender1.Show();
                }
