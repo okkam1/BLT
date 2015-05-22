@@ -92,7 +92,6 @@ public partial class Questionnaire : System.Web.UI.Page
             command.Parameters.Add("@Vitamins", SqlDbType.Bit).Value = Convert.ToByte(rblVitamins.SelectedValue);
             command.Parameters.Add("@HandWash", SqlDbType.Bit).Value = Convert.ToByte(rblHandWash.SelectedValue);
             command.Parameters.Add("@Bottle", SqlDbType.Bit).Value = Convert.ToByte(rblBottle.SelectedValue);
-            command.Parameters.Add("@Nursing", SqlDbType.Bit).Value = Convert.ToByte(rblNursing.SelectedValue);
             command.Parameters.Add("@Pacifier", SqlDbType.Bit).Value = Convert.ToByte(rblPacifier.SelectedValue);
             command.Parameters.Add("@BitesNails", SqlDbType.Bit).Value = Convert.ToByte(rblBiteNails.SelectedValue);
             command.Parameters.Add("@EatsOutdoors", SqlDbType.Bit).Value = Convert.ToByte(rblEatOutdoors.SelectedValue);
@@ -104,7 +103,11 @@ public partial class Questionnaire : System.Web.UI.Page
             command.Parameters.Add("@DayCareNotes", SqlDbType.VarChar).Value = tbDaycareNotes.Text;
             command.Parameters.Add("@Source", SqlDbType.Int).Value = Convert.ToInt32(rblSource.SelectedValue);
             command.Parameters.Add("@QuestionnaireNotes", SqlDbType.VarChar).Value = tbQuestionnaireNotes.Text;
-
+            command.Parameters.Add("@VisitsOldHomes", SqlDbType.Bit).Value = Convert.ToByte(rbVisitsOldHomes.SelectedValue);
+            command.Parameters.Add("@NursingMother", SqlDbType.Bit).Value = Convert.ToByte(rblNursingMother.SelectedValue);
+            command.Parameters.Add("@Pregnant", SqlDbType.Bit).Value = Convert.ToByte(rblPregnant.SelectedValue);
+            command.Parameters.Add("@NursingInfant", SqlDbType.Bit).Value = Convert.ToByte(rblNursingInfant.SelectedValue);
+            
             command.Parameters.Add("@Questionnaire_return_value", SqlDbType.Int).Direction = ParameterDirection.Output;  //usp returns ID upon completion
 
             sqlConnection.Open();

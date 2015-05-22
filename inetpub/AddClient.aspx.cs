@@ -119,7 +119,7 @@ order by f.Lastname
 
         Trace.Write("FamilyID: " + FamilyID);
 
-        if (FamilyID != "")
+        if (FamilyID != "" && FamilyID!=null)
             FamilyNameList.SelectedValue = FamilyID;
 
     }
