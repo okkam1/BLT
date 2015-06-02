@@ -28,6 +28,19 @@ public partial class EditFamily : System.Web.UI.Page
             updateFamilyList();
         }
 
+        futureDateValidator.ValueToCompare = DateTime.Now.ToString("MM/dd/yyyy");
+
+        if (rblOwnerOccupied.SelectedValue == "0")
+        {
+            pnlOwnerContactInformation.Visible = true;
+            tbOwnerContactInformation.Enabled = true;
+        }
+        else
+        {
+            tbOwnerContactInformation.Text = "";
+            pnlOwnerContactInformation.Visible = false;
+        }
+
 
     }
 
@@ -110,6 +123,12 @@ order by f.Lastname
                 command.Parameters.Add("@New_Family_Notes", SqlDbType.VarChar).Value = tbFamilyNotes.Text;
 
             command.Parameters.Add("@isNewAddress", SqlDbType.Bit).Value = Convert.ToInt16(bIsNewAddress);
+
+            if (tbDateBuilt.Text != "")
+                command.Parameters.Add("@New_Year_Built", SqlDbType.DateTime).Value = tbDateBuilt.Text;
+
+            if (tbOwnerContactInformation.Text != "")
+                command.Parameters.Add("@New_OwnerContactInformation", SqlDbType.VarChar).Value = tbDateBuilt.Text;
 
             Trace.Write("FamilyNameList.SelectedValue.ToString(): " + FamilyNameList.SelectedValue.ToString());
 
@@ -267,9 +286,29 @@ order by f.Lastname
             {
                 ddlState.SelectedIndex = 0;
             }
-
-
+            
             tbZip.Text = dtFamilyDetails.Rows[0]["zipCode"].ToString();
+
+            if (dtFamilyDetails.Rows[0]["YearBuilt"].ToString() != null && dtFamilyDetails.Rows[0]["YearBuilt"].ToString() != "")
+            {
+                tbDateBuilt.Text = Convert.ToDateTime(dtFamilyDetails.Rows[0]["YearBuilt"].ToString()).ToString("MM/dd/yyyy");
+            }
+            else
+            {
+                tbDateBuilt.Text = "";
+            }
+
+            if ((dtFamilyDetails.Rows[0]["OwnerContactInformation"].ToString() != null))
+            {
+                tbOwnerContactInformation.Text = dtFamilyDetails.Rows[0]["OwnerContactInformation"].ToString();
+            }
+            else
+            {
+                tbOwnerContactInformation.Text = "";
+            }
+            
+
+            
 
             tbHomePhone.Text = dtFamilyDetails.Rows[0]["HomePhoneNumber"].ToString();
             tbWorkPhone.Text = dtFamilyDetails.Rows[0]["WorkPhoneNumber"].ToString();
@@ -286,6 +325,7 @@ order by f.Lastname
             if ((dtFamilyDetails.Rows[0]["Pets"].ToString() != null) && (ddlPets.Items.FindByValue(dtFamilyDetails.Rows[0]["Pets"].ToString().Trim()) != null))
             {
                 ddlPets.SelectedValue = dtFamilyDetails.Rows[0]["Pets"].ToString().Trim();
+                RadioButtonListPetsInOut.Enabled = true;
             }
             else
             {
@@ -311,6 +351,9 @@ order by f.Lastname
         tbCity.Enabled = false;
         ddlState.Enabled = false;
         tbZip.Enabled = false;
+        tbDateBuilt.Enabled = false;
+        rblOwnerOccupied.Enabled = false;
+        tbOwnerContactInformation.Enabled = false;
     }
 
     protected void enableAddress()
@@ -320,6 +363,9 @@ order by f.Lastname
         tbCity.Enabled = true;
         ddlState.Enabled = true;
         tbZip.Enabled = true;
+        tbDateBuilt.Enabled = true;
+        rblOwnerOccupied.Enabled = true;
+        tbOwnerContactInformation.Enabled = true;
     }
 
 

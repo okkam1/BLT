@@ -153,19 +153,24 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
             <tr><td>Is Home Owner Occupied?</td>
                 <td>
 
-                       <asp:RadioButtonList ID="rblOwnerOccupied" runat="server" RepeatDirection="Horizontal">
+                       <asp:RadioButtonList ID="rblOwnerOccupied" runat="server" RepeatDirection="Horizontal" AutoPostBack="True">
                     <asp:ListItem Value="1">Yes</asp:ListItem>
                     <asp:ListItem Value="0">No</asp:ListItem>
                 </asp:RadioButtonList>
 
-
-
                 </td>
             </tr>
 
+            <asp:Panel runat="server" ID="pnlOwnerContactInformation" Visible="false">
+            <tr>
+                <td>Owner Contact Information:</td>
+                <td><asp:TextBox runat="server" ID="tbOwnerContactInformation" TextMode="MultiLine"></asp:TextBox></td>
+            </tr>
+            </asp:Panel>
+
             <tr><td colspan="2"><hr /></td></tr>
 
-        <tr>0
+        <tr>
                 <td>Home Phone:</td>
             <td>
         <asp:TextBox ID="HomePhoneTextBox" runat="server" MaxLength="10"></asp:TextBox>

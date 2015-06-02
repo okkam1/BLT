@@ -19,6 +19,15 @@ public partial class AddFamily : System.Web.UI.Page
 
         futureDateValidator.ValueToCompare = DateTime.Now.ToString("MM/dd/yyyy");
 
+        if (rblOwnerOccupied.SelectedValue == "0")
+        {
+            pnlOwnerContactInformation.Visible = true;
+        }
+        else
+        {
+            tbOwnerContactInformation.Text = "";
+            pnlOwnerContactInformation.Visible = false;
+        }
     }
 
     protected void updateLanguage()
@@ -83,6 +92,11 @@ public partial class AddFamily : System.Web.UI.Page
 
             command.Parameters.Add("@NumSmokers", SqlDbType.Bit).Value = Convert.ToInt16(ddlSmokers.SelectedValue);
 
+            if (rblOwnerOccupied.SelectedIndex>-1)
+                command.Parameters.Add("@is_Owner_Occupied", SqlDbType.Bit).Value = Convert.ToInt16(rblOwnerOccupied.SelectedValue);
+
+            if (tbOwnerContactInformation.Text!="")
+                command.Parameters.Add("@OwnerContactInformation", SqlDbType.VarChar).Value = tbOwnerContactInformation.Text;
             
             command.Parameters.Add("@Petsinandout", SqlDbType.Bit).Value = Convert.ToInt16(RadioButtonListPetsInOut.SelectedValue);
            command.Parameters.Add("@FamilyNotes", SqlDbType.VarChar).Value = tbFamilyNotes.Text;
