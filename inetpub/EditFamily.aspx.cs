@@ -244,7 +244,18 @@ order by f.Lastname
     protected void resetFields()
     {
         tbLastName.Text = "";
-
+        tbOwnerContactInformation.Text = "";
+        tbAddress.Text = "";
+        tbAddressLine2.Text = "";
+        tbCity.Text = "";
+        tbDateBuilt.Text = "";
+        tbFamilyNotes.Text = "";
+        tbHomePhone.Text = "";
+        tbWorkPhone.Text = "";
+        tbZip.Text = "";
+        ddlPets.SelectedIndex = 0;
+        ddlSmokers.SelectedIndex = 0;
+        ddlState.SelectedIndex = 6; //Colorado
 
     }
 
