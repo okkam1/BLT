@@ -128,7 +128,7 @@ order by f.Lastname
                 command.Parameters.Add("@New_Year_Built", SqlDbType.DateTime).Value = tbDateBuilt.Text;
 
             if (tbOwnerContactInformation.Text != "")
-                command.Parameters.Add("@New_OwnerContactInformation", SqlDbType.VarChar).Value = tbDateBuilt.Text;
+                command.Parameters.Add("@New_OwnerContactInformation", SqlDbType.VarChar).Value = tbOwnerContactInformation.Text;
 
             Trace.Write("FamilyNameList.SelectedValue.ToString(): " + FamilyNameList.SelectedValue.ToString());
 
