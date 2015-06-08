@@ -83,7 +83,18 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
                 <asp:RequiredFieldValidator ID="rfvGender" runat="server" ErrorMessage="Please select the gender" ControlToValidate="rblGender" ForeColor="Red"></asp:RequiredFieldValidator>
 </td>
             </tr>
-        
+
+              <tr>
+                <td>Client:</td>
+            <td>
+                <asp:RadioButtonList ID="rblClient" runat="server" RepeatDirection="Horizontal">
+                    <asp:ListItem Value="1" Selected="True">Yes</asp:ListItem>
+                    <asp:ListItem Value="0">No</asp:ListItem>
+                </asp:RadioButtonList>
+
+            </td>
+            </tr>
+
             <tr><td colspan="2"><hr /></td></tr>
 
         <tr>
