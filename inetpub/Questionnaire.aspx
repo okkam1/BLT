@@ -15,7 +15,7 @@
 
             <tr>
                 <td>Questionnaire Date:</td>
-                <td><asp:TextBox ID="tbQuestionnaireDate" runat="server"></asp:TextBox>
+                <td><asp:TextBox ID="tbQuestionnaireDate" runat="server" placeholder="MM/dd/yyyy" ToolTip="Date the questionnaire was completed"></asp:TextBox>
 
                     <ajaxtoolkit:CalendarExtender ID="CalendarExtender1"   
     runat="server"   
@@ -48,7 +48,7 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
             <tr>
                 <td>Paint Peeling:</td>
                 <td>
-                    <asp:RadioButtonList ID="rblPaintPeeling" runat="server" RepeatDirection="Horizontal">
+                    <asp:RadioButtonList ID="rblPaintPeeling" runat="server" RepeatDirection="Horizontal" ToolTip="Drop down Peeling, Flaking, Cracking in home">
                     <asp:ListItem Value="1">Yes</asp:ListItem>
                     <asp:ListItem Value="0">No</asp:ListItem>
                 </asp:RadioButtonList>
@@ -59,7 +59,7 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
 
                         <tr>
                 <td>Date Last Painted:</td>
-                <td><asp:TextBox ID="tbPaintDate" runat="server"></asp:TextBox>
+                <td><asp:TextBox ID="tbPaintDate" runat="server" placeholder="MM/dd/yyyy" ToolTip="Date the home was last painted"></asp:TextBox>
 
                     <ajaxtoolkit:CalendarExtender ID="CalendarExtender2"   
     runat="server"   
@@ -108,7 +108,7 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
             </tr>
             <tr>
                 <td>Date of Last Remodel:</td>
-                <td><asp:TextBox ID="tbRemodelDate" runat="server"></asp:TextBox>
+                <td><asp:TextBox ID="tbRemodelDate" runat="server" placeholder="MM/dd/yyyy" ToolTip="When was residence remodeled?"></asp:TextBox>
 
                     <ajaxtoolkit:CalendarExtender ID="CalendarExtender3"   
     runat="server"   
@@ -138,7 +138,7 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
             <tr>
                 <td>Vitamins:</td>
                 <td>
-                    <asp:RadioButtonList ID="rblVitamins" runat="server" RepeatDirection="Horizontal">
+                    <asp:RadioButtonList ID="rblVitamins" runat="server" RepeatDirection="Horizontal" ToolTip="Does the client take vitamins with iron?">
                     <asp:ListItem Value="1">Yes</asp:ListItem>
                     <asp:ListItem Value="0">No</asp:ListItem>
                     </asp:RadioButtonList>
@@ -148,7 +148,7 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
             <tr>
                 <td>Hand Wash:</td>
                 <td>
-                    <asp:RadioButtonList ID="rblHandWash" runat="server" RepeatDirection="Horizontal">
+                    <asp:RadioButtonList ID="rblHandWash" runat="server" RepeatDirection="Horizontal" ToolTip="Does the client wash their hands regularly (3 - 4 or more times a day)?">
                     <asp:ListItem Value="1">Yes</asp:ListItem>
                     <asp:ListItem Value="0">No</asp:ListItem>
                 </asp:RadioButtonList>
@@ -159,7 +159,7 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
             <tr>
                 <td>Bottle:</td>
                 <td>
-<asp:RadioButtonList ID="rblBottle" runat="server" RepeatDirection="Horizontal">
+<asp:RadioButtonList ID="rblBottle" runat="server" RepeatDirection="Horizontal" ToolTip="Does the client drink from a bottle?">
                     <asp:ListItem Value="1">Yes</asp:ListItem>
                     <asp:ListItem Value="0">No</asp:ListItem>
                 </asp:RadioButtonList>
@@ -181,7 +181,7 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
             <tr>
                 <td>Nursing Mother:</td>
                 <td>
-<asp:RadioButtonList ID="rblNursingMother" runat="server" RepeatDirection="Horizontal">
+<asp:RadioButtonList ID="rblNursingMother" runat="server" RepeatDirection="Horizontal" tooltip="Yes if the client is a mother nursing her child">
                     <asp:ListItem Value="1">Yes</asp:ListItem>
                     <asp:ListItem Value="0">No</asp:ListItem>
                 </asp:RadioButtonList>
@@ -211,7 +211,7 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
             <tr>
                 <td>Pacifier:</td>
                 <td>
-<asp:RadioButtonList ID="rblPacifier" runat="server" RepeatDirection="Horizontal">
+<asp:RadioButtonList ID="rblPacifier" runat="server" RepeatDirection="Horizontal" ToolTip="Does the client use a pacifier?">
                     <asp:ListItem Value="1">Yes</asp:ListItem>
                     <asp:ListItem Value="0">No</asp:ListItem>
                 </asp:RadioButtonList>

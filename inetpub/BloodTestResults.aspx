@@ -13,7 +13,7 @@
 
             <tr>
                 <td>Sample Date:</td>
-                <td><asp:TextBox ID="tbSampleDate" runat="server"></asp:TextBox>
+                <td><asp:TextBox ID="tbSampleDate" runat="server" placerholder="MM/dd/yyyy" ToolTip="Date the lead and hemoglobin samples where obtained"></asp:TextBox>
 
 <ajaxtoolkit:CalendarExtender ID="CalendarExtender2" 
     runat="server" 
@@ -39,7 +39,7 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
 
             <tr>
                 <td>Lab Date:</td>
-                <td><asp:TextBox ID="tbLabDate" runat="server"></asp:TextBox>
+                <td><asp:TextBox ID="tbLabDate" runat="server" placerholder="MM/dd/yyyy" ToolTip="Date the results were received from the Lab"></asp:TextBox>
 
                     
 <ajaxtoolkit:CalendarExtender ID="CalendarExtender1" 
@@ -70,7 +70,7 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
             <tr>
                 <td>Source of Results:</td>
             <td>
-                <asp:DropDownList ID="ddlLab" runat="server">
+                <asp:DropDownList ID="ddlLab" runat="server" ToolTip="Name of the lab the sample was processed by or source the sample results was obtained from dropdown LeadCare II, Tamarac, Other.">
                     <asp:ListItem>-</asp:ListItem>
                 </asp:DropDownList>  <a href="AddLab.aspx" class="small">Add New Source of Results</a>
 
@@ -85,7 +85,7 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
 
             <tr>
                 <td>Blood Lead Result (Pb):</td>
-                <td><asp:TextBox ID="tbBloodLeadResult" runat="server"></asp:TextBox>
+                <td><asp:TextBox ID="tbBloodLeadResult" runat="server" ToolTip="(Pb) – lead value from the sample"></asp:TextBox>
                     <asp:CompareValidator ID="cvBloodLeadResult" runat="server" ControlToValidate="tbBloodLeadResult" Type="Double" Operator="DataTypeCheck" ErrorMessage="Value must be a number!" ForeColor="Red" />
                 </td>
             </tr>
@@ -94,7 +94,7 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
                 <td>Flag:</td>
                 <td>
 
-                    <asp:DropDownList ID="ddlFlag" runat="server">
+                    <asp:DropDownList ID="ddlFlag" runat="server" ToolTip="For follow up dates, (i.e. 30, 60 90 days, 6 mos.)">
                     <asp:ListItem>30</asp:ListItem> 
                     <asp:ListItem>60</asp:ListItem>
                     <asp:ListItem>90</asp:ListItem> 
@@ -108,7 +108,7 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
 
             <tr>
                 <td>Test Type:</td>
-                <td><asp:DropDownList ID="ddlTestType" runat="server">
+                <td><asp:DropDownList ID="ddlTestType" runat="server" ToolTip="How was the sample taken (venous or capillary draw)?">
                     <asp:ListItem>-</asp:ListItem>
                 </asp:DropDownList>
                 </td>
@@ -119,7 +119,7 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
             <tr>
                 <td>Client Status Code:</td>
                 <td>
-                    <asp:DropDownList ID="ddlClientStatusCode" runat="server">
+                    <asp:DropDownList ID="ddlClientStatusCode" runat="server" ToolTip="What is the current status of the client Drop down?">
                     <asp:ListItem>-</asp:ListItem>
                 </asp:DropDownList>
                 </td>
@@ -127,7 +127,7 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
 
             <tr>
                 <td>Hemoglobin:</td>
-                <td><asp:TextBox ID="tbHemoglobin" runat="server"></asp:TextBox>
+                <td><asp:TextBox ID="tbHemoglobin" runat="server" ToolTip="Hemoglobin value from the sample"></asp:TextBox>
                     <asp:CompareValidator ID="cvHemoglobin" runat="server" ControlToValidate="tbHemoglobin" Type="Double" Operator="DataTypeCheck" ErrorMessage="Value must be a number!" ForeColor="Red" />
                 </td>
             </tr>
