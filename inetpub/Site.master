@@ -17,7 +17,7 @@
 
         <h1 class="DDMainHeader">
             <a href="/"><asp:Image ImageUrl="images/LakeCountySeal.jpg" runat="server" ID="CountySeal" border="0" /></a>
-            Lake County Blood Lead Tracking Software <span class="small">v2.7</span> 
+            Lake County Blood Lead Tracking Software <span class="small">v2.9.1</span> 
             <span runat="server" visible="false" id="userLabel" class="DDFloatRight" style="font-size:medium;">User: 
                 <asp:LoginName ID="LoginName1" runat="server" /> |
                 <span class="small">
@@ -63,6 +63,20 @@
 
     </div>
     </form>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-63347156-2', 'auto');
+        ga('send', 'pageview');
+
+</script>
+
 </body>
 </html>
 
