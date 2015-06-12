@@ -109,10 +109,10 @@ order by f.Lastname
 
             command.Parameters.Add("@New_StateAbbr", SqlDbType.VarChar).Value = ddlState.SelectedValue;
             command.Parameters.Add("@New_ZipCode", SqlDbType.VarChar).Value = tbZip.Text;
-            if (tbHomePhone.Text != "")
-                command.Parameters.Add("@New_HomePhone", SqlDbType.BigInt).Value = Convert.ToInt64(tbHomePhone.Text);
-            if (tbWorkPhone.Text != "")
-                command.Parameters.Add("@New_WorkPhone", SqlDbType.BigInt).Value = Convert.ToInt64(tbWorkPhone.Text);
+            if (tbPrimaryPhone.Text != "")
+                command.Parameters.Add("@New_PrimaryPhone", SqlDbType.BigInt).Value = Convert.ToInt64(tbPrimaryPhone.Text);
+            if (tbSecondaryPhone.Text != "")
+                command.Parameters.Add("@New_SecondaryPhone", SqlDbType.BigInt).Value = Convert.ToInt64(tbSecondaryPhone.Text);
             command.Parameters.Add("@New_Pets", SqlDbType.TinyInt).Value = Convert.ToInt16(ddlPets.SelectedValue);
 
             command.Parameters.Add("@New_Number_of_Smokers", SqlDbType.TinyInt).Value = Convert.ToInt16(ddlSmokers.SelectedValue);
@@ -250,8 +250,8 @@ order by f.Lastname
         tbCity.Text = "";
         tbDateBuilt.Text = "";
         tbFamilyNotes.Text = "";
-        tbHomePhone.Text = "";
-        tbWorkPhone.Text = "";
+        tbPrimaryPhone.Text = "";
+        tbSecondaryPhone.Text = "";
         tbZip.Text = "";
         ddlPets.SelectedIndex = 0;
         ddlSmokers.SelectedIndex = 0;
@@ -321,8 +321,8 @@ order by f.Lastname
 
             
 
-            tbHomePhone.Text = dtFamilyDetails.Rows[0]["HomePhoneNumber"].ToString();
-            tbWorkPhone.Text = dtFamilyDetails.Rows[0]["WorkPhoneNumber"].ToString();
+            tbPrimaryPhone.Text = dtFamilyDetails.Rows[0]["PrimaryPhoneNumber"].ToString();
+            tbSecondaryPhone.Text = dtFamilyDetails.Rows[0]["SecondaryPhoneNumber"].ToString();
 
             if ((dtFamilyDetails.Rows[0]["NumberofSmokers"].ToString() != null) && (ddlSmokers.Items.FindByValue(dtFamilyDetails.Rows[0]["NumberofSmokers"].ToString().Trim()) != null))
             {

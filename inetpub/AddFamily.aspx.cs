@@ -84,10 +84,10 @@ public partial class AddFamily : System.Web.UI.Page
                 command.Parameters.Add("@Year_Built", SqlDbType.DateTime).Value = tbDateBuilt.Text;
 
             command.Parameters.Add("@ZipCode", SqlDbType.VarChar).Value = TextBoxZip.Text;
-            if (HomePhoneTextBox.Text != "")
-                command.Parameters.Add("@HomePhone", SqlDbType.BigInt).Value = Convert.ToInt64(HomePhoneTextBox.Text);
-            if (WorkPhoneTextBox.Text != "")
-                command.Parameters.Add("@WorkPhone", SqlDbType.BigInt).Value = Convert.ToInt64(WorkPhoneTextBox.Text);
+            if (PrimaryPhoneTextBox.Text != "")
+                command.Parameters.Add("@PrimaryPhone", SqlDbType.BigInt).Value = Convert.ToInt64(PrimaryPhoneTextBox.Text);
+            if (SecondaryPhoneTextBox.Text != "")
+                command.Parameters.Add("@SecondaryPhone", SqlDbType.BigInt).Value = Convert.ToInt64(SecondaryPhoneTextBox.Text);
             command.Parameters.Add("@Pets", SqlDbType.Bit).Value = Convert.ToInt16(ddlPets.SelectedValue);
 
             command.Parameters.Add("@NumSmokers", SqlDbType.Bit).Value = Convert.ToInt16(ddlSmokers.SelectedValue);
