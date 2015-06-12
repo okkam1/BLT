@@ -171,12 +171,12 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
             <tr><td colspan="2"><hr /></td></tr>
 
         <tr>
-                <td>Home Phone:</td>
+                <td>Primary Phone:</td>
             <td>
-        <asp:TextBox ID="HomePhoneTextBox" runat="server" MaxLength="10"></asp:TextBox>
+        <asp:TextBox ID="PrimaryPhoneTextBox" runat="server" MaxLength="10"></asp:TextBox>
                 
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
-        ErrorMessage="Exactly 10 Numbers Only" ForeColor="Red" ControlToValidate="HomePhoneTextBox"
+        ErrorMessage="Exactly 10 Numbers Only" ForeColor="Red" ControlToValidate="PrimaryPhoneTextBox"
         ValidationExpression="^[0-9]{10}$"></asp:RegularExpressionValidator>
 
             </td>
@@ -184,11 +184,11 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
         
         
         <tr>
-                <td>Work Phone:</td>
+                <td>Secondary Phone:</td>
             <td>
-        <asp:TextBox ID="WorkPhoneTextBox" runat="server" MaxLength="10"></asp:TextBox>
+        <asp:TextBox ID="SecondaryPhoneTextBox" runat="server" MaxLength="10"></asp:TextBox>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
-        ErrorMessage="Exactly 10 Numbers Only" ForeColor="Red" ControlToValidate="WorkPhoneTextBox"
+        ErrorMessage="Exactly 10 Numbers Only" ForeColor="Red" ControlToValidate="SecondaryPhoneTextBox"
         ValidationExpression="^[0-9]{10}$"></asp:RegularExpressionValidator>
 
 
