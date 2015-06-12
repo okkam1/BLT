@@ -88,9 +88,9 @@ public partial class AddFamily : System.Web.UI.Page
                 command.Parameters.Add("@PrimaryPhone", SqlDbType.BigInt).Value = Convert.ToInt64(PrimaryPhoneTextBox.Text);
             if (SecondaryPhoneTextBox.Text != "")
                 command.Parameters.Add("@SecondaryPhone", SqlDbType.BigInt).Value = Convert.ToInt64(SecondaryPhoneTextBox.Text);
-            command.Parameters.Add("@Pets", SqlDbType.Bit).Value = Convert.ToInt16(ddlPets.SelectedValue);
+            command.Parameters.Add("@Pets", SqlDbType.TinyInt).Value = Convert.ToInt16(ddlPets.SelectedValue);
 
-            command.Parameters.Add("@NumSmokers", SqlDbType.Bit).Value = Convert.ToInt16(ddlSmokers.SelectedValue);
+            command.Parameters.Add("@NumSmokers", SqlDbType.TinyInt).Value = Convert.ToInt16(ddlSmokers.SelectedValue);
 
             if (rblOwnerOccupied.SelectedIndex>-1)
                 command.Parameters.Add("@is_Owner_Occupied", SqlDbType.Bit).Value = Convert.ToInt16(rblOwnerOccupied.SelectedValue);
