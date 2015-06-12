@@ -121,9 +121,9 @@ public partial class BloodTestResults : System.Web.UI.Page
                 command.Parameters.Add("@Lab_Date", SqlDbType.DateTime).Value = tbLabDate.Text;
             if (tbBloodLeadResult.Text != "")
                 command.Parameters.Add("@Blood_Lead_Result", SqlDbType.Decimal).Value = Convert.ToDecimal(tbBloodLeadResult.Text);
-            if (ddlTestType.Text != "")
+            if (ddlTestType.SelectedValue != "-")
                 command.Parameters.Add("@Test_Type", SqlDbType.Int).Value = Convert.ToInt32(ddlTestType.Text);
-            if (ddlLab.Text != "")
+            if (ddlLab.SelectedValue != "-")
                 command.Parameters.Add("@Lab_ID", SqlDbType.Int).Value = Convert.ToInt32(ddlLab.Text);
             if (ddlClientStatusCode.SelectedValue != "-")
                 command.Parameters.Add("@Child_Status_Code", SqlDbType.Int).Value = Convert.ToInt32(ddlClientStatusCode.SelectedValue);
