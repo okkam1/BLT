@@ -60,10 +60,10 @@ public partial class Questionnaire : System.Web.UI.Page
 
             */
 
-
+            ddlDayCare.Items.Insert(0, "-");
+ 
         }
 
-        ddlDayCare.Items.Insert(0, "-");
     }
 
 
@@ -111,7 +111,8 @@ public partial class Questionnaire : System.Web.UI.Page
                 command.Parameters.Add("@SucksThumb", SqlDbType.Bit).Value = Convert.ToByte(rblSucksThumb.SelectedValue);
             if (rblMouthing.SelectedValue != "") 
                 command.Parameters.Add("@Mouthing", SqlDbType.Bit).Value = Convert.ToByte(rblMouthing.SelectedValue);
-            command.Parameters.Add("@DaycareID", SqlDbType.Int).Value = ddlDayCare.SelectedValue;
+            if (ddlDayCare.SelectedValue!="-")
+                command.Parameters.Add("@DaycareID", SqlDbType.Int).Value = ddlDayCare.SelectedValue;
             command.Parameters.Add("@DayCareNotes", SqlDbType.VarChar).Value = tbDaycareNotes.Text;
             if (rblSource.SelectedValue != "") 
                 command.Parameters.Add("@Source", SqlDbType.Int).Value = Convert.ToInt32(rblSource.SelectedValue);

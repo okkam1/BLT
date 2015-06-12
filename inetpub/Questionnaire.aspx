@@ -289,7 +289,6 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
 
          <asp:DropDownList ID="ddlDayCare" runat="server" DataSourceID="SqlDataSourceDayCare"
             DataTextField="DaycareName" DataValueField="DaycareID" AppendDataBoundItems="True">
-             <asp:ListItem>-</asp:ListItem>
         </asp:DropDownList>
 
         <asp:SqlDataSource ID="SqlDataSourceDayCare" runat="server" SelectCommandType="StoredProcedure"
