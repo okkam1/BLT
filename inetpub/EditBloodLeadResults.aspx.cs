@@ -128,6 +128,7 @@ order by f.Lastname
         Session["FirstName"] = ddlFamilyMembers.SelectedItem.ToString();
         Session["LastName"] = FamilyNameList.SelectedItem.ToString();
         Session["ClientID"] = ddlFamilyMembers.SelectedValue.ToString();
+        Session["PageFrom"] = "EditBloodLeadResults.aspx";
 
         Response.Redirect("BloodTestResults.aspx");
 

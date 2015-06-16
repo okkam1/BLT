@@ -11,6 +11,7 @@ using System.Configuration;
 public partial class BloodTestResults : System.Web.UI.Page
 {
     string connectionString = ConfigurationManager.ConnectionStrings["csLCCHP"].ConnectionString;
+    string RefPage = "";
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -20,12 +21,18 @@ public partial class BloodTestResults : System.Web.UI.Page
 
         SqlConnection con = new SqlConnection(connectionString);
 
+        RefPage = (string)(Session["PageFrom"]);
+
+        Trace.Write("PageFrom: " + RefPage);
+
+
         if (!Page.IsPostBack)
         {
             string FirstName = (string)(Session["FirstName"]);
             string LastName = (string)(Session["LastName"]);
             string ClientID = (string)(Session["ClientID"]);
 
+            
             lblHeader.Text += "for " + FirstName + " " + LastName + " (" + ClientID + ") ";
 
             cvFutureSampleDate.ValueToCompare = DateTime.Now.ToString("MM/dd/yyyy");
@@ -186,6 +193,13 @@ public partial class BloodTestResults : System.Web.UI.Page
 
     protected void NextButton_Click(object sender, EventArgs e)
     {
-        Response.Redirect("/");
+        if (RefPage != "")
+        {
+            Response.Redirect(RefPage);
+        }
+        else
+        {
+            Response.Redirect("/");
+        }
     }
 }
