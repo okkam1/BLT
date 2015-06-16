@@ -321,8 +321,8 @@ order by f.Lastname
 
             
 
-            tbHomePhone.Text = dtFamilyDetails.Rows[0]["HomePhoneNumber"].ToString();
-            tbWorkPhone.Text = dtFamilyDetails.Rows[0]["WorkPhoneNumber"].ToString();
+            tbHomePhone.Text = dtFamilyDetails.Rows[0]["PrimaryPhoneNumber"].ToString();
+            tbWorkPhone.Text = dtFamilyDetails.Rows[0]["SecondaryPhoneNumber"].ToString();
 
             if ((dtFamilyDetails.Rows[0]["NumberofSmokers"].ToString() != null) && (ddlSmokers.Items.FindByValue(dtFamilyDetails.Rows[0]["NumberofSmokers"].ToString().Trim()) != null))
             {
