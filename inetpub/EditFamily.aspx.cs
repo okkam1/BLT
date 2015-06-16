@@ -343,10 +343,19 @@ order by f.Lastname
                 ddlPets.SelectedIndex = 0;
             }
 
+
+            if ((dtFamilyDetails.Rows[0]["Petsinandout"].ToString() != null) && (ddlPets.Items.FindByValue(dtFamilyDetails.Rows[0]["Pets"].ToString().Trim()) != null))
+            {
+                //ddlPets.SelectedValue = dtFamilyDetails.Rows[0]["Petsinandout"].ToString().Trim();
+                RadioButtonListPetsInOut.SelectedValue = dtFamilyDetails.Rows[0]["petsinandout"].ToString();
+                RadioButtonListPetsInOut.Enabled = true;
+            }
+            else
+            {
+                ddlPets.SelectedIndex = 0;
+            }
+
             //RadioButtonListPetsInOut.SelectedValue = dt.Rows[0]["petsinandout"].ToString();
-
-            
-
             //dt.Rows[0]["LastName"].ToString();
             
         }
