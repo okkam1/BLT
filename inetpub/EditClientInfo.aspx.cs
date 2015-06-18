@@ -136,8 +136,8 @@ order by f.Lastname
             command.Parameters.Add("@New_LanguageID", SqlDbType.TinyInt).Value = ddlLanguage.SelectedValue;
             command.Parameters.Add("@New_EthnicityID", SqlDbType.TinyInt).Value = ddlEthnicity.SelectedValue;
 
-            if (rblMoved.SelectedValue != "" && rblMoved.SelectedValue != null)
-                command.Parameters.Add("@New_Moved", SqlDbType.Bit).Value = Convert.ToByte(rblMoved.SelectedValue);
+            //if (rblMoved.SelectedValue != "" && rblMoved.SelectedValue != null)
+            //    command.Parameters.Add("@New_Moved", SqlDbType.Bit).Value = Convert.ToByte(rblMoved.SelectedValue);
 
             if (rblTravel.SelectedValue != "" && rblTravel.SelectedValue != null)
                 command.Parameters.Add("@New_ForeignTravel", SqlDbType.Bit).Value = Convert.ToByte(rblTravel.SelectedValue);
@@ -281,7 +281,7 @@ order by f.Lastname
         ddlLanguage.SelectedIndex = 0;
         ddlEthnicity.SelectedIndex = 0;
 
-        rblMoved.ClearSelection();
+        //rblMoved.ClearSelection();
         rblTravel.ClearSelection();
 
         //tbTravelNotes.Text = "";
@@ -357,11 +357,11 @@ where p.personid  = '" + sPersonIDIn + "'";
             Trace.Write("LanguageID: " + dt.Rows[0]["LanguageID"].ToString());
             Trace.Write("EthnicityID: " + dt.Rows[0]["EthnicityID"].ToString() );
 
-            if (dt.Rows[0]["Moved"].ToString().ToLower() == "true")
-                rblMoved.SelectedValue = "1";
+            //if (dt.Rows[0]["Moved"].ToString().ToLower() == "true")
+            //    rblMoved.SelectedValue = "1";
 
-            if (dt.Rows[0]["Moved"].ToString().ToLower() == "false")
-                rblMoved.SelectedValue = "0";
+            //if (dt.Rows[0]["Moved"].ToString().ToLower() == "false")
+            //    rblMoved.SelectedValue = "0";
 
             rblTravel.SelectedValue = dt.Rows[0]["travelV"].ToString();
 

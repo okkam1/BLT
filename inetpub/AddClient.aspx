@@ -137,7 +137,7 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
                 <td>Moved Out of County:</td>
             <td>
 
-            <asp:RadioButtonList ID="rblOutOfSite" runat="server" RepeatDirection="Horizontal" ToolTip="Does the client live out of Lake County?">
+            <asp:RadioButtonList ID="rblOutOfSite" runat="server" RepeatDirection="Horizontal" ToolTip="Does the client live outside of Lake County?">
                     <asp:ListItem Value="1">Yes</asp:ListItem>
                     <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
                 </asp:RadioButtonList>
