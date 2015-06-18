@@ -81,7 +81,7 @@
 
                 <tr><td>
                     <br />
-                    <asp:Button ID="btnInsertResults" runat="server" OnClick="Button1_Click" Text="Insert New Results" Visible="false" />
+                    <asp:Button ID="btnInsertResults" runat="server" OnClick="Button1_Click" Text="Insert New Questionnaire" Visible="false" />
 
 
 </td>

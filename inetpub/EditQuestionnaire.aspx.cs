@@ -130,7 +130,7 @@ order by f.Lastname
         Session["ClientID"] = ddlFamilyMembers.SelectedValue.ToString();
         Session["PageFrom"] = "EditBloodLeadResults.aspx";
 
-        Response.Redirect("BloodTestResults.aspx");
+        Response.Redirect("Questionnaire.aspx");
 
     }
 }
