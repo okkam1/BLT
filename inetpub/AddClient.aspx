@@ -175,9 +175,9 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
         <tr><td colspan="2"><hr /></td></tr>
 
         <tr>
-                <td>Child Notes:</td>
+                <td>Client Notes:</td>
             <td>
-                <asp:TextBox runat="server" ID="tbChildNotes" TextMode="MultiLine"></asp:TextBox>
+                <asp:TextBox runat="server" ID="tbClientNotes" TextMode="MultiLine"></asp:TextBox>
             </td>
             </tr>
         

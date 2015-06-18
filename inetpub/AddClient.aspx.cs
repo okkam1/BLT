@@ -149,7 +149,7 @@ order by f.Lastname
             command.Parameters.Add("@Out_of_Site", SqlDbType.Bit).Value = Convert.ToByte(rblOutOfSite.SelectedValue);
             
             command.Parameters.Add("@Release_Notes", SqlDbType.VarChar).Value = tbReleaseNotes.Text;
-            command.Parameters.Add("@Child_Notes", SqlDbType.VarChar).Value = tbChildNotes.Text;
+            command.Parameters.Add("@Client_Notes", SqlDbType.VarChar).Value = tbClientNotes.Text;
             
             command.Parameters.Add("@ClientID", SqlDbType.Int).Direction = ParameterDirection.Output;  //usp returns ID upon completion
 

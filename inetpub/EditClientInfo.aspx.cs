@@ -143,7 +143,7 @@ order by f.Lastname
                 command.Parameters.Add("@New_ForeignTravel", SqlDbType.Bit).Value = Convert.ToByte(rblTravel.SelectedValue);
 
             if (tbClientNotes.Text != "")
-                command.Parameters.Add("@New_Notes", SqlDbType.VarChar).Value = tbClientNotes.Text;
+                command.Parameters.Add("@New_ClientNotes", SqlDbType.VarChar).Value = tbClientNotes.Text;
 
             if (rblOutOfSite.SelectedValue != "" && rblOutOfSite.SelectedValue!=null)
                 command.Parameters.Add("@New_OutofSite", SqlDbType.Bit).Value = Convert.ToByte(rblOutOfSite.SelectedValue);
