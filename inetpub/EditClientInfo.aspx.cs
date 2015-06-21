@@ -316,6 +316,7 @@ order by f.Lastname
 (select top 1 LanguageID from PersontoLanguage ptl where p.personid = ptl.personid order by CreatedDate DESC) as LanguageID,
 (select top 1 EthnicityID from PersontoEthnicity pte where p.personid = pte.personid  order by CreatedDate DESC) as EthnicityID,
 CAST (OutofSite as varchar) as OutofSiteV,
+CAST (isClient as varchar) as isClientV,
 CAST (CONVERT(VARCHAR(10),BirthDate,101) as varchar) as BirthDateV,
 CAST (ForeignTravel as varchar) as travelV
 from person p
@@ -374,6 +375,8 @@ where p.personid  = '" + sPersonIDIn + "'";
             rblTravel.SelectedValue = dt.Rows[0]["travelV"].ToString();
 
             rblOutOfSite.SelectedValue = dt.Rows[0]["OutofSiteV"].ToString();
+
+            rblClient.SelectedValue = dt.Rows[0]["isClientV"].ToString();
 
             //rblTravelNew.SelectedValue = dt.Rows[0]["ForeignTravel"].ToString();
 
