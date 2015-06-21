@@ -285,15 +285,13 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
             <tr>
                 <td>Daycare:</td>
                 <td>
-            
-
+         
          <asp:DropDownList ID="ddlDayCare" runat="server" DataSourceID="SqlDataSourceDayCare"
             DataTextField="DaycareName" DataValueField="DaycareID" AppendDataBoundItems="True">
         </asp:DropDownList>
 
         <asp:SqlDataSource ID="SqlDataSourceDayCare" runat="server" SelectCommandType="StoredProcedure"
             SelectCommand="dbo.usp_SLDaycare" ConnectionString="<%$ ConnectionStrings:csLCCHP%>"></asp:SqlDataSource>
-
                 </td>
             </tr>
 
@@ -303,7 +301,42 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
             </tr>
    
             <tr><td colspan="2"><hr /></td></tr>
+            <tr>
+            <td rowspan="3">Hobbies</td>
 
+            <td>
+            <asp:DropDownList ID="ddlHobby1" runat="server" DataSourceID="SqlDataSourceHobby1"
+                DataTextField="HobbyName" DataValueField="HobbyID" AppendDataBoundItems="True"> 
+                </asp:DropDownList>
+
+                <asp:SqlDataSource ID="SqlDataSourceHobby1" runat="server" SelectCommandType="StoredProcedure"
+                    SelectCommand="dbo.usp_SlHobby" ConnectionString="<%$ ConnectionStrings:csLCCHP %>"></asp:SqlDataSource>
+            </td>
+            <tr>
+            <td>
+            <asp:DropDownList ID="ddlHobby2" runat="server" DataSourceID="SqlDataSourceHobby2"
+                DataTextField="HobbyName" DataValueField="HobbyID" AppendDataBoundItems="True"> 
+                </asp:DropDownList>
+
+                <asp:SqlDataSource ID="SqlDataSourceHobby2" runat="server" SelectCommandType="StoredProcedure"
+                    SelectCommand="dbo.usp_SlHobby" ConnectionString="<%$ ConnectionStrings:csLCCHP %>"></asp:SqlDataSource>
+            </td>
+            </tr>
+              <tr>
+            <td>
+            <asp:DropDownList ID="ddlHobby3" runat="server" DataSourceID="SqlDataSourceHobby3"
+                DataTextField="HobbyName" DataValueField="HobbyID" AppendDataBoundItems="True"> 
+                </asp:DropDownList>
+
+                <asp:SqlDataSource ID="SqlDataSourceHobby3" runat="server" SelectCommandType="StoredProcedure"
+                    SelectCommand="dbo.usp_SlHobby" ConnectionString="<%$ ConnectionStrings:csLCCHP %>"></asp:SqlDataSource>
+            </td>
+            </tr>
+            <tr>
+                <td>Hobby Notes:</td>
+                <td><asp:TextBox runat="server" ID="tbHobbyNotes" TextMode="MultiLine"></asp:TextBox></td>
+            </tr>
+            <tr><td colspan="2"><hr /></td></tr>
             <tr>
                 <td>Other Notes:</td>
                 <td><asp:TextBox runat="server" ID="tbQuestionnaireNotes" TextMode="MultiLine"></asp:TextBox></td>
