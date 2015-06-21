@@ -133,6 +133,8 @@ order by f.Lastname
             command.Parameters.Add("@New_LastName", SqlDbType.VarChar).Value = tbLastName.Text;
             command.Parameters.Add("@New_BirthDate", SqlDbType.DateTime).Value = tbBirthDate.Text;
             command.Parameters.Add("@New_Gender", SqlDbType.Char).Value = rblGender.SelectedValue;
+            if (rblClient.SelectedValue != "" && rblClient.SelectedValue != null)
+                command.Parameters.Add("@New_isClient", SqlDbType.Bit).Value = Convert.ToByte(rblClient.SelectedValue); 
             command.Parameters.Add("@New_LanguageID", SqlDbType.TinyInt).Value = ddlLanguage.SelectedValue;
             command.Parameters.Add("@New_EthnicityID", SqlDbType.TinyInt).Value = ddlEthnicity.SelectedValue;
 
@@ -142,11 +144,18 @@ order by f.Lastname
             if (rblTravel.SelectedValue != "" && rblTravel.SelectedValue != null)
                 command.Parameters.Add("@New_ForeignTravel", SqlDbType.Bit).Value = Convert.ToByte(rblTravel.SelectedValue);
 
+            if (tbTravelNotes.Text != "")
+                command.Parameters.Add("@New_TravelNotes", SqlDbType.VarChar).Value = tbTravelNotes.Text;
+
+            if (tbReleaseNotes.Text != "")
+                command.Parameters.Add("@New_ReleaseNotes", SqlDbType.VarChar).Value = tbReleaseNotes.Text;
+
             if (tbClientNotes.Text != "")
                 command.Parameters.Add("@New_ClientNotes", SqlDbType.VarChar).Value = tbClientNotes.Text;
 
             if (rblOutOfSite.SelectedValue != "" && rblOutOfSite.SelectedValue!=null)
                 command.Parameters.Add("@New_OutofSite", SqlDbType.Bit).Value = Convert.ToByte(rblOutOfSite.SelectedValue);
+
             
             //command.Parameters.Add("@Hobby_ID", SqlDbType.SmallInt).Value = rblGender.Text;
             //command.Parameters.Add("@Hobby_Notes", SqlDbType.VarChar).Value = tbHobbyNotes.Text;
@@ -278,6 +287,7 @@ order by f.Lastname
         tbMiddleName.Text = "";
         tbBirthDate.Text = "";
         rblGender.ClearSelection();
+        rblClient.ClearSelection();
         ddlLanguage.SelectedIndex = 0;
         ddlEthnicity.SelectedIndex = 0;
 
@@ -340,8 +350,6 @@ where p.personid  = '" + sPersonIDIn + "'";
             {
                 ddlLanguage.SelectedIndex = 0;
             }
-
-
 
             if ((dt.Rows[0]["EthnicityID"].ToString() != null) && (ddlEthnicity.Items.FindByValue(dt.Rows[0]["EthnicityID"].ToString().Trim()) != null))
             {

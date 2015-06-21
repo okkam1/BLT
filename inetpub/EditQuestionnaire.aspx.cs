@@ -105,8 +105,10 @@ order by f.Lastname
         //get indivifual
         // getIndividual(ddlFamilyMembers.SelectedValue.ToString());
 
-        //SqlDataSource1.SelectParameters.Add("@PersonID", ddlFamilyMembers.SelectedValue);
+        //SqlDataSource1.SelectParameters.Add("PersonID", ddlFamilyMembers.SelectedValue);
         SqlDataSource1.SelectParameters["PersonID"].DefaultValue = ddlFamilyMembers.SelectedValue.ToString();
+
+        //Trace.Write("@PersonID: " + SqlDataSource1.SelectParameters.GetValues.to
 
         gridText.Text = "";
 

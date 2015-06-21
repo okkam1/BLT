@@ -8,7 +8,15 @@
 
     <div class="DD">
 
-        <h2 class="DDSubHeader">Clients by Blood Lead Level</h2>
+        <h2 class="DDSubHeader">Clients by Blood Lead Level
+        </h2>
+       
+                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click1" 
+            Text="MinBLL" />
+        <asp:TextBox ID="TextBox1" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+        <asp:GridView ID="GridView1" runat="server">
+        </asp:GridView>
        
                 <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="80%">
             <LocalReport ReportPath="Reports\ClientsByBloodLeadLevelOcean.rdlc">
@@ -22,5 +30,6 @@
         <asp:SqlDataSource ID="ClientsByBloodLeadLevelDataSet" runat="server" ConnectionString="<%$ ConnectionStrings:csLCCHP%>" SelectCommand="usp_SLAllBloodTestResults" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
 
         </div>
+
 
 </asp:Content>

@@ -87,7 +87,7 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
               <tr>
                 <td>Client:</td>
             <td>
-                <asp:RadioButtonList ID="rblClient" runat="server" RepeatDirection="Horizontal">
+                <asp:RadioButtonList ID="rblClient" runat="server" RepeatDirection="Horizontal" ToolTip="Is the person a participant in the lead study program">
                     <asp:ListItem Value="1" Selected="True">Yes</asp:ListItem>
                     <asp:ListItem Value="0">No</asp:ListItem>
                 </asp:RadioButtonList>
