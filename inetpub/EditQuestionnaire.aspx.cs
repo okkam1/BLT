@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
 
-public partial class EditBloodLeadResults : System.Web.UI.Page
+public partial class EditQuestionnaire : System.Web.UI.Page
 {
     string connectionString = ConfigurationManager.ConnectionStrings["csLCCHP"].ConnectionString;
 
@@ -42,15 +42,15 @@ order by f.Lastname
             FamilyNameList.DataValueField = "FamilyID";
 
             FamilyNameList.DataBind();
-            
+
             FamilyNameList.Items.Insert(0, "(Family name -- PRIMARY residence)");
-            
+
             Trace.Write("connectionString: " + connectionString);
-                        
+
         }
 
     }
- 
+
     protected void getFamilyMembers(String sFamilyIDIn)
     {
 
@@ -99,14 +99,16 @@ order by f.Lastname
         btnInsertResults.Visible = false;
     }
 
- 
+
     protected void ddlFamilyMembers_SelectedIndexChanged(object sender, EventArgs e)
     {
         //get indivifual
-       // getIndividual(ddlFamilyMembers.SelectedValue.ToString());
+        // getIndividual(ddlFamilyMembers.SelectedValue.ToString());
 
-        //SqlDataSource1.SelectParameters.Add("@PersonID", ddlFamilyMembers.SelectedValue);
+        //SqlDataSource1.SelectParameters.Add("PersonID", ddlFamilyMembers.SelectedValue);
         SqlDataSource1.SelectParameters["PersonID"].DefaultValue = ddlFamilyMembers.SelectedValue.ToString();
+
+        //Trace.Write("@PersonID: " + SqlDataSource1.SelectParameters.GetValues.to
 
         gridText.Text = "";
 
@@ -130,7 +132,7 @@ order by f.Lastname
         Session["ClientID"] = ddlFamilyMembers.SelectedValue.ToString();
         Session["PageFrom"] = "EditBloodLeadResults.aspx";
 
-        Response.Redirect("BloodTestResults.aspx");
+        Response.Redirect("Questionnaire.aspx");
 
     }
 }

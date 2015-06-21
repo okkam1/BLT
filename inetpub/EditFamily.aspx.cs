@@ -318,7 +318,6 @@ order by f.Lastname
                 tbOwnerContactInformation.Text = "";
             }
 
-
             tbPrimaryPhone.Text = dtFamilyDetails.Rows[0]["PrimaryPhoneNumber"].ToString();
             tbSecondaryPhone.Text = dtFamilyDetails.Rows[0]["SecondaryPhoneNumber"].ToString();
 

@@ -894,6 +894,20 @@
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="MinimumDate">
+      <DataType>DateTime</DataType>
+      <Prompt>ReportParameter1</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>1/1/1960 12:00:00 AM</Value>
+            <Label>01/01/1960</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+  </ReportParameters>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
   <rd:ReportID>6b40934e-db89-4555-bbce-1bc343c3fc13</rd:ReportID>
 </Report>

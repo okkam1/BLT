@@ -61,6 +61,9 @@ public partial class Questionnaire : System.Web.UI.Page
             */
 
             ddlDayCare.Items.Insert(0, "-");
+            ddlHobby1.Items.Insert(0, "-");
+            ddlHobby2.Items.Insert(0, "-");
+            ddlHobby3.Items.Insert(0, "-");
  
         }
 
@@ -114,6 +117,13 @@ public partial class Questionnaire : System.Web.UI.Page
             if (ddlDayCare.SelectedValue!="-")
                 command.Parameters.Add("@DaycareID", SqlDbType.Int).Value = ddlDayCare.SelectedValue;
             command.Parameters.Add("@DayCareNotes", SqlDbType.VarChar).Value = tbDaycareNotes.Text;
+            if (ddlHobby1.SelectedValue != "-")
+                command.Parameters.Add("@Hobby1ID", SqlDbType.Int).Value = ddlHobby1.SelectedValue;
+            if (ddlHobby2.SelectedValue != "-")
+                command.Parameters.Add("@Hobby2ID", SqlDbType.Int).Value = ddlHobby2.SelectedValue;
+            if (ddlHobby3.SelectedValue != "-")
+                command.Parameters.Add("@Hobby3ID", SqlDbType.Int).Value = ddlHobby3.SelectedValue;
+            command.Parameters.Add("@HobbyNotes", SqlDbType.VarChar).Value = tbQuestionnaireNotes.Text;
             if (rblSource.SelectedValue != "") 
                 command.Parameters.Add("@Source", SqlDbType.Int).Value = Convert.ToInt32(rblSource.SelectedValue);
             command.Parameters.Add("@QuestionnaireNotes", SqlDbType.VarChar).Value = tbQuestionnaireNotes.Text;

@@ -87,7 +87,7 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
               <tr>
                 <td>Client:</td>
             <td>
-                <asp:RadioButtonList ID="rblClient" runat="server" RepeatDirection="Horizontal">
+                <asp:RadioButtonList ID="rblClient" runat="server" RepeatDirection="Horizontal" ToolTip="Is the person a participant in the lead study program">
                     <asp:ListItem Value="1" Selected="True">Yes</asp:ListItem>
                     <asp:ListItem Value="0">No</asp:ListItem>
                 </asp:RadioButtonList>
@@ -123,21 +123,12 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
             </tr>
 
         <tr>
-<%--                <td>Moved:</td>
-            <td>
-                <asp:RadioButtonList ID="rblMoved" runat="server" RepeatDirection="Horizontal">
-                    <asp:ListItem Value="1">Yes</asp:ListItem>
-                    <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
-                </asp:RadioButtonList>
-
-            </td>
-            </tr>--%>
 
             <tr>
                 <td>Moved Out of County:</td>
             <td>
 
-            <asp:RadioButtonList ID="rblOutOfSite" runat="server" RepeatDirection="Horizontal" ToolTip="Does the client live out of Lake County?">
+            <asp:RadioButtonList ID="rblOutOfSite" runat="server" RepeatDirection="Horizontal" ToolTip="Does the client live outside of Lake County?">
                     <asp:ListItem Value="1">Yes</asp:ListItem>
                     <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
                 </asp:RadioButtonList>
@@ -165,6 +156,7 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
             </td>
             </tr>
 
+        <tr>
             <tr><td colspan="2"><hr /></td></tr>
             
             <tr>
@@ -175,9 +167,9 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
         <tr><td colspan="2"><hr /></td></tr>
 
         <tr>
-                <td>Child Notes:</td>
+                <td>Client Notes:</td>
             <td>
-                <asp:TextBox runat="server" ID="tbChildNotes" TextMode="MultiLine"></asp:TextBox>
+                <asp:TextBox runat="server" ID="tbClientNotes" TextMode="MultiLine"></asp:TextBox>
             </td>
             </tr>
         

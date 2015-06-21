@@ -133,20 +133,29 @@ order by f.Lastname
             command.Parameters.Add("@New_LastName", SqlDbType.VarChar).Value = tbLastName.Text;
             command.Parameters.Add("@New_BirthDate", SqlDbType.DateTime).Value = tbBirthDate.Text;
             command.Parameters.Add("@New_Gender", SqlDbType.Char).Value = rblGender.SelectedValue;
+            if (rblClient.SelectedValue != "" && rblClient.SelectedValue != null)
+                command.Parameters.Add("@New_isClient", SqlDbType.Bit).Value = Convert.ToByte(rblClient.SelectedValue); 
             command.Parameters.Add("@New_LanguageID", SqlDbType.TinyInt).Value = ddlLanguage.SelectedValue;
             command.Parameters.Add("@New_EthnicityID", SqlDbType.TinyInt).Value = ddlEthnicity.SelectedValue;
 
-            if (rblMoved.SelectedValue != "" && rblMoved.SelectedValue != null)
-                command.Parameters.Add("@New_Moved", SqlDbType.Bit).Value = Convert.ToByte(rblMoved.SelectedValue);
+            //if (rblMoved.SelectedValue != "" && rblMoved.SelectedValue != null)
+            //    command.Parameters.Add("@New_Moved", SqlDbType.Bit).Value = Convert.ToByte(rblMoved.SelectedValue);
 
             if (rblTravel.SelectedValue != "" && rblTravel.SelectedValue != null)
                 command.Parameters.Add("@New_ForeignTravel", SqlDbType.Bit).Value = Convert.ToByte(rblTravel.SelectedValue);
 
+            if (tbTravelNotes.Text != "")
+                command.Parameters.Add("@New_TravelNotes", SqlDbType.VarChar).Value = tbTravelNotes.Text;
+
+            if (tbReleaseNotes.Text != "")
+                command.Parameters.Add("@New_ReleaseNotes", SqlDbType.VarChar).Value = tbReleaseNotes.Text;
+
             if (tbClientNotes.Text != "")
-                command.Parameters.Add("@New_Notes", SqlDbType.VarChar).Value = tbClientNotes.Text;
+                command.Parameters.Add("@New_ClientNotes", SqlDbType.VarChar).Value = tbClientNotes.Text;
 
             if (rblOutOfSite.SelectedValue != "" && rblOutOfSite.SelectedValue!=null)
                 command.Parameters.Add("@New_OutofSite", SqlDbType.Bit).Value = Convert.ToByte(rblOutOfSite.SelectedValue);
+
             
             //command.Parameters.Add("@Hobby_ID", SqlDbType.SmallInt).Value = rblGender.Text;
             //command.Parameters.Add("@Hobby_Notes", SqlDbType.VarChar).Value = tbHobbyNotes.Text;
@@ -228,7 +237,7 @@ order by f.Lastname
 
         SqlConnection con = new SqlConnection(connectionString);
 
-        string com = "select PersonID,FirstName,MiddleName from person where PersonID in (select PersonID from persontoFamily where FamilyID = '" + sFamilyIDIn + "')";
+        string com = "select PersonID,FirstName,MiddleName from person where PersonID in (select PersonID from persontoFamily where FamilyID = '" + sFamilyIDIn + "') order by FirstName";
 
 
         SqlDataAdapter adpt = new SqlDataAdapter(com, con);
@@ -278,10 +287,11 @@ order by f.Lastname
         tbMiddleName.Text = "";
         tbBirthDate.Text = "";
         rblGender.ClearSelection();
+        rblClient.ClearSelection();
         ddlLanguage.SelectedIndex = 0;
         ddlEthnicity.SelectedIndex = 0;
 
-        rblMoved.ClearSelection();
+        //rblMoved.ClearSelection();
         rblTravel.ClearSelection();
 
         //tbTravelNotes.Text = "";
@@ -306,6 +316,7 @@ order by f.Lastname
 (select top 1 LanguageID from PersontoLanguage ptl where p.personid = ptl.personid order by CreatedDate DESC) as LanguageID,
 (select top 1 EthnicityID from PersontoEthnicity pte where p.personid = pte.personid  order by CreatedDate DESC) as EthnicityID,
 CAST (OutofSite as varchar) as OutofSiteV,
+CAST (isClient as varchar) as isClientV,
 CAST (CONVERT(VARCHAR(10),BirthDate,101) as varchar) as BirthDateV,
 CAST (ForeignTravel as varchar) as travelV
 from person p
@@ -341,8 +352,6 @@ where p.personid  = '" + sPersonIDIn + "'";
                 ddlLanguage.SelectedIndex = 0;
             }
 
-
-
             if ((dt.Rows[0]["EthnicityID"].ToString() != null) && (ddlEthnicity.Items.FindByValue(dt.Rows[0]["EthnicityID"].ToString().Trim()) != null))
             {
                 ddlEthnicity.SelectedValue = dt.Rows[0]["EthnicityID"].ToString().Trim();
@@ -357,15 +366,17 @@ where p.personid  = '" + sPersonIDIn + "'";
             Trace.Write("LanguageID: " + dt.Rows[0]["LanguageID"].ToString());
             Trace.Write("EthnicityID: " + dt.Rows[0]["EthnicityID"].ToString() );
 
-            if (dt.Rows[0]["Moved"].ToString().ToLower() == "true")
-                rblMoved.SelectedValue = "1";
+            //if (dt.Rows[0]["Moved"].ToString().ToLower() == "true")
+            //    rblMoved.SelectedValue = "1";
 
-            if (dt.Rows[0]["Moved"].ToString().ToLower() == "false")
-                rblMoved.SelectedValue = "0";
+            //if (dt.Rows[0]["Moved"].ToString().ToLower() == "false")
+            //    rblMoved.SelectedValue = "0";
 
             rblTravel.SelectedValue = dt.Rows[0]["travelV"].ToString();
 
             rblOutOfSite.SelectedValue = dt.Rows[0]["OutofSiteV"].ToString();
+
+            rblClient.SelectedValue = dt.Rows[0]["isClientV"].ToString();
 
             //rblTravelNew.SelectedValue = dt.Rows[0]["ForeignTravel"].ToString();
 
