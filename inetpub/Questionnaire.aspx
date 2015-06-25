@@ -338,10 +338,10 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
             </tr>
             <tr><td colspan="2"><hr /></td></tr>
             <tr>
-                <td>Other Notes:</td>
+                <td>Questionnaire Notes:</td>
                 <td><asp:TextBox runat="server" ID="tbQuestionnaireNotes" TextMode="MultiLine"></asp:TextBox></td>
             </tr>
-   
+<%--   
             <tr>
                 <td>Source:</td>
                 <td>
@@ -351,7 +351,7 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
                 </asp:RadioButtonList>
                 </td>
             </tr>
-
+--%>
 
 </table>
 
