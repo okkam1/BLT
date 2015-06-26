@@ -311,7 +311,7 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
 
                 <asp:SqlDataSource ID="SqlDataSourceHobby1" runat="server" SelectCommandType="StoredProcedure"
                     SelectCommand="dbo.usp_SlHobby" ConnectionString="<%$ ConnectionStrings:csLCCHP %>"></asp:SqlDataSource>
-            </td>
+            <a href="AddHobby.aspx" class="small"> Add new hobby</a> </td>
             <tr>
             <td>
             <asp:DropDownList ID="ddlHobby2" runat="server" DataSourceID="SqlDataSourceHobby2"
