@@ -125,30 +125,73 @@
                 <td>Date Built: <br /> <em>(MM/DD/YYYY)</em></td>
                 <td><asp:TextBox ID="tbDateBuilt" runat="server"></asp:TextBox>
 
-<ajaxtoolkit:CalendarExtender ID="CalendarExtender2" 
-    runat="server" 
-    PopupPosition="Right"
-    PopupButtonID="tbDateBuilt" 
-    TargetControlID="tbDateBuilt" 
-    Format="MM/dd/yyyy" >
-</ajaxtoolkit:CalendarExtender>
+                    <ajaxtoolkit:CalendarExtender ID="CalendarExtender2" 
+                        runat="server" 
+                        PopupPosition="Right"
+                        PopupButtonID="tbDateBuilt" 
+                        TargetControlID="tbDateBuilt" 
+                        Format="MM/dd/yyyy" >
+                    </ajaxtoolkit:CalendarExtender>
 
-<asp:CompareValidator
-    id="dateValidator" runat="server" 
-    Type="Date"
-    Operator="DataTypeCheck"
-    ControlToValidate="tbDateBuilt" 
-    ErrorMessage="Please enter a valid date." ForeColor="Red">
-</asp:CompareValidator>
+                    <asp:CompareValidator
+                        id="dateValidator" runat="server" 
+                        Type="Date"
+                        Operator="DataTypeCheck"
+                        ControlToValidate="tbDateBuilt" 
+                        ErrorMessage="Please enter a valid date." ForeColor="Red">
+                    </asp:CompareValidator>
 
-<asp:CompareValidator ID="futureDateValidator" runat="server"  ControlToValidate="tbDateBuilt"
-ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type="Date" ForeColor="Red">
-</asp:CompareValidator>
+                    <asp:CompareValidator ID="futureDateValidator" runat="server"  ControlToValidate="tbDateBuilt"
+                    ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type="Date" ForeColor="Red">
+                    </asp:CompareValidator>
                     
                     <asp:RequiredFieldValidator ID="rfvDateBuilt" runat="server" InitialValue="" ErrorMessage="Please enter the date built" ControlToValidate="tbDateBuilt" ForeColor="Red"></asp:RequiredFieldValidator>
 
                 </td>
             </tr>
+            
+            <tr>
+                <td>Move in Date: <br /> <em>(MM/DD/YYYY)</em></td>
+                <td><asp:TextBox ID="tbMoveinDate" runat="server"></asp:TextBox></td>
+
+                    <ajaxToolkit:CalendarExtender ID="CalendarExtenderMoveinDate"
+                        runat="server"
+                        PopupPosition="Right"
+                        PopupbuttonID="tbMoveinDate"
+                        TargetControlID="tbMoveinDate"
+                        Format="MM/dd/yyyy">
+                        </ajaxtoolkit:CalendarExtender>
+
+                    <asp:CompareValidator
+                        id="dateValidatorMoveinDate" runat="server"
+                        Type="Date"
+                        Operator="DataTypeCheck"
+                        ControlToValidate="tbMoveinDate"
+                        ErrorMessage="Please entaer a valid date." ForeColor="Red">
+                    </asp:CompareValidator>
+            </tr>
+
+            <tr>
+                <td>Move out Date: <br /> <em>(MM/DD/YYYY)</em></td>
+                <td><asp:TextBox ID="tbMoveoutDate" runat="server"></asp:TextBox></td>
+
+                    <ajaxToolkit:CalendarExtender ID="CalendarExtenderMoveoutDate"
+                        runat="server"
+                        PopupPosition="Right"
+                        PopupbuttonID="tbMoveoutDate"
+                        TargetControlID="tbMoveoutDate"
+                        Format="MM/dd/yyyy">
+                        </ajaxtoolkit:CalendarExtender>
+
+                    <asp:CompareValidator
+                        id="CompareValidator1" runat="server"
+                        Type="Date"
+                        Operator="DataTypeCheck"
+                        ControlToValidate="tbMoveoutDate"
+                        ErrorMessage="Please entaer a valid date." ForeColor="Red">
+                    </asp:CompareValidator>
+            </tr>
+
 
             <tr><td>Is Home Owner Occupied?</td>
                 <td>

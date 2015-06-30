@@ -83,6 +83,12 @@ public partial class AddFamily : System.Web.UI.Page
             if (tbDateBuilt.Text != "")
                 command.Parameters.Add("@Year_Built", SqlDbType.DateTime).Value = tbDateBuilt.Text;
 
+            if (tbMoveinDate.Text != "")
+                command.Parameters.Add("@Movein_Date", SqlDbType.DateTime).Value = tbMoveinDate.Text;
+
+            if (tbMoveoutDate.Text != "")
+                command.Parameters.Add("@Moveout_Date", SqlDbType.DateTime).Value = tbMoveoutDate.Text;
+
             command.Parameters.Add("@ZipCode", SqlDbType.VarChar).Value = TextBoxZip.Text;
             if (PrimaryPhoneTextBox.Text != "")
                 command.Parameters.Add("@PrimaryPhone", SqlDbType.BigInt).Value = Convert.ToInt64(PrimaryPhoneTextBox.Text);

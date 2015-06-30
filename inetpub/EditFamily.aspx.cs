@@ -127,6 +127,14 @@ order by f.Lastname
             if (tbDateBuilt.Text != "")
                 command.Parameters.Add("@New_Year_Built", SqlDbType.DateTime).Value = tbDateBuilt.Text;
 
+            if (tbMoveinDate.Text != "")
+                command.Parameters.Add("@New_Movein_Date", SqlDbType.Date).Value = tbMoveinDate.Text;
+
+            if (tbMoveoutDate.Text != "")
+                command.Parameters.Add("@New_Moveout_Date", SqlDbType.Date).Value = tbMoveoutDate.Text;
+
+            command.Parameters.Add("@New_is_Owner_Occupied", SqlDbType.Bit).Value = Convert.ToInt16(rblOwnerOccupied.SelectedValue);
+
             if (tbOwnerContactInformation.Text != "")
                 command.Parameters.Add("@New_OwnerContactInformation", SqlDbType.VarChar).Value = tbOwnerContactInformation.Text;
 
@@ -249,6 +257,8 @@ order by f.Lastname
         tbAddressLine2.Text = "";
         tbCity.Text = "";
         tbDateBuilt.Text = "";
+        tbMoveinDate.Text = "";
+        tbMoveoutDate.Text = "";
         tbFamilyNotes.Text = "";
         tbPrimaryPhone.Text = "";
         tbSecondaryPhone.Text = "";
@@ -307,6 +317,33 @@ order by f.Lastname
             else
             {
                 tbDateBuilt.Text = "";
+            }
+
+            if (dtFamilyDetails.Rows[0]["MoveinDate"].ToString() != null && dtFamilyDetails.Rows[0]["MoveinDate"].ToString() != "")
+            {
+                tbMoveinDate.Text = Convert.ToDateTime(dtFamilyDetails.Rows[0]["MoveinDate"].ToString()).ToString("MM/dd/yyyy");
+            }
+            else
+            {
+                tbMoveinDate.Text = "";
+            }
+
+            if (dtFamilyDetails.Rows[0]["MoveoutDate"].ToString() != null && dtFamilyDetails.Rows[0]["MoveoutDate"].ToString() != "")
+            {
+                tbMoveoutDate.Text = Convert.ToDateTime(dtFamilyDetails.Rows[0]["MoveoutDate"].ToString()).ToString("MM/dd/yyyy");
+            }
+            else
+            {
+                tbMoveoutDate.Text = "";
+            }
+
+            if ((dtFamilyDetails.Rows[0]["OwnerOccupied"].ToString() != null))
+            {
+                rblOwnerOccupied.SelectedValue = dtFamilyDetails.Rows[0]["OwnerOccupied"].ToString();
+            }
+            else
+            {
+                rblOwnerOccupied.SelectedIndex = 0;
             }
 
             if ((dtFamilyDetails.Rows[0]["OwnerContactInformation"].ToString() != null))
@@ -369,6 +406,8 @@ order by f.Lastname
         ddlState.Enabled = false;
         tbZip.Enabled = false;
         tbDateBuilt.Enabled = false;
+        tbMoveinDate.Enabled = false;
+        tbMoveoutDate.Enabled = false;
         rblOwnerOccupied.Enabled = false;
         tbOwnerContactInformation.Enabled = false;
     }
@@ -381,6 +420,8 @@ order by f.Lastname
         ddlState.Enabled = true;
         tbZip.Enabled = true;
         tbDateBuilt.Enabled = true;
+        tbMoveinDate.Enabled = true;
+        tbMoveoutDate.Enabled = true;
         rblOwnerOccupied.Enabled = true;
         tbOwnerContactInformation.Enabled = true;
     }
