@@ -259,6 +259,7 @@ order by f.Lastname
         tbDateBuilt.Text = "";
         tbMoveinDate.Text = "";
         tbMoveoutDate.Text = "";
+        //CalendarExtenderMoveoutDate.SelectedDate = new DateTime(null) ;
         tbFamilyNotes.Text = "";
         tbPrimaryPhone.Text = "";
         tbSecondaryPhone.Text = "";
@@ -337,13 +338,13 @@ order by f.Lastname
                 tbMoveoutDate.Text = "";
             }
 
-            if ((dtFamilyDetails.Rows[0]["OwnerOccupied"].ToString() != null))
+            if ((dtFamilyDetails.Rows[0]["OwnerOccupied"].ToString() != null) && (dtFamilyDetails.Rows[0]["OwnerOccupied"].ToString() != ""))
             {
                 rblOwnerOccupied.SelectedValue = dtFamilyDetails.Rows[0]["OwnerOccupied"].ToString();
             }
             else
             {
-                rblOwnerOccupied.SelectedIndex = 0;
+                rblOwnerOccupied.SelectedValue = "0";
             }
 
             if ((dtFamilyDetails.Rows[0]["OwnerContactInformation"].ToString() != null))

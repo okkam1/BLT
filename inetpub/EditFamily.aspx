@@ -208,7 +208,7 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
                         Type="Date"
                         Operator="DataTypeCheck"
                         ControlToValidate="tbMoveoutDate"
-                        ErrorMessage="Please entaer a valid date." ForeColor="Red">
+                        ErrorMessage="Please enter a valid date." ForeColor="Red">
                     </asp:CompareValidator>
 
 
