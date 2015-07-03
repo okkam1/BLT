@@ -267,6 +267,9 @@ order by f.Lastname
         ddlPets.SelectedIndex = 0;
         ddlSmokers.SelectedIndex = 0;
         ddlState.SelectedIndex = 6; //Colorado
+        tbMoveinDate.Text = "";
+        tbMoveoutDate.Text = "";
+        tbDateBuilt.Text = "";
 
     }
 
@@ -443,6 +446,9 @@ order by f.Lastname
         tbCity.Text = "";
         ddlState.SelectedIndex = 0;
         tbZip.Text = "";
+        tbMoveinDate.Text = "";
+        tbMoveoutDate.Text = "";
+        tbDateBuilt.Text = "";
 
         bIsNewAddress = true;
     }
