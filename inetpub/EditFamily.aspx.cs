@@ -167,7 +167,13 @@ order by f.Lastname
                     //NextButton.Visible = true;
                     ModalPopupExtender1.Show();
 
-                    //updateFamilyList();
+                    //keep dropdown list value after refresh family
+                    Session["FamilyNameList"] = FamilyNameList.SelectedValue;
+                    
+                    //update the family list in case address was changed
+                    updateFamilyList();
+
+                    FamilyNameList.SelectedIndex = FamilyNameList.Items.IndexOf(FamilyNameList.Items.FindByValue(Convert.ToString(Session["FamilyNameList"])));
 
                 }
                 else if (sReturnValue == "50000")
@@ -235,10 +241,15 @@ order by f.Lastname
 
     protected void FamilyNameList_SelectedIndexChanged(object sender, EventArgs e)
     {
+        RefreshFamily();
+    }
+
+    protected void RefreshFamily()
+    {
         resetFields();
 
         disableAddress();
-        
+
         pnlEditAddress.Visible = false;
 
         btnUpdate.Visible = false;
