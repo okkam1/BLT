@@ -11,4 +11,11 @@ public partial class ReportPages_ListOfFamilies : System.Web.UI.Page
     {
 
     }
+    protected void btnApplyDate_Click(object sender, EventArgs e)
+    {
+        SqlDataSourcePerson.SelectParameters["StartDate"].DefaultValue = tbStartDate.Text;
+        SqlDataSourcePerson.SelectParameters["EndDate"].DefaultValue = tbEndDate.Text;
+
+        //SqlDataSourcePerson.SelectCommand.
+    }
 }
