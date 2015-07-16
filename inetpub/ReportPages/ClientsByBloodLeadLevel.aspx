@@ -59,8 +59,8 @@
         
         <asp:SqlDataSource ID="ClientsByBloodLeadLevelDataSet1" runat="server" ConnectionString="<%$ ConnectionStrings:csLCCHP%>" SelectCommand="usp_SLAllBloodTestResults2" SelectCommandType="StoredProcedure">
          <SelectParameters>
-                <asp:Parameter Name="Min_Lead_Value" Type="Decimal"></asp:Parameter>
-                <asp:Parameter Name="Max_Lead_Value" Type="Decimal"></asp:Parameter>
+                <asp:Parameter Name="Min_Lead_Value" Type="Double"></asp:Parameter>
+                <asp:Parameter Name="Max_Lead_Value" Type="Double"></asp:Parameter>
             </SelectParameters>
 
         </asp:SqlDataSource>

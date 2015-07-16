@@ -47,7 +47,7 @@ public partial class ReportPages_ResearchSubjectByAge : System.Web.UI.Page
         }
 
 
-    //    ReportViewer1.LocalReport.Refresh();
+        ReportViewer1.LocalReport.Refresh();
 
     }
 
