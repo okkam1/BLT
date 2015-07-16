@@ -2,18 +2,18 @@
 <Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:cl="http://schemas.microsoft.com/sqlserver/reporting/2010/01/componentdefinition" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition">
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="LCCHPBLTDataSet">
+    <DataSource Name="LCCHPBloodTestResultsDataSet">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>6fb0eec1-6c17-43a4-be0a-125a97a2ee6d</rd:DataSourceID>
+      <rd:DataSourceID>73168ba2-d301-4769-88ea-e851f664e2c6</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="ClientsByBloodLeadLevelDataSet">
+    <DataSet Name="ClientsByBloodLeadLevelDataSet1">
       <Query>
-        <DataSourceName>LCCHPBLTDataSet</DataSourceName>
+        <DataSourceName>LCCHPBloodTestResultsDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -37,16 +37,12 @@
           <DataField>Pb_ug_Per_dl</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
-        <Field Name="Hb_g_Per_dl">
-          <DataField>Hb_g_Per_dl</DataField>
+        <Field Name="Hb_g_per_dl">
+          <DataField>Hb_g_per_dl</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
-        <Field Name="RetestBL">
-          <DataField>RetestBL</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="RetestHB">
-          <DataField>RetestHB</DataField>
+        <Field Name="RetestDate">
+          <DataField>RetestDate</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
         <Field Name="Close">
@@ -63,12 +59,12 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>LCCHPBLTDataSet</rd:DataSetName>
-        <rd:SchemaPath>D:\BLT\inetpub\App_Code\LCCHPBLTDataSet1.xsd</rd:SchemaPath>
-        <rd:TableName>usp_SLAllBloodTestResultsMetaData</rd:TableName>
+        <rd:DataSetName>LCCHPBloodTestResultsDataSet</rd:DataSetName>
+        <rd:SchemaPath>D:\BLT\inetpub\App_Code\LCCHPBloodTestResultsDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>usp_SLAllBloodTestResults2</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>usp_SLAllBloodTestResultsMetaDataTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>usp_SLAllBloodTestResults2TableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -646,14 +642,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Hb_g_Per_dl">
+                        <Textbox Name="Hb_g_per_dl">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Hb_g_Per_dl.Value</Value>
+                                  <Value>=Fields!Hb_g_per_dl.Value</Value>
                                   <Style>
                                     <FontFamily>Tahoma</FontFamily>
                                     <Color>#4d4d4d</Color>
@@ -663,7 +659,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Hb_g_Per_dl</rd:DefaultName>
+                          <rd:DefaultName>Hb_g_per_dl</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>#e5e5e5</Color>
@@ -686,7 +682,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=CDate(Fields!RetestBL.Value).ToString("MM/dd/yyyy")</Value>
+                                  <Value>=CDate(Fields!RetestDate.Value).ToString("MM/dd/yyyy")</Value>
                                   <Style>
                                     <FontFamily>Tahoma</FontFamily>
                                     <Color>#4d4d4d</Color>
@@ -788,6 +784,7 @@
                                   <Value>=Fields!Movedate.Value</Value>
                                   <Style>
                                     <FontFamily>Tahoma</FontFamily>
+                                    <Format>d</Format>
                                     <Color>#4d4d4d</Color>
                                   </Style>
                                 </TextRun>
@@ -816,7 +813,7 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox23">
+                        <Textbox Name="tbCountClients">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -835,7 +832,6 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox23</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>#e5e5e5</Color>
@@ -847,6 +843,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -956,7 +953,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Pb_ug_Per_dl1">
+                        <Textbox Name="tbAvgPb_ug_Per_dl">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -975,7 +972,6 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Pb_ug_Per_dl1</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>#e5e5e5</Color>
@@ -991,14 +987,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox28">
+                        <Textbox Name="tbAverageHBLevel">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=CDbl(Round(Avg(Fields!Hb_g_Per_dl.Value)*10000)/10000)</Value>
+                                  <Value>=CDbl(Round(Avg(Fields!Hb_g_per_dl.Value)*10000)/10000)</Value>
                                   <Style>
                                     <FontFamily>Tahoma</FontFamily>
                                     <FontSize>12pt</FontSize>
@@ -1010,7 +1006,6 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox28</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>#e5e5e5</Color>
@@ -1191,7 +1186,7 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>ClientsByBloodLeadLevelDataSet</DataSetName>
+            <DataSetName>ClientsByBloodLeadLevelDataSet1</DataSetName>
             <Height>0.75in</Height>
             <Width>10in</Width>
             <Style>

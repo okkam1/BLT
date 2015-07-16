@@ -20,7 +20,7 @@
         </ul>
 
          <ul>   
-            <li><a href="ReportPages/ClientsByAge.aspx">Count of Clients by Age</a></li>
+            <%--<li><a href="ReportPages/ClientsByAge.aspx">Count of Clients by Age</a></li>--%>
             <li><a href="ReportPages/ClientsByAgeGroup.aspx">Count of Clients by Age Group</a></li>
             <%--<li><a href="ReportPages/CountAdultsTested.aspx">Count of Adults Tested</a></li>--%>
         </ul>
