@@ -9,14 +9,22 @@ public partial class ReportPages_SummaryReport : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (!Page.IsPostBack)
+        {
+            tbEndDate.Text = DateTime.Today.ToString("MM/dd/yyyy");
+            tbStartDate.Text = DateTime.Today.AddMonths(-1).ToString("MM/dd/yyyy");
+        }
 
+        SummaryReportDataSet1.SelectParameters["StartDate"].DefaultValue = tbStartDate.Text;
+        SummaryReportDataSet1.SelectParameters["EndDate"].DefaultValue = tbEndDate.Text;
     }
 
     protected void btnApplyDate_Click(object sender, EventArgs e)
     {
-     //   SummaryReportDataSet1.SelectParameters["StartDate"].DefaultValue = tbStartDate.Text;
-     //   SummaryReportDataSet1.SelectParameters["EndDate"].DefaultValue = tbEndDate.Text;
+        SummaryReportDataSet1.SelectParameters["StartDate"].DefaultValue = tbStartDate.Text;
+        SummaryReportDataSet1.SelectParameters["EndDate"].DefaultValue = tbEndDate.Text;
 
-        //SqlDataSourcePerson.SelectCommand.
+        ReportViewer1.LocalReport.Refresh();
+
     }
 }

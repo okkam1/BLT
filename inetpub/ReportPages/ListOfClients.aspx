@@ -34,7 +34,7 @@
                 </td>
 
                 <td>End Date: <br /> <em>(MM/DD/YYYY)</em></td>
-                <td><asp:TextBox ID="tbEndDate" runat="server" placeholder="MM/dd/yyyy" tooltip="End Date of the Date Range (Optional)"></asp:TextBox>
+                <td><asp:TextBox ID="tbEndDate" runat="server" placeholder="MM/dd/yyyy" tooltip="End Date of the Date Range (Optional)" ></asp:TextBox>
 
 <ajaxtoolkit:CalendarExtender ID="CalendarExtender1" 
     runat="server" 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Microsoft.Reporting.WebForms;
 
 public partial class ReportPages_ListOfFamilies : System.Web.UI.Page
 {
@@ -11,14 +12,20 @@ public partial class ReportPages_ListOfFamilies : System.Web.UI.Page
     {
         if (!Page.IsPostBack)
         {
-            SqlDataSourcePerson.SelectParameters["StartDate"].DefaultValue = "06/21/2015";
-            SqlDataSourcePerson.SelectParameters["EndDate"].DefaultValue = "06/29/2015";
+            tbEndDate.Text = DateTime.Today.ToString("MM/dd/yyyy");
+            tbStartDate.Text = DateTime.Today.AddMonths(-1).ToString("MM/dd/yyyy");
         }
+
+        SqlDataSourcePerson.SelectParameters["StartDate"].DefaultValue = tbStartDate.Text;
+        SqlDataSourcePerson.SelectParameters["EndDate"].DefaultValue = tbEndDate.Text;
     }
 
     protected void btnApplyDate_Click(object sender, EventArgs e)
     {
         SqlDataSourcePerson.SelectParameters["StartDate"].DefaultValue = tbStartDate.Text;
         SqlDataSourcePerson.SelectParameters["EndDate"].DefaultValue = tbEndDate.Text;
+
+        ReportViewer1.LocalReport.Refresh();
+
     }
 }
