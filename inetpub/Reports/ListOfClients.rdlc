@@ -57,8 +57,8 @@
           <DataField>EatsForeignFood</DataField>
           <rd:TypeName>System.Boolean</rd:TypeName>
         </Field>
-        <Field Name="PatientID">
-          <DataField>PatientID</DataField>
+        <Field Name="HistoricChildID">
+          <DataField>HistoricChildID</DataField>
           <rd:TypeName>System.Int16</rd:TypeName>
         </Field>
         <Field Name="RetestDate">
@@ -81,10 +81,6 @@
           <DataField>isResolved</DataField>
           <rd:TypeName>System.Boolean</rd:TypeName>
         </Field>
-        <Field Name="Notes">
-          <DataField>Notes</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="GuardianID">
           <DataField>GuardianID</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
@@ -97,10 +93,54 @@
           <DataField>isSmoker</DataField>
           <rd:TypeName>System.Boolean</rd:TypeName>
         </Field>
+        <Field Name="CreatedDate">
+          <DataField>CreatedDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="ModifiedDate">
+          <DataField>ModifiedDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Age">
+          <DataField>Age</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="isClient">
+          <DataField>isClient</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="NursingMother">
+          <DataField>NursingMother</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="Pregnant">
+          <DataField>Pregnant</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="ReleaseStatusID">
+          <DataField>ReleaseStatusID</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="ReviewStatusID">
+          <DataField>ReviewStatusID</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="EmailAddress">
+          <DataField>EmailAddress</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NursingInfant">
+          <DataField>NursingInfant</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="ClientStatusID">
+          <DataField>ClientStatusID</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>LCCHPPersonDataSet</rd:DataSetName>
-        <rd:SchemaPath />
+        <rd:DataSetName>LCCHPDevDataSet</rd:DataSetName>
+        <rd:SchemaPath>D:\BLT\inetpub\App_Code\LCCHPDevDataSet1.xsd</rd:SchemaPath>
         <rd:TableName>Person</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
