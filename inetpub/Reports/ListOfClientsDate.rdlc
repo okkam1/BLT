@@ -1248,6 +1248,7 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
+            <FixedColumnHeaders>true</FixedColumnHeaders>
             <DataSetName>DataSetPerson</DataSetName>
             <Height>0.75in</Height>
             <Width>10in</Width>

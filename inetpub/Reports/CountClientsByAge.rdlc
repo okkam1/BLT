@@ -279,6 +279,8 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
+        <FixedColumnHeaders>true</FixedColumnHeaders>
+        <FixedRowHeaders>true</FixedRowHeaders>
         <DataSetName>CountByAgeDataSet</DataSetName>
         <Height>0.75in</Height>
         <Width>2in</Width>
