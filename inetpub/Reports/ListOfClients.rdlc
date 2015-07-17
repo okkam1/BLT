@@ -174,7 +174,7 @@
                   <Width>1in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.08333in</Width>
+                  <Width>1.21875in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -399,14 +399,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox13">
+                        <Textbox Name="Textbox6">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Retest Date</Value>
+                                  <Value>Modified Date</Value>
                                   <Style>
                                     <FontFamily>Tahoma</FontFamily>
                                     <FontSize>11pt</FontSize>
@@ -418,7 +418,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox13</rd:DefaultName>
+                          <rd:DefaultName>Textbox6</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>#7292cc</Color>
@@ -579,10 +579,10 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Label>Date</Label>
-                                  <Value>=CDate(Fields!BirthDate.Value).ToString("MM/dd/yyyy")</Value>
+                                  <Value>=Fields!BirthDate.Value</Value>
                                   <Style>
                                     <FontFamily>Tahoma</FontFamily>
+                                    <Format>d</Format>
                                     <Color>#4d4d4d</Color>
                                   </Style>
                                 </TextRun>
@@ -602,6 +602,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -639,14 +640,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="RetestDate">
+                        <Textbox Name="ModifiedDate">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!RetestDate.Value</Value>
+                                  <Value>=Fields!ModifiedDate.Value</Value>
                                   <Style>
                                     <FontFamily>Tahoma</FontFamily>
                                     <Format>d</Format>
@@ -657,7 +658,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>RetestDate</rd:DefaultName>
+                          <rd:DefaultName>ModifiedDate</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>#e5e5e5</Color>
@@ -700,7 +701,7 @@
             </TablixRowHierarchy>
             <DataSetName>DataSetPerson</DataSetName>
             <Height>0.5in</Height>
-            <Width>7.08333in</Width>
+            <Width>7.21875in</Width>
             <Style>
               <Border>
                 <Style>None</Style>

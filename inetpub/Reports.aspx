@@ -16,19 +16,12 @@
         </ul>
 
         <ul>
-            <li><a href="ReportPages/ListOfClients.aspx">List of ALL Clients </a></li>
+            <li><a href="ReportPages/ListOfClientsbyCreatedDate.aspx">List of New Clients by Created Date</a></li>
+            <li><a href="ReportPages/ListOfClientsbyModifiedDate.aspx">List of Clients By Modified Date </a></li>
         </ul>
 
          <ul>   
-            <%--<li><a href="ReportPages/ClientsByAge.aspx">Count of Clients by Age</a></li>--%>
             <li><a href="ReportPages/ClientsByAgeGroup.aspx">Count of Clients by Age Group</a></li>
-            <%--<li><a href="ReportPages/CountAdultsTested.aspx">Count of Adults Tested</a></li>--%>
-        </ul>
-
-         <ul>   
-            <li><a href="ReportPages/ListOfClients30.aspx">List of New Clients -- Last 30 Days</a></li>
-            <li><a href="ReportPages/ListOfClients60.aspx">List of New Clients -- Last 60 Days</a></li>
-            <li><a href="ReportPages/ListOfClients90.aspx">List of New Clients -- Last 90 Days</a></li>
         </ul>
 
          <ul>   
