@@ -16,8 +16,9 @@
         </ul>
 
         <ul>
-            <li><a href="ReportPages/ListOfClientsbyCreatedDate.aspx">List of New Clients by Created Date</a></li>
-            <li><a href="ReportPages/ListOfClientsbyModifiedDate.aspx">List of Clients By Modified Date </a></li>
+            <li><a href="ReportPages/ListOfClientsbyCreatedDate.aspx">List of Clients by Created Date</a></li>
+            <li><a href="ReportPages/ListOfClientsbyModifiedDate.aspx">List of Clients by Modified Date </a></li>
+            <li><a href="ReportPages/ClientsByBloodLeadLevel.aspx">List of Clients by Blood Lead Level</a></li>
         </ul>
 
          <ul>   
@@ -25,7 +26,7 @@
         </ul>
 
          <ul>   
-            <li><a href="ReportPages/ClientsByBloodLeadLevel.aspx">List of Clients By Blood Lead Level</a></li>
+            
 
 <!--
         <li><a href="#">List of Research Subjects by Last Name</a></li>
