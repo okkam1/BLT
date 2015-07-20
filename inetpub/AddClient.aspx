@@ -198,7 +198,7 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
             <br /><br />
  
             
-            <asp:Button ID="OKButton" runat="server" Text="Close" />
+            <asp:Button ID="OKButton" runat="server" Text="Add Another" />
             <asp:Button ID="NextButton" runat="server" Text="Next &gt;&gt;" Visible="false" OnClick="NextButton_Click" />
 
 </asp:Panel>
