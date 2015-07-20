@@ -352,7 +352,7 @@
             <br /><br />
  
             
-            <asp:Button ID="OKButton" runat="server" Text="Close" />
+            <asp:Button ID="OKButton" runat="server" Text="Add Another" />
             <asp:Button ID="NextButton" runat="server" Text="Done &gt;&gt;" Visible="false" OnClick="NextButton_Click" />
 
 </asp:Panel>
