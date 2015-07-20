@@ -74,7 +74,7 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
                     <asp:ListItem>-</asp:ListItem>
                 </asp:DropDownList>  <a href="AddLab.aspx" class="small">Add New Source of Results</a>
 
-                <asp:RequiredFieldValidator ID="rfvLab" runat="server" InitialValue="-" ErrorMessage="Please select a lab" ControlToValidate="ddlLab" ForeColor="Red"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="rfvLab" runat="server" InitialValue="-" ErrorMessage="Please select a Source of Results" ControlToValidate="ddlLab" ForeColor="Red"></asp:RequiredFieldValidator>
 
             
             </td>
