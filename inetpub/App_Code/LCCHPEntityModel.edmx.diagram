@@ -59,6 +59,9 @@
         <AssociationConnector Association="LCCHPEntityModel.FK_Property_ReleaseStatus" />
         <AssociationConnector Association="LCCHPEntityModel.FK_PropertyNotes_Property" />
         <AssociationConnector Association="LCCHPEntityModel.FK_QuestionnaireNotes_Questionnaire" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.PersontoDaycare" Width="1.5" PointX="4.9261916880152157" PointY="22.650892283139235" />
+        <AssociationConnector Association="LCCHPEntityModel.FK_PersontoDaycare_Daycare" />
+        <AssociationConnector Association="LCCHPEntityModel.FK_PersontoDaycare_PersontoDaycare" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
