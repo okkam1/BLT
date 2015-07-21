@@ -123,17 +123,8 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
             </tr>
 
         <tr>
-<%--                <td>Moved:</td>
-            <td>
-                <asp:RadioButtonList ID="rblMoved" runat="server" RepeatDirection="Horizontal">
-                    <asp:ListItem Value="1">Yes</asp:ListItem>
-                    <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
-                </asp:RadioButtonList>
 
-            </td>
-            </tr>--%>
-
-            <tr>
+        
                 <td>Moved Out of County:</td>
             <td>
 
