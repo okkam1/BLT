@@ -145,10 +145,10 @@ order by f.Lastname
             command.Parameters.Add("@Ethnicity_ID", SqlDbType.TinyInt).Value = ddlEthnicity.SelectedValue;
            // command.Parameters.Add("@Moved_", SqlDbType.Bit).Value = Convert.ToByte(rblMoved.SelectedValue);
             command.Parameters.Add("@Travel", SqlDbType.Bit).Value = Convert.ToByte(rblTravel.SelectedValue);
-            command.Parameters.Add("@Travel_Notes", SqlDbType.VarChar).Value = tbTravelNotes.Text;
+           // command.Parameters.Add("@Travel_Notes", SqlDbType.VarChar).Value = tbTravelNotes.Text;
             command.Parameters.Add("@Out_of_Site", SqlDbType.Bit).Value = Convert.ToByte(rblOutOfSite.SelectedValue);
             
-            command.Parameters.Add("@Release_Notes", SqlDbType.VarChar).Value = tbReleaseNotes.Text;
+           // command.Parameters.Add("@Release_Notes", SqlDbType.VarChar).Value = tbReleaseNotes.Text;
             command.Parameters.Add("@Client_Notes", SqlDbType.VarChar).Value = tbClientNotes.Text;
             
             command.Parameters.Add("@ClientID", SqlDbType.Int).Direction = ParameterDirection.Output;  //usp returns ID upon completion

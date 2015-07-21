@@ -149,11 +149,11 @@ order by f.Lastname
             if (rblTravel.SelectedValue != "" && rblTravel.SelectedValue != null)
                 command.Parameters.Add("@New_ForeignTravel", SqlDbType.Bit).Value = Convert.ToByte(rblTravel.SelectedValue);
 
-            if (tbTravelNotes.Text != "")
-                command.Parameters.Add("@New_TravelNotes", SqlDbType.VarChar).Value = tbTravelNotes.Text;
+           // if (tbTravelNotes.Text != "")
+           //     command.Parameters.Add("@New_TravelNotes", SqlDbType.VarChar).Value = tbTravelNotes.Text;
 
-            if (tbReleaseNotes.Text != "")
-                command.Parameters.Add("@New_ReleaseNotes", SqlDbType.VarChar).Value = tbReleaseNotes.Text;
+           // if (tbReleaseNotes.Text != "")
+           //     command.Parameters.Add("@New_ReleaseNotes", SqlDbType.VarChar).Value = tbReleaseNotes.Text;
 
             if (tbClientNotes.Text != "")
                 command.Parameters.Add("@New_ClientNotes", SqlDbType.VarChar).Value = tbClientNotes.Text;

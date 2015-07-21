@@ -192,26 +192,7 @@
 
                 </td>
             </tr>
-            <tr>
-                <td>Travel Notes:</td>
-                <td>
-                    <asp:TextBox runat="server" ID="tbTravelNotes" TextMode="MultiLine"></asp:TextBox>
-                </td>
-            </tr>
-
-            <tr>
-                <td colspan="2">
-                    <hr />
-                </td>
-            </tr>
-
-            <tr>
-                <td>Release Notes:</td>
-                <td>
-                    <asp:TextBox runat="server" ID="tbReleaseNotes" TextMode="MultiLine"></asp:TextBox></td>
-            </tr>
-
-
+            
             <tr>
                 <td colspan="2">
                     <hr />

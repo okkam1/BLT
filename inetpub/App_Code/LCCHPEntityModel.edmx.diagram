@@ -18,7 +18,6 @@
         <EntityTypeShape EntityType="LCCHPEntityModel.LabNote" Width="1.5" PointX="1.2314535236132582" PointY="6.5849264592793428" />
         <EntityTypeShape EntityType="LCCHPEntityModel.Language" Width="1.5" PointX="11.514450922382274" PointY="9.00935995998297" />
         <EntityTypeShape EntityType="LCCHPEntityModel.Person" Width="1.5" PointX="2.6509125878340156" PointY="7.1157003078217151" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.PersonHobbyNote" Width="1.5" PointX="5.7013191979850264" PointY="11.772899856685148" />
         <EntityTypeShape EntityType="LCCHPEntityModel.PersonNote" Width="1.5" PointX="8.8105910703589174" PointY="16.421396263139972" />
         <EntityTypeShape EntityType="LCCHPEntityModel.PersonReleaseNote" Width="1.5" PointX="2.2465159624100273" PointY="21.509509305241288" />
         <EntityTypeShape EntityType="LCCHPEntityModel.PersonStatu" Width="1.5" PointX="11.4460434221877" PointY="22.856745134506721" />
@@ -52,7 +51,6 @@
         <AssociationConnector Association="LCCHPEntityModel.FK_PersontoHobby_Hobby" />
         <AssociationConnector Association="LCCHPEntityModel.FK_LabNotes_Lab" />
         <AssociationConnector Association="LCCHPEntityModel.FK_PersontoLanguage_Language" />
-        <AssociationConnector Association="LCCHPEntityModel.FK_PersonHobbyNotes_Person" />
         <AssociationConnector Association="LCCHPEntityModel.FK_PersonNotes_Person" />
         <AssociationConnector Association="LCCHPEntityModel.FK_PersonReleaseNotes_Person" />
         <AssociationConnector Association="LCCHPEntityModel.FK_PersontoDaycare_PersontoDaycare" />
