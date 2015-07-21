@@ -18,9 +18,11 @@
             <asp:HyperLink ID="hlEditFamily" runat="server" NavigateUrl="EditFamily.aspx">Edit Existing Family Information </asp:HyperLink></li>
 
             <li>
-            <asp:HyperLink ID="hlEditLab" runat="server" NavigateUrl="EditBloodLeadResults.aspx">Edit Existing Client Blood Level Information </asp:HyperLink></li>
-            <li>
             <asp:HyperLink ID="hlEditQuestionnaire" runat="server" NavigateUrl="EditQuestionnaire.aspx">Edit Existing Client Questionnaire Information </asp:HyperLink></li>
+            
+            <li>
+            <asp:HyperLink ID="hlEditLab" runat="server" NavigateUrl="EditBloodLeadResults.aspx">Edit Existing Client Blood Level Information </asp:HyperLink></li>
+        
         </ul>
         
         <br /><br />

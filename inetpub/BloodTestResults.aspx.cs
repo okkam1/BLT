@@ -193,7 +193,7 @@ public partial class BloodTestResults : System.Web.UI.Page
 
     protected void NextButton_Click(object sender, EventArgs e)
     {
-        if (RefPage != "")
+        if (RefPage != "" && RefPage!=null)
         {
             Response.Redirect(RefPage);
         }

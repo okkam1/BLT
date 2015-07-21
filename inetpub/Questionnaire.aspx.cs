@@ -124,8 +124,8 @@ public partial class Questionnaire : System.Web.UI.Page
             if (ddlHobby3.SelectedValue != "-")
                 command.Parameters.Add("@Hobby3ID", SqlDbType.Int).Value = ddlHobby3.SelectedValue;
             command.Parameters.Add("@HobbyNotes", SqlDbType.VarChar).Value = tbQuestionnaireNotes.Text;
-            if (rblSource.SelectedValue != "") 
-                command.Parameters.Add("@Source", SqlDbType.Int).Value = Convert.ToInt32(rblSource.SelectedValue);
+            //if (rblSource.SelectedValue != "") 
+            //    command.Parameters.Add("@Source", SqlDbType.Int).Value = Convert.ToInt32(rblSource.SelectedValue);
             command.Parameters.Add("@QuestionnaireNotes", SqlDbType.VarChar).Value = tbQuestionnaireNotes.Text;
             if (rbVisitsOldHomes.SelectedValue != "") 
                 command.Parameters.Add("@VisitsOldHomes", SqlDbType.Bit).Value = Convert.ToByte(rbVisitsOldHomes.SelectedValue);

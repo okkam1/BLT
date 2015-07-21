@@ -311,7 +311,7 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
 
                 <asp:SqlDataSource ID="SqlDataSourceHobby1" runat="server" SelectCommandType="StoredProcedure"
                     SelectCommand="dbo.usp_SlHobby" ConnectionString="<%$ ConnectionStrings:csLCCHP %>"></asp:SqlDataSource>
-            </td>
+            <a href="AddHobby.aspx" class="small"> Add new hobby</a> </td>
             <tr>
             <td>
             <asp:DropDownList ID="ddlHobby2" runat="server" DataSourceID="SqlDataSourceHobby2"
@@ -338,10 +338,10 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
             </tr>
             <tr><td colspan="2"><hr /></td></tr>
             <tr>
-                <td>Other Notes:</td>
+                <td>Questionnaire Notes:</td>
                 <td><asp:TextBox runat="server" ID="tbQuestionnaireNotes" TextMode="MultiLine"></asp:TextBox></td>
             </tr>
-   
+<%--   
             <tr>
                 <td>Source:</td>
                 <td>
@@ -351,7 +351,7 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
                 </asp:RadioButtonList>
                 </td>
             </tr>
-
+--%>
 
 </table>
 
@@ -370,7 +370,7 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
             <br /><br />
  
             
-            <asp:Button ID="OKButton" runat="server" Text="Close" />
+            <asp:Button ID="OKButton" runat="server" Text="Add Another" />
             <asp:Button ID="NextButton" runat="server" Text="Next &gt;&gt;" Visible="false" OnClick="NextButton_Click" />
 
 </asp:Panel>

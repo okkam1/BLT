@@ -23,9 +23,15 @@
                 <asp:HyperLink runat="server" id ="datamanage" NavigateUrl="ManageData.aspx" ImageUrl="images/data.jpg" ImageWidth="80" Text="Manage Data">Advanced Data Management</asp:HyperLink>
                 <asp:HyperLink runat="server" id ="datamanage2" NavigateUrl="ManageData.aspx" Text="Manage Data">Advanced Data Management</asp:HyperLink>
             </li>
-            </ul>
-                
+       </ul>
+
+       DOCUMENTATION
+       <ul>
+            <li>
+                <asp:HyperLink ID="UsersManual" runat="server" 
+                    NavigateUrl="LakeCountyBloodLeadTrackingWebPortalUsersManual.html"><img src="images/UserManual.jpg" />User's Manual</asp:HyperLink></li>
         
+       </ul>
    </div>
 
     

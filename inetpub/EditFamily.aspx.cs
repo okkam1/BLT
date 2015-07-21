@@ -127,6 +127,14 @@ order by f.Lastname
             if (tbDateBuilt.Text != "")
                 command.Parameters.Add("@New_Year_Built", SqlDbType.DateTime).Value = tbDateBuilt.Text;
 
+            if (tbMoveinDate.Text != "")
+                command.Parameters.Add("@New_Movein_Date", SqlDbType.Date).Value = tbMoveinDate.Text;
+
+            if (tbMoveoutDate.Text != "")
+                command.Parameters.Add("@New_Moveout_Date", SqlDbType.Date).Value = tbMoveoutDate.Text;
+
+            command.Parameters.Add("@New_is_Owner_Occupied", SqlDbType.Bit).Value = Convert.ToInt16(rblOwnerOccupied.SelectedValue);
+
             if (tbOwnerContactInformation.Text != "")
                 command.Parameters.Add("@New_OwnerContactInformation", SqlDbType.VarChar).Value = tbOwnerContactInformation.Text;
 
@@ -159,7 +167,13 @@ order by f.Lastname
                     //NextButton.Visible = true;
                     ModalPopupExtender1.Show();
 
-                    //updateFamilyList();
+                    //keep dropdown list value after refresh family
+                    Session["FamilyNameList"] = FamilyNameList.SelectedValue;
+                    
+                    //update the family list in case address was changed
+                    updateFamilyList();
+
+                    FamilyNameList.SelectedIndex = FamilyNameList.Items.IndexOf(FamilyNameList.Items.FindByValue(Convert.ToString(Session["FamilyNameList"])));
 
                 }
                 else if (sReturnValue == "50000")
@@ -227,10 +241,15 @@ order by f.Lastname
 
     protected void FamilyNameList_SelectedIndexChanged(object sender, EventArgs e)
     {
+        RefreshFamily();
+    }
+
+    protected void RefreshFamily()
+    {
         resetFields();
 
         disableAddress();
-        
+
         pnlEditAddress.Visible = false;
 
         btnUpdate.Visible = false;
@@ -249,6 +268,9 @@ order by f.Lastname
         tbAddressLine2.Text = "";
         tbCity.Text = "";
         tbDateBuilt.Text = "";
+        tbMoveinDate.Text = "";
+        tbMoveoutDate.Text = "";
+        //CalendarExtenderMoveoutDate.SelectedDate = new DateTime(null) ;
         tbFamilyNotes.Text = "";
         tbPrimaryPhone.Text = "";
         tbSecondaryPhone.Text = "";
@@ -256,6 +278,9 @@ order by f.Lastname
         ddlPets.SelectedIndex = 0;
         ddlSmokers.SelectedIndex = 0;
         ddlState.SelectedIndex = 6; //Colorado
+        tbMoveinDate.Text = "";
+        tbMoveoutDate.Text = "";
+        tbDateBuilt.Text = "";
 
     }
 
@@ -307,6 +332,33 @@ order by f.Lastname
             else
             {
                 tbDateBuilt.Text = "";
+            }
+
+            if (dtFamilyDetails.Rows[0]["MoveinDate"].ToString() != null && dtFamilyDetails.Rows[0]["MoveinDate"].ToString() != "")
+            {
+                tbMoveinDate.Text = Convert.ToDateTime(dtFamilyDetails.Rows[0]["MoveinDate"].ToString()).ToString("MM/dd/yyyy");
+            }
+            else
+            {
+                tbMoveinDate.Text = "";
+            }
+
+            if (dtFamilyDetails.Rows[0]["MoveoutDate"].ToString() != null && dtFamilyDetails.Rows[0]["MoveoutDate"].ToString() != "")
+            {
+                tbMoveoutDate.Text = Convert.ToDateTime(dtFamilyDetails.Rows[0]["MoveoutDate"].ToString()).ToString("MM/dd/yyyy");
+            }
+            else
+            {
+                tbMoveoutDate.Text = "";
+            }
+
+            if ((dtFamilyDetails.Rows[0]["OwnerOccupied"].ToString() != null) && (dtFamilyDetails.Rows[0]["OwnerOccupied"].ToString() != ""))
+            {
+                rblOwnerOccupied.SelectedValue = dtFamilyDetails.Rows[0]["OwnerOccupied"].ToString();
+            }
+            else
+            {
+                rblOwnerOccupied.SelectedValue = "0";
             }
 
             if ((dtFamilyDetails.Rows[0]["OwnerContactInformation"].ToString() != null))
@@ -369,6 +421,8 @@ order by f.Lastname
         ddlState.Enabled = false;
         tbZip.Enabled = false;
         tbDateBuilt.Enabled = false;
+        tbMoveinDate.Enabled = false;
+        tbMoveoutDate.Enabled = false;
         rblOwnerOccupied.Enabled = false;
         tbOwnerContactInformation.Enabled = false;
     }
@@ -381,6 +435,8 @@ order by f.Lastname
         ddlState.Enabled = true;
         tbZip.Enabled = true;
         tbDateBuilt.Enabled = true;
+        tbMoveinDate.Enabled = true;
+        tbMoveoutDate.Enabled = true;
         rblOwnerOccupied.Enabled = true;
         tbOwnerContactInformation.Enabled = true;
     }
@@ -401,6 +457,9 @@ order by f.Lastname
         tbCity.Text = "";
         ddlState.SelectedIndex = 0;
         tbZip.Text = "";
+        tbMoveinDate.Text = "";
+        tbMoveoutDate.Text = "";
+        tbDateBuilt.Text = "";
 
         bIsNewAddress = true;
     }

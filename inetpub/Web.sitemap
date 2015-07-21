@@ -7,10 +7,13 @@
       <siteMapNode url="EditClient.aspx" title="Edit Existing"  description="Modify Data for Existing Client">
         <siteMapNode url="EditClientInfo.aspx" title="Edit Existing Client Info" description="Edit Existing Client Information" />
         <siteMapNode url="EditFamily.aspx" title="Edit Existing Family Info" description="Edit Existing Family Information" />
-        <siteMapNode url="EditBloodTest.aspx" title="Edit Existing Blood Test Info" description="Edit Existing Blood Test Information" />
+        <siteMapNode url="EditBloodLeadResults.aspx" title="Edit Existing Blood Test Info" description="Edit Existing Blood Test Information" />
       </siteMapNode>
         <siteMapNode url="Reports.aspx" title="Reports"  description="View Reports for Lead Data Study">
-        <siteMapNode url="ReportPages/ListOfClients.aspx" title="List of ALL Clients" description="Complete List of Clients in the Study" />
+        <siteMapNode url="ReportPages/SummaryReport.aspx" title="Summary Report" description="Complete Summary Report of Clients in the Study" />
+          <siteMapNode url="ReportPages/ClientFollowUp.aspx" title="Client Follow Up Report" description="Report of Clients in the Study Who Require a Follow-up Appointment" />
+        <siteMapNode url="ReportPages/ListOfClientsByCreatedDate.aspx" title="List of ALL Clients By Created Date" description="Complete List of Clients in the Study By Created Date" />
+        <siteMapNode url="ReportPages/ListOfClientsByModifiedDate.aspx" title="List of ALL Clients By Modified Date" description="Complete List of Clients in the Study By Modified Date" />
         <siteMapNode url="ReportPages/ListOfClients30.aspx" title="List of New Clients -- 30 Days" description="List of New Clients in the Study" />
         <siteMapNode url="ReportPages/ListOfClients60.aspx" title="List of New Clients -- 60 Days" description="List of New Clients in the Study" />
         <siteMapNode url="ReportPages/ListOfClients90.aspx" title="List of New Clients -- 90 Days" description="List of New Clients in the Study" />

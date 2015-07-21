@@ -1,50 +1,50 @@
 ﻿/*	Global classes	*/
 .DDMainHeader
 {
-	font: small-caps bold 1.6em Trebuchet MS, Arial, sans-serif;
-	color:#888;
-	padding-bottom: 12px;
+    font: small-caps bold 1.6em Trebuchet MS, Arial, sans-serif;
+    color: #888;
+    padding-bottom: 12px;
     border-bottom: 1px dotted #bbbbbb;
 }
 
 .DDSubHeader
 {
-	margin-bottom: 10px;
-    font:1.2em Trebuchet MS, Arial, sans-serif;
+    margin-bottom: 10px;
+    font: 1.2em Trebuchet MS, Arial, sans-serif;
     color: #888;
     padding: 10px;
 }
 
 .DD
 {
-	padding: 0px 8px;
+    padding: 0px 8px;
     font: .90em Tahoma, Arial, sans-serif;
     color: #666;
 }
 
 .DDLightHeader
 {
-	font-weight: bold;
-	background-color: #F7F7FF;
-} 
+    font-weight: bold;
+    background-color: #F7F7FF;
+}
 
 .DDTextBox, .DDDropDown
 {
-	color: #666;
-	font: .95em Tahoma, Arial, Sans-Serif;
-	border: solid 1px #dcdcdc;
-	background-color: #FEFEFE;
+    color: #666;
+    font: .95em Tahoma, Arial, Sans-Serif;
+    border: solid 1px #dcdcdc;
+    background-color: #FEFEFE;
 }
 
 .DDDropDown
 {
-	padding:2px;
+    padding: 2px;
 }
 
 .DDFilter
 {
-	font: .95em Tahoma, Arial, Sans-serif;
-	color:#666;
+    font: .95em Tahoma, Arial, Sans-serif;
+    color: #666;
 }
 
 .DDControl
@@ -56,38 +56,39 @@
 
 .DDFloatLeft
 {
-	float:left;
+    float: left;
 }
 
 .DDFloatRight
 {
-	float:right;
+    float: right;
 }
 
-.small {
-    font-size:small;
+.small
+{
+    font-size: small;
 }
 
 .DDFooter
 {
-	background-color: #dbddff;
+    background-color: #dbddff;
 }
 
 .DDSelected
 {
-	background-color: #fdffb8;
+    background-color: #fdffb8;
 }
 
 div.DDNoItem
 {
-	color:Red;
-	font-family:Trebuchet MS, Arial, sans-serif;
+    color: Red;
+    font-family: Trebuchet MS, Arial, sans-serif;
 }
 
 .DDValidator
 {
-	color:Red;
-	font-family:Trebuchet MS, Arial, sans-serif;
+    color: Red;
+    font-family: Trebuchet MS, Arial, sans-serif;
 }
 
 
@@ -95,21 +96,22 @@ div.DDNoItem
 
 div.DDNavigation
 {
-	font:.75em Tahoma, Arial, Sans-Serif;
-	position: relative;
+    font: .75em Tahoma, Arial, Sans-Serif;
+    position: relative;
     top: -28px;
     margin-bottom: -10px;
     padding: 0px 5px;
 }
 
-div.DDNavigation img
-{
-    position: relative;
-    margin-top: 0em;
-    padding: 0px 8px;
-    border: none;
-    background-color: #fff;
-}
+    div.DDNavigation img
+    {
+        position: relative;
+        margin-top: 0em;
+        padding: 0px 8px;
+        border: none;
+        background-color: #fff;
+    }
+
 div.DDNavigation
 {
     color: #839ce7;
@@ -122,36 +124,38 @@ div.DDNavigation
 
 .MainNavigation
 {
-	font:1.25em Tahoma, Arial, Sans-Serif;
-	position: relative;
+    font: 1.25em Tahoma, Arial, Sans-Serif;
+    position: relative;
     top: 10px;
     margin-bottom: 10px;
     padding: 0px 5px;
 }
 
-.MainNavigation a:visited
-{
-    color: #839ce7;
-    text-decoration: underline !important;
-}
-
-    .MainNavigation img {
-        vertical-align:middle;
-        width: 80px;
-        border:0px;
+    .MainNavigation a:visited
+    {
+        color: #839ce7;
+        text-decoration: underline !important;
     }
 
-    .MainNavigation li {
-    padding:10px;
-    color:#888888;
+    .MainNavigation img
+    {
+        vertical-align: middle;
+        width: 80px;
+        border: 0px;
+    }
+
+    .MainNavigation li
+    {
+        padding: 10px;
+        color: #888888;
     }
 
 
     .MainNavigation a:hover
-{
-    color: #718ABE;
-    text-decoration: underline !important;
-}
+    {
+        color: #718ABE;
+        text-decoration: underline !important;
+    }
 
 
 div.DDNavigation a:hover
@@ -163,105 +167,102 @@ div.DDNavigation a:hover
 .DD a:visited, .DDNavigation a:visited
 {
     color: #839ce7;
-    
 }
 
 /*	Details VIEW/EDIT	*/
 table.DDDetailsTable
 {
-	color: #666;
-	background-color: #FCFDFE;
-	border: 1px solid #dbddff;
-	border-bottom-width: 3px;
+    color: #666;
+    background-color: #FCFDFE;
+    border: 1px solid #dbddff;
+    border-bottom-width: 3px;
 }
 
-table.DDDetailsTable a
-{
-	color:#718ABE;
-	text-decoration: none;
-	padding-right: 6px;
-}
+    table.DDDetailsTable a
+    {
+        color: #718ABE;
+        text-decoration: none;
+        padding-right: 6px;
+    }
 
-table.DDDetailsTable a:hover
-{
-    color: #000099;
-    text-decoration: underline !important;
-}
+        table.DDDetailsTable a:hover
+        {
+            color: #000099;
+            text-decoration: underline !important;
+        }
 
-table.DDDetailsTable .td
-{
-	padding: 3px 6px;
-	border: 1px solid #dbddff;
-	border-bottom-style: dotted;
-	font-size: .7em;
-	font-family:Tahoma, Arial, Sans-Serif;
-}
+    table.DDDetailsTable .td
+    {
+        padding: 3px 6px;
+        border: 1px solid #dbddff;
+        border-bottom-style: dotted;
+        font-size: .7em;
+        font-family: Tahoma, Arial, Sans-Serif;
+    }
 
 
 /*	DDGridView/DDListView	*/
 table.DDGridView, table.DDListView
 {
-	width: 100%;
-	color: #666;
-	border:solid 1px #dbddff;
-	font: .7em Tahoma, Arial, Sans-Serif;
+    width: 100%;
+    color: #666;
+    border: solid 1px #dbddff;
+    font: .7em Tahoma, Arial, Sans-Serif;
 }
 
-table.DDGridView .th, table.DDGridView .td, table.DDListView .th, table.DDListView .td
-{
-	white-space: nowrap;
-}
+    table.DDGridView .th, table.DDGridView .td, table.DDListView .th, table.DDListView .td
+    {
+        white-space: nowrap;
+    }
 
-table.DDGridView .th, table.DDListView .th
-{
-	background: url(DynamicData/Content/Images/header_back.gif) repeat-x;
-	line-height:1.3em;
-	text-align: left;
-	font-size: 1em;
-	border:solid 1px #dbddff;
-}
+    table.DDGridView .th, table.DDListView .th
+    {
+        background: url(DynamicData/Content/Images/header_back.gif) repeat-x;
+        line-height: 1.3em;
+        text-align: left;
+        font-size: 1em;
+        border: solid 1px #dbddff;
+    }
 
-table.DDGridView .th a, table.DDListView .th a
-{
-	color: #666;
-	text-decoration: none;
-}
+        table.DDGridView .th a, table.DDListView .th a
+        {
+            color: #666;
+            text-decoration: none;
+        }
 
-table.DDGridView .td, table.DDListView .td
-{
-	border: dotted 1px #dbddff;
-	border-left-width:0px;
-	border-right-width:0px;
-	padding: 6px;
-}
+    table.DDGridView .td, table.DDListView .td
+    {
+        border: dotted 1px #dbddff;
+        border-left-width: 0px;
+        border-right-width: 0px;
+        padding: 6px;
+    }
 
-table.DDGridView .td a, table.DDListView .td a
-{
-	color: #718ABE;
-    text-decoration: none;
-    margin-right: 6px;
-	
-}
+        table.DDGridView .td a, table.DDListView .td a
+        {
+            color: #718ABE;
+            text-decoration: none;
+            margin-right: 6px;
+        }
 
-table.DDGridView .DDSelected a, table.DDListView .DDSelected a
-{
-	color: #718ABE;
-    text-decoration: none;
-    margin-right: 6px;
-	
-}
+    table.DDGridView .DDSelected a, table.DDListView .DDSelected a
+    {
+        color: #718ABE;
+        text-decoration: none;
+        margin-right: 6px;
+    }
 
-table.DDGridView .DDSelected a:hover, table.DDListView .DDSelected a:hover
-{
-	color: #000099;
-	text-decoration: underline;
-}
+        table.DDGridView .DDSelected a:hover, table.DDListView .DDSelected a:hover
+        {
+            color: #000099;
+            text-decoration: underline;
+        }
 
-table.DDGridView .td a:hover, table.DDListView .td a:hover
-{
-	color: #000099;
-	text-decoration: underline;
-}
+    table.DDGridView .td a:hover, table.DDListView .td a:hover
+    {
+        color: #000099;
+        text-decoration: underline;
+    }
 
 /*	DataPager	*/
 div.DDPager
@@ -272,25 +273,47 @@ div.DDPager
 
 /* Bottom hyperlink design*/
 div.DDBottomHyperLink
-{	
+{
     font: .75em Tahoma, Arial, Sans-Serif;
 }
-div.DDBottomHyperLink a
+
+    div.DDBottomHyperLink a
+    {
+        color: #839ce7;
+        text-decoration: none;
+    }
+
+        div.DDBottomHyperLink a:hover
+        {
+            color: #000099;
+            text-decoration: underline !important;
+        }
+
+    div.DDBottomHyperLink img
+    {
+        padding-right: 5px;
+        border: none;
+    }
+
+.LoginTextBox
 {
-    color: #839ce7;
-    text-decoration: none;
-}
-div.DDBottomHyperLink a:hover
-{
-    color: #000099;
-    text-decoration: underline !important;
-}
-div.DDBottomHyperLink img
-{
-    padding-right: 5px;
-    border: none;
+    margin: 10px;
 }
 
-.LoginTextBox {
-    margin: 10px;
+
+.modalBackground
+{
+    background-color: Black;
+    filter: alpha(opacity=90);
+    opacity: 0.8;
+}
+
+.modalPopup
+{
+    background-color: #FFFFFF;
+    border-width: 3px;
+    border-style: solid;
+    border-color: black;
+    padding-top: 10px;
+    padding-left: 10px;
 }

@@ -90,32 +90,37 @@ order by f.Lastname
             // if (!Page.IsPostBack)
             ddlLanguage.Items.Insert(0, "-");
 
-            //fill Ethnicity Drop down
-
-            SqlConnection conEthnicity = new SqlConnection(connectionString);
-
-            string comEthnicity = "Select EthnicityID, Upper(Ethnicity) as Ethnicity, HistoricEthnicityCode from dbo.Ethnicity order by Ethnicity asc";
-
-            SqlDataAdapter adptEthnicity = new SqlDataAdapter(comEthnicity, conEthnicity);
-
-            DataTable dtEthnicity = new DataTable();
-
-            adptEthnicity.Fill(dtEthnicity);
-
-            ddlEthnicity.DataSource = dtEthnicity;
-
-            ddlEthnicity.DataBind();
-
-            ddlEthnicity.DataTextField = "Ethnicity";
-            ddlEthnicity.DataValueField = "EthnicityID";
-
-            ddlEthnicity.DataBind();
-            ddlEthnicity.Items.Insert(0, "-");
-
+            FillEthnicity();
 
         }
 
     }
+
+    protected void FillEthnicity()
+    {
+        //fill Ethnicity Drop down
+
+        SqlConnection conEthnicity = new SqlConnection(connectionString);
+
+        string comEthnicity = "Select EthnicityID, Upper(Ethnicity) as Ethnicity, HistoricEthnicityCode from dbo.Ethnicity order by Ethnicity asc";
+
+        SqlDataAdapter adptEthnicity = new SqlDataAdapter(comEthnicity, conEthnicity);
+
+        DataTable dtEthnicity = new DataTable();
+
+        adptEthnicity.Fill(dtEthnicity);
+
+        ddlEthnicity.DataSource = dtEthnicity;
+
+        ddlEthnicity.DataBind();
+
+        ddlEthnicity.DataTextField = "Ethnicity";
+        ddlEthnicity.DataValueField = "EthnicityID";
+
+        ddlEthnicity.DataBind();
+        ddlEthnicity.Items.Insert(0, "-");
+    }
+
     protected void Button1_Click(object sender, EventArgs e)
     {
         try
@@ -144,11 +149,11 @@ order by f.Lastname
             if (rblTravel.SelectedValue != "" && rblTravel.SelectedValue != null)
                 command.Parameters.Add("@New_ForeignTravel", SqlDbType.Bit).Value = Convert.ToByte(rblTravel.SelectedValue);
 
-            if (tbTravelNotes.Text != "")
-                command.Parameters.Add("@New_TravelNotes", SqlDbType.VarChar).Value = tbTravelNotes.Text;
+           // if (tbTravelNotes.Text != "")
+           //     command.Parameters.Add("@New_TravelNotes", SqlDbType.VarChar).Value = tbTravelNotes.Text;
 
-            if (tbReleaseNotes.Text != "")
-                command.Parameters.Add("@New_ReleaseNotes", SqlDbType.VarChar).Value = tbReleaseNotes.Text;
+           // if (tbReleaseNotes.Text != "")
+           //     command.Parameters.Add("@New_ReleaseNotes", SqlDbType.VarChar).Value = tbReleaseNotes.Text;
 
             if (tbClientNotes.Text != "")
                 command.Parameters.Add("@New_ClientNotes", SqlDbType.VarChar).Value = tbClientNotes.Text;
@@ -403,5 +408,10 @@ where p.personid  = '" + sPersonIDIn + "'";
     {
         //get indivifual
         getIndividual(ddlFamilyMembers.SelectedValue.ToString());
+    }
+
+    protected void btnCloseEthnicity_Click(object sender, EventArgs e)
+    {
+        FillEthnicity();
     }
 }

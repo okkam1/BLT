@@ -8,26 +8,62 @@
 
     <div class="DD">
 
-        <h2 class="DDSubHeader">Clients by Blood Lead Level
-        </h2>
+        <h2 class="DDSubHeader">Clients by Blood Lead Level </h2>
        
-                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click1" 
-            Text="MinBLL" />
-        <asp:TextBox ID="TextBox1" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
-        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
-        <asp:GridView ID="GridView1" runat="server">
-        </asp:GridView>
+       <table>
+            <tr>
+                <td>Minimum Blood Lead Level: <br /> <em>(xx.x)</em></td>
+                <td><asp:TextBox ID="tbMinLeadValue" runat="server" tooltip="Minimum blood lead Value (Optional)"></asp:TextBox></td>
+                  <asp:CompareValidator
+                    id="CompareValidator1" runat="server" 
+                    Type="Double"
+                    Operator="DataTypeCheck"
+                    ControlToValidate="tbMinLeadvalue" 
+                    ErrorMessage="Please enter a decimal value." ForeColor="Red">
+                </asp:CompareValidator>
+
+                <td>Maximum Blood Lead Level: <br /> <em>(xx.x)</em></td>
+                <td><asp:TextBox ID="tbMaxLeadValue" runat="server" tooltip="Maximum blood lead Value (Optional)" ></asp:TextBox>
+
+                <asp:CompareValidator
+                    id="CompareValidator2" runat="server" 
+                    Type="Double"
+                    Operator="DataTypeCheck"
+                    ControlToValidate="tbMaxLeadvalue" 
+                    ErrorMessage="Please enter a decimal value." ForeColor="Red">
+                </asp:CompareValidator>
+
+                </td>
+
+                            <td>
+                                <asp:Button runat="server" ID="btnApplyLeadValueFilter" 
+                                    Text="Apply Blood Lead Level Range Filter &gt;&gt;" 
+                                    OnClick="btnApplyLeadValueFilter_Click" />
+                            </td>
+            </tr>
+        
+
+        </table>
+
+        <p>&nbsp;</p>
+
        
-                <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="80%">
+            <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="80%">
             <LocalReport ReportPath="Reports\ClientsByBloodLeadLevelOcean.rdlc">
                 <DataSources>
-                    <rsweb:ReportDataSource DataSourceId="ClientsByBloodLeadLevelDataSet" Name="ClientsByBloodLeadLevelDataSet" />
+                    <rsweb:ReportDataSource DataSourceId="ClientsByBloodLeadLevelDataSet1" Name="ClientsByBloodLeadLevelDataSet1" />
                 </DataSources>
             </LocalReport>
         </rsweb:ReportViewer>
 
         
-        <asp:SqlDataSource ID="ClientsByBloodLeadLevelDataSet" runat="server" ConnectionString="<%$ ConnectionStrings:csLCCHP%>" SelectCommand="usp_SLAllBloodTestResults" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="ClientsByBloodLeadLevelDataSet1" runat="server" ConnectionString="<%$ ConnectionStrings:csLCCHP%>" SelectCommand="usp_SLAllBloodTestResults2" SelectCommandType="StoredProcedure">
+         <SelectParameters>
+                <asp:Parameter Name="Min_Lead_Value" Type="Double"></asp:Parameter>
+                <asp:Parameter Name="Max_Lead_Value" Type="Double"></asp:Parameter>
+            </SelectParameters>
+
+        </asp:SqlDataSource>
 
         </div>
 
