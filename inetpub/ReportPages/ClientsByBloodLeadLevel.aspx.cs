@@ -14,19 +14,19 @@ using Microsoft.Reporting.WebForms;
 public partial class ReportPages_ResearchSubjectByAge : System.Web.UI.Page
 {
     String MinLeadValue = "-3.3";
-    String MaxLeadvalue = "100.0";
+    String MaxLeadValue = "100.0";
 
     protected void Page_Load(object sender, EventArgs e)
     {
 
         if (!Page.IsPostBack)
         {
-            tbMinLeadValue.Text = "-3.3"; //  DateTime.Today.ToString("MM/dd/yyyy");
-            tbMaxLeadValue.Text = "100.0"; // DateTime.Today.AddMonths(1).ToString("MM/dd/yyyy");
+            tbMinLeadValue.Text = MinLeadValue; 
+            tbMaxLeadValue.Text = MaxLeadValue; 
         }
-        //if (tbMinLeadValue != "")
-        ClientsByBloodLeadLevelDataSet1.SelectParameters["Min_Lead_Value"].DefaultValue = tbMinLeadValue.Text;
-        ClientsByBloodLeadLevelDataSet1.SelectParameters["Max_Lead_Value"].DefaultValue = tbMaxLeadValue.Text;
+
+        ClientsByBloodLeadLevelDataSet1.SelectParameters["Min_Lead_Value"].DefaultValue = MinLeadValue;
+        ClientsByBloodLeadLevelDataSet1.SelectParameters["Max_Lead_Value"].DefaultValue = MaxLeadValue;
     }
 
     protected void btnApplyLeadValueFilter_Click(object sender, EventArgs e)
@@ -36,14 +36,14 @@ public partial class ReportPages_ResearchSubjectByAge : System.Web.UI.Page
         else
         {
             ClientsByBloodLeadLevelDataSet1.SelectParameters["Min_Lead_Value"].DefaultValue = MinLeadValue;
-            tbMinLeadValue.Text = "-3.3";
+            tbMinLeadValue.Text = MinLeadValue;
         }
         if (tbMaxLeadValue.Text != "")
             ClientsByBloodLeadLevelDataSet1.SelectParameters["Max_Lead_Value"].DefaultValue = tbMaxLeadValue.Text;
         else
         {
             ClientsByBloodLeadLevelDataSet1.SelectParameters["Max_Lead_Value"].DefaultValue = "100.0";
-            tbMaxLeadValue.Text = "100.0";
+            tbMaxLeadValue.Text = MaxLeadValue;
         }
 
 
