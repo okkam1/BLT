@@ -46,8 +46,6 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_Property_ReleaseStatus", "ReleaseStatu", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LCCHPEntityModel.ReleaseStatu), "Property", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.Property), true)]
 [assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_PropertyNotes_Property", "Property", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.Property), "PropertyNote", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.PropertyNote), true)]
 [assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_QuestionnaireNotes_Questionnaire", "Questionnaire", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.Questionnaire), "QuestionnaireNote", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.QuestionnaireNote), true)]
-[assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_PersontoDaycare_Daycare", "Daycare", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.Daycare), "PersontoDaycare", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.PersontoDaycare), true)]
-[assembly: EdmRelationshipAttribute("LCCHPEntityModel", "FK_PersontoDaycare_PersontoDaycare", "Person", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LCCHPEntityModel.Person), "PersontoDaycare", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LCCHPEntityModel.PersontoDaycare), true)]
 
 #endregion
 
@@ -530,22 +528,6 @@ namespace LCCHPEntityModel
             }
         }
         private ObjectSet<SampleType> _SampleTypes;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<PersontoDaycare> PersontoDaycares
-        {
-            get
-            {
-                if ((_PersontoDaycares == null))
-                {
-                    _PersontoDaycares = base.CreateObjectSet<PersontoDaycare>("PersontoDaycares");
-                }
-                return _PersontoDaycares;
-            }
-        }
-        private ObjectSet<PersontoDaycare> _PersontoDaycares;
 
         #endregion
 
@@ -765,14 +747,6 @@ namespace LCCHPEntityModel
         public void AddToSampleTypes(SampleType sampleType)
         {
             base.AddObject("SampleTypes", sampleType);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the PersontoDaycares EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToPersontoDaycares(PersontoDaycare persontoDaycare)
-        {
-            base.AddObject("PersontoDaycares", persontoDaycare);
         }
 
         #endregion
@@ -1809,28 +1783,6 @@ namespace LCCHPEntityModel
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Questionnaire>("LCCHPEntityModel.FK_Questionnaire_Daycare", "Questionnaire", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LCCHPEntityModel", "FK_PersontoDaycare_Daycare", "PersontoDaycare")]
-        public EntityCollection<PersontoDaycare> PersontoDaycares
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<PersontoDaycare>("LCCHPEntityModel.FK_PersontoDaycare_Daycare", "PersontoDaycare");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<PersontoDaycare>("LCCHPEntityModel.FK_PersontoDaycare_Daycare", "PersontoDaycare", value);
                 }
             }
         }
@@ -4909,28 +4861,6 @@ namespace LCCHPEntityModel
                 }
             }
         }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LCCHPEntityModel", "FK_PersontoDaycare_PersontoDaycare", "PersontoDaycare")]
-        public EntityCollection<PersontoDaycare> PersontoDaycares
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<PersontoDaycare>("LCCHPEntityModel.FK_PersontoDaycare_PersontoDaycare", "PersontoDaycare");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<PersontoDaycare>("LCCHPEntityModel.FK_PersontoDaycare_PersontoDaycare", "PersontoDaycare", value);
-                }
-            }
-        }
 
         #endregion
 
@@ -5281,272 +5211,6 @@ namespace LCCHPEntityModel
         private Nullable<global::System.DateTime> _CreatedDate;
         partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
         partial void OnCreatedDateChanged();
-
-        #endregion
-
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="LCCHPEntityModel", Name="PersontoDaycare")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class PersontoDaycare : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new PersontoDaycare object.
-        /// </summary>
-        /// <param name="personID">Initial value of the PersonID property.</param>
-        /// <param name="daycareID">Initial value of the DaycareID property.</param>
-        /// <param name="startDate">Initial value of the StartDate property.</param>
-        public static PersontoDaycare CreatePersontoDaycare(global::System.Int32 personID, global::System.Int32 daycareID, global::System.DateTime startDate)
-        {
-            PersontoDaycare persontoDaycare = new PersontoDaycare();
-            persontoDaycare.PersonID = personID;
-            persontoDaycare.DaycareID = daycareID;
-            persontoDaycare.StartDate = startDate;
-            return persontoDaycare;
-        }
-
-        #endregion
-
-        #region Simple Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 PersonID
-        {
-            get
-            {
-                return _PersonID;
-            }
-            set
-            {
-                if (_PersonID != value)
-                {
-                    OnPersonIDChanging(value);
-                    ReportPropertyChanging("PersonID");
-                    _PersonID = StructuralObject.SetValidValue(value, "PersonID");
-                    ReportPropertyChanged("PersonID");
-                    OnPersonIDChanged();
-                }
-            }
-        }
-        private global::System.Int32 _PersonID;
-        partial void OnPersonIDChanging(global::System.Int32 value);
-        partial void OnPersonIDChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 DaycareID
-        {
-            get
-            {
-                return _DaycareID;
-            }
-            set
-            {
-                if (_DaycareID != value)
-                {
-                    OnDaycareIDChanging(value);
-                    ReportPropertyChanging("DaycareID");
-                    _DaycareID = StructuralObject.SetValidValue(value, "DaycareID");
-                    ReportPropertyChanged("DaycareID");
-                    OnDaycareIDChanged();
-                }
-            }
-        }
-        private global::System.Int32 _DaycareID;
-        partial void OnDaycareIDChanging(global::System.Int32 value);
-        partial void OnDaycareIDChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime StartDate
-        {
-            get
-            {
-                return _StartDate;
-            }
-            set
-            {
-                if (_StartDate != value)
-                {
-                    OnStartDateChanging(value);
-                    ReportPropertyChanging("StartDate");
-                    _StartDate = StructuralObject.SetValidValue(value, "StartDate");
-                    ReportPropertyChanged("StartDate");
-                    OnStartDateChanged();
-                }
-            }
-        }
-        private global::System.DateTime _StartDate;
-        partial void OnStartDateChanging(global::System.DateTime value);
-        partial void OnStartDateChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.DateTime> EndDate
-        {
-            get
-            {
-                return _EndDate;
-            }
-            set
-            {
-                OnEndDateChanging(value);
-                ReportPropertyChanging("EndDate");
-                _EndDate = StructuralObject.SetValidValue(value, "EndDate");
-                ReportPropertyChanged("EndDate");
-                OnEndDateChanged();
-            }
-        }
-        private Nullable<global::System.DateTime> _EndDate;
-        partial void OnEndDateChanging(Nullable<global::System.DateTime> value);
-        partial void OnEndDateChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String DaycareNotes
-        {
-            get
-            {
-                return _DaycareNotes;
-            }
-            set
-            {
-                OnDaycareNotesChanging(value);
-                ReportPropertyChanging("DaycareNotes");
-                _DaycareNotes = StructuralObject.SetValidValue(value, true, "DaycareNotes");
-                ReportPropertyChanged("DaycareNotes");
-                OnDaycareNotesChanged();
-            }
-        }
-        private global::System.String _DaycareNotes;
-        partial void OnDaycareNotesChanging(global::System.String value);
-        partial void OnDaycareNotesChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.DateTime> CreatedDate
-        {
-            get
-            {
-                return _CreatedDate;
-            }
-            set
-            {
-                OnCreatedDateChanging(value);
-                ReportPropertyChanging("CreatedDate");
-                _CreatedDate = StructuralObject.SetValidValue(value, "CreatedDate");
-                ReportPropertyChanged("CreatedDate");
-                OnCreatedDateChanged();
-            }
-        }
-        private Nullable<global::System.DateTime> _CreatedDate;
-        partial void OnCreatedDateChanging(Nullable<global::System.DateTime> value);
-        partial void OnCreatedDateChanged();
-
-        #endregion
-
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LCCHPEntityModel", "FK_PersontoDaycare_Daycare", "Daycare")]
-        public Daycare Daycare
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Daycare>("LCCHPEntityModel.FK_PersontoDaycare_Daycare", "Daycare").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Daycare>("LCCHPEntityModel.FK_PersontoDaycare_Daycare", "Daycare").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Daycare> DaycareReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Daycare>("LCCHPEntityModel.FK_PersontoDaycare_Daycare", "Daycare");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Daycare>("LCCHPEntityModel.FK_PersontoDaycare_Daycare", "Daycare", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LCCHPEntityModel", "FK_PersontoDaycare_PersontoDaycare", "Person")]
-        public Person Person
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Person>("LCCHPEntityModel.FK_PersontoDaycare_PersontoDaycare", "Person").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Person>("LCCHPEntityModel.FK_PersontoDaycare_PersontoDaycare", "Person").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Person> PersonReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Person>("LCCHPEntityModel.FK_PersontoDaycare_PersontoDaycare", "Person");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Person>("LCCHPEntityModel.FK_PersontoDaycare_PersontoDaycare", "Person", value);
-                }
-            }
-        }
 
         #endregion
 

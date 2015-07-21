@@ -21,7 +21,6 @@
           <EntitySet Name="Person" EntityType="LCCHPEntityModel.Store.Person" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="PersonNotes" EntityType="LCCHPEntityModel.Store.PersonNotes" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="PersonStatus" EntityType="LCCHPEntityModel.Store.PersonStatus" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="PersontoDaycare" EntityType="LCCHPEntityModel.Store.PersontoDaycare" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="PersontoEthnicity" EntityType="LCCHPEntityModel.Store.PersontoEthnicity" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="PersontoFamily" EntityType="LCCHPEntityModel.Store.PersontoFamily" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="PersontoHobby" EntityType="LCCHPEntityModel.Store.PersontoHobby" store:Type="Tables" Schema="dbo" />
@@ -77,14 +76,6 @@
           <AssociationSet Name="FK_PersonNotes_Person" Association="LCCHPEntityModel.Store.FK_PersonNotes_Person">
             <End Role="Person" EntitySet="Person" />
             <End Role="PersonNotes" EntitySet="PersonNotes" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PersontoDaycare_Daycare" Association="LCCHPEntityModel.Store.FK_PersontoDaycare_Daycare">
-            <End Role="Daycare" EntitySet="Daycare" />
-            <End Role="PersontoDaycare" EntitySet="PersontoDaycare" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PersontoDaycare_PersontoDaycare" Association="LCCHPEntityModel.Store.FK_PersontoDaycare_PersontoDaycare">
-            <End Role="Person" EntitySet="Person" />
-            <End Role="PersontoDaycare" EntitySet="PersontoDaycare" />
           </AssociationSet>
           <AssociationSet Name="FK_PersontoEthnicity_Ethnicity" Association="LCCHPEntityModel.Store.FK_PersontoEthnicity_Ethnicity">
             <End Role="Ethnicity" EntitySet="Ethnicity" />
@@ -351,19 +342,6 @@
           <Property Name="PersonStatusName" Type="varchar" MaxLength="50" />
           <Property Name="HistoricPersonStatusID" Type="char" MaxLength="1" />
           <Property Name="ModifiedDate" Type="datetime" />
-          <Property Name="CreatedDate" Type="datetime" />
-        </EntityType>
-        <EntityType Name="PersontoDaycare">
-          <Key>
-            <PropertyRef Name="PersonID" />
-            <PropertyRef Name="DaycareID" />
-            <PropertyRef Name="StartDate" />
-          </Key>
-          <Property Name="PersonID" Type="int" Nullable="false" />
-          <Property Name="DaycareID" Type="int" Nullable="false" />
-          <Property Name="StartDate" Type="date" Nullable="false" />
-          <Property Name="EndDate" Type="date" />
-          <Property Name="DaycareNotes" Type="varchar" MaxLength="3000" />
           <Property Name="CreatedDate" Type="datetime" />
         </EntityType>
         <EntityType Name="PersontoEthnicity">
@@ -672,30 +650,6 @@
               <PropertyRef Name="PersonID" />
             </Principal>
             <Dependent Role="PersonNotes">
-              <PropertyRef Name="PersonID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_PersontoDaycare_Daycare">
-          <End Role="Daycare" Type="LCCHPEntityModel.Store.Daycare" Multiplicity="1" />
-          <End Role="PersontoDaycare" Type="LCCHPEntityModel.Store.PersontoDaycare" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Daycare">
-              <PropertyRef Name="DaycareID" />
-            </Principal>
-            <Dependent Role="PersontoDaycare">
-              <PropertyRef Name="DaycareID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_PersontoDaycare_PersontoDaycare">
-          <End Role="Person" Type="LCCHPEntityModel.Store.Person" Multiplicity="1" />
-          <End Role="PersontoDaycare" Type="LCCHPEntityModel.Store.PersontoDaycare" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Person">
-              <PropertyRef Name="PersonID" />
-            </Principal>
-            <Dependent Role="PersontoDaycare">
               <PropertyRef Name="PersonID" />
             </Dependent>
           </ReferentialConstraint>
@@ -1032,15 +986,6 @@
             <End Role="Questionnaire" EntitySet="Questionnaires" />
             <End Role="QuestionnaireNote" EntitySet="QuestionnaireNotes" />
           </AssociationSet>
-          <EntitySet Name="PersontoDaycares" EntityType="LCCHPEntityModel.PersontoDaycare" />
-          <AssociationSet Name="FK_PersontoDaycare_Daycare" Association="LCCHPEntityModel.FK_PersontoDaycare_Daycare">
-            <End Role="Daycare" EntitySet="Daycares" />
-            <End Role="PersontoDaycare" EntitySet="PersontoDaycares" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PersontoDaycare_PersontoDaycare" Association="LCCHPEntityModel.FK_PersontoDaycare_PersontoDaycare">
-            <End Role="Person" EntitySet="People" />
-            <End Role="PersontoDaycare" EntitySet="PersontoDaycares" />
-          </AssociationSet>
         </EntityContainer>
         <EntityType Name="BloodTestResult">
           <Key>
@@ -1092,7 +1037,6 @@
           <Property Type="DateTime" Name="ModifiedDate" Precision="3" />
           <Property Type="DateTime" Name="CreatedDate" Precision="3" />
           <NavigationProperty Name="Questionnaires" Relationship="LCCHPEntityModel.FK_Questionnaire_Daycare" FromRole="Daycare" ToRole="Questionnaire" />
-          <NavigationProperty Name="PersontoDaycares" Relationship="LCCHPEntityModel.FK_PersontoDaycare_Daycare" FromRole="Daycare" ToRole="PersontoDaycare" />
         </EntityType>
         <EntityType Name="Ethnicity">
           <Key>
@@ -1254,7 +1198,6 @@
           <NavigationProperty Name="PersontoProperties" Relationship="LCCHPEntityModel.FK_PersontoProperty_Person" FromRole="Person" ToRole="PersontoProperty" />
           <NavigationProperty Name="Properties" Relationship="LCCHPEntityModel.FK_Property_Person" FromRole="Person" ToRole="Property" />
           <NavigationProperty Name="Questionnaires" Relationship="LCCHPEntityModel.FK_Questionnaire_Person" FromRole="Person" ToRole="Questionnaire" />
-          <NavigationProperty Name="PersontoDaycares" Relationship="LCCHPEntityModel.FK_PersontoDaycare_PersontoDaycare" FromRole="Person" ToRole="PersontoDaycare" />
         </EntityType>
         <EntityType Name="PersonNote">
           <Key>
@@ -1802,45 +1745,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="PersontoDaycare">
-          <Key>
-            <PropertyRef Name="PersonID" />
-            <PropertyRef Name="DaycareID" />
-            <PropertyRef Name="StartDate" />
-          </Key>
-          <Property Type="Int32" Name="PersonID" Nullable="false" />
-          <Property Type="Int32" Name="DaycareID" Nullable="false" />
-          <Property Type="DateTime" Name="StartDate" Nullable="false" Precision="0" />
-          <Property Type="DateTime" Name="EndDate" Precision="0" />
-          <Property Type="String" Name="DaycareNotes" MaxLength="3000" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="CreatedDate" Precision="3" />
-          <NavigationProperty Name="Daycare" Relationship="LCCHPEntityModel.FK_PersontoDaycare_Daycare" FromRole="PersontoDaycare" ToRole="Daycare" />
-          <NavigationProperty Name="Person" Relationship="LCCHPEntityModel.FK_PersontoDaycare_PersontoDaycare" FromRole="PersontoDaycare" ToRole="Person" />
-        </EntityType>
-        <Association Name="FK_PersontoDaycare_Daycare">
-          <End Type="LCCHPEntityModel.Daycare" Role="Daycare" Multiplicity="1" />
-          <End Type="LCCHPEntityModel.PersontoDaycare" Role="PersontoDaycare" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Daycare">
-              <PropertyRef Name="DaycareID" />
-            </Principal>
-            <Dependent Role="PersontoDaycare">
-              <PropertyRef Name="DaycareID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_PersontoDaycare_PersontoDaycare">
-          <End Type="LCCHPEntityModel.Person" Role="Person" Multiplicity="1" />
-          <End Type="LCCHPEntityModel.PersontoDaycare" Role="PersontoDaycare" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Person">
-              <PropertyRef Name="PersonID" />
-            </Principal>
-            <Dependent Role="PersontoDaycare">
-              <PropertyRef Name="PersonID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2248,18 +2152,6 @@
                 <ScalarProperty Name="SampleTypeDescription" ColumnName="SampleTypeDescription" />
                 <ScalarProperty Name="SampleTypeName" ColumnName="SampleTypeName" />
                 <ScalarProperty Name="SampleTypeID" ColumnName="SampleTypeID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="PersontoDaycares">
-            <EntityTypeMapping TypeName="LCCHPEntityModel.PersontoDaycare">
-              <MappingFragment StoreEntitySet="PersontoDaycare">
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="DaycareNotes" ColumnName="DaycareNotes" />
-                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-                <ScalarProperty Name="DaycareID" ColumnName="DaycareID" />
-                <ScalarProperty Name="PersonID" ColumnName="PersonID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
