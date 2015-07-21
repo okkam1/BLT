@@ -29,7 +29,7 @@
        <ul>
             <li>
                 <asp:HyperLink ID="UsersManual" runat="server" 
-                    NavigateUrl="LakeCountyBloodLeadTrackingSoftwareUsersManual.html"><img src="images/UserManual.jpg" />User's Manual</asp:HyperLink></li>
+                    NavigateUrl="LakeCountyBloodLeadTrackingWebPortalUsersManual.html"><img src="images/UserManual.jpg" />User's Manual</asp:HyperLink></li>
         
        </ul>
    </div>

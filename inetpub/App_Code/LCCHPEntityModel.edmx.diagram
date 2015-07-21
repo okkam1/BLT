@@ -8,17 +8,6 @@
         <EntityTypeShape EntityType="LCCHPEntityModel.TargetStatu" Width="1.5" PointX="11.962667081487675" PointY="9.06705333714702" />
         <EntityTypeShape EntityType="LCCHPEntityModel.TravelNote" Width="1.5" PointX="10.545278554104865" PointY="9.1204049480708331" />
         <AssociationConnector Association="LCCHPEntityModel.FK_TravelNotes_Family" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.AccessAgreement" Width="1.5" PointX="0.40005420725795171" PointY="14.758612073379855" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.AccessAgreementNote" Width="1.5" PointX="6.5299287710943865" PointY="6.6828131408816267" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.AccessPurpose" Width="1.5" PointX="3.9177935551469183" PointY="11.142286454859324" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.Area" Width="1.5" PointX="7.995619988066899" PointY="12.133790141033842" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.BloodTestResult" Width="1.5" PointX="3.9664396457217816" PointY="4.5822177848695862" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.BloodTestResultsNote" Width="1.5" PointX="1.5420709352670565" PointY="21.183074856727885" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.CleanupStatu" Width="1.5" PointX="0.12772478727983533" PointY="23.289450999018481" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.ConstructionType" Width="1.5" PointX="10.725338927807911" PointY="19.526868426951985" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.Contractor" Width="1.5" PointX="7.0271328962534358" PointY="20.420219356389818" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.ContractortoProperty" Width="1.5" PointX="10.232980883788773" PointY="6.3409162938319685" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.ContractortoRemediation" Width="1.5" PointX="10.573271204984408" PointY="23.206599201637598" />
         <EntityTypeShape EntityType="LCCHPEntityModel.ContractortoRemediationActionPlan" Width="1.5" PointX="3.8889828584571289" PointY="20.503286997090694" />
         <EntityTypeShape EntityType="LCCHPEntityModel.Country" Width="1.5" PointX="8.2033518684112234" PointY="12.4212752936507" />
         <EntityTypeShape EntityType="LCCHPEntityModel.Daycare" Width="1.5" PointX="9.961275915597227" PointY="9.32216711776432" />
@@ -75,7 +64,7 @@
         <EntityTypeShape EntityType="LCCHPEntityModel.PropertytoHouseholdSourcesofLead" Width="1.5" PointX="3.8147102165104405" PointY="12.052352672467173" />
         <EntityTypeShape EntityType="LCCHPEntityModel.PropertytoMedium" Width="1.5" PointX="11.086352951399215" PointY="21.707181389307223" />
         <EntityTypeShape EntityType="LCCHPEntityModel.Questionnaire" Width="1.5" PointX="5.8945788340152143" PointY="17.080363326277752" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.QuestionnaireNote" Width="1.5" PointX="11.355066111010995" PointY="9.1023600143857113" />
+        <EntityTypeShape EntityType="LCCHPEntityModel.QuestionnaireNote" Width="1.5" PointX="12.125" PointY="3.25" IsExpanded="true" />
         <EntityTypeShape EntityType="LCCHPEntityModel.RelationshipType" Width="1.5" PointX="10.253069383210068" PointY="12.735934501856535" />
         <EntityTypeShape EntityType="LCCHPEntityModel.Remediation" Width="1.5" PointX="7.5018003748272548" PointY="6.8122143479120982" />
         <EntityTypeShape EntityType="LCCHPEntityModel.RemediationActionPlan" Width="1.5" PointX="6.929135333248011" PointY="0.50676526152843859" />
@@ -85,26 +74,6 @@
         <EntityTypeShape EntityType="LCCHPEntityModel.Source" Width="1.5" PointX="1.4807754575651024" PointY="16.220384366912945" />
         <EntityTypeShape EntityType="LCCHPEntityModel.sysdiagram" Width="1.5" PointX="5.5819803483700285" PointY="8.2076742538286727" />
         <EntityTypeShape EntityType="LCCHPEntityModel.Unit" Width="1.5" PointX="7.8916973974051405" PointY="16.67430754782367" />
-        <AssociationConnector Association="LCCHPEntityModel.FK_AccessAgreement_AccessPurpose" />
-        <AssociationConnector Association="LCCHPEntityModel.FK_AccessAgreement_Property" />
-        <AssociationConnector Association="LCCHPEntityModel.FK_AccessAgreementNotes_AccessAgreement" />
-        <AssociationConnector Association="LCCHPEntityModel.FK_PersontoAccessAgreement_AccessAgreement" />
-        <AssociationConnector Association="LCCHPEntityModel.FK_Property_Area" />
-        <AssociationConnector Association="LCCHPEntityModel.FK_BloodTestResults_HematocritLevelCategory" />
-        <AssociationConnector Association="LCCHPEntityModel.FK_BloodTestResults_HemoglobinLevelCategory" />
-        <AssociationConnector Association="LCCHPEntityModel.FK_BloodTestResults_Lab" />
-        <AssociationConnector Association="LCCHPEntityModel.FK_BloodTestResults_LeadLevelCategory" />
-        <AssociationConnector Association="LCCHPEntityModel.FK_BloodTestResults_Person" />
-        <AssociationConnector Association="LCCHPEntityModel.FK_BloodTestResults_SampleType" />
-        <AssociationConnector Association="LCCHPEntityModel.FK_BloodTestResultsNotes_BloodTestResults" />
-        <AssociationConnector Association="LCCHPEntityModel.FK_PropertytoCleanupStatus_CleanupStatus" />
-        <AssociationConnector Association="LCCHPEntityModel.FK_Property_ConstructionType" />
-        <AssociationConnector Association="LCCHPEntityModel.FK_ContractortoProperty_Contractor" />
-        <AssociationConnector Association="LCCHPEntityModel.FK_ContractortoRemediation_Contractor" />
-        <AssociationConnector Association="LCCHPEntityModel.FK_ContractortoRemediationActionPlan_Contractor" />
-        <AssociationConnector Association="LCCHPEntityModel.FK_ContractortoSamplingPlan_Contractor" />
-        <AssociationConnector Association="LCCHPEntityModel.FK_ContractortoProperty_Property" />
-        <AssociationConnector Association="LCCHPEntityModel.FK_ContractortoRemediation_Remediation" />
         <AssociationConnector Association="LCCHPEntityModel.FK_ContractortoRemediationActionPlan_RemediationActionPlan" />
         <AssociationConnector Association="LCCHPEntityModel.FK_ContractortoRemediationPlan_RemediationActionPlan" />
         <AssociationConnector Association="LCCHPEntityModel.FK_ForeignFoodtoCountry_Country" />
@@ -123,7 +92,6 @@
         <AssociationConnector Association="LCCHPEntityModel.FK_PersontoEthnicity_Ethnicity" />
         <AssociationConnector Association="LCCHPEntityModel.FK_FamilyNotes_Family" />
         <AssociationConnector Association="LCCHPEntityModel.FK_PersontoFamily_Family" />
-        <AssociationConnector Association="LCCHPEntityModel.FK_TravelNotes_Family" />
         <AssociationConnector Association="LCCHPEntityModel.FK_ForeignFoodtoCountry_ForeignFood" />
         <AssociationConnector Association="LCCHPEntityModel.FK_PersontoForeignFood_ForeignFood" />
         <AssociationConnector Association="LCCHPEntityModel.FK_GiftCard_Person" />
@@ -177,6 +145,8 @@
         <AssociationConnector Association="LCCHPEntityModel.FK_QuestionnaireNotes_Questionnaire" />
         <AssociationConnector Association="LCCHPEntityModel.FK_Remediation_RemediationActionPlan" />
         <AssociationConnector Association="LCCHPEntityModel.FK_RemediationNotes_Remediation" />
+        <AssociationConnector Association="LCCHPEntityModel.FK_Questionnaire_Daycare" />
+        <AssociationConnector Association="LCCHPEntityModel.FK_Person_TargetStatus" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
