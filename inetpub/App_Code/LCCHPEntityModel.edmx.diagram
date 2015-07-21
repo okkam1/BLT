@@ -19,15 +19,12 @@
         <EntityTypeShape EntityType="LCCHPEntityModel.Language" Width="1.5" PointX="11.514450922382274" PointY="9.00935995998297" />
         <EntityTypeShape EntityType="LCCHPEntityModel.Person" Width="1.5" PointX="2.6509125878340156" PointY="7.1157003078217151" />
         <EntityTypeShape EntityType="LCCHPEntityModel.PersonNote" Width="1.5" PointX="8.8105910703589174" PointY="16.421396263139972" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.PersonReleaseNote" Width="1.5" PointX="2.2465159624100273" PointY="21.509509305241288" />
         <EntityTypeShape EntityType="LCCHPEntityModel.PersonStatu" Width="1.5" PointX="11.4460434221877" PointY="22.856745134506721" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.PersontoDaycare" Width="1.5" PointX="5.2616137719068741" PointY="7.5673762297105869" />
         <EntityTypeShape EntityType="LCCHPEntityModel.PersontoEthnicity" Width="1.5" PointX="1.5101812749682837" PointY="26.902621430765194" />
         <EntityTypeShape EntityType="LCCHPEntityModel.PersontoFamily" Width="1.5" PointX="4.38467987272175" PointY="22.869170527378643" />
         <EntityTypeShape EntityType="LCCHPEntityModel.PersontoHobby" Width="1.5" PointX="0.058585586053591959" PointY="5.5915034886410009" />
         <EntityTypeShape EntityType="LCCHPEntityModel.PersontoLanguage" Width="1.5" PointX="5.679385718740237" PointY="5.6790247287969224" />
         <EntityTypeShape EntityType="LCCHPEntityModel.PersontoProperty" Width="1.5" PointX="9.8892872919744281" PointY="31.304165973935355" />
-        <EntityTypeShape EntityType="LCCHPEntityModel.PersonTravelNote" Width="1.5" PointX="6.8102214740636864" PointY="27.54562197418214" />
         <EntityTypeShape EntityType="LCCHPEntityModel.PhoneNumber" Width="1.5" PointX="3.94227993858153" PointY="24.974825185246218" />
         <EntityTypeShape EntityType="LCCHPEntityModel.Property" Width="1.5" PointX="7.48306711739072" PointY="27.586291713447444" />
         <EntityTypeShape EntityType="LCCHPEntityModel.PropertyNote" Width="1.5" PointX="0.14153951599334344" PointY="22.338740493328654" />
@@ -39,7 +36,6 @@
         <AssociationConnector Association="LCCHPEntityModel.FK_BloodTestResults_Person" />
         <AssociationConnector Association="LCCHPEntityModel.FK_BloodTestResults_SampleType" />
         <AssociationConnector Association="LCCHPEntityModel.FK_BloodTestResultsNotes_BloodTestResults" />
-        <AssociationConnector Association="LCCHPEntityModel.FK_PersontoDaycare_Daycare" />
         <AssociationConnector Association="LCCHPEntityModel.FK_Questionnaire_Daycare" />
         <AssociationConnector Association="LCCHPEntityModel.FK_PersontoEthnicity_Ethnicity" />
         <AssociationConnector Association="LCCHPEntityModel.FK_FamilyNotes_Family" />
@@ -52,14 +48,11 @@
         <AssociationConnector Association="LCCHPEntityModel.FK_LabNotes_Lab" />
         <AssociationConnector Association="LCCHPEntityModel.FK_PersontoLanguage_Language" />
         <AssociationConnector Association="LCCHPEntityModel.FK_PersonNotes_Person" />
-        <AssociationConnector Association="LCCHPEntityModel.FK_PersonReleaseNotes_Person" />
-        <AssociationConnector Association="LCCHPEntityModel.FK_PersontoDaycare_PersontoDaycare" />
         <AssociationConnector Association="LCCHPEntityModel.FK_PersontoEthnicity_Person" />
         <AssociationConnector Association="LCCHPEntityModel.FK_PersontoFamily_Person" />
         <AssociationConnector Association="LCCHPEntityModel.FK_PersontoHobby_Person" />
         <AssociationConnector Association="LCCHPEntityModel.FK_PersontoLanguage_Person" />
         <AssociationConnector Association="LCCHPEntityModel.FK_PersontoProperty_Person" />
-        <AssociationConnector Association="LCCHPEntityModel.FK_PersonTravelNotes_Person" />
         <AssociationConnector Association="LCCHPEntityModel.FK_Property_Person" />
         <AssociationConnector Association="LCCHPEntityModel.FK_Questionnaire_Person" />
         <AssociationConnector Association="LCCHPEntityModel.FK_PersontoProperty_Property" />

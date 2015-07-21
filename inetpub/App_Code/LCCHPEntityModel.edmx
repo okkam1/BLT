@@ -19,17 +19,13 @@
           <EntitySet Name="LabNotes" EntityType="LCCHPEntityModel.Store.LabNotes" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Language" EntityType="LCCHPEntityModel.Store.Language" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Person" EntityType="LCCHPEntityModel.Store.Person" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="PersonHobbyNotes" EntityType="LCCHPEntityModel.Store.PersonHobbyNotes" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="PersonNotes" EntityType="LCCHPEntityModel.Store.PersonNotes" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="PersonReleaseNotes" EntityType="LCCHPEntityModel.Store.PersonReleaseNotes" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="PersonStatus" EntityType="LCCHPEntityModel.Store.PersonStatus" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="PersontoDaycare" EntityType="LCCHPEntityModel.Store.PersontoDaycare" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="PersontoEthnicity" EntityType="LCCHPEntityModel.Store.PersontoEthnicity" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="PersontoFamily" EntityType="LCCHPEntityModel.Store.PersontoFamily" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="PersontoHobby" EntityType="LCCHPEntityModel.Store.PersontoHobby" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="PersontoLanguage" EntityType="LCCHPEntityModel.Store.PersontoLanguage" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="PersontoProperty" EntityType="LCCHPEntityModel.Store.PersontoProperty" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="PersonTravelNotes" EntityType="LCCHPEntityModel.Store.PersonTravelNotes" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="PhoneNumber" EntityType="LCCHPEntityModel.Store.PhoneNumber" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Property" EntityType="LCCHPEntityModel.Store.Property" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="PropertyNotes" EntityType="LCCHPEntityModel.Store.PropertyNotes" store:Type="Tables" Schema="dbo" />
@@ -77,25 +73,9 @@
             <End Role="Lab" EntitySet="Lab" />
             <End Role="LabNotes" EntitySet="LabNotes" />
           </AssociationSet>
-          <AssociationSet Name="FK_PersonHobbyNotes_Person" Association="LCCHPEntityModel.Store.FK_PersonHobbyNotes_Person">
-            <End Role="Person" EntitySet="Person" />
-            <End Role="PersonHobbyNotes" EntitySet="PersonHobbyNotes" />
-          </AssociationSet>
           <AssociationSet Name="FK_PersonNotes_Person" Association="LCCHPEntityModel.Store.FK_PersonNotes_Person">
             <End Role="Person" EntitySet="Person" />
             <End Role="PersonNotes" EntitySet="PersonNotes" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PersonReleaseNotes_Person" Association="LCCHPEntityModel.Store.FK_PersonReleaseNotes_Person">
-            <End Role="Person" EntitySet="Person" />
-            <End Role="PersonReleaseNotes" EntitySet="PersonReleaseNotes" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PersontoDaycare_Daycare" Association="LCCHPEntityModel.Store.FK_PersontoDaycare_Daycare">
-            <End Role="Daycare" EntitySet="Daycare" />
-            <End Role="PersontoDaycare" EntitySet="PersontoDaycare" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PersontoDaycare_PersontoDaycare" Association="LCCHPEntityModel.Store.FK_PersontoDaycare_PersontoDaycare">
-            <End Role="Person" EntitySet="Person" />
-            <End Role="PersontoDaycare" EntitySet="PersontoDaycare" />
           </AssociationSet>
           <AssociationSet Name="FK_PersontoEthnicity_Ethnicity" Association="LCCHPEntityModel.Store.FK_PersontoEthnicity_Ethnicity">
             <End Role="Ethnicity" EntitySet="Ethnicity" />
@@ -136,10 +116,6 @@
           <AssociationSet Name="FK_PersontoProperty_Property" Association="LCCHPEntityModel.Store.FK_PersontoProperty_Property">
             <End Role="Property" EntitySet="Property" />
             <End Role="PersontoProperty" EntitySet="PersontoProperty" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PersonTravelNotes_Person" Association="LCCHPEntityModel.Store.FK_PersonTravelNotes_Person">
-            <End Role="Person" EntitySet="Person" />
-            <End Role="PersonTravelNotes" EntitySet="PersonTravelNotes" />
           </AssociationSet>
           <AssociationSet Name="FK_Property_Person" Association="LCCHPEntityModel.Store.FK_Property_Person">
             <End Role="Person" EntitySet="Person" />
@@ -348,29 +324,11 @@
           <Property Name="NursingInfant" Type="bit" />
           <Property Name="ClientStatusID" Type="smallint" />
         </EntityType>
-        <EntityType Name="PersonHobbyNotes">
-          <Key>
-            <PropertyRef Name="PersonHobbyNotesID" />
-          </Key>
-          <Property Name="PersonHobbyNotesID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="PersonID" Type="int" Nullable="false" />
-          <Property Name="CreatedDate" Type="datetime" />
-          <Property Name="Notes" Type="varchar" Nullable="false" MaxLength="3000" />
-        </EntityType>
         <EntityType Name="PersonNotes">
           <Key>
             <PropertyRef Name="PersonNotesID" />
           </Key>
           <Property Name="PersonNotesID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="PersonID" Type="int" Nullable="false" />
-          <Property Name="CreatedDate" Type="datetime" />
-          <Property Name="Notes" Type="varchar" Nullable="false" MaxLength="3000" />
-        </EntityType>
-        <EntityType Name="PersonReleaseNotes">
-          <Key>
-            <PropertyRef Name="PersonReleaseNotesID" />
-          </Key>
-          <Property Name="PersonReleaseNotesID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="PersonID" Type="int" Nullable="false" />
           <Property Name="CreatedDate" Type="datetime" />
           <Property Name="Notes" Type="varchar" Nullable="false" MaxLength="3000" />
@@ -384,19 +342,6 @@
           <Property Name="PersonStatusName" Type="varchar" MaxLength="50" />
           <Property Name="HistoricPersonStatusID" Type="char" MaxLength="1" />
           <Property Name="ModifiedDate" Type="datetime" />
-          <Property Name="CreatedDate" Type="datetime" />
-        </EntityType>
-        <EntityType Name="PersontoDaycare">
-          <Key>
-            <PropertyRef Name="PersonID" />
-            <PropertyRef Name="DaycareID" />
-            <PropertyRef Name="StartDate" />
-          </Key>
-          <Property Name="PersonID" Type="int" Nullable="false" />
-          <Property Name="DaycareID" Type="int" Nullable="false" />
-          <Property Name="StartDate" Type="date" Nullable="false" />
-          <Property Name="EndDate" Type="date" />
-          <Property Name="DaycareNotes" Type="varchar" MaxLength="3000" />
           <Property Name="CreatedDate" Type="datetime" />
         </EntityType>
         <EntityType Name="PersontoEthnicity">
@@ -453,15 +398,6 @@
           <Property Name="FamilyID" Type="int" />
           <Property Name="PersontoPropertyID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="CreatedDate" Type="datetime" />
-        </EntityType>
-        <EntityType Name="PersonTravelNotes">
-          <Key>
-            <PropertyRef Name="PersonTravelNotesID" />
-          </Key>
-          <Property Name="PersonTravelNotesID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="PersonID" Type="int" Nullable="false" />
-          <Property Name="CreatedDate" Type="datetime" />
-          <Property Name="Notes" Type="varchar" Nullable="false" MaxLength="3000" />
         </EntityType>
         <EntityType Name="PhoneNumber">
           <Key>
@@ -706,18 +642,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_PersonHobbyNotes_Person">
-          <End Role="Person" Type="LCCHPEntityModel.Store.Person" Multiplicity="1" />
-          <End Role="PersonHobbyNotes" Type="LCCHPEntityModel.Store.PersonHobbyNotes" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Person">
-              <PropertyRef Name="PersonID" />
-            </Principal>
-            <Dependent Role="PersonHobbyNotes">
-              <PropertyRef Name="PersonID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_PersonNotes_Person">
           <End Role="Person" Type="LCCHPEntityModel.Store.Person" Multiplicity="1" />
           <End Role="PersonNotes" Type="LCCHPEntityModel.Store.PersonNotes" Multiplicity="*" />
@@ -726,42 +650,6 @@
               <PropertyRef Name="PersonID" />
             </Principal>
             <Dependent Role="PersonNotes">
-              <PropertyRef Name="PersonID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_PersonReleaseNotes_Person">
-          <End Role="Person" Type="LCCHPEntityModel.Store.Person" Multiplicity="1" />
-          <End Role="PersonReleaseNotes" Type="LCCHPEntityModel.Store.PersonReleaseNotes" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Person">
-              <PropertyRef Name="PersonID" />
-            </Principal>
-            <Dependent Role="PersonReleaseNotes">
-              <PropertyRef Name="PersonID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_PersontoDaycare_Daycare">
-          <End Role="Daycare" Type="LCCHPEntityModel.Store.Daycare" Multiplicity="1" />
-          <End Role="PersontoDaycare" Type="LCCHPEntityModel.Store.PersontoDaycare" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Daycare">
-              <PropertyRef Name="DaycareID" />
-            </Principal>
-            <Dependent Role="PersontoDaycare">
-              <PropertyRef Name="DaycareID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_PersontoDaycare_PersontoDaycare">
-          <End Role="Person" Type="LCCHPEntityModel.Store.Person" Multiplicity="1" />
-          <End Role="PersontoDaycare" Type="LCCHPEntityModel.Store.PersontoDaycare" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Person">
-              <PropertyRef Name="PersonID" />
-            </Principal>
-            <Dependent Role="PersontoDaycare">
               <PropertyRef Name="PersonID" />
             </Dependent>
           </ReferentialConstraint>
@@ -886,18 +774,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_PersonTravelNotes_Person">
-          <End Role="Person" Type="LCCHPEntityModel.Store.Person" Multiplicity="1" />
-          <End Role="PersonTravelNotes" Type="LCCHPEntityModel.Store.PersonTravelNotes" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Person">
-              <PropertyRef Name="PersonID" />
-            </Principal>
-            <Dependent Role="PersonTravelNotes">
-              <PropertyRef Name="PersonID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Property_Person">
           <End Role="Person" Type="LCCHPEntityModel.Store.Person" Multiplicity="0..1" />
           <End Role="Property" Type="LCCHPEntityModel.Store.Property" Multiplicity="*" />
@@ -988,17 +864,13 @@
           <EntitySet Name="LabNotes" EntityType="LCCHPEntityModel.LabNote" />
           <EntitySet Name="Languages" EntityType="LCCHPEntityModel.Language" />
           <EntitySet Name="People" EntityType="LCCHPEntityModel.Person" />
-          <EntitySet Name="PersonHobbyNotes" EntityType="LCCHPEntityModel.PersonHobbyNote" />
           <EntitySet Name="PersonNotes" EntityType="LCCHPEntityModel.PersonNote" />
-          <EntitySet Name="PersonReleaseNotes" EntityType="LCCHPEntityModel.PersonReleaseNote" />
           <EntitySet Name="PersonStatus" EntityType="LCCHPEntityModel.PersonStatu" />
-          <EntitySet Name="PersontoDaycares" EntityType="LCCHPEntityModel.PersontoDaycare" />
           <EntitySet Name="PersontoEthnicities" EntityType="LCCHPEntityModel.PersontoEthnicity" />
           <EntitySet Name="PersontoFamilies" EntityType="LCCHPEntityModel.PersontoFamily" />
           <EntitySet Name="PersontoHobbies" EntityType="LCCHPEntityModel.PersontoHobby" />
           <EntitySet Name="PersontoLanguages" EntityType="LCCHPEntityModel.PersontoLanguage" />
           <EntitySet Name="PersontoProperties" EntityType="LCCHPEntityModel.PersontoProperty" />
-          <EntitySet Name="PersonTravelNotes" EntityType="LCCHPEntityModel.PersonTravelNote" />
           <EntitySet Name="PhoneNumbers" EntityType="LCCHPEntityModel.PhoneNumber" />
           <EntitySet Name="Properties" EntityType="LCCHPEntityModel.Property" />
           <EntitySet Name="PropertyNotes" EntityType="LCCHPEntityModel.PropertyNote" />
@@ -1021,10 +893,6 @@
           <AssociationSet Name="FK_BloodTestResultsNotes_BloodTestResults" Association="LCCHPEntityModel.FK_BloodTestResultsNotes_BloodTestResults">
             <End Role="BloodTestResult" EntitySet="BloodTestResults" />
             <End Role="BloodTestResultsNote" EntitySet="BloodTestResultsNotes" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PersontoDaycare_Daycare" Association="LCCHPEntityModel.FK_PersontoDaycare_Daycare">
-            <End Role="Daycare" EntitySet="Daycares" />
-            <End Role="PersontoDaycare" EntitySet="PersontoDaycares" />
           </AssociationSet>
           <AssociationSet Name="FK_Questionnaire_Daycare" Association="LCCHPEntityModel.FK_Questionnaire_Daycare">
             <End Role="Daycare" EntitySet="Daycares" />
@@ -1070,21 +938,9 @@
             <End Role="Language" EntitySet="Languages" />
             <End Role="PersontoLanguage" EntitySet="PersontoLanguages" />
           </AssociationSet>
-          <AssociationSet Name="FK_PersonHobbyNotes_Person" Association="LCCHPEntityModel.FK_PersonHobbyNotes_Person">
-            <End Role="Person" EntitySet="People" />
-            <End Role="PersonHobbyNote" EntitySet="PersonHobbyNotes" />
-          </AssociationSet>
           <AssociationSet Name="FK_PersonNotes_Person" Association="LCCHPEntityModel.FK_PersonNotes_Person">
             <End Role="Person" EntitySet="People" />
             <End Role="PersonNote" EntitySet="PersonNotes" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PersonReleaseNotes_Person" Association="LCCHPEntityModel.FK_PersonReleaseNotes_Person">
-            <End Role="Person" EntitySet="People" />
-            <End Role="PersonReleaseNote" EntitySet="PersonReleaseNotes" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PersontoDaycare_PersontoDaycare" Association="LCCHPEntityModel.FK_PersontoDaycare_PersontoDaycare">
-            <End Role="Person" EntitySet="People" />
-            <End Role="PersontoDaycare" EntitySet="PersontoDaycares" />
           </AssociationSet>
           <AssociationSet Name="FK_PersontoEthnicity_Person" Association="LCCHPEntityModel.FK_PersontoEthnicity_Person">
             <End Role="Person" EntitySet="People" />
@@ -1105,10 +961,6 @@
           <AssociationSet Name="FK_PersontoProperty_Person" Association="LCCHPEntityModel.FK_PersontoProperty_Person">
             <End Role="Person" EntitySet="People" />
             <End Role="PersontoProperty" EntitySet="PersontoProperties" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PersonTravelNotes_Person" Association="LCCHPEntityModel.FK_PersonTravelNotes_Person">
-            <End Role="Person" EntitySet="People" />
-            <End Role="PersonTravelNote" EntitySet="PersonTravelNotes" />
           </AssociationSet>
           <AssociationSet Name="FK_Property_Person" Association="LCCHPEntityModel.FK_Property_Person">
             <End Role="Person" EntitySet="People" />
@@ -1184,7 +1036,6 @@
           <Property Type="String" Name="DaycareDescription" MaxLength="253" FixedLength="false" Unicode="false" />
           <Property Type="DateTime" Name="ModifiedDate" Precision="3" />
           <Property Type="DateTime" Name="CreatedDate" Precision="3" />
-          <NavigationProperty Name="PersontoDaycares" Relationship="LCCHPEntityModel.FK_PersontoDaycare_Daycare" FromRole="Daycare" ToRole="PersontoDaycare" />
           <NavigationProperty Name="Questionnaires" Relationship="LCCHPEntityModel.FK_Questionnaire_Daycare" FromRole="Daycare" ToRole="Questionnaire" />
         </EntityType>
         <EntityType Name="Ethnicity">
@@ -1339,28 +1190,14 @@
           <Property Type="Boolean" Name="NursingInfant" />
           <Property Type="Int16" Name="ClientStatusID" />
           <NavigationProperty Name="BloodTestResults" Relationship="LCCHPEntityModel.FK_BloodTestResults_Person" FromRole="Person" ToRole="BloodTestResult" />
-          <NavigationProperty Name="PersonHobbyNotes" Relationship="LCCHPEntityModel.FK_PersonHobbyNotes_Person" FromRole="Person" ToRole="PersonHobbyNote" />
           <NavigationProperty Name="PersonNotes" Relationship="LCCHPEntityModel.FK_PersonNotes_Person" FromRole="Person" ToRole="PersonNote" />
-          <NavigationProperty Name="PersonReleaseNotes" Relationship="LCCHPEntityModel.FK_PersonReleaseNotes_Person" FromRole="Person" ToRole="PersonReleaseNote" />
-          <NavigationProperty Name="PersontoDaycares" Relationship="LCCHPEntityModel.FK_PersontoDaycare_PersontoDaycare" FromRole="Person" ToRole="PersontoDaycare" />
           <NavigationProperty Name="PersontoEthnicities" Relationship="LCCHPEntityModel.FK_PersontoEthnicity_Person" FromRole="Person" ToRole="PersontoEthnicity" />
           <NavigationProperty Name="PersontoFamilies" Relationship="LCCHPEntityModel.FK_PersontoFamily_Person" FromRole="Person" ToRole="PersontoFamily" />
           <NavigationProperty Name="PersontoHobbies" Relationship="LCCHPEntityModel.FK_PersontoHobby_Person" FromRole="Person" ToRole="PersontoHobby" />
           <NavigationProperty Name="PersontoLanguages" Relationship="LCCHPEntityModel.FK_PersontoLanguage_Person" FromRole="Person" ToRole="PersontoLanguage" />
           <NavigationProperty Name="PersontoProperties" Relationship="LCCHPEntityModel.FK_PersontoProperty_Person" FromRole="Person" ToRole="PersontoProperty" />
-          <NavigationProperty Name="PersonTravelNotes" Relationship="LCCHPEntityModel.FK_PersonTravelNotes_Person" FromRole="Person" ToRole="PersonTravelNote" />
           <NavigationProperty Name="Properties" Relationship="LCCHPEntityModel.FK_Property_Person" FromRole="Person" ToRole="Property" />
           <NavigationProperty Name="Questionnaires" Relationship="LCCHPEntityModel.FK_Questionnaire_Person" FromRole="Person" ToRole="Questionnaire" />
-        </EntityType>
-        <EntityType Name="PersonHobbyNote">
-          <Key>
-            <PropertyRef Name="PersonHobbyNotesID" />
-          </Key>
-          <Property Type="Int32" Name="PersonHobbyNotesID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Int32" Name="PersonID" Nullable="false" />
-          <Property Type="DateTime" Name="CreatedDate" Precision="3" />
-          <Property Type="String" Name="Notes" Nullable="false" MaxLength="3000" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Person" Relationship="LCCHPEntityModel.FK_PersonHobbyNotes_Person" FromRole="PersonHobbyNote" ToRole="Person" />
         </EntityType>
         <EntityType Name="PersonNote">
           <Key>
@@ -1372,16 +1209,6 @@
           <Property Type="String" Name="Notes" Nullable="false" MaxLength="3000" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Person" Relationship="LCCHPEntityModel.FK_PersonNotes_Person" FromRole="PersonNote" ToRole="Person" />
         </EntityType>
-        <EntityType Name="PersonReleaseNote">
-          <Key>
-            <PropertyRef Name="PersonReleaseNotesID" />
-          </Key>
-          <Property Type="Int32" Name="PersonReleaseNotesID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Int32" Name="PersonID" Nullable="false" />
-          <Property Type="DateTime" Name="CreatedDate" Precision="3" />
-          <Property Type="String" Name="Notes" Nullable="false" MaxLength="3000" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Person" Relationship="LCCHPEntityModel.FK_PersonReleaseNotes_Person" FromRole="PersonReleaseNote" ToRole="Person" />
-        </EntityType>
         <EntityType Name="PersonStatu">
           <Key>
             <PropertyRef Name="PersonStatusID" />
@@ -1392,21 +1219,6 @@
           <Property Type="String" Name="HistoricPersonStatusID" MaxLength="1" FixedLength="true" Unicode="false" />
           <Property Type="DateTime" Name="ModifiedDate" Precision="3" />
           <Property Type="DateTime" Name="CreatedDate" Precision="3" />
-        </EntityType>
-        <EntityType Name="PersontoDaycare">
-          <Key>
-            <PropertyRef Name="PersonID" />
-            <PropertyRef Name="DaycareID" />
-            <PropertyRef Name="StartDate" />
-          </Key>
-          <Property Type="Int32" Name="PersonID" Nullable="false" />
-          <Property Type="Int32" Name="DaycareID" Nullable="false" />
-          <Property Type="DateTime" Name="StartDate" Nullable="false" Precision="0" />
-          <Property Type="DateTime" Name="EndDate" Precision="0" />
-          <Property Type="String" Name="DaycareNotes" MaxLength="3000" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="CreatedDate" Precision="3" />
-          <NavigationProperty Name="Daycare" Relationship="LCCHPEntityModel.FK_PersontoDaycare_Daycare" FromRole="PersontoDaycare" ToRole="Daycare" />
-          <NavigationProperty Name="Person" Relationship="LCCHPEntityModel.FK_PersontoDaycare_PersontoDaycare" FromRole="PersontoDaycare" ToRole="Person" />
         </EntityType>
         <EntityType Name="PersontoEthnicity">
           <Key>
@@ -1472,16 +1284,6 @@
           <Property Type="DateTime" Name="CreatedDate" Precision="3" />
           <NavigationProperty Name="Person" Relationship="LCCHPEntityModel.FK_PersontoProperty_Person" FromRole="PersontoProperty" ToRole="Person" />
           <NavigationProperty Name="Property" Relationship="LCCHPEntityModel.FK_PersontoProperty_Property" FromRole="PersontoProperty" ToRole="Property" />
-        </EntityType>
-        <EntityType Name="PersonTravelNote">
-          <Key>
-            <PropertyRef Name="PersonTravelNotesID" />
-          </Key>
-          <Property Type="Int32" Name="PersonTravelNotesID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Int32" Name="PersonID" Nullable="false" />
-          <Property Type="DateTime" Name="CreatedDate" Precision="3" />
-          <Property Type="String" Name="Notes" Nullable="false" MaxLength="3000" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Person" Relationship="LCCHPEntityModel.FK_PersonTravelNotes_Person" FromRole="PersonTravelNote" ToRole="Person" />
         </EntityType>
         <EntityType Name="PhoneNumber">
           <Key>
@@ -1667,18 +1469,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_PersontoDaycare_Daycare">
-          <End Type="LCCHPEntityModel.Daycare" Role="Daycare" Multiplicity="1" />
-          <End Type="LCCHPEntityModel.PersontoDaycare" Role="PersontoDaycare" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Daycare">
-              <PropertyRef Name="DaycareID" />
-            </Principal>
-            <Dependent Role="PersontoDaycare">
-              <PropertyRef Name="DaycareID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Questionnaire_Daycare">
           <End Type="LCCHPEntityModel.Daycare" Role="Daycare" Multiplicity="0..1" />
           <End Type="LCCHPEntityModel.Questionnaire" Role="Questionnaire" Multiplicity="*" />
@@ -1811,18 +1601,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_PersonHobbyNotes_Person">
-          <End Type="LCCHPEntityModel.Person" Role="Person" Multiplicity="1" />
-          <End Type="LCCHPEntityModel.PersonHobbyNote" Role="PersonHobbyNote" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Person">
-              <PropertyRef Name="PersonID" />
-            </Principal>
-            <Dependent Role="PersonHobbyNote">
-              <PropertyRef Name="PersonID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_PersonNotes_Person">
           <End Type="LCCHPEntityModel.Person" Role="Person" Multiplicity="1" />
           <End Type="LCCHPEntityModel.PersonNote" Role="PersonNote" Multiplicity="*" />
@@ -1831,30 +1609,6 @@
               <PropertyRef Name="PersonID" />
             </Principal>
             <Dependent Role="PersonNote">
-              <PropertyRef Name="PersonID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_PersonReleaseNotes_Person">
-          <End Type="LCCHPEntityModel.Person" Role="Person" Multiplicity="1" />
-          <End Type="LCCHPEntityModel.PersonReleaseNote" Role="PersonReleaseNote" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Person">
-              <PropertyRef Name="PersonID" />
-            </Principal>
-            <Dependent Role="PersonReleaseNote">
-              <PropertyRef Name="PersonID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_PersontoDaycare_PersontoDaycare">
-          <End Type="LCCHPEntityModel.Person" Role="Person" Multiplicity="1" />
-          <End Type="LCCHPEntityModel.PersontoDaycare" Role="PersontoDaycare" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Person">
-              <PropertyRef Name="PersonID" />
-            </Principal>
-            <Dependent Role="PersontoDaycare">
               <PropertyRef Name="PersonID" />
             </Dependent>
           </ReferentialConstraint>
@@ -1915,18 +1669,6 @@
               <PropertyRef Name="PersonID" />
             </Principal>
             <Dependent Role="PersontoProperty">
-              <PropertyRef Name="PersonID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_PersonTravelNotes_Person">
-          <End Type="LCCHPEntityModel.Person" Role="Person" Multiplicity="1" />
-          <End Type="LCCHPEntityModel.PersonTravelNote" Role="PersonTravelNote" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Person">
-              <PropertyRef Name="PersonID" />
-            </Principal>
-            <Dependent Role="PersonTravelNote">
               <PropertyRef Name="PersonID" />
             </Dependent>
           </ReferentialConstraint>
@@ -2205,16 +1947,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="PersonHobbyNotes">
-            <EntityTypeMapping TypeName="LCCHPEntityModel.PersonHobbyNote">
-              <MappingFragment StoreEntitySet="PersonHobbyNotes">
-                <ScalarProperty Name="Notes" ColumnName="Notes" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="PersonID" ColumnName="PersonID" />
-                <ScalarProperty Name="PersonHobbyNotesID" ColumnName="PersonHobbyNotesID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="PersonNotes">
             <EntityTypeMapping TypeName="LCCHPEntityModel.PersonNote">
               <MappingFragment StoreEntitySet="PersonNotes">
@@ -2222,16 +1954,6 @@
                 <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
                 <ScalarProperty Name="PersonID" ColumnName="PersonID" />
                 <ScalarProperty Name="PersonNotesID" ColumnName="PersonNotesID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="PersonReleaseNotes">
-            <EntityTypeMapping TypeName="LCCHPEntityModel.PersonReleaseNote">
-              <MappingFragment StoreEntitySet="PersonReleaseNotes">
-                <ScalarProperty Name="Notes" ColumnName="Notes" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="PersonID" ColumnName="PersonID" />
-                <ScalarProperty Name="PersonReleaseNotesID" ColumnName="PersonReleaseNotesID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2244,18 +1966,6 @@
                 <ScalarProperty Name="PersonStatusName" ColumnName="PersonStatusName" />
                 <ScalarProperty Name="PersonStatusDescription" ColumnName="PersonStatusDescription" />
                 <ScalarProperty Name="PersonStatusID" ColumnName="PersonStatusID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="PersontoDaycares">
-            <EntityTypeMapping TypeName="LCCHPEntityModel.PersontoDaycare">
-              <MappingFragment StoreEntitySet="PersontoDaycare">
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="DaycareNotes" ColumnName="DaycareNotes" />
-                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-                <ScalarProperty Name="DaycareID" ColumnName="DaycareID" />
-                <ScalarProperty Name="PersonID" ColumnName="PersonID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2312,16 +2022,6 @@
                 <ScalarProperty Name="StartDate" ColumnName="StartDate" />
                 <ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
                 <ScalarProperty Name="PersonID" ColumnName="PersonID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="PersonTravelNotes">
-            <EntityTypeMapping TypeName="LCCHPEntityModel.PersonTravelNote">
-              <MappingFragment StoreEntitySet="PersonTravelNotes">
-                <ScalarProperty Name="Notes" ColumnName="Notes" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="PersonID" ColumnName="PersonID" />
-                <ScalarProperty Name="PersonTravelNotesID" ColumnName="PersonTravelNotesID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
