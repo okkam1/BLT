@@ -149,32 +149,10 @@
                 <td>Ethnicity:</td>
                 <td>
                     <asp:DropDownList ID="ddlEthnicity" runat="server" ViewStateMode="Enabled" ToolTip="Clients’ ethnic background"></asp:DropDownList>
-
-                    <asp:Button runat="server" ID="btnAddEthnicity" Text="Add a New Ethnicity" CausesValidation="false" />
-
-                    <cc1:ModalPopupExtender ID="mpeEthnicity" runat="server" PopupControlID="pnlEthnicity" TargetControlID="btnAddEthnicity"
-                        CancelControlID="btnCloseEthnicity" BackgroundCssClass="modalBackground">
-                    </cc1:ModalPopupExtender>
-
-                    <asp:Panel ID="pnlEthnicity" Height="350" Width="550" runat="server" CssClass="modalPopup" align="center" Style="display: none">
-
-                        <uc1:AddEthnicity runat="server" ID="AddEthnicity" />
-
-                        <!--<iframe src="AddEthnicity.aspx"></iframe>-->
-
-                        <asp:Button ID="btnCloseEthnicity" runat="server" Text="Close" CausesValidation="false" OnClick="btnCloseEthnicity_Click" />
-
-
-                    </asp:Panel>
-
-
+                    
                     <a href="AddEthnicity.aspx" class="small" target="_blank">Add a New Ethnicity</a>
 
                     <asp:RequiredFieldValidator ID="rfvEthnicity" runat="server" InitialValue="-" ErrorMessage="Please select an ethnicity" ControlToValidate="ddlEthnicity" ForeColor="Red"></asp:RequiredFieldValidator>
-
-
-
-
 
                 </td>
             </tr>
@@ -263,7 +241,7 @@
 
         <asp:Button ID="Button2" runat="server" OnClick="Button1_Click" Text="Update" Style="visibility: hidden;" />
 
-        <asp:Panel ID="ModalPanel" runat="server" Width="500px" Height="100px" BackColor="#CCFF99" BorderColor="Black" BorderWidth="1" HorizontalAlign="Center" ScrollBars="Vertical">
+        <asp:Panel ID="ModalPanel" runat="server" Width="500px" Height="100px" BackColor="#CCFF99" BorderColor="Black" BorderWidth="1" HorizontalAlign="Center" ScrollBars="Vertical" Visible="false">
             <br />
             <asp:Label ID="lbPopUp" runat="server" Text="success or failure message here"></asp:Label>
             <br />
