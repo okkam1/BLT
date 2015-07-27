@@ -288,129 +288,130 @@ order by f.Lastname
     protected void getFamilyDetails(String sFamilyIDIn)
     {
 
-        //resetFields();
-
-        SqlConnection conFamilyDetails = new SqlConnection(connectionString);
-
-        string comFamilyDetails = @"exec usp_SLEditFamilyWebScreenInformation @Family_ID='" + sFamilyIDIn + "'";
-
-
-        SqlDataAdapter adptFamilyDetails = new SqlDataAdapter(comFamilyDetails, conFamilyDetails);
-
-        DataTable dtFamilyDetails = new DataTable();
-
-        adptFamilyDetails.Fill(dtFamilyDetails);
-
-        //fill UI screen with pre-selected values
-        if (dtFamilyDetails.Rows.Count > 0)
+        if (FamilyNameList.SelectedIndex != 0)
         {
 
-            pnlEditAddress.Visible = true;
+            SqlConnection conFamilyDetails = new SqlConnection(connectionString);
 
-            btnUpdate.Visible = true;
-
-            tbLastName.Text = dtFamilyDetails.Rows[0]["LastName"].ToString();
-            tbAddress.Text = dtFamilyDetails.Rows[0]["AddressLine1"].ToString();
-            tbAddressLine2.Text = dtFamilyDetails.Rows[0]["AddressLine2"].ToString();
-            tbCity.Text = dtFamilyDetails.Rows[0]["city"].ToString();
-
-            if ((dtFamilyDetails.Rows[0]["State"].ToString() != null) && (ddlState.Items.FindByValue(dtFamilyDetails.Rows[0]["State"].ToString().Trim()) != null))
-            {
-                ddlState.SelectedValue = dtFamilyDetails.Rows[0]["State"].ToString().Trim();
-            }
-            else
-            {
-                ddlState.SelectedIndex = 0;
-            }
-            
-            tbZip.Text = dtFamilyDetails.Rows[0]["zipCode"].ToString();
-
-            if (dtFamilyDetails.Rows[0]["YearBuilt"].ToString() != null && dtFamilyDetails.Rows[0]["YearBuilt"].ToString() != "")
-            {
-                tbDateBuilt.Text = Convert.ToDateTime(dtFamilyDetails.Rows[0]["YearBuilt"].ToString()).ToString("MM/dd/yyyy");
-            }
-            else
-            {
-                tbDateBuilt.Text = "";
-            }
-
-            if (dtFamilyDetails.Rows[0]["MoveinDate"].ToString() != null && dtFamilyDetails.Rows[0]["MoveinDate"].ToString() != "")
-            {
-                tbMoveinDate.Text = Convert.ToDateTime(dtFamilyDetails.Rows[0]["MoveinDate"].ToString()).ToString("MM/dd/yyyy");
-            }
-            else
-            {
-                tbMoveinDate.Text = "";
-            }
-
-            if (dtFamilyDetails.Rows[0]["MoveoutDate"].ToString() != null && dtFamilyDetails.Rows[0]["MoveoutDate"].ToString() != "")
-            {
-                tbMoveoutDate.Text = Convert.ToDateTime(dtFamilyDetails.Rows[0]["MoveoutDate"].ToString()).ToString("MM/dd/yyyy");
-            }
-            else
-            {
-                tbMoveoutDate.Text = "";
-            }
-
-            if ((dtFamilyDetails.Rows[0]["OwnerOccupied"].ToString() != null) && (dtFamilyDetails.Rows[0]["OwnerOccupied"].ToString() != ""))
-            {
-                rblOwnerOccupied.SelectedValue = dtFamilyDetails.Rows[0]["OwnerOccupied"].ToString();
-            }
-            else
-            {
-                rblOwnerOccupied.SelectedValue = "0";
-            }
-
-            if ((dtFamilyDetails.Rows[0]["OwnerContactInformation"].ToString() != null))
-            {
-                tbOwnerContactInformation.Text = dtFamilyDetails.Rows[0]["OwnerContactInformation"].ToString();
-            }
-            else
-            {
-                tbOwnerContactInformation.Text = "";
-            }
-
-            tbPrimaryPhone.Text = dtFamilyDetails.Rows[0]["PrimaryPhoneNumber"].ToString();
-            tbSecondaryPhone.Text = dtFamilyDetails.Rows[0]["SecondaryPhoneNumber"].ToString();
-
-            if ((dtFamilyDetails.Rows[0]["NumberofSmokers"].ToString() != null) && (ddlSmokers.Items.FindByValue(dtFamilyDetails.Rows[0]["NumberofSmokers"].ToString().Trim()) != null))
-            {
-                ddlSmokers.SelectedValue = dtFamilyDetails.Rows[0]["NumberofSmokers"].ToString().Trim();
-            }
-            else
-            {
-                ddlSmokers.SelectedIndex = 0;
-            }
-
-            if ((dtFamilyDetails.Rows[0]["Pets"].ToString() != null) && (ddlPets.Items.FindByValue(dtFamilyDetails.Rows[0]["Pets"].ToString().Trim()) != null))
-            {
-                ddlPets.SelectedValue = dtFamilyDetails.Rows[0]["Pets"].ToString().Trim();
-                RadioButtonListPetsInOut.Enabled = true;
-            }
-            else
-            {
-                ddlPets.SelectedIndex = 0;
-            }
+            string comFamilyDetails = @"exec usp_SLEditFamilyWebScreenInformation @Family_ID='" + sFamilyIDIn + "'";
 
 
-            if ((dtFamilyDetails.Rows[0]["Petsinandout"].ToString() != null) && (ddlPets.Items.FindByValue(dtFamilyDetails.Rows[0]["Pets"].ToString().Trim()) != null))
+            SqlDataAdapter adptFamilyDetails = new SqlDataAdapter(comFamilyDetails, conFamilyDetails);
+
+            DataTable dtFamilyDetails = new DataTable();
+
+            adptFamilyDetails.Fill(dtFamilyDetails);
+
+            //fill UI screen with pre-selected values
+            if (dtFamilyDetails.Rows.Count > 0)
             {
-                //ddlPets.SelectedValue = dtFamilyDetails.Rows[0]["Petsinandout"].ToString().Trim();
-                RadioButtonListPetsInOut.SelectedValue = dtFamilyDetails.Rows[0]["petsinandout"].ToString();
-                RadioButtonListPetsInOut.Enabled = true;
-            }
-            else
-            {
-                ddlPets.SelectedIndex = 0;
+
+                pnlEditAddress.Visible = true;
+
+                btnUpdate.Visible = true;
+
+                tbLastName.Text = dtFamilyDetails.Rows[0]["LastName"].ToString();
+                tbAddress.Text = dtFamilyDetails.Rows[0]["AddressLine1"].ToString();
+                tbAddressLine2.Text = dtFamilyDetails.Rows[0]["AddressLine2"].ToString();
+                tbCity.Text = dtFamilyDetails.Rows[0]["city"].ToString();
+
+                if ((dtFamilyDetails.Rows[0]["State"].ToString() != null) && (ddlState.Items.FindByValue(dtFamilyDetails.Rows[0]["State"].ToString().Trim()) != null))
+                {
+                    ddlState.SelectedValue = dtFamilyDetails.Rows[0]["State"].ToString().Trim();
+                }
+                else
+                {
+                    ddlState.SelectedIndex = 0;
+                }
+
+                tbZip.Text = dtFamilyDetails.Rows[0]["zipCode"].ToString();
+
+                if (dtFamilyDetails.Rows[0]["YearBuilt"].ToString() != null && dtFamilyDetails.Rows[0]["YearBuilt"].ToString() != "")
+                {
+                    tbDateBuilt.Text = Convert.ToDateTime(dtFamilyDetails.Rows[0]["YearBuilt"].ToString()).ToString("MM/dd/yyyy");
+                }
+                else
+                {
+                    tbDateBuilt.Text = "";
+                }
+
+                if (dtFamilyDetails.Rows[0]["MoveinDate"].ToString() != null && dtFamilyDetails.Rows[0]["MoveinDate"].ToString() != "")
+                {
+                    tbMoveinDate.Text = Convert.ToDateTime(dtFamilyDetails.Rows[0]["MoveinDate"].ToString()).ToString("MM/dd/yyyy");
+                }
+                else
+                {
+                    tbMoveinDate.Text = "";
+                }
+
+                if (dtFamilyDetails.Rows[0]["MoveoutDate"].ToString() != null && dtFamilyDetails.Rows[0]["MoveoutDate"].ToString() != "")
+                {
+                    tbMoveoutDate.Text = Convert.ToDateTime(dtFamilyDetails.Rows[0]["MoveoutDate"].ToString()).ToString("MM/dd/yyyy");
+                }
+                else
+                {
+                    tbMoveoutDate.Text = "";
+                }
+
+                if ((dtFamilyDetails.Rows[0]["OwnerOccupied"].ToString() != null) && (dtFamilyDetails.Rows[0]["OwnerOccupied"].ToString() != ""))
+                {
+                    rblOwnerOccupied.SelectedValue = dtFamilyDetails.Rows[0]["OwnerOccupied"].ToString();
+                }
+                else
+                {
+                    rblOwnerOccupied.SelectedValue = "0";
+                }
+
+                if ((dtFamilyDetails.Rows[0]["OwnerContactInformation"].ToString() != null))
+                {
+                    tbOwnerContactInformation.Text = dtFamilyDetails.Rows[0]["OwnerContactInformation"].ToString();
+                }
+                else
+                {
+                    tbOwnerContactInformation.Text = "";
+                }
+
+                tbPrimaryPhone.Text = dtFamilyDetails.Rows[0]["PrimaryPhoneNumber"].ToString();
+                tbSecondaryPhone.Text = dtFamilyDetails.Rows[0]["SecondaryPhoneNumber"].ToString();
+
+                if ((dtFamilyDetails.Rows[0]["NumberofSmokers"].ToString() != null) && (ddlSmokers.Items.FindByValue(dtFamilyDetails.Rows[0]["NumberofSmokers"].ToString().Trim()) != null))
+                {
+                    ddlSmokers.SelectedValue = dtFamilyDetails.Rows[0]["NumberofSmokers"].ToString().Trim();
+                }
+                else
+                {
+                    ddlSmokers.SelectedIndex = 0;
+                }
+
+                if ((dtFamilyDetails.Rows[0]["Pets"].ToString() != null) && (ddlPets.Items.FindByValue(dtFamilyDetails.Rows[0]["Pets"].ToString().Trim()) != null))
+                {
+                    ddlPets.SelectedValue = dtFamilyDetails.Rows[0]["Pets"].ToString().Trim();
+                    RadioButtonListPetsInOut.Enabled = true;
+                }
+                else
+                {
+                    ddlPets.SelectedIndex = 0;
+                }
+
+
+                if ((dtFamilyDetails.Rows[0]["Petsinandout"].ToString() != null) && (ddlPets.Items.FindByValue(dtFamilyDetails.Rows[0]["Pets"].ToString().Trim()) != null))
+                {
+                    //ddlPets.SelectedValue = dtFamilyDetails.Rows[0]["Petsinandout"].ToString().Trim();
+                    RadioButtonListPetsInOut.SelectedValue = dtFamilyDetails.Rows[0]["petsinandout"].ToString();
+                    RadioButtonListPetsInOut.Enabled = true;
+                }
+                else
+                {
+                    ddlPets.SelectedIndex = 0;
+                }
+
+                //RadioButtonListPetsInOut.SelectedValue = dt.Rows[0]["petsinandout"].ToString();
+                //dt.Rows[0]["LastName"].ToString();
+
             }
 
-            //RadioButtonListPetsInOut.SelectedValue = dt.Rows[0]["petsinandout"].ToString();
-            //dt.Rows[0]["LastName"].ToString();
-            
+            Trace.Write("connectionString: " + connectionString);
         }
-
-        Trace.Write("connectionString: " + connectionString);
-
     }
 
     protected void disableAddress()

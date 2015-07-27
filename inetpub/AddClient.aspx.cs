@@ -221,4 +221,12 @@ order by f.Lastname
     {
         Response.Redirect("Questionnaire.aspx");
     }
+
+    protected void AddAnotherButton_Click(object sender, EventArgs e)
+    {
+        tbFirstName.Text = "";
+        tbMiddleName.Text = "";
+        rblGender.ClearSelection();
+        tbBirthDate.Text = "";
+    }
 }

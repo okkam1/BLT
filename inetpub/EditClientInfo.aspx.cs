@@ -240,42 +240,45 @@ order by f.Lastname
 
         resetFields();
 
-        SqlConnection con = new SqlConnection(connectionString);
-
-        string com = "select PersonID,FirstName,MiddleName from person where PersonID in (select PersonID from persontoFamily where FamilyID = '" + sFamilyIDIn + "') order by FirstName";
-
-
-        SqlDataAdapter adpt = new SqlDataAdapter(com, con);
-
-        DataTable dt = new DataTable();
-
-        adpt.Fill(dt);
-
-        ddlFamilyMembers.DataSource = dt;
-                                                                                                                                      
-        ddlFamilyMembers.DataBind();
-
-        ddlFamilyMembers.DataTextField = "FirstName";
-        ddlFamilyMembers.DataValueField = "PersonID";
-
-        ddlFamilyMembers.DataBind();
-        ddlFamilyMembers.Items.Insert(0, "-");
-
-
-        Trace.Write("connectionString: " + connectionString);
-
-        //if (dt.Rows.Count>1)
-        if (ddlFamilyMembers.Items.Count > 1)
+        if (FamilyNameList.SelectedIndex != 0)
         {
-            pnlFamilyMembers.Visible = true;
-        }
-        else
-        {
-            pnlFamilyMembers.Visible = false;
-            getIndividual(ddlFamilyMembers.SelectedValue.ToString());
-        }
+
+            SqlConnection con = new SqlConnection(connectionString);
+
+            string com = "select PersonID,FirstName,MiddleName from person where PersonID in (select PersonID from persontoFamily where FamilyID = '" + sFamilyIDIn + "') order by FirstName";
 
 
+            SqlDataAdapter adpt = new SqlDataAdapter(com, con);
+
+            DataTable dt = new DataTable();
+
+            adpt.Fill(dt);
+
+            ddlFamilyMembers.DataSource = dt;
+
+            ddlFamilyMembers.DataBind();
+
+            ddlFamilyMembers.DataTextField = "FirstName";
+            ddlFamilyMembers.DataValueField = "PersonID";
+
+            ddlFamilyMembers.DataBind();
+            ddlFamilyMembers.Items.Insert(0, "-");
+
+
+            Trace.Write("connectionString: " + connectionString);
+
+            //if (dt.Rows.Count>1)
+            if (ddlFamilyMembers.Items.Count > 1)
+            {
+                pnlFamilyMembers.Visible = true;
+            }
+            else
+            {
+                pnlFamilyMembers.Visible = false;
+                getIndividual(ddlFamilyMembers.SelectedValue.ToString());
+            }
+
+        }
     }
     
     protected void FamilyNameList_SelectedIndexChanged(object sender, EventArgs e)
