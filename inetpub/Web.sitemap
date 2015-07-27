@@ -8,6 +8,7 @@
         <siteMapNode url="EditClientInfo.aspx" title="Edit Existing Client Info" description="Edit Existing Client Information" />
         <siteMapNode url="EditFamily.aspx" title="Edit Existing Family Info" description="Edit Existing Family Information" />
         <siteMapNode url="EditBloodLeadResults.aspx" title="Edit Existing Blood Test Info" description="Edit Existing Blood Test Information" />
+        <siteMapNode url="EditQuestionnaire.aspx" title="Edit Existing Questionnaire Info" description="Edit Existing Questionnaire Information" />
       </siteMapNode>
         <siteMapNode url="Reports.aspx" title="Reports"  description="View Reports for Lead Data Study">
         <siteMapNode url="ReportPages/SummaryReport.aspx" title="Summary Report" description="Complete Summary Report of Clients in the Study" />
