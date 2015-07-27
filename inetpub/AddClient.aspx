@@ -174,9 +174,9 @@ ErrorMessage="Date must be today or a past date!"  Operator="LessThanEqual" Type
             <br />
 <asp:Label ID="lbPopUp" runat="server" Text="success or failure message here"></asp:Label>
             <br /><br />
- 
-            
-            <asp:Button ID="OKButton" runat="server" Text="Add Another" />
+
+            <asp:Button ID="OKButton" runat="server" Text="OK" />
+            <asp:Button ID="AddAnother" runat="server" Text="Add Another" OnClick="AddAnotherButton_Click" />
             <asp:Button ID="NextButton" runat="server" Text="Next &gt;&gt;" Visible="false" OnClick="NextButton_Click" />
 
 </asp:Panel>
