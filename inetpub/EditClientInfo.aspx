@@ -201,7 +201,7 @@
 
 
             <tr>
-                <td style="vertical-align: top;"><span style="vertical-align: top;">Add New Client Notes:
+                <td style="vertical-align: top;"><span style="vertical-align: top;">Client Notes:
                     <br />
                     <span class="small"><em>Historic notes are only available via Advanced Data Management</em></span></span>
                 </td>
