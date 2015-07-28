@@ -58,7 +58,7 @@
 
         <div class="DDFloatRight">
           
-            <span class="DD"><a href="/"><asp:Image ImageUrl="images/LakeCountyLogo.jpg" Height="150px" runat="server" ID="Image1" border="0" vspace="1" /></a><br />
+            <span class="DD"><a href="/"><asp:Image ImageUrl="images/LakeCountyLogo.jpg" Height="150px" runat="server" ID="imgLakeCountyLogo" border="0" vspace="1" /></a><br />
             <span class="DDFloatRight">Lake County Community Health Program &copy; 
             <asp:Label ID="lblCopyrightDate" runat="server" Text=""></asp:Label></span>
             </span>
