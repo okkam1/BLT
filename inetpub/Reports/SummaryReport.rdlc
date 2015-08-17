@@ -193,7 +193,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Elevated Blood Lead Levels *</Value>
+                              <Value>Elevated Blood Lead Levels (10 and above)</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
