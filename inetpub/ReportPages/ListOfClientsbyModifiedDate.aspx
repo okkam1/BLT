@@ -65,9 +65,9 @@
         <p>&nbsp;</p>
 
                 <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="80%">
-            <LocalReport ReportPath="Reports\ListOfClients.rdlc">
+            <LocalReport ReportPath="Reports\ListOfClientsDate.rdlc">
                 <DataSources>
-                    <rsweb:ReportDataSource DataSourceId="SqlDataSourcePerson" Name="DataSetPerson" />
+                    <rsweb:ReportDataSource DataSourceId="SqlDataSourcePerson" Name="ListClientsByModifiedDate" />
                 </DataSources>
             </LocalReport>
         </rsweb:ReportViewer>

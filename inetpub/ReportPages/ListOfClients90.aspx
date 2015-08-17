@@ -11,9 +11,9 @@
         <h2 class="DDSubHeader">List of Clients Added in the Last 90 Days</h2>
        
                 <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="80%">
-            <LocalReport ReportPath="Reports\ListOfClientsDate.rdlc">
+            <LocalReport ReportPath="Reports\ListClientsByCreateDate.rdlc">
                 <DataSources>
-                    <rsweb:ReportDataSource DataSourceId="SqlDataSourcePerson" Name="DataSetPerson" />
+                    <rsweb:ReportDataSource DataSourceId="SqlDataSourcePerson" Name="ListClientsByCreateDate" />
                 </DataSources>
             </LocalReport>
         </rsweb:ReportViewer>
