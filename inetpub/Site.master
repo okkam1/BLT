@@ -19,11 +19,13 @@
         <h1 class="DDMainHeader">
             <a href="/"><asp:Image ImageUrl="images/LakeCountySeal.jpg" runat="server" ID="CountySeal" border="0" /></a>
             Lake County Blood Lead Tracking Software <span class="small">v2.9.1</span> 
-            <span runat="server" visible="false" id="userLabel" class="DDFloatRight" style="font-size:medium;">User: 
+            <span runat="server" visible="false" id="userLabel" class="DDFloatRight" style="font-size:medium;">
+                User: 
                 <asp:LoginName ID="LoginName1" runat="server" /> |
                 <span class="small">
                     <asp:HyperLink runat="server" id ="HyperLink1" NavigateUrl="ChangePassword.aspx" Text="Change Password" CssClass="DD">Change Password</asp:HyperLink> | 
                     <asp:LoginStatus ID="LoginStatus1" runat="server" /></span>
+                
             </span></h1>
 
         <br />
@@ -52,15 +54,17 @@
 
         <h1 class="DDMainHeader"></h1>
         
+        
 
         <div class="DDFloatRight">
-
-            <span class="DD">Lake County Community Health Program &copy; 
-            <asp:Label ID="lblCopyrightDate" runat="server" Text=""></asp:Label>
+          
+            <span class="DD"><a href="/"><asp:Image ImageUrl="images/LakeCountyLogo.jpg" Height="150px" runat="server" ID="imgLakeCountyLogo" border="0" vspace="1" /></a><br />
+            <span class="DDFloatRight">Lake County Community Health Program &copy; 
+            <asp:Label ID="lblCopyrightDate" runat="server" Text=""></asp:Label></span>
             </span>
-
+             <br /><br />
         </div>
-        <br />
+       
 
     </div>
     </form>

@@ -14,12 +14,7 @@ public partial class AddChild : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        //string connectionString = ConfigurationManager.ConnectionStrings["csLeadTrackingProgram2"].ConnectionString;
-
         Trace.Write("connectionString: " + connectionString);
-
-       // if (tbBirthDate.Text=="")
-         //   tbBirthDate.Text = DateTime.Today.ToShortDateString();
 
         futureDateValidator.ValueToCompare = DateTime.Now.ToString("MM/dd/yyyy");
 
@@ -29,16 +24,12 @@ public partial class AddChild : System.Web.UI.Page
         {
             SqlConnection con = new SqlConnection(connectionString);
 
-//            string com = "Select Lastname, FamilyID from dbo.Family order by Lastname asc";
-
-
             string com = @"Select f.FamilyID, p.PropertyID, f.Lastname, CONCAT(f.Lastname,' -- ', p.AddressLine1,' ',p.Zipcode ) NameAddress
 from dbo.Family f 
      join Property p 
        on p.PropertyID = f.PrimaryPropertyID
 order by f.Lastname
 ";
-
 
             SqlDataAdapter adpt = new SqlDataAdapter(com, con);
 
@@ -50,22 +41,14 @@ order by f.Lastname
 
             FamilyNameList.DataBind();
 
-            Random r1 = new Random();
-
-            int addr = r1.Next(9999);
-            int zip = r1.Next(99999);
-
             FamilyNameList.DataTextField = "NameAddress";
             FamilyNameList.DataValueField = "FamilyID";
 
             FamilyNameList.DataBind();
-            //FamilyNameList.("test");
-            // if (!Page.IsPostBack)
+            
             FamilyNameList.Items.Insert(0, "(Family name -- PRIMARY residence)");
-            // FamilyNameList.Items.Insert(1, "Bonifacic"  + " -- " + addr.ToString() + " Main St, " + zip.ToString());
-
+            
             Trace.Write("connectionString: " + connectionString);
-
 
             //fill language drop down
             SqlConnection conLang = new SqlConnection(connectionString);
