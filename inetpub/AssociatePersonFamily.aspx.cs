@@ -59,6 +59,7 @@ public partial class AssociatePersonFamily : System.Web.UI.Page
     protected void rblWithoutFamily_Changed(object sender, EventArgs e)
     {
         GetPeople();
+        GetFamilies();
         GetPeopleFamilyAssociations();
     }
 
@@ -145,7 +146,9 @@ public partial class AssociatePersonFamily : System.Web.UI.Page
                 if (sReturnValue == "0")
                 {
                     lbOutput.Text = "New Family Association Successfully Created at: " + DateTime.Now;
-
+                   
+                    // Refresh the datagrid contents
+                    GetPeopleFamilyAssociations();
                     GetPeople();
                     ddlFamily.SelectedIndex = 0;
 
@@ -158,7 +161,7 @@ public partial class AssociatePersonFamily : System.Web.UI.Page
                 {
                     lbOutput.Text = "Failed to Create Family Association. SQL Error code" + @sReturnValue;
                 }
-                GetPeopleFamilyAssociations();
+
             }
             catch (SqlException exSQL)
             {
