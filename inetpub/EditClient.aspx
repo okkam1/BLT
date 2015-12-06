@@ -22,7 +22,9 @@
             
             <li>
             <asp:HyperLink ID="hlEditLab" runat="server" NavigateUrl="EditBloodLeadResults.aspx">Edit Existing Client Blood Level Information </asp:HyperLink></li>
-        
+            
+            <li>
+            <asp:HyperLink ID="hlAssociatePersonFamily" runat="server" NavigateUrl="AssociatePersonFamily.aspx">Associate Person and Family</asp:HyperLink></li>
         </ul>
         
         <br /><br />

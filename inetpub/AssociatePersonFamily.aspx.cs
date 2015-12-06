@@ -19,6 +19,7 @@ public partial class AssociatePersonFamily : System.Web.UI.Page
         {
             GetPeople();
             GetFamilies();
+            GetPeopleFamilyAssociations();
         }
 
         lbOutput.Text = "";
@@ -47,8 +48,8 @@ public partial class AssociatePersonFamily : System.Web.UI.Page
             ddlFamily.DataBind();
 
             ListItem itemHyphen = new ListItem();
-            itemHyphen.Text="0";
-            itemHyphen.Value="0";
+            itemHyphen.Text="-";
+            itemHyphen.Value="-";
 
             ddlFamily.Items.Insert(0, "-");
 
@@ -58,13 +59,32 @@ public partial class AssociatePersonFamily : System.Web.UI.Page
     protected void rblWithoutFamily_Changed(object sender, EventArgs e)
     {
         GetPeople();
+        GetPeopleFamilyAssociations();
     }
+
+    protected void ddlFamilyChanged(object sender, EventArgs e)
+    {
+        lbOutput.Text = "";
+    }
+
+    protected void ddlPeopleChanged(object sender, EventArgs e)
+    {
+        GetPeopleFamilyAssociations();
+        lbOutput.Text = "";
+        //Reset_rblWithoutFamily();
+    }
+
+    private void Reset_rblWithoutFamily()
+    {
+        throw new NotImplementedException();
+    }
+
 
     protected void GetPeople()
     {
         SqlConnection sqlConnection_people = new SqlConnection(connectionString);
 
-        SqlCommand command_people = new SqlCommand("usp_SlListPersonandFamilies", sqlConnection_people);
+        SqlCommand command_people = new SqlCommand("usp_SlListPersonBaseDetails", sqlConnection_people);
         command_people.CommandType = CommandType.StoredProcedure;
         command_people.Parameters.Add("@WithoutFamily", SqlDbType.Bit).Value = Convert.ToByte(rblWithoutFamily.SelectedValue);
 
@@ -131,13 +151,14 @@ public partial class AssociatePersonFamily : System.Web.UI.Page
 
                 }
 
+                else if (sReturnValue == "2627")
+                {   lbOutput.Text = "Nothing to do, The Person and Family were already associated.";
+                }
                 else
                 {
-                    lbOutput.Text = "Failed to Create Family Association.";
-
+                    lbOutput.Text = "Failed to Create Family Association. SQL Error code" + @sReturnValue;
                 }
-
-
+                GetPeopleFamilyAssociations();
             }
             catch (SqlException exSQL)
             {
@@ -152,5 +173,24 @@ public partial class AssociatePersonFamily : System.Web.UI.Page
             }
 
         }
-    } 
+    }
+
+    protected void GetPeopleFamilyAssociations()
+    {
+        SqlDataSource_PersontoFamilies.SelectParameters["PersonID"].DefaultValue = ddlPeople.SelectedValue.ToString();
+
+        gridText.Text = "";
+
+        GridView1.DataBind();
+
+        if (GridView1.Rows.Count > 0)
+        {
+            GridView1.Visible = true;
+        }
+        else
+        {
+            gridText.Text = "No Results Found";
+        }
+    }
+
 }
