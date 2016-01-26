@@ -28,32 +28,55 @@ public partial class AssociatePersonFamily : System.Web.UI.Page
 
     protected void GetFamilies()
     {
-        SqlConnection sqlConnection_family = new SqlConnection(connectionString);
-
-        SqlCommand command_family = new SqlCommand("usp_SlFamilyNametoProperty", sqlConnection_family);
-        command_family.CommandType = CommandType.StoredProcedure;
-
-        sqlConnection_family.Open();
-        command_family.ExecuteNonQuery();
-        sqlConnection_family.Close();
-
-        using (SqlDataAdapter da_family = new SqlDataAdapter(command_family))
+        try
         {
-            DataTable dt_family = new DataTable();
-            da_family.Fill(dt_family);
-            ddlFamily.DataSource = dt_family;
+            SqlConnection sqlConnection_family = new SqlConnection(connectionString);
 
-            ddlFamily.DataTextField = "FamilyProperty";
-            ddlFamily.DataValueField = "FamilyID";
-            ddlFamily.DataBind();
+            SqlCommand command_family = new SqlCommand("usp_SlFamilyNametoProperty", sqlConnection_family);
+            command_family.CommandType = CommandType.StoredProcedure;
 
-            ListItem itemHyphen = new ListItem();
-            itemHyphen.Text="-";
-            itemHyphen.Value="-";
+            sqlConnection_family.Open();
+            command_family.ExecuteNonQuery();
+            sqlConnection_family.Close();
 
-            ddlFamily.Items.Insert(0, "-");
+            using (SqlDataAdapter da_family = new SqlDataAdapter(command_family))
+            {
+                DataTable dt_family = new DataTable();
+                da_family.Fill(dt_family);
+                ddlFamily.DataSource = dt_family;
+
+                ddlFamily.DataTextField = "FamilyProperty";
+                ddlFamily.DataValueField = "FamilyID";
+                ddlFamily.DataBind();
+
+                ListItem itemHyphen = new ListItem();
+                itemHyphen.Text = "-";
+                itemHyphen.Value = "-";
+
+                ddlFamily.Items.Insert(0, "-");
+
+            }
+        }
+        catch (SqlException exSQL)
+        {
+            lbOutput.Text = "SQL ERROR: " + exSQL.Message.ToString() + " " + DateTime.Now;
+
+            lbPopUp.Text = lbOutput.Text;
+            ModalPopupExtender1.Show();
+
+            Trace.Write("SQL Error" + exSQL.Message.ToString());
 
         }
+        catch (Exception ex)
+        {
+            lbOutput.Text = "ERROR: " + ex.Message.ToString() + " " + DateTime.Now;
+
+            lbPopUp.Text = lbOutput.Text;
+            ModalPopupExtender1.Show();
+
+            Trace.Write("Error" + ex.Message.ToString());
+        }
+
     }
 
     protected void rblWithoutFamily_Changed(object sender, EventArgs e)
