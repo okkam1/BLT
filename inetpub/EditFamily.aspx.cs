@@ -170,7 +170,7 @@ order by f.Lastname
                     Session["FamilyNameList"] = FamilyNameList.SelectedValue;
                     
                     //update the family list in case address was changed
-                    updateFamilyList();
+                    GetFamilies();
 
                     FamilyNameList.SelectedIndex = FamilyNameList.Items.IndexOf(FamilyNameList.Items.FindByValue(Convert.ToString(Session["FamilyNameList"])));
 
