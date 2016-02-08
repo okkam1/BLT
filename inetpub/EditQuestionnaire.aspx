@@ -90,9 +90,6 @@
 <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" TargetControlId="btnInsertResults" 
  PopupControlID="ModalPanel" OkControlID="OKButton" />
 
-
-
-
         <br /><br />
         <asp:Label ID="lbOutput" runat="server" Text=""></asp:Label>
         <br />
