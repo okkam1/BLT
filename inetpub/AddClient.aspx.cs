@@ -24,29 +24,7 @@ public partial class AddChild : System.Web.UI.Page
         {
             SqlConnection con = new SqlConnection(connectionString);
 
-            string com = @"Select f.FamilyID, p.PropertyID, f.Lastname, CONCAT(f.Lastname,' -- ', p.AddressLine1,' ',p.Zipcode ) NameAddress
-from dbo.Family f 
-     join Property p 
-       on p.PropertyID = f.PrimaryPropertyID
-order by f.Lastname
-";
-
-            SqlDataAdapter adpt = new SqlDataAdapter(com, con);
-
-            DataTable dt = new DataTable();
-
-            adpt.Fill(dt);
-
-            FamilyNameList.DataSource = dt;
-
-            FamilyNameList.DataBind();
-
-            FamilyNameList.DataTextField = "NameAddress";
-            FamilyNameList.DataValueField = "FamilyID";
-
-            FamilyNameList.DataBind();
-            
-            FamilyNameList.Items.Insert(0, "(Family name -- PRIMARY residence)");
+            GetFamilies();
             
             Trace.Write("connectionString: " + connectionString);
 
@@ -170,7 +148,7 @@ order by f.Lastname
             }
             else
             {
-                lbOutput.Text = "Failed to Insert New Client";
+                lbOutput.Text = "Failed to Insert New Client (FamilyID: " + FamilyNameList.DataValueField;
                 lbPopUp.Text = lbOutput.Text;
                 ModalPopupExtender1.Show();
             }
@@ -211,5 +189,59 @@ order by f.Lastname
         tbMiddleName.Text = "";
         rblGender.ClearSelection();
         tbBirthDate.Text = "";
+    }
+
+    protected void GetFamilies()
+    {
+        try
+        {
+
+            SqlConnection sqlConnection_family = new SqlConnection(connectionString);
+
+            SqlCommand command_family = new SqlCommand("usp_SlFamilyNametoProperty", sqlConnection_family);
+            command_family.CommandType = CommandType.StoredProcedure;
+
+            sqlConnection_family.Open();
+            command_family.ExecuteNonQuery();
+            sqlConnection_family.Close();
+
+            using (SqlDataAdapter da_family = new SqlDataAdapter(command_family))
+            {
+                DataTable dt_family = new DataTable();
+                da_family.Fill(dt_family);
+                FamilyNameList.DataSource = dt_family;
+
+                FamilyNameList.DataTextField = "FamilyProperty";
+                FamilyNameList.DataValueField = "FamilyID";
+                FamilyNameList.DataBind();
+
+                ListItem itemHyphen = new ListItem();
+                itemHyphen.Text = "-";
+                itemHyphen.Value = "-";
+
+                FamilyNameList.Items.Insert(0, "-");
+
+            }
+        }
+        catch (SqlException exSQL)
+        {
+            lbOutput.Text = "SQL ERROR: " + exSQL.Message.ToString() + " " + DateTime.Now;
+            AddAnother.Visible = false;
+            lbPopUp.Text = lbOutput.Text;
+            ModalPopupExtender1.Show();
+
+            Trace.Write("SQL Error" + exSQL.Message.ToString());
+
+        }
+        catch (Exception ex)
+        {
+            lbOutput.Text = "ERROR: " + ex.Message.ToString() + " " + DateTime.Now;
+            AddAnother.Visible = false;
+            lbPopUp.Text = lbOutput.Text;
+            ModalPopupExtender1.Show();
+
+            Trace.Write("Error" + ex.Message.ToString());
+        }
+
     }
 }
