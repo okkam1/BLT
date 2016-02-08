@@ -16,7 +16,7 @@ public partial class EditFamily : System.Web.UI.Page
 
     string sCurrentFamilyName = "";
     string sCurrentFamilyID = "";
-    bool bIsNewAddress = false;
+    //bool bIsNewAddress = false;
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -25,7 +25,11 @@ public partial class EditFamily : System.Web.UI.Page
         if (!Page.IsPostBack)
         {
             GetFamilies();
+            Session["bIsNewAddress"] = false;
         }
+
+        //        bool bIsNewAddress = (bool)(Session["IsNewAddress"]);
+
 
         futureDateValidator.ValueToCompare = DateTime.Now.ToString("MM/dd/yyyy");
 
@@ -45,7 +49,7 @@ public partial class EditFamily : System.Web.UI.Page
 
     protected void updateLanguage()
     {
-        
+
         Trace.Write("connectionString: " + connectionString);
 
         SqlConnection con = new SqlConnection(connectionString);
@@ -58,7 +62,7 @@ public partial class EditFamily : System.Web.UI.Page
 
         adpt.Fill(dt);
 
-        
+
     }
 
     protected void updateFamilyList()
@@ -121,6 +125,9 @@ order by f.Lastname
             if (tbFamilyNotes.Text != "")
                 command.Parameters.Add("@New_Family_Notes", SqlDbType.VarChar).Value = tbFamilyNotes.Text;
 
+            //pull from session if this is a new address
+            bool bIsNewAddress = (bool)(Session["bIsNewAddress"]);
+
             command.Parameters.Add("@isNewAddress", SqlDbType.Bit).Value = Convert.ToInt16(bIsNewAddress);
 
             if (tbDateBuilt.Text != "")
@@ -143,7 +150,7 @@ order by f.Lastname
 
             command.Parameters.Add("@DEBUG", SqlDbType.Bit).Value = 1;
 
-            
+
             command.Parameters.Add("@ReturnValue", SqlDbType.Int).Direction = ParameterDirection.ReturnValue;
 
             sqlConnection.Open();
@@ -168,7 +175,7 @@ order by f.Lastname
 
                     //keep dropdown list value after refresh family
                     Session["FamilyNameList"] = FamilyNameList.SelectedValue;
-                    
+
                     //update the family list in case address was changed
                     GetFamilies();
 
@@ -224,7 +231,7 @@ order by f.Lastname
         }
 
     }
-    
+
     protected void ddlPets_SelectedIndexChanged(object sender, EventArgs e)
     {
         if (ddlPets.SelectedIndex != 0)
@@ -445,7 +452,7 @@ order by f.Lastname
     protected void bEditCurrentAddress_Click(object sender, EventArgs e)
     {
         enableAddress();
-        bIsNewAddress = false;
+        Session["bIsNewAddress"] = false;
     }
 
     protected void bAddNewAddress_Click(object sender, EventArgs e)
@@ -461,7 +468,7 @@ order by f.Lastname
         tbMoveoutDate.Text = "";
         tbDateBuilt.Text = "";
 
-        bIsNewAddress = true;
+        Session["bIsNewAddress"] = true;
     }
 
     protected void GetFamilies()
