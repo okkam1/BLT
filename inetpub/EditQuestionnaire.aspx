@@ -77,6 +77,22 @@
             </table>
     </div>
 
+                <asp:Panel ID="ModalPanel" runat="server" Width="500px" Height="100px" BackColor="#CCFF99" BorderColor="Black" BorderWidth="1" HorizontalAlign="Center" ScrollBars="Vertical" Visible="false">
+            <br />
+<asp:Label ID="lbPopUp" runat="server" Text="success or failure message here"></asp:Label>
+            <br /><br />
+
+            <asp:Button ID="OKButton" runat="server" Text="OK" />
+            
+</asp:Panel>
+ 
+
+<ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" TargetControlId="btnInsertResults" 
+ PopupControlID="ModalPanel" OkControlID="OKButton" />
+
+
+
+
         <br /><br />
         <asp:Label ID="lbOutput" runat="server" Text=""></asp:Label>
         <br />

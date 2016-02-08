@@ -19,12 +19,8 @@ public partial class EditBloodLeadResults : System.Web.UI.Page
 
         if (!Page.IsPostBack)
         {
-            SqlConnection con = new SqlConnection(connectionString);
-
             GetFamilies();
 
-            Trace.Write("connectionString: " + connectionString);
-                        
         }
 
     }
