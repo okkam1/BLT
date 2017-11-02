@@ -80,8 +80,9 @@ public partial class AddChild : System.Web.UI.Page
 
         Trace.Write("FamilyID: " + FamilyID);
 
-        if (FamilyID != "" && FamilyID!=null)
-            FamilyNameList.SelectedValue = FamilyID;
+        //commented out to fix bug when newly added family name persists, regardless of user selection
+        //if (FamilyID != "" && FamilyID!=null)
+          //  FamilyNameList.SelectedValue = FamilyID;
 
     }
     protected void Button1_Click(object sender, EventArgs e)
