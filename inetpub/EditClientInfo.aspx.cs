@@ -16,9 +16,9 @@ public partial class EditClientInfo : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         //string connectionString = ConfigurationManager.ConnectionStrings["csLeadTrackingProgram2"].ConnectionString;
-     
-        Trace.Write("connectionString: " + connectionString);
 
+        Trace.Write("connectionString: " + connectionString);
+     
         // if (tbBirthDate.Text=="")
         //   tbBirthDate.Text = DateTime.Today.ToShortDateString();
 
