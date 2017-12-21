@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="EditClientInfo.aspx.cs" Inherits="EditClientInfo" Trace="false" EnableViewState="true" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="EditClientInfo.aspx.cs" Inherits="EditClientInfo" Trace="true" EnableViewState="true" %>
 
 <%@ Register Src="~/AddEthnicity.ascx" TagPrefix="uc1" TagName="AddEthnicity" %>
 
@@ -222,7 +222,7 @@
 
         <asp:Button ID="Button2" runat="server" OnClick="Button1_Click" Text="Update" Style="visibility: hidden;" />
 
-        <asp:Panel ID="ModalPanel" runat="server" Width="500px" Height="100px" BackColor="#CCFF99" BorderColor="Black" BorderWidth="1" HorizontalAlign="Center" ScrollBars="Vertical" Visible="false">
+        <asp:Panel ID="ModalPanel" runat="server" Width="500px" Height="100px" BackColor="#CCFF99" BorderColor="Black" BorderWidth="1" HorizontalAlign="Center" ScrollBars="Vertical">
             <br />
             <asp:Label ID="lbPopUp" runat="server" Text="success or failure message here"></asp:Label>
             <br />

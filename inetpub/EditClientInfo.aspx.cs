@@ -16,7 +16,7 @@ public partial class EditClientInfo : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         //string connectionString = ConfigurationManager.ConnectionStrings["csLeadTrackingProgram2"].ConnectionString;
-
+     
         Trace.Write("connectionString: " + connectionString);
 
         // if (tbBirthDate.Text=="")
@@ -57,9 +57,84 @@ public partial class EditClientInfo : System.Web.UI.Page
 
             FillEthnicity();
 
+        
+
+        string sPersonID = Request.QueryString["pid"];
+        string sFamilyID = "";
+
+        if (sPersonID != "" && sPersonID != null)
+        {
+            Trace.Write("sPersonID: " + sPersonID);
+
+            //call to DB to get FamilyID based on PersonID Lookup
+            sFamilyID = getFamilyID(sPersonID);
+
+            if (sFamilyID != "")
+            {
+                //set drop-down to correct family
+                FamilyNameList.SelectedValue = @sFamilyID;
+
+                //show other family members in dropdown
+                resetFields();
+                pnlFamilyMembers.Visible = false;
+                getFamilyMembers(FamilyNameList.SelectedValue);
+                ddlFamilyMembers.SelectedValue = sPersonID;
+
+
+                //call getIndividual to populate Person Information
+                getIndividual(@sPersonID);
+            }
+            else
+            {
+                //show error because family not found (PersonID not valid?)
+
+                lbOutput.Text = "Unable to find a family for Person ID:  " + sPersonID + " " + DateTime.Now;
+                // AddAnother.Visible = false;
+                lbPopUp.Text = "Unable to find a family for Person ID:  " + sPersonID + " " + DateTime.Now; //lbOutput.Text;
+                
+                ModalPopupExtender1.Show();
+
+                Trace.Write(lbOutput.Text);
+
+
+            }
+        }
+            
+        }
+    }
+
+    protected string getFamilyID(string sPersonIDIn)
+    {
+        string sFamilyID = "";
+
+        if (sPersonIDIn != "" && sPersonIDIn != null)
+        {
+
+            Int32 iFamilyID = Int32.Parse(sPersonIDIn);
+
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand("usp_SLPersontoFamilyID", sqlConnection);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.Add("@PersonID", SqlDbType.Int).Value = iFamilyID;
+
+            //command.Parameters.Add("@ReturnValue", SqlDbType.Int).Direction = ParameterDirection.ReturnValue;
+
+            command.Parameters.Add("@FamilyID", SqlDbType.Int).Direction = ParameterDirection.Output;
+
+            sqlConnection.Open();
+            command.ExecuteNonQuery();
+            sqlConnection.Close();
+
+            sFamilyID = command.Parameters["@FamilyID"].Value.ToString();
         }
 
+        Trace.Write("sFamilyID: " + sFamilyID);
+
+        return sFamilyID;
+        
     }
+
+
 
     protected void FillEthnicity()
     {
