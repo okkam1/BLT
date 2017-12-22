@@ -42,9 +42,7 @@
         <%-- TODO: Enable partial rendering by setting the EnablePartialRendering attribute to "true" to provide a smoother browsing experience.
              Leaving partial rendering disabled will provide a better debugging experience while the application is in development. --%>
 
-        
-
-        <ajaxToolkit:ToolkitScriptManager runat="server"><Scripts>
+        <ajaxToolkit:ToolkitScriptManager runat="server" EnablePageMethods = "true"><Scripts>
                 <asp:ScriptReference Name="jquery" />
                 <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" />
             </Scripts></ajaxToolkit:ToolkitScriptManager> 

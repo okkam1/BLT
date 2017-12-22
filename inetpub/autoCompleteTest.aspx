@@ -1,24 +1,27 @@
 ﻿
-<%@ Page Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"  CodeFile="AutoCompleteTest.aspx.cs" Inherits="autoCompleteTest" Trace="true" EnableViewState="true" %>
+<%@ Page Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="AutoCompleteTest.aspx.cs" Inherits="autoCompleteTest" Trace="true" EnableViewState="true" %>
 
 <asp:Content ID="headContent" ContentPlaceHolderID="head" Runat="Server"></asp:Content>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
 
-
-<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
-
     <div class="DD">
 
     <h2 class="DDSubHeader">Find Client(s) in Lead Research Study</h2>
 
-
     <table>
     <tr>
     <td> <p>
     FirstName:
-    <asp:TextBox ID="tbFirstName" runat="server"></asp:TextBox></p>
+    <asp:TextBox ID="tbFirstName" runat="server"></asp:TextBox>
+        <ajaxToolkit:AutoCompleteExtender ServiceMethod="SearchFirstName"
+    MinimumPrefixLength="2"
+    CompletionInterval="25" EnableCaching="false" CompletionSetCount="10"
+    TargetControlID="tbFirstName"
+    ID="AutoCompleteExtender1" runat="server" FirstRowSelected = "false" UseContextKey="True">
+</ajaxToolkit:AutoCompleteExtender>
+         </p>
     </td>
     <td>
         <asp:Button ID="SearchByTagButton" runat="server" Text="SEARCH"
@@ -28,6 +31,12 @@
     <tr>
     <td> LastName:
         <asp:TextBox ID="tbLastName" runat="server"></asp:TextBox>
+        <ajaxToolkit:AutoCompleteExtender ServiceMethod="SearchLastName"
+    MinimumPrefixLength="2"
+    CompletionInterval="25" EnableCaching="false" CompletionSetCount="10"
+    TargetControlID="tbLastName"
+    ID="AutoCompleteExtender2" runat="server" FirstRowSelected = "false" UseContextKey="True">
+</ajaxToolkit:AutoCompleteExtender>
     </td>
     <td> Date of Birth:
         <asp:TextBox ID="tbBirthDate" runat="server"></asp:TextBox>

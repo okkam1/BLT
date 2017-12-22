@@ -13,6 +13,7 @@ public partial class autoCompleteTest : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
     }
+    
     protected void SearchByTagButton_Click(object sender, EventArgs e)
     {
          
@@ -69,5 +70,65 @@ public partial class autoCompleteTest : System.Web.UI.Page
             //Connection Object Closed
             conn.Close();
         }
+    }
+
+    [System.Web.Services.WebMethodAttribute(), System.Web.Script.Services.ScriptMethodAttribute()]
+    public static List<string> SearchFirstName(string prefixText, int count, string contextKey)
+    {
+        using (SqlConnection conn = new SqlConnection())
+        {
+            conn.ConnectionString = ConfigurationManager
+                    .ConnectionStrings["csLCCHP"].ConnectionString;
+
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.CommandText = "select FirstName from Person where " +
+                "FirstName like @SearchText + '%'";
+                cmd.Parameters.AddWithValue("@SearchText", prefixText);
+                cmd.Connection = conn;
+                conn.Open();
+                List<string> names = new List<string>();
+                using (SqlDataReader sdr = cmd.ExecuteReader())
+                {
+                    while (sdr.Read())
+                    {
+                        names.Add(sdr["FirstName"].ToString());
+                    }
+                }
+                conn.Close();
+                return names;
+            }
+        }
+    }
+
+    
+    [System.Web.Services.WebMethodAttribute(), System.Web.Script.Services.ScriptMethodAttribute()]
+    public static List<string> SearchLastName(string prefixText, int count, string contextKey)
+    {
+        using (SqlConnection conn = new SqlConnection())
+        {
+            conn.ConnectionString = ConfigurationManager
+                    .ConnectionStrings["csLCCHP"].ConnectionString;
+
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.CommandText = "select LastName from Person where " +
+                "LastName like @SearchText + '%'";
+                cmd.Parameters.AddWithValue("@SearchText", prefixText);
+                cmd.Connection = conn;
+                conn.Open();
+                List<string> names = new List<string>();
+                using (SqlDataReader sdr = cmd.ExecuteReader())
+                {
+                    while (sdr.Read())
+                    {
+                        names.Add(sdr["LastName"].ToString());
+                    }
+                }
+                conn.Close();
+                return names;
+            }
+        }
+ 
     }
 }
