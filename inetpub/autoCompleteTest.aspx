@@ -70,12 +70,18 @@
             <asp:BoundField ReadOnly="true" HeaderText="Last Name" DataField="LastName" SortExpression="LastName" />
             <asp:BoundField ReadOnly="true" HeaderText="Birth Date" DataField="BirthDate" SortExpression="BirthDate" />
 
+        <%-- Hyperink to edit client info --%>
         <asp:hyperlinkfield datatextfield="PersonId"
         datanavigateurlfields="PersonId" HeaderText="EditClientInfo"
         datanavigateurlformatstring="EditClientInfo.aspx?pid={0}"  Target="_blank" SortExpression="PersonID"/>
-                <asp:hyperlinkfield datatextfield="PersonId"
+        <%-- Hyperink to edit blood lead results info --%>
+        <asp:hyperlinkfield datatextfield="PersonId"
         datanavigateurlfields="PersonId" HeaderText="EditBloodLeadResults"
         datanavigateurlformatstring="EditBloodLeadResults.aspx?pid={0}"  Target="_blank" SortExpression="PersonID"/>
+        <%-- Hyperink to edit questionnaire info --%>
+        <asp:hyperlinkfield datatextfield="PersonId"
+        datanavigateurlfields="PersonId" HeaderText="EditQuestionnaire"
+        datanavigateurlformatstring="EditQuestionnaire.aspx?pid={0}"  Target="_blank" SortExpression="PersonID"/>
     </Columns>
 
     </asp:GridView>
