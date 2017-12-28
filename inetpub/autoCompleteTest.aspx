@@ -11,6 +11,9 @@
 
     <fieldset style="width:300px">
     <legend>Search Fields</legend>
+    <p> PersonID: 
+        <asp:TextBox ID="tbPersonID" runat="server"></asp:TextBox>
+    </p>
     <p> First Name:
         <asp:TextBox ID="tbFirstName" runat="server"></asp:TextBox>
         <ajaxToolkit:AutoCompleteExtender ServiceMethod="SearchFirstName"

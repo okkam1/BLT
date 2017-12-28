@@ -24,6 +24,7 @@ public partial class autoCompleteTest : System.Web.UI.Page
         {
             command.Parameters.Add(new SqlParameter("@FirstName", tbFirstName.Text.Trim()));
             command.Parameters.Add(new SqlParameter("@LastName", tbLastName.Text.Trim()));
+            command.Parameters.Add(new SqlParameter("@PersonID", tbPersonID.Text.Trim()));
 
             if (ddlYear.SelectedValue != "-")
             {
