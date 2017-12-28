@@ -21,10 +21,96 @@ public partial class EditBloodLeadResults : System.Web.UI.Page
         {
             GetFamilies();
 
+            string sPersonID = Request.QueryString["pid"];
+            string sFamilyID = "";
+
+            if (sPersonID != "" && sPersonID != null)
+            {
+                Trace.Write("sPersonID: " + sPersonID);
+
+                //call to DB to get FamilyID based on PersonID Lookup
+                sFamilyID = getFamilyID(sPersonID);
+
+                if (sFamilyID != "")
+                {
+                    //set drop-down to correct family
+                    FamilyNameList.SelectedValue = @sFamilyID;
+
+                    //show other family members in dropdown
+                    resetFields();
+                    pnlFamilyMembers.Visible = false;
+                    getFamilyMembers(FamilyNameList.SelectedValue);
+                    ddlFamilyMembers.SelectedValue = sPersonID;
+
+
+                    //call getIndividual to populate Person Information
+                    getIndividual(@sPersonID);
+                    SqlDataSource1.SelectParameters["PersonID"].DefaultValue = ddlFamilyMembers.SelectedValue.ToString();
+
+                    gridText.Text = "";
+
+                    GridView1.DataBind();
+
+                    if (GridView1.Rows.Count > 0)
+                    {
+                        GridView1.Visible = true;
+                    }
+                    else
+                    {
+                        gridText.Text = "No Results Found";
+                    }
+
+                    btnInsertResults.Visible = true;
+                }
+                else
+                {
+                    //show error because family not found (PersonID not valid?)
+
+                    lbOutput.Text = "Unable to find a family for Person ID:  " + sPersonID + " " + DateTime.Now;
+                    // AddAnother.Visible = false;
+                    lbPopUp.Text = "Unable to find a family for Person ID:  " + sPersonID + " " + DateTime.Now; //lbOutput.Text;
+
+                    ModalPopupExtender1.Show();
+
+                    Trace.Write(lbOutput.Text);
+
+
+                }
+            }
         }
 
     }
- 
+
+    protected string getFamilyID(string sPersonIDIn)
+    {
+        string sFamilyID = "";
+
+        if (sPersonIDIn != "" && sPersonIDIn != null)
+        {
+
+            Int32 iFamilyID = Int32.Parse(sPersonIDIn);
+
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand("usp_SLPersontoFamilyID", sqlConnection);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.Add("@PersonID", SqlDbType.Int).Value = iFamilyID;
+
+            //command.Parameters.Add("@ReturnValue", SqlDbType.Int).Direction = ParameterDirection.ReturnValue;
+
+            command.Parameters.Add("@FamilyID", SqlDbType.Int).Direction = ParameterDirection.Output;
+
+            sqlConnection.Open();
+            command.ExecuteNonQuery();
+            sqlConnection.Close();
+
+            sFamilyID = command.Parameters["@FamilyID"].Value.ToString();
+        }
+
+        Trace.Write("sFamilyID: " + sFamilyID);
+
+        return sFamilyID;
+
+    }
     protected void getFamilyMembers(String sFamilyIDIn)
     {
         if (FamilyNameList.SelectedIndex != 0)
@@ -74,7 +160,47 @@ public partial class EditBloodLeadResults : System.Web.UI.Page
         btnInsertResults.Visible = false;
     }
 
- 
+    protected void resetFields()
+    {
+
+    }
+
+    protected void getIndividual(String sPersonIDIn)
+    {
+
+        resetFields();
+
+        SqlConnection con = new SqlConnection(connectionString);
+
+        string com = @"select *,
+(select top 1 LanguageID from PersontoLanguage ptl where p.personid = ptl.personid order by CreatedDate DESC) as LanguageID,
+(select top 1 EthnicityID from PersontoEthnicity pte where p.personid = pte.personid  order by CreatedDate DESC) as EthnicityID,
+CAST (OutofSite as varchar) as OutofSiteV,
+CAST (isClient as varchar) as isClientV,
+CAST (CONVERT(VARCHAR(10),BirthDate,101) as varchar) as BirthDateV,
+CAST (ForeignTravel as varchar) as travelV
+from person p
+where p.personid  = '" + sPersonIDIn + "'";
+
+
+        SqlDataAdapter adpt = new SqlDataAdapter(com, con);
+
+        DataTable dt = new DataTable();
+
+        adpt.Fill(dt);
+
+        //fill UI screen with pre-selected values
+        if (dt.Rows.Count > 0)
+        {
+            ddlFamilyMembers.SelectedValue = sPersonIDIn;
+
+          
+        }
+
+        Trace.Write("connectionString: " + connectionString);
+
+    }
+   
     protected void ddlFamilyMembers_SelectedIndexChanged(object sender, EventArgs e)
     {
         //get indivifual

@@ -73,6 +73,9 @@
         <asp:hyperlinkfield datatextfield="PersonId"
         datanavigateurlfields="PersonId" HeaderText="EditClientInfo"
         datanavigateurlformatstring="EditClientInfo.aspx?pid={0}"  Target="_blank" SortExpression="PersonID"/>
+                <asp:hyperlinkfield datatextfield="PersonId"
+        datanavigateurlfields="PersonId" HeaderText="EditBloodLeadResults"
+        datanavigateurlformatstring="EditBloodLeadResults.aspx?pid={0}"  Target="_blank" SortExpression="PersonID"/>
     </Columns>
 
     </asp:GridView>
