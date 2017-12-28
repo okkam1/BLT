@@ -9,11 +9,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 
 public partial class autoCompleteTest : System.Web.UI.Page
-{
-    protected void Page_Load(object sender, EventArgs e)
-    {
-    }
-    
+{ 
     protected void SearchByTagButton_Click(object sender, EventArgs e)
     {
          
@@ -26,39 +22,29 @@ public partial class autoCompleteTest : System.Web.UI.Page
 
         try
         {
-
-            //String fname;
-            //List<String> names = new List<string>();
-            
-            //String FirstName = "%" + tbFirstName.Text.Trim() + "%";
-            //String LastName =  "%" + tbLastName.Text.Trim() + "%";
-            //Date BirthDate = tbBirthDate;
-
             command.Parameters.Add(new SqlParameter("@FirstName", tbFirstName.Text.Trim()));
             command.Parameters.Add(new SqlParameter("@LastName", tbLastName.Text.Trim()));
-            command.Parameters.Add(new SqlParameter("@BirthDate", tbBirthDate.Text));
 
-
-            //command.Parameters.Add(new SqlParameter("@Birthdate" tbBirthDate));
-//            command.Parameters.Add("@PersonID", SqlDbType.Int).Direction = ParameterDirection.Output;
-
-            //command.Parameters.Add("@FirstName", SqlDbType.Int).Direction = ParameterDirection.Output;
-            //command.Parameters.Add("@LastName", SqlDbType.Int).Direction = ParameterDirection.Output;
-            //command.Parameters.Add("@Birthdate", SqlDbType.Int).Direction = ParameterDirection.Output;
-
-
-
+            if (ddlYear.SelectedValue != "-")
+            {
+                command.Parameters.Add(new SqlParameter("@BirthYear", ddlYear.SelectedItem.Value));
+            }
+            if (ddlMonth.SelectedValue != "-")
+            {
+                command.Parameters.Add(new SqlParameter("@BirthMonth", ddlMonth.SelectedIndex));
+            }
+            if (ddlDay.SelectedValue != "-")
+            {
+                command.Parameters.Add(new SqlParameter("@Birthday", ddlDay.SelectedValue));
+            }
+            
             using (SqlDataReader rdr = command.ExecuteReader())
             {
-
-                //SqlDataReader dr = cmd.ExecuteReader();
                 DataTable dt = new DataTable();
                 dt.Load(rdr);
 
                 gvClients.DataSource = dt;
                 gvClients.DataBind();
-
-
             }
         }
         catch (Exception ex)
@@ -82,7 +68,7 @@ public partial class autoCompleteTest : System.Web.UI.Page
 
             using (SqlCommand cmd = new SqlCommand())
             {
-                cmd.CommandText = "select FirstName from Person where " +
+                cmd.CommandText = "select distinct FirstName from Person where " +
                 "FirstName like @SearchText + '%'";
                 cmd.Parameters.AddWithValue("@SearchText", prefixText);
                 cmd.Connection = conn;
@@ -112,9 +98,21 @@ public partial class autoCompleteTest : System.Web.UI.Page
 
             using (SqlCommand cmd = new SqlCommand())
             {
-                cmd.CommandText = "select LastName from Person where " +
+                string cmdText = "select distinct LastName from Person where " +
                 "LastName like @SearchText + '%'";
+
+                //    cmd.CommandText = "select distinct LastName from Person where " +
+                //"LastName like @SearchText + '%'";
+                
                 cmd.Parameters.AddWithValue("@SearchText", prefixText);
+                if (contextKey != "0")
+                {
+                    cmdText += " and FirstName like @FirstName + '%'";
+                    cmd.Parameters.AddWithValue("@FirstName", contextKey);
+                }
+                cmd.CommandText = cmdText;
+                
+
                 cmd.Connection = conn;
                 conn.Open();
                 List<string> names = new List<string>();
@@ -131,4 +129,62 @@ public partial class autoCompleteTest : System.Web.UI.Page
         }
  
     }
+
+    
+    
+    protected void Page_Load(object sender, EventArgs e)
+    {
+         if (!Page.IsPostBack)
+        {
+           // string $currentYear = System.DateTime.Now.Year.ToString();
+
+            int currentYear = System.DateTime.Now.Year;
+
+            //Fill Years
+            for (int i = currentYear; i >= (currentYear - 80); i--)
+            {
+                ddlYear.Items.Add(i.ToString());
+            }
+            // add default entry to year drop down - nothing to filter on
+            ddlYear.Items.Insert(0, "-");
+
+            //Fill days
+            FillDays();
+        }
+
+    }
+
+    private void FillDays()
+    {
+                ddlDay.Items.Clear();
+
+        //getting number of days in selected month & year
+        if ((ddlYear.SelectedValue != "-") && (ddlMonth.SelectedValue != "-"))
+        {
+            int noofdays = DateTime.DaysInMonth(Convert.ToInt32(ddlYear.SelectedValue), Convert.ToInt32(ddlMonth.SelectedIndex));
+            //Fill days
+            for (int i = 1; i <= noofdays; i++)
+            {
+                ddlDay.Items.Add(i.ToString());
+            }
+            // add default entry to month drop down - nothing to filter on
+            ddlDay.Items.Insert(0, "-");
+        }
+        else
+        {
+            ddlDay.Items.Insert(0, "-");
+        }
+    }
+
+    protected void ddlYear_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        FillDays();
+    }
+
+    protected void ddlMonth_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      FillDays();
+     }
+    
 }
+
