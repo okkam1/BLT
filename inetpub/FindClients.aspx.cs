@@ -7,18 +7,24 @@ using System.Data;
 using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Web.UI.WebControls;
 
 public partial class autoCompleteTest : System.Web.UI.Page
 { 
     protected void SearchByTagButton_Click(object sender, EventArgs e)
     {
-         
+
+        GetClients();
+    }
+
+    protected void GetClients()
+    {
         string connectionString = ConfigurationManager.ConnectionStrings["csLCCHP"].ConnectionString;
         SqlConnection conn = new SqlConnection(connectionString);
         conn.Open();
         SqlCommand command = new SqlCommand("usp_findPerson", conn);
 
-            command.CommandType = CommandType.StoredProcedure;
+        command.CommandType = CommandType.StoredProcedure;
 
         try
         {
@@ -38,7 +44,7 @@ public partial class autoCompleteTest : System.Web.UI.Page
             {
                 command.Parameters.Add(new SqlParameter("@Birthday", ddlDay.SelectedValue));
             }
-            
+
             using (SqlDataReader rdr = command.ExecuteReader())
             {
                 DataTable dt = new DataTable();
@@ -186,6 +192,13 @@ public partial class autoCompleteTest : System.Web.UI.Page
     {
       FillDays();
      }
-    
+
+    protected void gvClients_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    {
+        gvClients.PageIndex = e.NewPageIndex;
+
+        GetClients();
+
+    }
 }
 
