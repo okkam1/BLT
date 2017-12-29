@@ -15,6 +15,8 @@
     padding: 10px;
 }
 
+
+
 .DD
 {
     padding: 0px 8px;
@@ -34,11 +36,20 @@
     font: .95em Tahoma, Arial, Sans-Serif;
     border: solid 1px #dcdcdc;
     background-color: #FEFEFE;
+    list-style-type:none;
 }
 
 .DDDropDown
 {
-    padding: 2px;
+    padding: 0px 0px 0px 0px; 
+    list-style-type:none;
+    -moz-appearance: none;
+
+}
+
+
+.DDHighlighted {
+    background-color: #dbddff;
 }
 
 .DDFilter

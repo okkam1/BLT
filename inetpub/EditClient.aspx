@@ -12,6 +12,9 @@
         <div class="MainNavigation">
         <ul>
             <li>
+            <asp:HyperLink ID="hlClientSearch" runat="server" NavigateUrl="ClientSearch.aspx">Find Client(s)</asp:HyperLink></li>
+        
+            <li>
             <asp:HyperLink ID="hlEditClientInfo" runat="server" NavigateUrl="EditClientInfo.aspx">Edit Existing Client Information</asp:HyperLink></li>
         
             <li>

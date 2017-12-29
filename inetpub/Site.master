@@ -24,7 +24,8 @@
                 <asp:LoginName ID="LoginName1" runat="server" /> |
                 <span class="small">
                     <asp:HyperLink runat="server" id ="HyperLink1" NavigateUrl="ChangePassword.aspx" Text="Change Password" CssClass="DD">Change Password</asp:HyperLink> | 
-                    <asp:LoginStatus ID="LoginStatus1" runat="server" /></span>
+                    <asp:LoginStatus ID="LoginStatus1" runat="server" /><br />
+                <asp:HyperLink runat="server" id ="HyperLink2" NavigateUrl="clientSearch.aspx" Text="Find Clients" CssClass="DD">Find Clients</asp:HyperLink></span>
                 
             </span></h1>
 

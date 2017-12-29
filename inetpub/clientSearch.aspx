@@ -20,7 +20,7 @@
         MinimumPrefixLength="2"
         CompletionInterval="25" EnableCaching="false" CompletionSetCount="10"
         TargetControlID="tbFirstName"
-        ID="AutoCompleteExtender4" runat="server" FirstRowSelected = "false" UseContextKey="True" CompletionListCssClass="DDDropDown">
+        ID="AutoCompleteExtender4" runat="server" FirstRowSelected = "false" UseContextKey="True" CompletionListCssClass="DDDropDown" CompletionListItemCssClass="DDDropDown" CompletionListHighlightedItemCssClass="DDHighlighted">
         </ajaxToolkit:AutoCompleteExtender>
     </p>
     <p class="DD"> Last Name:
@@ -29,7 +29,7 @@
         MinimumPrefixLength="2"
         CompletionInterval="25" EnableCaching="false" CompletionSetCount="10"
         TargetControlID="tbLastName"
-        ID="AutoCompleteExtender3" runat="server" FirstRowSelected = "false" UseContextKey="True" CompletionListCssClass="DDDropDown">
+        ID="AutoCompleteExtender3" runat="server" FirstRowSelected = "false" UseContextKey="True" CompletionListCssClass="DDDropDown" CompletionListItemCssClass="DDDropDown" CompletionListHighlightedItemCssClass="DDHighlighted">
         </ajaxToolkit:AutoCompleteExtender>
     </p>
     <p class="DD">
