@@ -5,7 +5,7 @@
       <siteMapNode url="Questionnaire.aspx" title="Questionnaire" description="Questionnaire" />
         <siteMapNode url="BloodTestResults.aspx" title="BloodTestResults" description="Blood Test Results" />
       <siteMapNode url="EditClient.aspx" title="Edit Existing"  description="Modify Data for Existing Client">
-        <siteMapNode url="clientSearch.aspx" title="Find Clients"  description="Search Research Subjects" />
+        <siteMapNode url="FindClients.aspx" title="Find Clients"  description="Search Research Subjects" />
         <siteMapNode url="EditClientInfo.aspx" title="Edit Existing Client Info" description="Edit Existing Client Information" />
         <siteMapNode url="EditFamily.aspx" title="Edit Existing Family Info" description="Edit Existing Family Information" />
         <siteMapNode url="EditBloodLeadResults.aspx" title="Edit Existing Blood Test Info" description="Edit Existing Blood Test Information" />
